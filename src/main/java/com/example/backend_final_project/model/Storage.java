@@ -1,0 +1,120 @@
+package com.example.backend_final_project.model;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
+import java.util.Date;
+
+@Entity
+@Table(name ="storage")
+public class Storage {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
+    private int Id;
+
+    @ManyToOne
+    @JoinColumn(name ="product_id")
+    private Product product;
+
+    @ManyToOne
+    @JoinColumn(name ="provider_id")
+    private Provider Provider;
+
+    @Column(name ="quantity")
+    private int Quantity;
+
+    @Column(name = "created_date")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    private Date Created_date;
+
+    @Column(name = "create_by")
+    private String Created_by;
+
+    @Column(name = "updated_date")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    private Date Updated_date;
+
+    @Column(name ="update_by")
+    private String Updated_by;
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public Provider getProvider() {
+        return Provider;
+    }
+
+    public void setProvider(Provider provider) {
+        Provider = provider;
+    }
+
+    public int getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        Quantity = quantity;
+    }
+
+    public Date getCreated_date() {
+        return Created_date;
+    }
+
+    public void setCreated_date(Date created_date) {
+        Created_date = created_date;
+    }
+
+    public String getCreated_by() {
+        return Created_by;
+    }
+
+    public void setCreated_by(String created_by) {
+        Created_by = created_by;
+    }
+
+    public Date getUpdated_date() {
+        return Updated_date;
+    }
+
+    public void setUpdated_date(Date updated_date) {
+        Updated_date = updated_date;
+    }
+
+    public String getUpdated_by() {
+        return Updated_by;
+    }
+
+    public void setUpdated_by(String updated_by) {
+        Updated_by = updated_by;
+    }
+
+    public Storage(int id, Product product, Provider provider, int quantity, Date created_date, String created_by, Date updated_date, String updated_by) {
+        Id = id;
+        this.product = product;
+        Provider = provider;
+        Quantity = quantity;
+        Created_date = created_date;
+        Created_by = created_by;
+        Updated_date = updated_date;
+        Updated_by = updated_by;
+    }
+
+    public Storage() {
+    }
+}
