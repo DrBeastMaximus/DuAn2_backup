@@ -8,7 +8,13 @@ import java.util.List;
 public interface UserService {
     List<User> getUserList();
 
+    List<User> findUserByKeyword(String keyword);
+
     User getUserId(int id);
+
+    User getUserByEmail(int email);
+
+    User getUserByUsername(String username);
 
     void addUser(User user);
 

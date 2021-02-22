@@ -1,8 +1,10 @@
 package com.example.backend_final_project.DAO.Impl;
 
 import com.example.backend_final_project.DAO.UserDAO;
+import com.example.backend_final_project.model.Admin;
 import com.example.backend_final_project.model.Product;
 import com.example.backend_final_project.model.User;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +36,19 @@ public class UserDAOlmpl implements UserDAO {
     public void addUser(User user) {
 
     }
-
+    @Override
+    public List<User> findUserByKeyword(String keyword) {
+        Session session = this.sessionFactory.openSession();
+        String hql = "FROM User where address like :addr or fullname like :name or phone like :phone or username like :user or email like :email ";
+        Query query = session.createQuery(hql);
+        query.setParameter("user", "%" + keyword + "%");
+        query.setParameter("addr", "%" + keyword + "%");
+        query.setParameter("name", "%" + keyword + "%");
+        query.setParameter("phone", "%" + keyword + "%");
+        query.setParameter("email", "%" + keyword + "%");
+        List<User> list = query.list();
+        return list;
+    }
     @Override
     public void updateUser(User user) {
 

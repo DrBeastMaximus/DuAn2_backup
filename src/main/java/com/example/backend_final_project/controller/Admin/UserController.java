@@ -7,6 +7,7 @@ import com.example.backend_final_project.service.Impl.UserServicelmpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -23,5 +24,9 @@ public class UserController {
         List<User>  list = userServicelmpl.getUserList();
         System.out.println("test............");
         return list;
+    }
+    @GetMapping("/find")
+    public List<User> index(@RequestParam("keyword") String keyword) {
+        return userServicelmpl.findUserByKeyword(keyword);
     }
 }

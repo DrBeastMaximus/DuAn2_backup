@@ -25,6 +25,46 @@ public class ProductDAOlmpl implements ProductDAO {
     }
 
     @Override
+    public List<Product> getHotProductList() {
+        return null;
+    }
+
+    @Override
+    public List<Product> getLatestProductList() {
+        return null;
+    }
+
+    @Override
+    public List<Product> getSalesProductList() {
+        return null;
+    }
+
+    @Override
+    public List<Product> getProductListByBrandId(int brandID) {
+        return null;
+    }
+
+    @Override
+    public List<Product> getProductListByGender(Boolean gender) {
+        return null;
+    }
+
+    @Override
+    public List<Product> getProductListByProdTypeId(int prodTypeID) {
+        return null;
+    }
+
+    @Override
+    public List<Product> getProductListByKeyword(String keyword) {
+        return null;
+    }
+
+    @Override
+    public List<Product> getProductListInPriceRange(int minPrice, int maxPrice) {
+        return null;
+    }
+
+    @Override
     public Product getProductById(int id) {
         return null;
     }

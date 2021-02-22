@@ -52,6 +52,10 @@ public class Product {
     @Column(name ="isdelete")
     private boolean isdelete;
 
+
+    @Column(name ="gender")
+    private boolean gender;
+
 //    @OneToMany(mappedBy="product_detail",fetch=FetchType.EAGER)
 //    private Collection<Product_Detail> Product_Detail;
 //   @OneToMany(mappedBy="product_image",fetch=FetchType.EAGER)
@@ -171,6 +175,14 @@ public class Product {
         this.isdelete = isdelete;
     }
 
+    public boolean isGender() {
+        return gender;
+    }
+
+    public void setGender(boolean gender) {
+        this.gender = gender;
+    }
+
 //    public Collection<Product_Detail> getProduct_Detail() {
 //        return Product_Detail;
 //    }
@@ -258,7 +270,7 @@ public class Product {
 //        Wishlish = wishlish;
 //    }
 
-    public Product(int ID, String code, String name, float price, float price_slae, String description, Product_type productType, com.example.backend_final_project.model.Brand brand, boolean issale, Date created_date, String creatd_by, boolean isdelete) {
+    public Product(int ID, String code, String name, float price, float price_slae, String description, Product_type productType, com.example.backend_final_project.model.Brand brand, boolean issale, Date created_date, String creatd_by, boolean isdelete, boolean gender) {
         this.ID = ID;
         Code = code;
         Name = name;
@@ -271,6 +283,7 @@ public class Product {
         Created_date = created_date;
         Creatd_by = creatd_by;
         this.isdelete = isdelete;
+        this.gender = gender;
     }
 
     public Product() {

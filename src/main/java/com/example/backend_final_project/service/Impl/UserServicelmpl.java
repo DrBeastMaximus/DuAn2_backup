@@ -22,7 +22,22 @@ public class UserServicelmpl implements UserService {
     }
 
     @Override
+    public List<User> findUserByKeyword(String keyword) {
+        return userDAOlmpl.findUserByKeyword(keyword);
+    }
+
+    @Override
     public User getUserId(int id) {
+        return null;
+    }
+
+    @Override
+    public User getUserByEmail(int email) {
+        return null;
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
         return null;
     }
 
