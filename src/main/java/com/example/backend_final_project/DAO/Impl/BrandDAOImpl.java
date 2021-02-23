@@ -18,22 +18,22 @@ public class BrandDAOImpl implements BrandDAO {
     }
 
     @Override
-    public List<Brand> findAdminByKeyword(String keyword) {
+    public List<Brand> findBrandByKeyword(String keyword) {
         return null;
     }
 
     @Override
-    public void addAdmin(Brand brand) {
+    public void addBrand(Brand brand) {
 
     }
 
     @Override
-    public void updateAdmin(Brand brand) {
+    public void updateBrand(Brand brand) {
 
     }
 
     @Override
-    public void deleteAdmin(Brand brand) {
+    public void deleteBrand(Brand brand) {
 
     }
 }

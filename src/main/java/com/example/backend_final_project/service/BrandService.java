@@ -1,10 +1,11 @@
-package com.example.backend_final_project.DAO;
+package com.example.backend_final_project.service;
 
+import com.example.backend_final_project.model.Admin;
 import com.example.backend_final_project.model.Brand;
 
 import java.util.List;
 
-public interface BrandDAO {
+public interface BrandService {
     List<Brand> getBrandList();
 
     Brand getBrandById(int id);
