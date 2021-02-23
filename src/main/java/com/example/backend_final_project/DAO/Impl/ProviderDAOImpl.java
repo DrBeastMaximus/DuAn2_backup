@@ -2,9 +2,15 @@ package com.example.backend_final_project.DAO.Impl;
 
 import com.example.backend_final_project.DAO.ProviderDAO;
 import com.example.backend_final_project.model.Provider;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Repository
+@Transactional
+@EnableTransactionManagement
 public class ProviderDAOImpl implements ProviderDAO {
     @Override
     public List<Provider> getProviderList() {

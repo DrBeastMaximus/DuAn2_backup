@@ -16,7 +16,6 @@ public class BrandServiceImpl implements BrandService {
     @Autowired
     private BrandDAOImpl brandDAOlmpl;
 
-
     @Override
     public List<Brand> getBrandList() {
         return brandDAOlmpl.getBrandList();

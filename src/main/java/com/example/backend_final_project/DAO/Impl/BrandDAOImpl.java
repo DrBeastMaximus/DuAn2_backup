@@ -2,9 +2,14 @@ package com.example.backend_final_project.DAO.Impl;
 
 import com.example.backend_final_project.DAO.BrandDAO;
 import com.example.backend_final_project.model.Brand;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+@Repository
+@Transactional
+@EnableTransactionManagement
 public class BrandDAOImpl implements BrandDAO {
 
     @Override

@@ -2,9 +2,14 @@ package com.example.backend_final_project.DAO.Impl;
 
 import com.example.backend_final_project.DAO.InvoiceDetailDAO;
 import com.example.backend_final_project.model.Invoice_Detail;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+@Repository
+@Transactional
+@EnableTransactionManagement
 public class InvoiceDetailDAOImpl implements InvoiceDetailDAO {
     @Override
     public List<Invoice_Detail> getInvoiceDetailList() {
