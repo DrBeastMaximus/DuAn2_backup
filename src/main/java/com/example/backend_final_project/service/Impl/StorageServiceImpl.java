@@ -51,7 +51,7 @@ public class StorageServiceImpl implements StorageService {
     }
 
     @Override
-    public void deleteStorage(Storage storage) {
-    storageDAOlmpl.deleteStorage(storage);
+    public void deleteStorage(int storageID) {
+    storageDAOlmpl.deleteStorage(storageID);
     }
 }

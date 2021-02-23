@@ -17,5 +17,5 @@ public interface InvoiceDetailService {
 
     void updateInvoiceDetail(Invoice_Detail invoiceD);
 
-    void deleteInvoiceDetail(Invoice_Detail invoiceD);
+    void deleteInvoiceDetail(int invoiceDetailID);
 }

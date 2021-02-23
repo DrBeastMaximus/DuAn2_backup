@@ -45,7 +45,7 @@ public class DeliveryServiceImpl implements DeliveryService {
     }
 
     @Override
-    public void deleteDelivery(Delivery delivery) {
-    deliveryDAOlmpl.deleteDelivery(delivery);
+    public void deleteDelivery(int deliveryID) {
+    deliveryDAOlmpl.deleteDelivery(deliveryID);
     }
 }

@@ -15,5 +15,5 @@ public interface ProductTypeDAO {
 
     void updateProductType(Product_type productType);
 
-    void deleteProductType(Product_type productType);
+    void deleteProductType(int productTypeID);
 }

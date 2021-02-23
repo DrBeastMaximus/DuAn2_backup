@@ -45,7 +45,7 @@ public class LoginAdminServiceImpl implements LoginAdminService {
     }
 
     @Override
-    public void deleteAdmin(Admin admin) {
-    adminLoginDAOlmpl.deleteAdmin(admin);
+    public void deleteAdmin(int adminID) {
+    adminLoginDAOlmpl.deleteAdmin(adminID);
     }
 }

@@ -37,7 +37,7 @@ public class CartDetailDAOImpl implements CartDetailDAO {
     }
 
     @Override
-    public void deleteCartDetail(Cart_Detail cartD) {
+    public void deleteCartDetail(int cartDetailID) {
 
     }
 }

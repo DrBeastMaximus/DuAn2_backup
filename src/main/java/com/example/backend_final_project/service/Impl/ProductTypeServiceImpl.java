@@ -45,7 +45,7 @@ public class ProductTypeServiceImpl implements ProductTypeService {
     }
 
     @Override
-    public void deleteProductType(Product_type productType) {
-    productTypeDAOlmpl.deleteProductType(productType);
+    public void deleteProductType(int productTypeID) {
+    productTypeDAOlmpl.deleteProductType(productTypeID);
     }
 }

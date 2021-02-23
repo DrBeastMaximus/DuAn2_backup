@@ -5,7 +5,7 @@ import com.example.backend_final_project.model.Product_Image;
 import java.util.List;
 
 public interface ProductImageDAO {
-    List<Product_Image> getDeliveryList();
+    List<Product_Image> getProductImagesList();
 
     Product_Image getProductImageById(int id);
 
@@ -15,5 +15,5 @@ public interface ProductImageDAO {
 
     void updateProductImage(Product_Image productImage);
 
-    void deleteProductImage(Product_Image productImage);
+    void deleteProductImage(int productImageID);
 }

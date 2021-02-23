@@ -37,7 +37,7 @@ public class NewsletterDAOImpl implements NewsletterDAO {
     }
 
     @Override
-    public void deleteNewsletterEmail(Email newsletterEmail) {
+    public void deleteNewsletterEmail(int newsletterEmailID) {
 
     }
 }

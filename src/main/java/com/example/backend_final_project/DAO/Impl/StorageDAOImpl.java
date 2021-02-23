@@ -43,7 +43,7 @@ public class StorageDAOImpl implements StorageDAO {
     }
 
     @Override
-    public void deleteStorage(Storage storage) {
+    public void deleteStorage(int storageID) {
 
     }
 }

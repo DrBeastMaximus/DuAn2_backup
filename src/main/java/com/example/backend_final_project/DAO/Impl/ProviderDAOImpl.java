@@ -48,7 +48,7 @@ public class ProviderDAOImpl implements ProviderDAO {
     }
 
     @Override
-    public void deleteProvider(Provider provider) {
+    public void deleteProvider(int providerID) {
 
     }
 }

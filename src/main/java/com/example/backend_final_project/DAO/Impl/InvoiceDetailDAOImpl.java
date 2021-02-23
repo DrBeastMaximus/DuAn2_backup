@@ -42,7 +42,7 @@ public class InvoiceDetailDAOImpl implements InvoiceDetailDAO {
     }
 
     @Override
-    public void deleteInvoiceDetail(Invoice_Detail invoiceD) {
+    public void deleteInvoiceDetail(int invoiceDetailID) {
 
     }
 }

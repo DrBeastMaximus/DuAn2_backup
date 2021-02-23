@@ -51,7 +51,7 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
-    public void deleteInvoice(Invoice invoice) {
-    invoiceDAOlmpl.deleteInvoice(invoice);
+    public void deleteInvoice(int invoiceID) {
+    invoiceDAOlmpl.deleteInvoice(invoiceID);
     }
 }

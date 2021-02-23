@@ -15,5 +15,5 @@ public interface WishlishService {
 
     void updateWishlish(Wishlish wishlish);
 
-    void deleteWishlish(Wishlish wishlish);
+    void deleteWishlish(int wishlishID);
 }

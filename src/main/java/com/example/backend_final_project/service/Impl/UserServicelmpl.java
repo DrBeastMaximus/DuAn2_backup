@@ -53,7 +53,7 @@ public class UserServicelmpl implements UserService {
     }
 
     @Override
-    public void deleteUser(User user) {
-        userDAOlmpl.deleteUser(user);
+    public void deleteUser(int userID) {
+        userDAOlmpl.deleteUser(userID);
     }
 }

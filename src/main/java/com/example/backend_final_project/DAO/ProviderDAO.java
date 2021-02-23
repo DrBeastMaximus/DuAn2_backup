@@ -19,5 +19,5 @@ public interface ProviderDAO {
 
     void updateProvider(Provider provider);
 
-    void deleteProvider(Provider provider);
+    void deleteProvider(int providerID);
 }

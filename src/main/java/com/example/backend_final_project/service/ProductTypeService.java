@@ -15,5 +15,5 @@ public interface ProductTypeService {
 
     void updateProductType(Product_type productType);
 
-    void deleteProductType(Product_type productType);
+    void deleteProductType(int productTypeID);
 }

@@ -100,10 +100,11 @@ public class UserDAOlmpl implements UserDAO {
     }
 
     @Override
-    public void deleteUser(User user) {
+    public void deleteUser(int userID) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();
         try {
+            User user = session.get(User.class, userID);
             session.delete(user);
             t.commit();
         } catch (Exception e) {

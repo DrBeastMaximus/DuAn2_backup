@@ -16,5 +16,5 @@ public interface DeliveryDAO {
 
     void updateDelivery(Delivery delivery);
 
-    void deleteDelivery(Delivery delivery);
+    void deleteDelivery(int deliveryID);
 }

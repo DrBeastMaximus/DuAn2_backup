@@ -42,7 +42,7 @@ public class CartDetailServiceImpl implements CartDetailService {
     }
 
     @Override
-    public void deleteCartDetail(Cart_Detail cartDetail) {
-    cartDetailDAOlmpl.deleteCartDetail(cartDetail);
+    public void deleteCartDetail(int cartDetailID) {
+    cartDetailDAOlmpl.deleteCartDetail(cartDetailID);
     }
 }

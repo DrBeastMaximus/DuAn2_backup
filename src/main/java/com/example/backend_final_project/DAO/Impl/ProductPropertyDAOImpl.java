@@ -37,7 +37,7 @@ public class ProductPropertyDAOImpl implements ProductPropertyDAO {
     }
 
     @Override
-    public void deleteProductProperty(Product_Property productProperty) {
+    public void deleteProductProperty(int productPropertyID) {
 
     }
 }

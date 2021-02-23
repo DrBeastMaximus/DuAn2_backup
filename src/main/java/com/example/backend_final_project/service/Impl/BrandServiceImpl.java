@@ -42,7 +42,7 @@ public class BrandServiceImpl implements BrandService {
     }
 
     @Override
-    public void deleteBrand(Brand brand) {
-        brandDAOlmpl.deleteBrand(brand);
+    public void deleteBrand(int brandID) {
+        brandDAOlmpl.deleteBrand(brandID);
     }
 }

@@ -17,5 +17,5 @@ public interface StorageService {
 
     void updateStorage(Storage storage);
 
-    void deleteStorage(Storage storage);
+    void deleteStorage(int storageID);
 }

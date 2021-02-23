@@ -15,9 +15,9 @@ public interface VoucherService {
 
     List<Voucher> getVoucherByStatus(int status);
 
-    void addStorage(Voucher voucher);
+    void addVoucher(Voucher voucher);
 
-    void updateStorage(Voucher voucher);
+    void updateVoucher(Voucher voucher);
 
-    void deleteStorage(Voucher voucher);
+    void deleteVoucher(int voucherID);
 }

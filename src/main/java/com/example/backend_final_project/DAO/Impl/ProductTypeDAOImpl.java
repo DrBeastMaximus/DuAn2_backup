@@ -37,7 +37,7 @@ public class ProductTypeDAOImpl implements ProductTypeDAO {
     }
 
     @Override
-    public void deleteProductType(Product_type productType) {
+    public void deleteProductType(int productTypeID) {
 
     }
 }

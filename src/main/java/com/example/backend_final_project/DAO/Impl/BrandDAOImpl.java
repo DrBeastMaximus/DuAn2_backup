@@ -38,7 +38,7 @@ public class BrandDAOImpl implements BrandDAO {
     }
 
     @Override
-    public void deleteBrand(Brand brand) {
+    public void deleteBrand(int brandID) {
 
     }
 }

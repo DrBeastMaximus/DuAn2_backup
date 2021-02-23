@@ -37,7 +37,7 @@ public class DeliveryDAOImpl implements DeliveryDAO {
     }
 
     @Override
-    public void deleteDelivery(Delivery delivery) {
+    public void deleteDelivery(int deliveryID) {
 
     }
 }

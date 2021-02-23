@@ -57,7 +57,7 @@ public class ProviderServiceImpl implements ProviderService {
     }
 
     @Override
-    public void deleteProvider(Provider provider) {
-    providerDAOlmpl.deleteProvider(provider);
+    public void deleteProvider(int providerID) {
+    providerDAOlmpl.deleteProvider(providerID);
     }
 }

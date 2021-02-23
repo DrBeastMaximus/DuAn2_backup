@@ -15,5 +15,5 @@ public interface NewsletterDAO {
 
     void updateNewsletterEmail(Email newsletterEmail);
 
-    void deleteNewsletterEmail(Email newsletterEmail);
+    void deleteNewsletterEmail(int newsletterEmailID);
 }

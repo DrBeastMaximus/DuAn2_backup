@@ -42,7 +42,7 @@ public class InvoiceDAOImpl implements InvoiceDAO {
     }
 
     @Override
-    public void deleteInvoice(Invoice invoice) {
+    public void deleteInvoice(int invoiceID) {
 
     }
 }

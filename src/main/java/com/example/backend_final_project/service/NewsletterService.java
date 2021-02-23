@@ -15,5 +15,5 @@ public interface NewsletterService {
 
     void updateNewsletterEmail(Email newsletterEmail);
 
-    void deleteNewsletterEmail(Email newsletterEmail);
+    void deleteNewsletterEmail(int newsletterEmailID);
 }

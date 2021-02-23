@@ -38,17 +38,17 @@ public class VoucherDAOImpl implements VoucherDAO {
     }
 
     @Override
-    public void addStorage(Voucher voucher) {
+    public void addVoucher(Voucher voucher) {
 
     }
 
     @Override
-    public void updateStorage(Voucher voucher) {
+    public void updateVoucher(Voucher voucher) {
 
     }
 
     @Override
-    public void deleteStorage(Voucher voucher) {
+    public void deleteVoucher(int voucherID) {
 
     }
 }

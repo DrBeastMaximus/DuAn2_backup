@@ -78,7 +78,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void deleteProduct(Product product) {
-    productDAOlmpl.deleteProduct(product);
+    public void deleteProduct(int productID) {
+    productDAOlmpl.deleteProduct(productID);
     }
 }

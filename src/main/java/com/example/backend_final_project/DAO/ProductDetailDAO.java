@@ -15,5 +15,5 @@ public interface ProductDetailDAO {
 
     void updateProductDetail(Product_Detail productDetail);
 
-    void deleteProductDetail(Product_Detail productDetail);
+    void deleteProductDetail(int productDetailID);
 }

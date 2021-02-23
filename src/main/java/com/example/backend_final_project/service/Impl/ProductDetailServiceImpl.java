@@ -45,7 +45,7 @@ public class ProductDetailServiceImpl implements ProductDetailService {
     }
 
     @Override
-    public void deleteProductDetail(Product_Detail productDetail) {
-    productDetailDAOlmpl.deleteProductDetail(productDetail);
+    public void deleteProductDetail(int productDetailID) {
+    productDetailDAOlmpl.deleteProductDetail(productDetailID);
     }
 }

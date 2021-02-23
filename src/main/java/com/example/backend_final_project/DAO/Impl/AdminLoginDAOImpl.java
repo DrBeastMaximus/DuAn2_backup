@@ -83,10 +83,11 @@ public class AdminLoginDAOImpl implements AdminLoginDAO {
 
     @Override
     @ExceptionHandler({DeleteDataException.class})
-    public void deleteAdmin(Admin admin) {
+    public void deleteAdmin(int adminID) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();
         try {
+            Admin admin = session.get(Admin.class, adminID);
             session.delete(admin);
             t.commit();
         } catch (Exception e) {

@@ -37,7 +37,7 @@ public class CommentDAOImpl implements CommentDAO {
     }
 
     @Override
-    public void deleteComment(Comment comment) {
+    public void deleteComment(int commentID) {
 
     }
 }

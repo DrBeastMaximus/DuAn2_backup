@@ -12,7 +12,7 @@ import java.util.List;
 @EnableTransactionManagement
 public class ProductImageDAOImpl implements ProductImageDAO {
     @Override
-    public List<Product_Image> getDeliveryList() {
+    public List<Product_Image> getProductImagesList() {
         return null;
     }
 
@@ -37,7 +37,7 @@ public class ProductImageDAOImpl implements ProductImageDAO {
     }
 
     @Override
-    public void deleteProductImage(Product_Image productImage) {
+    public void deleteProductImage(int productImageID) {
 
     }
 }

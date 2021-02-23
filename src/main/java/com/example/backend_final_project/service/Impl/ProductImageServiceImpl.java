@@ -17,9 +17,9 @@ public class ProductImageServiceImpl implements ProductImageService {
     private ProductImageDAOImpl productImageDAOlmpl;
 
     @Override
-    public List<Product_Image> getDeliveryList() {
+    public List<Product_Image> getProductImagesList() {
 
-        return productImageDAOlmpl.getDeliveryList();
+        return productImageDAOlmpl.getProductImagesList();
     }
 
     @Override
@@ -45,7 +45,7 @@ public class ProductImageServiceImpl implements ProductImageService {
     }
 
     @Override
-    public void deleteProductImage(Product_Image productImage) {
-    productImageDAOlmpl.deleteProductImage(productImage);
+    public void deleteProductImage(int productImageID) {
+    productImageDAOlmpl.deleteProductImage(productImageID);
     }
 }

@@ -15,5 +15,5 @@ public interface ProductPropertyDAO {
 
     void updateProductProperty(Product_Property productProperty);
 
-    void deleteProductProperty(Product_Property productProperty);
+    void deleteProductProperty(int productPropertyID);
 }

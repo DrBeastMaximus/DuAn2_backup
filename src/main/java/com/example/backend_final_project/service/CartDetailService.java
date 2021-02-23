@@ -9,17 +9,13 @@ public interface CartDetailService {
 
     List<Cart_Detail> getCartDetailList();
 
-
-
     Cart_Detail getCartDetailId(int id);
 
     List<Cart_Detail> getCartDetailListByCardID(int id);
-
-
 
     void addCartDetail(Cart_Detail cartDetail);
 
     void updateCartDetail(Cart_Detail cartDetail);
 
-    void deleteCartDetail(Cart_Detail cartDetail);
+    void deleteCartDetail(int cartDetailID);
 }

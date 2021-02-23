@@ -8,13 +8,11 @@ import java.util.List;
 public interface CartService {
     List<Cart> getCartList();
 
-
-
     Cart getCartId(int id);
 
     void addCart(Cart cart);
 
     void updateCart(Cart cart);
 
-    void deleteCart(Cart cart);
+    void deleteCart(int cartID);
 }

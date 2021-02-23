@@ -38,7 +38,7 @@ public class WishlistDAOImpl implements WishlistDAO {
     }
 
     @Override
-    public void deleteWishlish(Wishlish wishlish) {
+    public void deleteWishlish(int wishlishID) {
 
     }
 }

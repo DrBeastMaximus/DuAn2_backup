@@ -47,17 +47,17 @@ public class VoucherServiceImpl implements VoucherService {
     }
 
     @Override
-    public void addStorage(Voucher voucher) {
-    voucherDAOlmpl.addStorage(voucher);
+    public void addVoucher(Voucher voucher) {
+    voucherDAOlmpl.addVoucher(voucher);
     }
 
     @Override
-    public void updateStorage(Voucher voucher) {
-    voucherDAOlmpl.updateStorage(voucher);
+    public void updateVoucher(Voucher voucher) {
+    voucherDAOlmpl.updateVoucher(voucher);
     }
 
     @Override
-    public void deleteStorage(Voucher voucher) {
-    voucherDAOlmpl.deleteStorage(voucher);
+    public void deleteVoucher(int voucherID) {
+    voucherDAOlmpl.deleteVoucher(voucherID);
     }
 }

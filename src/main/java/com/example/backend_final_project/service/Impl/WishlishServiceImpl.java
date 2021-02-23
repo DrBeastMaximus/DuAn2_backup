@@ -45,7 +45,7 @@ public class WishlishServiceImpl implements WishlishService {
     }
 
     @Override
-    public void deleteWishlish(Wishlish wishlish) {
-    wishlistDAOlmpl.deleteWishlish(wishlish);
+    public void deleteWishlish(int wishlishID) {
+    wishlistDAOlmpl.deleteWishlish(wishlishID);
     }
 }

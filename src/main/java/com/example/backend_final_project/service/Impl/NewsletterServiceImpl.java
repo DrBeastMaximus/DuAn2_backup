@@ -45,7 +45,7 @@ public class NewsletterServiceImpl implements NewsletterService {
     }
 
     @Override
-    public void deleteNewsletterEmail(Email newsletterEmail) {
-    newletterlDAOlmpl.deleteNewsletterEmail(newsletterEmail);
+    public void deleteNewsletterEmail(int newsletterEmailID) {
+    newletterlDAOlmpl.deleteNewsletterEmail(newsletterEmailID);
     }
 }

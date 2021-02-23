@@ -80,7 +80,7 @@ public class ProductDAOlmpl implements ProductDAO {
     }
 
     @Override
-    public void deleteProduct(Product product) {
+    public void deleteProduct(int productID) {
 
     }
 

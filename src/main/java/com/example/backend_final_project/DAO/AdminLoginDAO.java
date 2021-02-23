@@ -15,6 +15,6 @@ public interface AdminLoginDAO {
 
     void updateAdmin(Admin admin);
 
-    void deleteAdmin(Admin admin);
+    void deleteAdmin(int adminID);
 }
 

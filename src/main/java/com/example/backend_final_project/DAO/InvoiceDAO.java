@@ -19,5 +19,5 @@ public interface InvoiceDAO {
 
     void updateInvoice(Invoice invoice);
 
-    void deleteInvoice(Invoice invoice);
+    void deleteInvoice(int invoiceID);
 }

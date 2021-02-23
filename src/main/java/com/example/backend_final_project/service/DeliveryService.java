@@ -15,5 +15,5 @@ public interface DeliveryService {
 
     void updateDelivery(Delivery delivery);
 
-    void deleteDelivery(Delivery delivery);
+    void deleteDelivery(int deliveryID);
 }

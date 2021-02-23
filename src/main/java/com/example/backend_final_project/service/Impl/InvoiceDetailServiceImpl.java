@@ -51,7 +51,7 @@ public class InvoiceDetailServiceImpl implements InvoiceDetailService {
     }
 
     @Override
-    public void deleteInvoiceDetail(Invoice_Detail invoiceD) {
-    invoiceDetailDAOlmpl.deleteInvoiceDetail(invoiceD);
+    public void deleteInvoiceDetail(int invoiceDetailID) {
+    invoiceDetailDAOlmpl.deleteInvoiceDetail(invoiceDetailID);
     }
 }

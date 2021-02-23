@@ -19,5 +19,5 @@ public interface ProviderService {
 
     void updateProvider(Provider provider);
 
-    void deleteProvider(Provider provider);
+    void deleteProvider(int providerID);
 }

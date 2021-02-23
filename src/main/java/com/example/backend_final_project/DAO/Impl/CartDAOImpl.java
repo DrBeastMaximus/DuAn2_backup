@@ -32,7 +32,7 @@ public class CartDAOImpl implements CartDAO {
     }
 
     @Override
-    public void deleteCart(Cart cart) {
+    public void deleteCart(int cartID) {
 
     }
 }
