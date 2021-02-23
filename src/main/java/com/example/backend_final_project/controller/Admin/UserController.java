@@ -2,9 +2,7 @@ package com.example.backend_final_project.controller.Admin;
 
 import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
-import com.example.backend_final_project.model.Product;
 import com.example.backend_final_project.model.User;
-import com.example.backend_final_project.service.Impl.ProductServiceImpl;
 import com.example.backend_final_project.service.Impl.UserServicelmpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -57,12 +55,38 @@ public class UserController {
         }
 
     }
+    @GetMapping("/edit")
+    public String update(@RequestParam("username") String usn,@RequestParam("password") String pwd) throws SaveDataErrorException {
+        User usr = userServicelmpl.getUserByUsername(usn);
+        if(usr!=null) {
+        Date date = new Date();
+        usr.setAddress("SSS");
+        usr.setBirthday(date);
+        usr.setCreated_date(date);
+        usr.setFullname("ABC");
+        usr.setEmail("CCC");
+        usr.setFullname("FFF");
+        usr.setGender(true);
+        usr.setPassword(pwd);
+        usr.setPhone("555");
+        usr.setUpdate_date(date);
+        usr.setUsername(usn);
+        usr.setIsdelete(false);
+            userServicelmpl.updateUser(usr);
+            return "Update functioning ok!";
+        } else {
+            throw new SaveDataErrorException();
+        }
+
+    }
+    //Đang làm thử Add, Delete, Update cho user. Delete bị lỗi vẫn chưa fix đc
     @GetMapping("/delete")
-    public String delete(@RequestParam("id") int id) throws DeleteDataException {
-        User usr = userServicelmpl.getUserById(id);
+    public User delete(@RequestParam("username") String usn) throws DeleteDataException {
+        User usr = userServicelmpl.getUserByUsername(usn);
+
         if(usr!=null){
             userServicelmpl.deleteUser(usr);
-            return "Delete functioning ok!";
+            return usr;
         } else{
             throw new DeleteDataException();
         }

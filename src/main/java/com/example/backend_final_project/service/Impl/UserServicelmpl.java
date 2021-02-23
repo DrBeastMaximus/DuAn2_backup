@@ -52,7 +52,6 @@ public class UserServicelmpl implements UserService {
         userDAOlmpl.updateUser(user);
     }
 
-
     @Override
     public void deleteUser(User user) {
         userDAOlmpl.deleteUser(user);

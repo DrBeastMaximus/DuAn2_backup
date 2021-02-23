@@ -93,6 +93,7 @@ public class UserDAOlmpl implements UserDAO {
             t.commit();
         } catch (Exception e) {
             t.rollback();
+            e.printStackTrace();
         } finally {
             session.close();
         }
@@ -107,6 +108,7 @@ public class UserDAOlmpl implements UserDAO {
             t.commit();
         } catch (Exception e) {
             t.rollback();
+            e.printStackTrace();
         } finally {
             session.close();
         }
