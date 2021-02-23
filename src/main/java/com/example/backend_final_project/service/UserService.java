@@ -10,15 +10,15 @@ public interface UserService {
 
     List<User> findUserByKeyword(String keyword);
 
-    User getUserId(int id);
+    User getUserById(int id);
 
-    User getUserByEmail(int email);
+    User getUserByEmail(String email);
 
     User getUserByUsername(String username);
 
     void addUser(User user);
 
-    void editUser(User user);
+    void updateUser(User user);
 
     void deleteUser(User user);
 }

@@ -27,32 +27,34 @@ public class UserServicelmpl implements UserService {
     }
 
     @Override
-    public User getUserId(int id) {
-        return null;
+    public User getUserById(int id) {
+        return userDAOlmpl.getUserById(id);
     }
 
+
     @Override
-    public User getUserByEmail(int email) {
-        return null;
+    public User getUserByEmail(String email) {
+        return userDAOlmpl.getUserByEmail(email);
     }
 
     @Override
     public User getUserByUsername(String username) {
-        return null;
+        return userDAOlmpl.getUserByUsername(username);
     }
 
     @Override
     public void addUser(User user) {
-
+        userDAOlmpl.addUser(user);
     }
 
     @Override
-    public void editUser(User user) {
-
+    public void updateUser(User user) {
+        userDAOlmpl.updateUser(user);
     }
+
 
     @Override
     public void deleteUser(User user) {
-
+        userDAOlmpl.deleteUser(user);
     }
 }

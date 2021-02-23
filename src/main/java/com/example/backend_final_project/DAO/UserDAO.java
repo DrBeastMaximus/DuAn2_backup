@@ -13,6 +13,10 @@ public interface UserDAO {
 
     User getUserById(int id);
 
+    User getUserByEmail(String email);
+
+    User getUserByUsername(String username);
+
     void addUser(User user);
 
     void updateUser(User user);
