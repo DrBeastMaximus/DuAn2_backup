@@ -5,6 +5,7 @@ import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
 import com.example.backend_final_project.model.Admin;
+import com.example.backend_final_project.model.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -36,7 +37,11 @@ public class AdminLoginDAOImpl implements AdminLoginDAO {
 
     @Override
     public Admin getAdminById(int id) {
-        return null;
+        Session session = this.sessionFactory.openSession();
+        String queryString = "FROM Admin WHERE id = :id";
+        return (Admin) session.createQuery(queryString)
+                .setParameter("id", id)
+                .uniqueResult();
     }
 
     @Override
@@ -92,6 +97,7 @@ public class AdminLoginDAOImpl implements AdminLoginDAO {
             t.commit();
         } catch (Exception e) {
             t.rollback();
+            e.printStackTrace();
         } finally {
             session.close();
         }

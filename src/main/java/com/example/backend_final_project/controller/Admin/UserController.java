@@ -81,12 +81,11 @@ public class UserController {
     }
     //Đang làm thử Add, Delete, Update cho user. Delete bị lỗi vẫn chưa fix đc
     @GetMapping("/delete")
-    public User delete(@RequestParam("username") String usn) throws DeleteDataException {
-        User usr = userServicelmpl.getUserByUsername(usn);
-
+    public String delete(@RequestParam("id") int id) throws DeleteDataException {
+        User usr = userServicelmpl.getUserById(id);
         if(usr!=null){
-            userServicelmpl.deleteUser(usr);
-            return usr;
+            userServicelmpl.deleteUser(usr.getId());
+            return "Delete functioning ok!";
         } else{
             throw new DeleteDataException();
         }
