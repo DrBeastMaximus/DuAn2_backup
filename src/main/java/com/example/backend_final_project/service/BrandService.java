@@ -8,6 +8,8 @@ import java.util.List;
 public interface BrandService {
     List<Brand> getBrandList();
 
+    List<Brand> getListDeleted();
+
     Brand getBrandById(int id);
 
     List<Brand> findBrandByKeyword(String keyword);

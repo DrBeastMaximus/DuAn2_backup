@@ -7,7 +7,7 @@ import java.util.List;
 public interface InvoiceService {
     List<Invoice> getInvoiceList();
 
-    Invoice getDeliveryById(int id);
+    Invoice getInvoiceById(int id);
 
     List<Invoice> getInvoiceListByUserId(int userID);
 

@@ -23,9 +23,9 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
-    public Invoice getDeliveryById(int id)
+    public Invoice getInvoiceById(int id)
     {
-        return invoiceDAOlmpl.getDeliveryById(id);
+        return invoiceDAOlmpl.getInvoiceById(id);
     }
 
     @Override

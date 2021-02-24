@@ -22,6 +22,11 @@ public class BrandServiceImpl implements BrandService {
     }
 
     @Override
+    public List<Brand> getListDeleted() {
+        return brandDAOlmpl.getListDeleted();
+    }
+
+    @Override
     public Brand getBrandById(int id) {
         return brandDAOlmpl.getBrandById(id);
     }
