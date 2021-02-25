@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CartPageREST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/BrandDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/BrandDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/AdminLoginDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/AdminLoginDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/BrandDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/BrandDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/CartDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/CartDAOImpl.java" afterDir="false" />
@@ -13,32 +15,42 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/InvoiceDetailDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/InvoiceDetailDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/NewsletterDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/NewsletterDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/InvoiceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/InvoiceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/BrandService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/BrandServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/BrandServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/InvoiceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/InvoiceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/InvoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/InvoiceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/AdminLoginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/AdminLoginDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/CartDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/CartDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/CartDetailDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/CartDetailDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/CommentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/CommentDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/DeliveryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/DeliveryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductDAOlmpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductDAOlmpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductDetailDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductDetailDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductImageDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductImageDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductPropertyDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductPropertyDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductPropertyDetailDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductPropertyDetailDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductTypeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductTypeDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProviderDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProviderDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/StorageDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/StorageDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/UserDAOlmpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/UserDAOlmpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/VoucherDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/VoucherDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/WishlistDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/WishlistDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/ProductPropertyDetailDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/ProductPropertyDetailDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProductPropertyDetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProductPropertyDetailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/ProductPropertyDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/ProductPropertyDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/BrandDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/BrandDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/AdminLoginDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/AdminLoginDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/BrandDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/BrandDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/CartDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/CartDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/CartDetailDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/CartDetailDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/CommentDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/CommentDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/DeliveryDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/DeliveryDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/InvoiceDetailDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/InvoiceDetailDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/NewsletterDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/NewsletterDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductDAOlmpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductDAOlmpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductDetailDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductDetailDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductImageDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductImageDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductPropertyDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductPropertyDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductPropertyDetailDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductPropertyDetailDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductTypeDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductTypeDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProviderDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProviderDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/StorageDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/StorageDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/UserDAOlmpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/UserDAOlmpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/VoucherDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/VoucherDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/WishlistDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/WishlistDAOImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/InvoiceDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/InvoiceDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/InvoiceDetailDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/InvoiceDetailDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/NewsletterDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/NewsletterDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductDetailDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductDetailDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductImageDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductImageDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductPropertyDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductPropertyDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductPropertyDetailDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductPropertyDetailDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductTypeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductTypeDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProviderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProviderDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/StorageDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/StorageDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/VoucherDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/VoucherDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/WishlistDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/WishlistDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/UserServicelmpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/UserServicelmpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +63,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -139,7 +151,8 @@
       <workItem from="1613960302730" duration="17615000" />
       <workItem from="1614034946962" duration="15132000" />
       <workItem from="1614066326504" duration="6533000" />
-      <workItem from="1614133238420" duration="4302000" />
+      <workItem from="1614133238420" duration="4447000" />
+      <workItem from="1614210629624" duration="10111000" />
     </task>
     <task id="LOCAL-00001" summary="Thêm Class DAO">
       <created>1613982667329</created>
@@ -211,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614072119802</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="DAO hoàn thành 1/2 đến NewsletterDAO">
+      <created>1614137721261</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1614137721261</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,53 +258,54 @@
     <MESSAGE value="Thêm function .cho DAO" />
     <MESSAGE value="Sửa DAO" />
     <MESSAGE value="Chỉnh lý lại các Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chỉnh lý lại các Class" />
+    <MESSAGE value="DAO hoàn thành 1/2 đến NewsletterDAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="DAO hoàn thành 1/2 đến NewsletterDAO" />
   </component>
   <component name="WindowStateProjectService">
     <state x="764" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1614072699294">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="764" y="247" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1614072699294" />
-    <state x="584" y="132" key="CommitChangelistDialog2" timestamp="1614072116826">
+    <state x="584" y="132" key="CommitChangelistDialog2" timestamp="1614137716114">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="584" y="132" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1614072116826" />
+    <state x="584" y="132" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1614137716114" />
     <state x="739" y="293" key="FileChooserDialogImpl" timestamp="1613963123630">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="739" y="293" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1613963123630" />
-    <state width="1875" height="277" key="GridCell.Tab.0.bottom" timestamp="1614072866260">
+    <state width="1875" height="276" key="GridCell.Tab.0.bottom" timestamp="1614222399485">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1875" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1614072866260" />
-    <state width="1875" height="277" key="GridCell.Tab.0.center" timestamp="1614072866260">
+    <state width="1875" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1614222399485" />
+    <state width="1875" height="276" key="GridCell.Tab.0.center" timestamp="1614222399485">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1875" height="277" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1614072866260" />
-    <state width="1875" height="277" key="GridCell.Tab.0.left" timestamp="1614072866260">
+    <state width="1875" height="276" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1614222399485" />
+    <state width="1875" height="276" key="GridCell.Tab.0.left" timestamp="1614222399484">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1875" height="277" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1614072866260" />
-    <state width="1875" height="277" key="GridCell.Tab.0.right" timestamp="1614072866260">
+    <state width="1875" height="276" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1614222399484" />
+    <state width="1875" height="276" key="GridCell.Tab.0.right" timestamp="1614222399485">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1875" height="277" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1614072866260" />
-    <state width="1875" height="277" key="GridCell.Tab.1.bottom" timestamp="1614072866260">
+    <state width="1875" height="276" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1614222399485" />
+    <state width="1875" height="276" key="GridCell.Tab.1.bottom" timestamp="1614222399485">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1875" height="277" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1614072866260" />
-    <state width="1875" height="277" key="GridCell.Tab.1.center" timestamp="1614072866260">
+    <state width="1875" height="276" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1614222399485" />
+    <state width="1875" height="276" key="GridCell.Tab.1.center" timestamp="1614222399485">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1875" height="277" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1614072866260" />
-    <state width="1875" height="277" key="GridCell.Tab.1.left" timestamp="1614072866260">
+    <state width="1875" height="276" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1614222399485" />
+    <state width="1875" height="276" key="GridCell.Tab.1.left" timestamp="1614222399485">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1875" height="277" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1614072866260" />
-    <state width="1875" height="277" key="GridCell.Tab.1.right" timestamp="1614072866260">
+    <state width="1875" height="276" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1614222399485" />
+    <state width="1875" height="276" key="GridCell.Tab.1.right" timestamp="1614222399485">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1875" height="277" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1614072866260" />
+    <state width="1875" height="276" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1614222399485" />
     <state width="1875" height="361" key="GridCell.Tab.2.bottom" timestamp="1614050622371">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -301,10 +322,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1875" height="361" key="GridCell.Tab.2.right/0.0.1920.1080@0.0.1920.1080" timestamp="1614050622371" />
-    <state x="551" y="259" key="Vcs.Push.Dialog.v2" timestamp="1614072121828">
+    <state x="551" y="259" key="Vcs.Push.Dialog.v2" timestamp="1614137724533">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="551" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1614072121828" />
+    <state x="551" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1614137724533" />
     <state x="768" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614137299854">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

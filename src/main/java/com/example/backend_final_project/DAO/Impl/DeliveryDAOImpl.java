@@ -1,6 +1,7 @@
 package com.example.backend_final_project.DAO.Impl;
 
 import com.example.backend_final_project.DAO.DeliveryDAO;
+import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
 import com.example.backend_final_project.model.Cart_Detail;
@@ -26,13 +27,13 @@ public class DeliveryDAOImpl implements DeliveryDAO {
     @Override
     public List<Delivery> getDeliveryList() {
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from delivery", Delivery.class).getResultList();
+        return session.createQuery("from Delivery", Delivery.class).getResultList();
     }
 
     @Override
     public Delivery getDeliveryById(int id) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "FROM delivery WHERE id = :id";
+        String queryString = "FROM Delivery WHERE id = :id";
         return (Delivery) session.createQuery(queryString)
                 .setParameter("id", id)
                 .uniqueResult();
@@ -41,7 +42,7 @@ public class DeliveryDAOImpl implements DeliveryDAO {
     @Override
     public List<Delivery> getDeliveryListByInvoiceId(int invID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM delivery where invoice_id like :id";
+        String hql = "FROM Delivery where Invoice like :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", invID);
         List<Delivery> list = query.list();
@@ -79,7 +80,7 @@ public class DeliveryDAOImpl implements DeliveryDAO {
     }
 
     @Override
-    @ExceptionHandler({UpdateDataException.class})
+    @ExceptionHandler({DeleteDataException.class})
     public void deleteDelivery(int deliveryID) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();

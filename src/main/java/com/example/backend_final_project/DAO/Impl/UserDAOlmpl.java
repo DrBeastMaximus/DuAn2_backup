@@ -1,7 +1,9 @@
 package com.example.backend_final_project.DAO.Impl;
 
 import com.example.backend_final_project.DAO.UserDAO;
+import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
+import com.example.backend_final_project.exception.UpdateDataException;
 import com.example.backend_final_project.model.Admin;
 import com.example.backend_final_project.model.Product;
 import com.example.backend_final_project.model.User;
@@ -27,13 +29,13 @@ public class UserDAOlmpl implements UserDAO {
     @Override
     public List<User> getUserList() {
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from User", User.class).getResultList();
+        return session.createQuery("from User where isdelete=0 ", User.class).getResultList();
     }
 
     @Override
     public User getUserById(int id) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "FROM User WHERE id = :id";
+        String queryString = "FROM User WHERE id = :id and isdelete=0";
         return (User) session.createQuery(queryString)
                 .setParameter("id", id)
                 .uniqueResult();
@@ -42,7 +44,7 @@ public class UserDAOlmpl implements UserDAO {
     @Override
     public User getUserByEmail(String email) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "FROM User WHERE email = :email";
+        String queryString = "FROM User WHERE Email = :email and isdelete=false";
         return (User) session.createQuery(queryString)
                 .setParameter("email", email)
                 .uniqueResult();
@@ -51,7 +53,7 @@ public class UserDAOlmpl implements UserDAO {
     @Override
     public User getUserByUsername(String username) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "FROM User WHERE username = :username";
+        String queryString = "FROM User WHERE Username = :username and isdelete=false";
         return (User) session.createQuery(queryString)
                 .setParameter("username", username)
                 .uniqueResult();
@@ -74,7 +76,7 @@ public class UserDAOlmpl implements UserDAO {
     @Override
     public List<User> findUserByKeyword(String keyword) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM User where address like :addr or fullname like :name or phone like :phone or username like :user or email like :email ";
+        String hql = "FROM User where Address like :addr or Fullname like :name or Phone like :phone or Username like :user or Email like :email and isdelete=false ";
         Query query = session.createQuery(hql);
         query.setParameter("user", "%" + keyword + "%");
         query.setParameter("addr", "%" + keyword + "%");
@@ -85,6 +87,7 @@ public class UserDAOlmpl implements UserDAO {
         return list;
     }
     @Override
+    @ExceptionHandler({UpdateDataException.class})
     public void updateUser(User user) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();
@@ -100,6 +103,7 @@ public class UserDAOlmpl implements UserDAO {
     }
 
     @Override
+    @ExceptionHandler({DeleteDataException.class})
     public void deleteUser(int userID) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();

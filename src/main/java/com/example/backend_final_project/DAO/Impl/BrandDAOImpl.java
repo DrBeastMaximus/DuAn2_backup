@@ -26,7 +26,7 @@ public class BrandDAOImpl implements BrandDAO {
 
     private List<Brand> getListNonDeleted(){
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from brand", Brand.class).getResultList();
+        return session.createQuery("from Brand", Brand.class).getResultList();
     }
     @Override
     public List<Brand> getBrandList() {
@@ -35,13 +35,13 @@ public class BrandDAOImpl implements BrandDAO {
     @Override
     public List<Brand> getListDeleted() {
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from brand where isdelete = 0", Brand.class).getResultList();
+        return session.createQuery("from Brand where isdelete = false", Brand.class).getResultList();
     }
 
     @Override
     public Brand getBrandById(int id) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "FROM brand WHERE id = :id";
+        String queryString = "FROM Brand WHERE id = :id";
         return (Brand) session.createQuery(queryString)
                 .setParameter("id", id)
                 .uniqueResult();
@@ -50,7 +50,7 @@ public class BrandDAOImpl implements BrandDAO {
     @Override
     public List<Brand> findBrandByKeyword(String keyword) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM brand where name like :name and isdelete = 0";
+        String hql = "FROM Brand where Name like :name and isdelete = false";
         Query query = session.createQuery(hql);
         query.setParameter("name", "%" + keyword + "%");
         List<Brand> list = query.list();

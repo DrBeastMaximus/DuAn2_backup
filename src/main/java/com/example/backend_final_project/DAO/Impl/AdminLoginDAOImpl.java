@@ -27,7 +27,7 @@ public class AdminLoginDAOImpl implements AdminLoginDAO {
 
     private List<Admin> getList(){
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from admin where isdelete = 0", Admin.class).getResultList();
+        return session.createQuery("from Admin where isdelete = false", Admin.class).getResultList();
     }
 
     @Override
@@ -38,7 +38,7 @@ public class AdminLoginDAOImpl implements AdminLoginDAO {
     @Override
     public Admin getAdminById(int id) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "FROM admin WHERE id = :id and isdelete = 0";
+        String queryString = "FROM Admin WHERE id = :id and isdelete = false ";
         return (Admin) session.createQuery(queryString)
                 .setParameter("id", id)
                 .uniqueResult();
@@ -47,7 +47,7 @@ public class AdminLoginDAOImpl implements AdminLoginDAO {
     @Override
     public List<Admin> findAdminByKeyword(String keyword) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM admin where username like :user or password like :pass or id like :id and isdelete = 0";
+        String hql = "FROM Admin where Username like :user or Password like :pass or id like :id and isdelete = false";
         Query query = session.createQuery(hql);
         query.setParameter("user", "%" + keyword + "%");
         query.setParameter("pass", "%" + keyword + "%");

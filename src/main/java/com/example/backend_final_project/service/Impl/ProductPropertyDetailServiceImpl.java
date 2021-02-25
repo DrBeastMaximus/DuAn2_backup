@@ -14,44 +14,44 @@ import java.util.List;
 @Transactional
 public class ProductPropertyDetailServiceImpl implements ProductPropertyDetailService {
     @Autowired
-    private ProductPropertyDetailDAOImpl productProperDetailtyDAOlmpl;
+    private ProductPropertyDetailDAOImpl productPropertyDetailDAOlmpl;
 
     @Override
     public List<Product_Property_Detail> getProductPropertyDetailList() {
 
-        return productProperDetailtyDAOlmpl.getProductPropertyDetailList();
+        return productPropertyDetailDAOlmpl.getProductPropertyDetailList();
     }
 
     @Override
     public Product_Property_Detail getProductPropertyDetailById(int id) {
 
-        return productProperDetailtyDAOlmpl.getProductPropertyDetailById(id);
+        return productPropertyDetailDAOlmpl.getProductPropertyDetailById(id);
     }
 
     @Override
-    public List<Product_Property_Detail> getByProductPropertyDetailId(int id) {
+    public List<Product_Property_Detail> getByProductPropertyId(int id) {
 
-        return productProperDetailtyDAOlmpl.getByProductPropertyDetailId(id);
+        return productPropertyDetailDAOlmpl.getByProductPropertyId(id);
     }
 
     @Override
     public List<Product_Property_Detail> getByProductId(int prodID) {
 
-        return productProperDetailtyDAOlmpl.getByProductId(prodID);
+        return productPropertyDetailDAOlmpl.getByProductId(prodID);
     }
 
     @Override
     public void addProductPropertyD(Product_Property_Detail productPropertyD) {
-    productProperDetailtyDAOlmpl.addProductPropertyD(productPropertyD);
+        productPropertyDetailDAOlmpl.addProductPropertyD(productPropertyD);
     }
 
     @Override
     public void updateProductPropertyD(Product_Property_Detail productPropertyD) {
-    productProperDetailtyDAOlmpl.updateProductPropertyD(productPropertyD);
+        productPropertyDetailDAOlmpl.updateProductPropertyD(productPropertyD);
     }
 
     @Override
     public void deleteProductPropertyD(int productPropertyDetailID) {
-    productProperDetailtyDAOlmpl.deleteProductPropertyD(productPropertyDetailID);
+        productPropertyDetailDAOlmpl.deleteProductPropertyD(productPropertyDetailID);
     }
 }

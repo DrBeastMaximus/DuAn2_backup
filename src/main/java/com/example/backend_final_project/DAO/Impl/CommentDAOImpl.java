@@ -1,6 +1,7 @@
 package com.example.backend_final_project.DAO.Impl;
 
 import com.example.backend_final_project.DAO.CommentDAO;
+import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
 import com.example.backend_final_project.model.Cart_Detail;
@@ -25,13 +26,13 @@ public class CommentDAOImpl implements CommentDAO {
     @Override
     public List<Comment> getCommentList() {
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from comment where isdelete=0", Comment.class).getResultList();
+        return session.createQuery("from Comment where isdelete=false", Comment.class).getResultList();
     }
 
     @Override
     public Comment getCommentById(int id) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "FROM comment WHERE id = :id and isdelete=0";
+        String queryString = "FROM Comment WHERE id = :id and isdelete=false";
         return (Comment) session.createQuery(queryString)
                 .setParameter("id", id)
                 .uniqueResult();
@@ -40,7 +41,7 @@ public class CommentDAOImpl implements CommentDAO {
     @Override
     public List<Comment> getCommentListByProductId(int prodID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM comment where product_id like :id and isdelete=0";
+        String hql = "FROM Comment where Product like :id and isdelete=false";
         Query query = session.createQuery(hql);
         query.setParameter("id", prodID);
         List<Comment> list = query.list();
@@ -78,7 +79,7 @@ public class CommentDAOImpl implements CommentDAO {
     }
 
     @Override
-    @ExceptionHandler({UpdateDataException.class})
+    @ExceptionHandler({DeleteDataException.class})
     public void deleteComment(int commentID) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();

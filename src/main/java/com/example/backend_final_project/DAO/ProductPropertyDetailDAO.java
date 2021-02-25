@@ -9,7 +9,7 @@ public interface ProductPropertyDetailDAO {
 
     Product_Property_Detail getProductPropertyDetailById(int id);
 
-    List<Product_Property_Detail> getByProductPropertyDetailId(int id);
+    List<Product_Property_Detail> getByProductPropertyId(int id);
 
     List<Product_Property_Detail> getByProductId(int prodID);
 

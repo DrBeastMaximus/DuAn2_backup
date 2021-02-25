@@ -1,6 +1,7 @@
 package com.example.backend_final_project.DAO.Impl;
 
 import com.example.backend_final_project.DAO.InvoiceDAO;
+import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
 import com.example.backend_final_project.model.Cart_Detail;
@@ -26,13 +27,13 @@ public class InvoiceDAOImpl implements InvoiceDAO {
     @Override
     public List<Invoice> getInvoiceList() {
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from invoice where isdelete=0", Invoice.class).getResultList();
+        return session.createQuery("from Invoice where isdelete=false", Invoice.class).getResultList();
     }
 
     @Override
     public Invoice getInvoiceById(int id) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "from invoice where isdelete=0 and id = :id";
+        String queryString = "from Invoice where isdelete=false and id = :id";
         return (Invoice) session.createQuery(queryString)
                 .setParameter("id", id)
                 .uniqueResult();
@@ -41,7 +42,7 @@ public class InvoiceDAOImpl implements InvoiceDAO {
     @Override
     public List<Invoice> getInvoiceListByUserId(int userID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM invoice where user_id like :id and isdelete=0";
+        String hql = "FROM Invoice where User like :id and isdelete=false ";
         Query query = session.createQuery(hql);
         query.setParameter("id", userID);
         List<Invoice> list = query.list();
@@ -51,7 +52,7 @@ public class InvoiceDAOImpl implements InvoiceDAO {
     @Override
     public List<Invoice> getInvoiceListByVoucherId(int voucherID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM invoice where voucher_id like :id and isdelete=0";
+        String hql = "FROM Invoice where Voucher like :id and isdelete=false ";
         Query query = session.createQuery(hql);
         query.setParameter("id", voucherID);
         List<Invoice> list = query.list();
@@ -89,7 +90,7 @@ public class InvoiceDAOImpl implements InvoiceDAO {
     }
 
     @Override
-    @ExceptionHandler({UpdateDataException.class})
+    @ExceptionHandler({DeleteDataException.class})
     public void deleteInvoice(int invoiceID) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();

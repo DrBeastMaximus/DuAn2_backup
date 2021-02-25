@@ -1,6 +1,7 @@
 package com.example.backend_final_project.DAO.Impl;
 
 import com.example.backend_final_project.DAO.InvoiceDetailDAO;
+import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
 import com.example.backend_final_project.model.Invoice;
@@ -25,13 +26,13 @@ public class InvoiceDetailDAOImpl implements InvoiceDetailDAO {
     @Override
     public List<Invoice_Detail> getInvoiceDetailList() {
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from invoice_detail", Invoice_Detail.class).getResultList();
+        return session.createQuery("from Invoice_Detail", Invoice_Detail.class).getResultList();
     }
 
     @Override
     public Invoice_Detail getInvoiceDetailById(int id) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "from invoice_detail where id = :id";
+        String queryString = "from Invoice_Detail where id = :id";
         return (Invoice_Detail) session.createQuery(queryString)
                 .setParameter("id", id)
                 .uniqueResult();
@@ -40,7 +41,7 @@ public class InvoiceDetailDAOImpl implements InvoiceDetailDAO {
     @Override
     public List<Invoice_Detail> getInvoiceDetailListByInvoiceId(int invoiceID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM invoice_detail where invoice_id like :id";
+        String hql = "FROM Invoice_Detail where Invoice like :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", invoiceID);
         List<Invoice_Detail> list = query.list();
@@ -50,7 +51,7 @@ public class InvoiceDetailDAOImpl implements InvoiceDetailDAO {
     @Override
     public List<Invoice_Detail> getInvoiceDetailByProductId(int prodID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM invoice_detail where product_id like :id";
+        String hql = "FROM Invoice_Detail where Product like :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", prodID);
         List<Invoice_Detail> list = query.list();
@@ -88,7 +89,7 @@ public class InvoiceDetailDAOImpl implements InvoiceDetailDAO {
     }
 
     @Override
-    @ExceptionHandler({UpdateDataException.class})
+    @ExceptionHandler({DeleteDataException.class})
     public void deleteInvoiceDetail(int invoiceDetailID) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();

@@ -1,6 +1,7 @@
 package com.example.backend_final_project.DAO.Impl;
 
 import com.example.backend_final_project.DAO.CartDetailDAO;
+import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
 import com.example.backend_final_project.model.Admin;
@@ -33,7 +34,7 @@ public class CartDetailDAOImpl implements CartDetailDAO {
     @Override
     public Cart_Detail getCartDetailById(int id) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "FROM cart_detail WHERE id = :id";
+        String queryString = "FROM Cart_Detail WHERE id = :id";
         return (Cart_Detail) session.createQuery(queryString)
                 .setParameter("id", id)
                 .uniqueResult();
@@ -42,7 +43,7 @@ public class CartDetailDAOImpl implements CartDetailDAO {
     @Override
     public List<Cart_Detail> getCartDetailListByCardID(int cartDetailID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM cart_detail where cart_id like :id";
+        String hql = "FROM Cart_Detail where Cart like :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", cartDetailID);
         List<Cart_Detail> list = query.list();
@@ -80,7 +81,7 @@ public class CartDetailDAOImpl implements CartDetailDAO {
     }
 
     @Override
-    @ExceptionHandler({UpdateDataException.class})
+    @ExceptionHandler({DeleteDataException.class})
     public void deleteCartDetail(int cartDetailID) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();

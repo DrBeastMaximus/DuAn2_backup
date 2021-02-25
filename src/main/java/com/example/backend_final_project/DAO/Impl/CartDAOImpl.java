@@ -1,6 +1,7 @@
 package com.example.backend_final_project.DAO.Impl;
 
 import com.example.backend_final_project.DAO.CartDAO;
+import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
 import com.example.backend_final_project.model.Admin;
@@ -25,13 +26,13 @@ public class CartDAOImpl implements CartDAO {
     @Override
     public List<Cart> getCartList() {
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from cart", Cart.class).getResultList();
+        return session.createQuery("from Cart", Cart.class).getResultList();
     }
 
     @Override
     public Cart getCartById(int id) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "FROM cart WHERE id = :id";
+        String queryString = "FROM Cart WHERE id = :id";
         return (Cart) session.createQuery(queryString)
                 .setParameter("id", id)
                 .uniqueResult();
@@ -68,7 +69,7 @@ public class CartDAOImpl implements CartDAO {
     }
 
     @Override
-    @ExceptionHandler({UpdateDataException.class})
+    @ExceptionHandler({DeleteDataException.class})
     public void deleteCart(int cartID) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();

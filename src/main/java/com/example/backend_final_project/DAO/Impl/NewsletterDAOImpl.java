@@ -1,6 +1,7 @@
 package com.example.backend_final_project.DAO.Impl;
 
 import com.example.backend_final_project.DAO.NewsletterDAO;
+import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
 import com.example.backend_final_project.model.Email;
@@ -25,13 +26,13 @@ public class NewsletterDAOImpl implements NewsletterDAO {
     @Override
     public List<Email> getNewsletterEmailList() {
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from email where isdelete=0", Email.class).getResultList();
+        return session.createQuery("from Email where isdelete=false", Email.class).getResultList();
     }
 
     @Override
     public Email getNewsletterEmailById(int id) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "from email where isdelete=0 and id = :id";
+        String queryString = "from Email where isdelete=false and id = :id";
         return (Email) session.createQuery(queryString)
                 .setParameter("id", id)
                 .uniqueResult();
@@ -40,7 +41,7 @@ public class NewsletterDAOImpl implements NewsletterDAO {
     @Override
     public List<Email> getNewsletterEmailByEmail(String email) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM email where email like :email and isdelete=0";
+        String hql = "FROM Email where Email like :email and isdelete=false ";
         Query query = session.createQuery(hql);
         query.setParameter("email", email);
         List<Email> list = query.list();
@@ -78,7 +79,7 @@ public class NewsletterDAOImpl implements NewsletterDAO {
     }
 
     @Override
-    @ExceptionHandler({UpdateDataException.class})
+    @ExceptionHandler({DeleteDataException.class})
     public void deleteNewsletterEmail(int newsletterEmailID) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();
