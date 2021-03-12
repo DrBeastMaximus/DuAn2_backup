@@ -22,7 +22,7 @@ public class Invoice_Detail {
     private Product Product;
 
     @Column(name ="product_price")
-    private int Product_Price;
+    private float Product_Price;
 
     @Column(name ="quantity")
     private int Quantity;
@@ -64,11 +64,11 @@ public class Invoice_Detail {
         Product = product;
     }
 
-    public int getProduct_Price() {
+    public float getProduct_Price() {
         return Product_Price;
     }
 
-    public void setProduct_Price(int product_Price) {
+    public void setProduct_Price(float product_Price) {
         Product_Price = product_Price;
     }
 
@@ -104,7 +104,7 @@ public class Invoice_Detail {
         Update_Date = update_Date;
     }
 
-    public Invoice_Detail(int ID, Invoice invoice, Product product, int product_Price, int quantity, float total, Date created_date, Date update_Date) {
+    public Invoice_Detail(int ID, Invoice invoice, Product product, float product_Price, int quantity, float total, Date created_date, Date update_Date) {
         this.ID = ID;
         Invoice = invoice;
         Product = product;

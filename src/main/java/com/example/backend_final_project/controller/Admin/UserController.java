@@ -5,16 +5,19 @@ import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.model.User;
 import com.example.backend_final_project.service.Impl.UserServicelmpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.data.domain.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user2")
 public class UserController {
 
     @Autowired
@@ -23,7 +26,7 @@ public class UserController {
     @GetMapping("")
     public List<User> helloword(){
         List<User>  list = userServicelmpl.getUserList();
-        System.out.println("test............");
+        System.out.println("User list loaded successfully!");
         return list;
     }
     @GetMapping("/find")
@@ -89,5 +92,63 @@ public class UserController {
         } else{
             throw new DeleteDataException();
         }
+    }
+
+    @GetMapping("/paging")
+    public List listCustomer(Model model,
+                             @RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
+                             @RequestParam(name = "size", required = false, defaultValue = "1") Integer size,
+                             @RequestParam(name = "sort", required = false, defaultValue = "ASC") String sort) {
+        if(sort=="ASC"){
+        List<User> usr = userServicelmpl.getPagination(page,size);
+        Collections.sort(usr, Comparator.comparing(User::getUsername));
+        return usr;
+        } else if(sort=="DESC"){
+            List<User> usr = userServicelmpl.getPagination(page,size);
+            Collections.sort(usr, new Comparator<User>() {
+                @Override
+                public int compare(User u1, User u2) {
+                    return (u1.getUsername().compareToIgnoreCase(u2.getUsername()));
+                }
+            });
+            return usr;
+        }
+        else{
+            return userServicelmpl.getPagination(page,size);
+        }
+    }
+    @GetMapping("/totalpaging")
+    public ResponseEntity<Integer> totalRecords( @RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
+                                                 @RequestParam(name = "size", required = false, defaultValue = "1") Integer size){
+        List<User> usn = userServicelmpl.getUserList();
+        PagedListHolder pg = new PagedListHolder(usn);
+        pg.setPageSize(size);
+        pg.setPage(page);
+
+        return ResponseEntity.ok(pg.getPageCount());
+    }
+    @GetMapping("/paging2")
+    public ResponseEntity<List<User>> listCustomer2(
+                              @RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
+                              @RequestParam(name = "size", required = false, defaultValue = "16") Integer size,
+                              @RequestParam(name = "sort", required = false, defaultValue = "DESC") String sort) {
+
+//        Page<User> usr = new PageImpl<User>(userServicelmpl.getUserList(PageRequest.of(page,size)));
+        List<User> usn = userServicelmpl.getUserList();
+
+        switch (sort){
+            case "DESC":
+                usn.sort(Comparator.comparing(User::getUsername).reversed());
+                break;
+            case "ASC":
+                usn.sort(Comparator.comparing(User::getUsername));
+                break;
+        }
+
+        PagedListHolder pg = new PagedListHolder(usn);
+        pg.setPageSize(size);
+        pg.setPage(page);
+
+        return ResponseEntity.ok(pg.getPageList());
     }
 }

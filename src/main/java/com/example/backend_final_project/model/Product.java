@@ -25,7 +25,7 @@ public class Product {
     private float Price;
 
     @Column(name = "price_sale")
-    private float Price_slae;
+    private float Price_sale;
 
     @Column(name = "description")
     private String Description;
@@ -112,11 +112,11 @@ public class Product {
     }
 
     public float getPrice_slae() {
-        return Price_slae;
+        return Price_sale;
     }
 
     public void setPrice_slae(float price_slae) {
-        Price_slae = price_slae;
+        Price_sale = price_slae;
     }
 
     public String getDescription() {
@@ -270,12 +270,12 @@ public class Product {
 //        Wishlish = wishlish;
 //    }
 
-    public Product(int ID, String code, String name, float price, float price_slae, String description, Product_type productType, com.example.backend_final_project.model.Brand brand, boolean issale, Date created_date, String creatd_by, boolean isdelete, boolean gender) {
+    public Product(int ID, String code, String name, float price, float price_sale, String description, Product_type productType, com.example.backend_final_project.model.Brand brand, boolean issale, Date created_date, String creatd_by, boolean isdelete, boolean gender) {
         this.ID = ID;
         Code = code;
         Name = name;
         Price = price;
-        Price_slae = price_slae;
+        Price_sale = price_sale;
         Description = description;
         this.productType = productType;
         Brand = brand;

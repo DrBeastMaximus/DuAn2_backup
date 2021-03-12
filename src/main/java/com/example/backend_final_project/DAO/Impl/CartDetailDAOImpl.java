@@ -7,6 +7,7 @@ import com.example.backend_final_project.exception.UpdateDataException;
 import com.example.backend_final_project.model.Admin;
 import com.example.backend_final_project.model.Cart;
 import com.example.backend_final_project.model.Cart_Detail;
+import com.example.backend_final_project.model.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -41,13 +42,18 @@ public class CartDetailDAOImpl implements CartDetailDAO {
     }
 
     @Override
-    public List<Cart_Detail> getCartDetailListByCardID(int cartDetailID) {
+    public List<Cart_Detail> getCartDetailListByCardID(int cartID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Cart_Detail where Cart like :id";
-        Query query = session.createQuery(hql);
-        query.setParameter("id", cartDetailID);
-        List<Cart_Detail> list = query.list();
-        return list;
+        return session.createQuery("FROM Cart_Detail WHERE Cart.Id = :id", Cart_Detail.class).setParameter("id",cartID).getResultList();
+
+    }
+
+    @Override
+    public void removeCartDetail(int cartID, int productID){
+        Session session = this.sessionFactory.openSession();
+        session.createQuery("delete from Cart_Detail where Cart_Detail.Cart = :cartID and Cart_Detail.product = :productID", Cart_Detail.class)
+                .setParameter("cartID",cartID)
+                .setParameter("productID",productID);
     }
 
     @Override

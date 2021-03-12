@@ -5,8 +5,6 @@ import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
 import com.example.backend_final_project.model.Product;
-import com.example.backend_final_project.model.Product_type;
-import com.example.backend_final_project.model.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -29,13 +27,122 @@ public class ProductDAOlmpl implements ProductDAO {
     @Override
     public List<Product> getProductList() {
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from Product where isdelete=0", Product.class).getResultList();
+        return session.createQuery("from Product where isdelete=false", Product.class).getResultList();
+    }
+    @Override
+    public List<Product> getMaleProductPage(int pos, int pageSize){
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from Product where isdelete=0",Product.class);
+        query.setFirstResult(pos);
+        query.setMaxResults(pageSize);
+        return query.list();
+    }
+    @Override
+    public List<Product> getFemaleProductPage(int pos, int pageSize){
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from Product where isdelete=0",Product.class);
+        query.setFirstResult(pos);
+        query.setMaxResults(pageSize);
+        return query.list();
+    }
+
+    @Override
+    public List<Product> getHotMaleProductPage(int pos, int pageSize) {
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from Product where isdelete=0",Product.class);
+        query.setFirstResult(pos);
+        query.setMaxResults(pageSize);
+        return query.list();
+    }
+
+    @Override
+    public List<Product> getHotFemaleProductPage(int pos, int pageSize) {
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from Product where isdelete=0",Product.class);
+        query.setFirstResult(pos);
+        query.setMaxResults(pageSize);
+        return query.list();
+    }
+
+    @Override
+    public List<Product> getMaleProductList() {
+        Session session = this.sessionFactory.openSession();
+        return session.createQuery("from Product where isdelete=0 and gender=1", Product.class).getResultList();
+    }
+    @Override
+    public List<Product> getFemaleProductList() {
+        Session session = this.sessionFactory.openSession();
+        return session.createQuery("from Product where isdelete=0 and gender=0", Product.class).getResultList();
     }
 
     @Override
     public List<Product> getHotProductList() {
-        //đang làm
-        return null;
+        Session session = this.sessionFactory.openSession();
+        return session.createQuery("from Product where isdelete=0",
+                Product.class).getResultList();
+
+    }
+    @Override
+    public List<Product> getHotMaleProductList() {
+        Session session = this.sessionFactory.openSession();
+        return session.createQuery("from Product where isdelete=0 and gender=1", Product.class).getResultList();
+    }
+    @Override
+    public List<Product> getHotMaleProductListFiltered(int pdID) {
+        Session session = this.sessionFactory.openSession();
+        return session.createQuery("FROM Product where isdelete=0 and gender=1 and id in (\n" +
+                "SELECT Product FROM Product_Property_Detail WHERE id = : pdID)", Product.class).setParameter("pdID", pdID)
+                .list();
+
+    }
+
+    @Override
+    public List<Product> getHotFemaleProductListFiltered(int pdID) {
+        Session session = this.sessionFactory.openSession();
+        return session.createQuery("FROM Product where isdelete=0 and gender=0 and id in (\n" +
+                "SELECT Product FROM Product_Property_Detail WHERE id = : pdID)", Product.class).setParameter("pdID", pdID)
+                .list();
+
+    }
+
+    @Override
+    public List<Product> getHotFemaleProductListFilteredInRange(int pdID, long min, long max) {
+        Session session = this.sessionFactory.openSession();
+        return session.createQuery("FROM Product where isdelete=0 and gender=0 and (price Between :min and :max) and id in (\n" +
+                "SELECT Product FROM Product_Property_Detail WHERE id = : pdID)", Product.class).setParameter("pdID", pdID).setParameter("min", min).setParameter("max",max)
+                .list();
+
+    }
+
+    @Override
+    public List<Product> getHotMaleProductListFilteredInRange(int pdID, long min, long max) {
+        Session session = this.sessionFactory.openSession();
+        return session.createQuery("FROM Product where isdelete=0 and gender=1 and (price Between :min and :max) and id in (\n" +
+                "SELECT Product FROM Product_Property_Detail WHERE id = : pdID)", Product.class).setParameter("pdID", pdID).setParameter("min", min).setParameter("max",max)
+                .list();
+
+    }
+
+    @Override
+    public List<Product> getHotFemaleProductListInRange(long min, long max) {
+        Session session = this.sessionFactory.openSession();
+        return session.createQuery("FROM Product where isdelete=0 and gender=0 and (price Between :min and :max)", Product.class).setParameter("min", min).setParameter("max",max)
+                .list();
+
+    }
+
+    @Override
+    public List<Product> getHotMaleProductListInRange(long min, long max) {
+        Session session = this.sessionFactory.openSession();
+        return session.createQuery("FROM Product where isdelete=0 and gender=1 and (price Between :min and :max)", Product.class).setParameter("min", min).setParameter("max",max)
+                .list();
+
+    }
+
+    @Override
+    public List<Product> getHotFemaleProductList() {
+        Session session = this.sessionFactory.openSession();
+        return session.createQuery("from Product where isdelete=0 and gender=0", Product.class).getResultList();
     }
 
     @Override

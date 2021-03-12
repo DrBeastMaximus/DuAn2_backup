@@ -23,6 +23,11 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
+    public Cart getCartByUserId(int id) {
+        return cartDAOlmpl.getCartByUserId(id);
+    }
+
+    @Override
     public Cart getCartId(int id) {
         return cartDAOlmpl.getCartById(id);
     }

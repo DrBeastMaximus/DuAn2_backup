@@ -23,8 +23,78 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<Product> getMaleProductPage(int pos, int pageSize) {
+        return  productDAOlmpl.getMaleProductPage(pos,pageSize);
+    }
+
+    @Override
+    public List<Product> getFemaleProductPage(int pos, int pageSize) {
+        return productDAOlmpl.getFemaleProductPage(pos,pageSize);
+    }
+
+    @Override
+    public List<Product> getHotMaleProductPage(int pos, int pageSize) {
+        return productDAOlmpl.getHotMaleProductPage(pos,pageSize);
+    }
+
+    @Override
+    public List<Product> getHotFemaleProductPage(int pos, int pageSize) {
+        return productDAOlmpl.getHotFemaleProductPage(pos,pageSize);
+    }
+
+    @Override
+    public List<Product> getHotFemaleProductListFilteredInRange(int pdID, long min, long max) {
+        return productDAOlmpl.getHotFemaleProductListFilteredInRange(pdID,min,max);
+    }
+
+    @Override
+    public List<Product> getHotMaleProductListFilteredInRange(int pdID, long min, long max) {
+        return productDAOlmpl.getHotMaleProductListFilteredInRange(pdID,min,max);
+    }
+
+    @Override
+    public List<Product> getHotFemaleProductListInRange(long min, long max) {
+        return productDAOlmpl.getHotFemaleProductListInRange(min,max);
+    }
+
+    @Override
+    public List<Product> getHotMaleProductListInRange(long min, long max) {
+        return productDAOlmpl.getHotFemaleProductListInRange(min,max);
+    }
+
+    @Override
+    public List<Product> getHotMaleProductListFiltered(int pdID) {
+        return productDAOlmpl.getHotMaleProductListFiltered(pdID);
+    }
+
+    @Override
+    public List<Product> getHotFemaleProductListFiltered(int pdID) {
+        return  productDAOlmpl.getHotFemaleProductListFiltered(pdID);
+    }
+
+    @Override
+    public List<Product> getMaleProductList() {
+        return productDAOlmpl.getMaleProductList();
+    }
+
+    @Override
+    public List<Product> getFemaleProductList() {
+        return productDAOlmpl.getFemaleProductList();
+    }
+
+    @Override
     public List<Product> getHotProductList() {
         return productDAOlmpl.getHotProductList();
+    }
+
+    @Override
+    public List<Product> getHotMaleProductList() {
+        return productDAOlmpl.getHotMaleProductList();
+    }
+
+    @Override
+    public List<Product> getHotFemaleProductList() {
+        return productDAOlmpl.getHotFemaleProductList();
     }
 
     @Override

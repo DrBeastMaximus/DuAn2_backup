@@ -8,6 +8,7 @@ import java.util.Date;
 @Entity
 @Table(name ="wishlish")
 public class Wishlish {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -20,7 +21,7 @@ public class Wishlish {
 
     @ManyToOne
     @JoinColumn(name ="user_id")
-    private Cart Cart;
+    private User User;
 
     @Column(name = "created_date")
     @Temporal(TemporalType.DATE)
@@ -48,12 +49,12 @@ public class Wishlish {
         this.product = product;
     }
 
-    public Cart getCart() {
-        return Cart;
+    public User getUser() {
+        return User;
     }
 
-    public void setCart(Cart cart) {
-        Cart = cart;
+    public void setUser(User user) {
+        User = user;
     }
 
     public Date getCreated_date() {
@@ -72,10 +73,10 @@ public class Wishlish {
         Update_Date = update_Date;
     }
 
-    public Wishlish(int ID, Product product, Cart cart, Date created_date, Date update_Date) {
+    public Wishlish(int ID, Product product, User user, Date created_date, Date update_Date) {
         this.ID = ID;
         this.product = product;
-        Cart = cart;
+        User = user;
         Created_date = created_date;
         Update_Date = update_Date;
     }

@@ -11,6 +11,8 @@ public interface CartDetailDAO {
 
     List<Cart_Detail> getCartDetailListByCardID(int cartID);
 
+    void removeCartDetail(int cartDetailID, int productID);
+
     void addCartDetail(Cart_Detail cartD);
 
     void updateCartDetail(Cart_Detail cartD);

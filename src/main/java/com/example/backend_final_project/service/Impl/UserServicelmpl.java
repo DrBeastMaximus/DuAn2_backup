@@ -5,6 +5,8 @@ import com.example.backend_final_project.DAO.Impl.UserDAOlmpl;
 import com.example.backend_final_project.model.User;
 import com.example.backend_final_project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +23,8 @@ public class UserServicelmpl implements UserService {
         return userDAOlmpl.getUserList();
     }
 
+
+
     @Override
     public List<User> findUserByKeyword(String keyword) {
         return userDAOlmpl.findUserByKeyword(keyword);
@@ -29,6 +33,21 @@ public class UserServicelmpl implements UserService {
     @Override
     public User getUserById(int id) {
         return userDAOlmpl.getUserById(id);
+    }
+
+    @Override
+    public List<User> getUserList(Pageable pageable) {
+        return userDAOlmpl.getUserList(pageable);
+    }
+
+    @Override
+    public List<User> getPagination(int pos, int pageSize) {
+        return userDAOlmpl.getPagination(pos, pageSize);
+    }
+
+    @Override
+    public long countTotalUsersRecord() {
+        return userDAOlmpl.countTotalUsersRecord();
     }
 
 

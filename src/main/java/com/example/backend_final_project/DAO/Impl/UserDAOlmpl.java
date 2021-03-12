@@ -12,6 +12,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,9 +29,26 @@ public class UserDAOlmpl implements UserDAO {
     private SessionFactory sessionFactory;
 
     @Override
-    public List<User> getUserList() {
+    public List<User> getUserList(Pageable pageable) {
         Session session = this.sessionFactory.openSession();
         return session.createQuery("from User where isdelete=0 ", User.class).getResultList();
+    }
+
+    @Override
+    public List<User> getPagination(int pos, int pageSize){
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("from User where isdelete=0",User.class);
+        query.setFirstResult(pos);
+        query.setMaxResults(pageSize);
+        return query.list();
+    }
+
+    @Override
+    public long countTotalUsersRecord(){
+        Session session = sessionFactory.openSession();
+        String countQ = "Select count (u.id) from User u";
+        Query countQuery = session.createQuery(countQ);
+        return (Long) countQuery.uniqueResult();
     }
 
     @Override
@@ -73,6 +92,13 @@ public class UserDAOlmpl implements UserDAO {
             session.close();
         }
     }
+
+    @Override
+    public List<User> getUserList() {
+        Session session = this.sessionFactory.openSession();
+        return session.createQuery("from User where isdelete=0 ", User.class).getResultList();
+    }
+
     @Override
     public List<User> findUserByKeyword(String keyword) {
         Session session = this.sessionFactory.openSession();

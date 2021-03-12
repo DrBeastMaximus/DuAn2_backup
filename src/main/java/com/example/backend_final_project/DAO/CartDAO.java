@@ -9,6 +9,8 @@ public interface CartDAO {
 
     Cart getCartById(int id);
 
+    Cart getCartByUserId(int id);
+
     void addCart(Cart cart);
 
     void updateCart(Cart cart);

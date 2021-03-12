@@ -30,10 +30,6 @@ public class Cart_Detail {
     @Column(name ="total")
     private float Total;
 
-    @Column(name = "created_date")
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
-    private Date Created_date;
 
     @Column(name = "update_date")
     @Temporal(TemporalType.DATE)
@@ -88,13 +84,6 @@ public class Cart_Detail {
         Total = total;
     }
 
-    public Date getCreated_date() {
-        return Created_date;
-    }
-
-    public void setCreated_date(Date created_date) {
-        Created_date = created_date;
-    }
 
     public Date getUpdate_Date() {
         return Update_Date;
@@ -104,14 +93,13 @@ public class Cart_Detail {
         Update_Date = update_Date;
     }
 
-    public Cart_Detail(int id, Cart cart, Product product, float product_Price, int quantity, float total, Date created_date, Date update_Date) {
+    public Cart_Detail(int id, Cart cart, Product product, float product_Price, int quantity, float total, Date update_Date) {
         Id = id;
         Cart = cart;
         this.product = product;
         Product_Price = product_Price;
         Quantity = quantity;
         Total = total;
-        Created_date = created_date;
         Update_Date = update_Date;
     }
 

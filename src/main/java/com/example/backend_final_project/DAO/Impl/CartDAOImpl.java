@@ -37,6 +37,14 @@ public class CartDAOImpl implements CartDAO {
                 .setParameter("id", id)
                 .uniqueResult();
     }
+    @Override
+    public Cart getCartByUserId(int id) {
+        Session session = this.sessionFactory.openSession();
+        String queryString = "FROM Cart WHERE User.Id = :id";
+        return (Cart) session.createQuery(queryString)
+                .setParameter("id", id)
+                .uniqueResult();
+    }
 
     @Override
     @ExceptionHandler({SaveDataErrorException.class})

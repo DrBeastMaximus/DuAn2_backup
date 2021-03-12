@@ -4,7 +4,6 @@ import com.example.backend_final_project.DAO.BrandDAO;
 import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
-import com.example.backend_final_project.model.Admin;
 import com.example.backend_final_project.model.Brand;
 import org.hibernate.Query;
 import org.hibernate.Session;

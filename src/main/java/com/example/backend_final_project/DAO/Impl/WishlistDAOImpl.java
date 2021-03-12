@@ -4,6 +4,7 @@ import com.example.backend_final_project.DAO.WishlistDAO;
 import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
+import com.example.backend_final_project.model.Cart_Detail;
 import com.example.backend_final_project.model.Product_type;
 import com.example.backend_final_project.model.Wishlish;
 import org.hibernate.Query;
@@ -95,5 +96,13 @@ public class WishlistDAOImpl implements WishlistDAO {
         } finally {
             session.close();
         }
+    }
+    @Override
+    @ExceptionHandler({DeleteDataException.class})
+    public void deleteWishlishByProductID(int userID, int productID) {
+        Session session = this.sessionFactory.openSession();
+        session.createQuery("delete from Wishlish where Wishlish.User = :userID and Wishlish.product = :productID", Wishlish.class)
+                .setParameter("userID",userID)
+                .setParameter("productID",productID);
     }
 }
