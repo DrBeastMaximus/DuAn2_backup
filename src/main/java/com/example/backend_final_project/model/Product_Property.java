@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Date;
 
 @Entity
-@Table(name ="prodct_property")
+@Table(name ="product_property")
 public class Product_Property {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

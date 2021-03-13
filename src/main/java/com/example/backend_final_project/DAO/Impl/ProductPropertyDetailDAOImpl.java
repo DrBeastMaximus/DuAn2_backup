@@ -26,6 +26,7 @@ public class ProductPropertyDetailDAOImpl implements ProductPropertyDetailDAO {
     @Override
     public List<Product_Property_Detail> getProductPropertyDetailList() {
         Session session = this.sessionFactory.openSession();
+        System.out.println("aaaaaaaaaaaaaaaaaaaaaaa");
         return session.createQuery("from Product_Property_Detail", Product_Property_Detail.class).getResultList();
     }
 
@@ -41,7 +42,7 @@ public class ProductPropertyDetailDAOImpl implements ProductPropertyDetailDAO {
     @Override
     public List<Product_Property_Detail> getByProductPropertyId(int id) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Product_Property_Detail where Product_Property like :id";
+        String hql = "FROM Product_Property_Detail where Product_Property.ID like :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", id);
         List<Product_Property_Detail> list = query.list();
@@ -51,7 +52,7 @@ public class ProductPropertyDetailDAOImpl implements ProductPropertyDetailDAO {
     @Override
     public List<Product_Property_Detail> getByProductId(int prodID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Product_Property_Detail where Product like :id";
+        String hql = "FROM Product_Property_Detail where Product.ID like :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", prodID);
         List<Product_Property_Detail> list = query.list();

@@ -576,8 +576,8 @@ s
                 $scope.begin += 8;
             }else{
                 if($scope.begin == 0){
-                    $scope.begin += 8;
-                }
+                    // $scope.begin += 8;
+                }  $scope.begin = ($scope.pageCount - 1) * 8;
             }
 
         }
