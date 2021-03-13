@@ -43,6 +43,14 @@ public class AdminLoginDAOImpl implements AdminLoginDAO {
                 .setParameter("id", id)
                 .uniqueResult();
     }
+    @Override
+    public Admin getAdminByUsername(String username) {
+        Session session = this.sessionFactory.openSession();
+        String queryString = "FROM Admin WHERE Username = :username";
+        return (Admin) session.createQuery(queryString)
+                .setParameter("username", username)
+                .uniqueResult();
+    }
 
     @Override
     public List<Admin> findAdminByKeyword(String keyword) {

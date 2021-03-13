@@ -8,7 +8,7 @@ public interface LoginAdminService {
     List<Admin> getAdminList();
 
     Admin getAdminId(int id);
-
+    Admin getAdminUsername(String username);
     List<Admin> findAdminByKeyword(String keyword);
 
     void addAdmin(Admin admin);

@@ -27,6 +27,11 @@ public class LoginAdminServiceImpl implements LoginAdminService {
 
         return adminLoginDAOlmpl.getAdminById(id);
     }
+    @Override
+    public Admin getAdminUsername(String username) {
+        return adminLoginDAOlmpl.getAdminByUsername(username);
+    }
+
 
     @Override
     public List<Admin> findAdminByKeyword(String keyword) {

@@ -62,8 +62,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().antMatchers("/api/auth/**").permitAll()
                 .antMatchers("/api/image/**").permitAll()
                 .antMatchers("/api/product/**").permitAll()
+                .antMatchers("/api/product/**").permitAll()
+                .antMatchers("/admin/**").permitAll()
+                .antMatchers("/assets/**").permitAll()
+                .antMatchers("/*.css").permitAll()
+                .antMatchers("/*.js").permitAll()
                 .anyRequest().authenticated();
         http.addFilterAfter(new JWTAuthFilter(authenticationManager(),authService), UsernamePasswordAuthenticationFilter.class);
-//        httpSecurity.authorizeRequests().antMatchers("/").permitAll();
+
     }
 }

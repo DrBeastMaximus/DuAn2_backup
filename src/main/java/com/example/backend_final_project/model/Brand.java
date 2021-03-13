@@ -28,7 +28,7 @@ public class Brand {
 
     @Column(name = "created_date")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Created_date;
 
     @Column(name = "created_by")
@@ -36,7 +36,7 @@ public class Brand {
 
     @Column(name = "update_date")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Update_date;
 
     @Column(name = "update_by")

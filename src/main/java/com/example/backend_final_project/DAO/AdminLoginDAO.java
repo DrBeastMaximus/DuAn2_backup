@@ -8,7 +8,7 @@ public interface AdminLoginDAO {
     List<Admin> getAdminList();
 
     Admin getAdminById(int id);
-
+    Admin getAdminByUsername(String Username);
     List<Admin> findAdminByKeyword(String keyword);
 
     void addAdmin(Admin admin);

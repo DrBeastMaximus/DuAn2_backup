@@ -43,7 +43,7 @@ public class Product {
 
     @Column(name = "created_date")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "ysyyy/MM/dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Created_date;
 
     @Column(name = "creatd_by")

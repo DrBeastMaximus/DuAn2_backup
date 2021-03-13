@@ -19,7 +19,7 @@ public class Product_Property {
 
     @Column(name = "created_date")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Created_date;
 
     @Column(name = "create_by")
@@ -27,7 +27,7 @@ public class Product_Property {
 
     @Column(name = "updated_date")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Updated_date;
 
     @Column(name ="update_by")

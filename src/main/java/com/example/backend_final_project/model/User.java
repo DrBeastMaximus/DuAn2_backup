@@ -31,7 +31,7 @@ public class User {
 
     @Column(name = "birthday")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Birthday;
 
     @Column(name = "phone")
@@ -45,7 +45,7 @@ public class User {
 
     @Column(name = "created_date")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Created_date;
 
     @Column(name = "update_date")

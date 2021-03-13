@@ -32,12 +32,12 @@ public class Invoice_Detail {
 
     @Column(name = "created_date")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Created_date;
 
     @Column(name = "update_date")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Update_Date;
 
     public int getID() {
