@@ -23,27 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/ProductRespone.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductImageDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductImageDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductPropertyDetailDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductPropertyDetailDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/tk.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/tk.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductImageDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductImageDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductPropertyDetailDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductPropertyDetailDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Brand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Brand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Invoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Invoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Invoice_Detail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Invoice_Detail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product_Detail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product_Detail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product_Image.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product_Image.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product_Property.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product_Property.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product_Property_Detail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product_Property_Detail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Provider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Provider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Storage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Storage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Voucher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Voucher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/tk.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/tk.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProductController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +159,7 @@
       <workItem from="1615613551805" duration="1519000" />
       <workItem from="1615621902100" duration="5834000" />
       <workItem from="1615631096029" duration="2686000" />
-      <workItem from="1615637442070" duration="6728000" />
+      <workItem from="1615637442070" duration="8351000" />
     </task>
     <task id="LOCAL-00001" summary="Thêm Class DAO">
       <created>1613982667329</created>
@@ -324,45 +306,45 @@
     </state>
     <state x="739" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615606839166" />
     <state x="739" y="293" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1613963123630" />
-    <state width="975" height="223" key="GridCell.Tab.0.bottom" timestamp="1615643966842">
+    <state width="1877" height="223" key="GridCell.Tab.0.bottom" timestamp="1615645028232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="975" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615643966842" />
+    <state width="1877" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
     <state width="1875" height="231" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1615482622683" />
-    <state width="975" height="223" key="GridCell.Tab.0.center" timestamp="1615643966842">
+    <state width="1877" height="223" key="GridCell.Tab.0.center" timestamp="1615645028232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="975" height="223" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615643966842" />
+    <state width="1877" height="223" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
     <state width="1875" height="231" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1615482622683" />
-    <state width="975" height="223" key="GridCell.Tab.0.left" timestamp="1615643966842">
+    <state width="1877" height="223" key="GridCell.Tab.0.left" timestamp="1615645028232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="975" height="223" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615643966842" />
+    <state width="1877" height="223" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
     <state width="1875" height="231" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1615482622682" />
-    <state width="975" height="223" key="GridCell.Tab.0.right" timestamp="1615643966842">
+    <state width="1877" height="223" key="GridCell.Tab.0.right" timestamp="1615645028232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="975" height="223" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615643966842" />
+    <state width="1877" height="223" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
     <state width="1875" height="231" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1615482622683" />
-    <state width="975" height="223" key="GridCell.Tab.1.bottom" timestamp="1615643966842">
+    <state width="1877" height="223" key="GridCell.Tab.1.bottom" timestamp="1615645028232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="975" height="223" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615643966842" />
+    <state width="1877" height="223" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
     <state width="1875" height="231" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1615482622683" />
-    <state width="975" height="223" key="GridCell.Tab.1.center" timestamp="1615643966842">
+    <state width="1877" height="223" key="GridCell.Tab.1.center" timestamp="1615645028232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="975" height="223" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615643966842" />
+    <state width="1877" height="223" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
     <state width="1875" height="231" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1615482622683" />
-    <state width="975" height="223" key="GridCell.Tab.1.left" timestamp="1615643966842">
+    <state width="1877" height="223" key="GridCell.Tab.1.left" timestamp="1615645028232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="975" height="223" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615643966842" />
+    <state width="1877" height="223" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
     <state width="1875" height="231" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1615482622683" />
-    <state width="975" height="223" key="GridCell.Tab.1.right" timestamp="1615643966842">
+    <state width="1877" height="223" key="GridCell.Tab.1.right" timestamp="1615645028232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="975" height="223" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615643966842" />
+    <state width="1877" height="223" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
     <state width="1875" height="231" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1615482622683" />
     <state width="1875" height="341" key="GridCell.Tab.2.bottom" timestamp="1615482606084">
       <screen x="0" y="0" width="1920" height="1080" />
