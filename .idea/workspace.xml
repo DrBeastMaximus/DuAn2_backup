@@ -23,30 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/Utils/ImageUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CommentREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/CommentDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/CommentDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductImageDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductImageDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductPropertyREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPropertyREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/ProductImageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/ProductImageDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProductImageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProductImageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/ProductImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/ProductImageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/CommentDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/CommentDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductImageDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductImageDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductImageDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductImageDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/DashboardREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/DashboardREST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/ProductImageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/ProductImageServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/ProductImageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/ProductImageService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +173,7 @@
       <workItem from="1615965453904" duration="779000" />
       <workItem from="1615966310812" duration="48000" />
       <workItem from="1615967016466" duration="1188000" />
-      <workItem from="1615969091741" duration="22622000" />
+      <workItem from="1615969091741" duration="23049000" />
     </task>
     <task id="LOCAL-00001" summary="Thêm Class DAO">
       <created>1613982667329</created>
@@ -295,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615972167390</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="API hoàn thành. Test 30%">
+      <created>1615995220857</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1615995220857</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +310,8 @@
     <MESSAGE value="DAO hoàn thành 1/2 đến NewsletterDAO" />
     <MESSAGE value="DAO hoàn thành." />
     <MESSAGE value="Update 17/3/2021" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update 17/3/2021" />
+    <MESSAGE value="API hoàn thành. Test 30%" />
+    <option name="LAST_COMMIT_MESSAGE" value="API hoàn thành. Test 30%" />
   </component>
   <component name="WindowStateProjectService">
     <state x="551" y="196" key="#Assign_Data_Sources" timestamp="1615977043573">
@@ -353,55 +339,55 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="689" y="285" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1615968270900" />
-    <state x="584" y="132" key="CommitChangelistDialog2" timestamp="1615995088554">
+    <state x="584" y="132" key="CommitChangelistDialog2" timestamp="1615995217405">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="584" y="132" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1615995088554" />
+    <state x="584" y="132" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1615995217405" />
     <state x="739" y="293" key="FileChooserDialogImpl" timestamp="1615965594778">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="739" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615606839166" />
     <state x="739" y="293" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1615965594778" />
-    <state width="1875" height="208" key="GridCell.Tab.0.bottom" timestamp="1615990549355">
+    <state width="1875" height="207" key="GridCell.Tab.0.bottom" timestamp="1615995518818">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="208" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1615990549355" />
-    <state width="1875" height="208" key="GridCell.Tab.0.center" timestamp="1615990549355">
+    <state width="1875" height="207" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1615995518818" />
+    <state width="1875" height="207" key="GridCell.Tab.0.center" timestamp="1615995518818">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="208" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1615990549355" />
-    <state width="1875" height="208" key="GridCell.Tab.0.left" timestamp="1615990549355">
+    <state width="1875" height="207" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1615995518818" />
+    <state width="1875" height="207" key="GridCell.Tab.0.left" timestamp="1615995518818">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="208" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1615990549355" />
-    <state width="1875" height="208" key="GridCell.Tab.0.right" timestamp="1615990549355">
+    <state width="1875" height="207" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1615995518818" />
+    <state width="1875" height="207" key="GridCell.Tab.0.right" timestamp="1615995518818">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="208" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1615990549355" />
-    <state width="1875" height="208" key="GridCell.Tab.1.bottom" timestamp="1615990549356">
+    <state width="1875" height="207" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1615995518818" />
+    <state width="1875" height="207" key="GridCell.Tab.1.bottom" timestamp="1615995518819">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="208" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1615990549356" />
-    <state width="1875" height="208" key="GridCell.Tab.1.center" timestamp="1615990549355">
+    <state width="1875" height="207" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1615995518819" />
+    <state width="1875" height="207" key="GridCell.Tab.1.center" timestamp="1615995518819">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="208" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1615990549355" />
-    <state width="1875" height="208" key="GridCell.Tab.1.left" timestamp="1615990549355">
+    <state width="1875" height="207" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1615995518819" />
+    <state width="1875" height="207" key="GridCell.Tab.1.left" timestamp="1615995518818">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="208" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1615990549355" />
-    <state width="1875" height="208" key="GridCell.Tab.1.right" timestamp="1615990549355">
+    <state width="1875" height="207" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1615995518818" />
+    <state width="1875" height="207" key="GridCell.Tab.1.right" timestamp="1615995518819">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="208" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1615990549355" />
+    <state width="1875" height="207" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1615995518819" />
     <state width="1875" height="340" key="GridCell.Tab.2.bottom" timestamp="1615979418666">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -422,10 +408,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="235" y="198" width="1465" height="719" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1615965598310" />
-    <state x="551" y="259" key="Vcs.Push.Dialog.v2" timestamp="1615972169117">
+    <state x="551" y="259" key="Vcs.Push.Dialog.v2" timestamp="1615995225692">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="551" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1615972169117" />
+    <state x="551" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1615995225692" />
     <state x="768" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614137299854">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

@@ -1,6 +1,7 @@
 package com.example.backend_final_project.controller.User.RESTController;
 
 import com.example.backend_final_project.model.Product_Detail;
+import com.example.backend_final_project.model.Storage;
 import com.example.backend_final_project.service.Impl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +17,18 @@ import java.util.List;
 public class ProductDetailPageREST {
     @Autowired
     private ProductDetailServiceImpl productDetaiService;
+    @Autowired
+    private StorageServiceImpl storageService;
 
     @GetMapping("{productID}")
     public ResponseEntity<?> viewProduct(@PathVariable Integer productID){
         List<Product_Detail> product = productDetaiService.getProductDetailListByProductId(productID);
         return ResponseEntity.ok(product.get(0));
+    }
+
+    @GetMapping("/checkStatus/{productID}")
+    public ResponseEntity<?> checkStatus(@PathVariable Integer productID){
+        List<Storage> storage = storageService.getStorageByProdID(productID);
+        return ResponseEntity.ok(storage.get(0));
     }
 }
