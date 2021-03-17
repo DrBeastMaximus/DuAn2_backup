@@ -41,7 +41,7 @@ public class InvoiceDetailDAOImpl implements InvoiceDetailDAO {
     @Override
     public List<Invoice_Detail> getInvoiceDetailListByInvoiceId(int invoiceID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Invoice_Detail where Invoice like :id";
+        String hql = "FROM Invoice_Detail where Invoice.ID = :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", invoiceID);
         List<Invoice_Detail> list = query.list();
@@ -51,7 +51,7 @@ public class InvoiceDetailDAOImpl implements InvoiceDetailDAO {
     @Override
     public List<Invoice_Detail> getInvoiceDetailByProductId(int prodID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Invoice_Detail where Product like :id";
+        String hql = "FROM Invoice_Detail where Product.id = :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", prodID);
         List<Invoice_Detail> list = query.list();

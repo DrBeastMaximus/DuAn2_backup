@@ -41,7 +41,7 @@ public class ProductImageDAOImpl implements ProductImageDAO {
     @Override
     public List<Product_Image> getProductImageByProdId(int prodID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Product_Image where Product.ID like :id and isdelete=false ";
+        String hql = "FROM Product_Image where Product.ID = :id and isdelete=false ";
         Query query = session.createQuery(hql);
         query.setParameter("id", prodID);
         List<Product_Image> list = query.list();

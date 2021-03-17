@@ -41,7 +41,7 @@ public class NewsletterDAOImpl implements NewsletterDAO {
     @Override
     public List<Email> getNewsletterEmailByEmail(String email) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Email where Email like :email and isdelete=false ";
+        String hql = "FROM Email where Email = :email and isdelete=false ";
         Query query = session.createQuery(hql);
         query.setParameter("email", email);
         List<Email> list = query.list();

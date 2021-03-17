@@ -42,7 +42,7 @@ public class InvoiceDAOImpl implements InvoiceDAO {
     @Override
     public List<Invoice> getInvoiceListByUserId(int userID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Invoice where User like :id and isdelete=false ";
+        String hql = "FROM Invoice where User.Id = :id and isdelete=false ";
         Query query = session.createQuery(hql);
         query.setParameter("id", userID);
         List<Invoice> list = query.list();
@@ -52,7 +52,7 @@ public class InvoiceDAOImpl implements InvoiceDAO {
     @Override
     public List<Invoice> getInvoiceListByVoucherId(int voucherID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Invoice where Voucher like :id and isdelete=false ";
+        String hql = "FROM Invoice where Voucher.Code = :id and isdelete=false ";
         Query query = session.createQuery(hql);
         query.setParameter("id", voucherID);
         List<Invoice> list = query.list();

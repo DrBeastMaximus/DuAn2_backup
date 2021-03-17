@@ -41,7 +41,7 @@ public class StorageDAOImpl implements StorageDAO {
     @Override
     public List<Storage> getStorageByProdID(int prodID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Storage where Product like :id";
+        String hql = "FROM Storage where Product.ID = :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", prodID);
         List<Storage> list = query.list();
@@ -51,7 +51,7 @@ public class StorageDAOImpl implements StorageDAO {
     @Override
     public List<Storage> getStorageByProviderID(int providerID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Storage where Provider like :id";
+        String hql = "FROM Storage where Provider.Id = :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", providerID);
         List<Storage> list = query.list();

@@ -42,7 +42,7 @@ public class ProductPropertyDetailDAOImpl implements ProductPropertyDetailDAO {
     @Override
     public List<Product_Property_Detail> getByProductPropertyId(int id) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Product_Property_Detail where Product_Property.ID like :id";
+        String hql = "FROM Product_Property_Detail where Product_Property.ID = :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", id);
         List<Product_Property_Detail> list = query.list();
@@ -52,7 +52,7 @@ public class ProductPropertyDetailDAOImpl implements ProductPropertyDetailDAO {
     @Override
     public List<Product_Property_Detail> getByProductId(int prodID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Product_Property_Detail where Product.ID like :id";
+        String hql = "FROM Product_Property_Detail where Product.ID = :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", prodID);
         List<Product_Property_Detail> list = query.list();

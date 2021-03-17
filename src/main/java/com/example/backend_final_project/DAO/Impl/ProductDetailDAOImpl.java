@@ -41,7 +41,7 @@ public class ProductDetailDAOImpl implements ProductDetailDAO {
     @Override
     public List<Product_Detail> getProductDetailListByProductId(int prodID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Product_Detail where Product like :id";
+        String hql = "FROM Product_Detail where Product.ID = :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", prodID);
         List<Product_Detail> list = query.list();

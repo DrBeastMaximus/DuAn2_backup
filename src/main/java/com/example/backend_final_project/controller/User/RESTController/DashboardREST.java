@@ -1,9 +1,7 @@
 package com.example.backend_final_project.controller.User.RESTController;
 
 import com.example.backend_final_project.Utils.TokenFactory;
-import com.example.backend_final_project.model.Cart;
-import com.example.backend_final_project.model.Cart_Detail;
-import com.example.backend_final_project.model.User;
+import com.example.backend_final_project.model.*;
 import com.example.backend_final_project.service.Impl.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +10,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -81,5 +80,21 @@ public class DashboardREST {
         }{return ResponseEntity.ok("Cập nhật thông tin thất bại!");}
     }
 
-
+    @GetMapping("/viewPurchaseHistory")
+    public ResponseEntity<?> viewPurchaseHistory(HttpServletRequest request){
+        String token = TokenFactory.getJwtFromRequest(request);
+        if (StringUtils.hasText(token) && TokenFactory.validateToken(token)) {
+            int userId = Integer.parseInt(TokenFactory.getUserIdFromJWT(token));
+            List<Invoice> invc = invoiceService.getInvoiceListByUserId(userId);
+            List<Invoice_Detail> invcD = new ArrayList<>();
+            if (invc != null) {
+                for(int i=0;i>invc.size();i++){
+                    invcD.addAll(invoiceDetailService.getInvoiceDetailListByInvoiceId(invc.get(i).getID()));
+                }
+                return ResponseEntity.ok(invcD);
+            } else {
+                return ResponseEntity.ok("Không có lịch sử mua hàng!");
+            }
+        }{return ResponseEntity.ok("Không có lịch sử mua hàng!");}
+    }
 }
