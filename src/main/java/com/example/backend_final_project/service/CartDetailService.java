@@ -1,6 +1,5 @@
 package com.example.backend_final_project.service;
 
-import com.example.backend_final_project.model.Brand;
 import com.example.backend_final_project.model.Cart_Detail;
 
 import java.util.List;

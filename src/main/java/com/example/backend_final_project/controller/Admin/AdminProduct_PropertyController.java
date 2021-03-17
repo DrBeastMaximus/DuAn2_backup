@@ -1,6 +1,5 @@
 package com.example.backend_final_project.controller.Admin;
 
-import com.example.backend_final_project.model.Brand;
 import com.example.backend_final_project.model.Product_Property;
 import com.example.backend_final_project.service.Impl.ProductPropertyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

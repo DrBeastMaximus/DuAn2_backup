@@ -27,9 +27,6 @@ public class Voucher {
     @Column(name ="limit_use")
     private int Limit_use;
 
-    @ManyToOne
-    @JoinColumn(name ="product_type_id")
-    private Product_type ProductType;
 
     @Column(name = "expiration_date")
     @Temporal(TemporalType.DATE)
@@ -95,13 +92,6 @@ public class Voucher {
         Limit_use = limit_use;
     }
 
-    public Product_type getProductType() {
-        return ProductType;
-    }
-
-    public void setProductType(Product_type productType) {
-        ProductType = productType;
-    }
 
     public Date getExpiration_date() {
         return Expiration_date;
@@ -167,13 +157,12 @@ public class Voucher {
 //    }
 
 
-    public Voucher(int ID, String code, int value, boolean status, int limit_use, Product_type productType, Date expiration_date, Date created_date, String created_by, Date updated_date, String updated_by) {
+    public Voucher(int ID, String code, int value, boolean status, int limit_use, Date expiration_date, Date created_date, String created_by, Date updated_date, String updated_by) {
         this.ID = ID;
         Code = code;
         Value = value;
         Status = status;
         Limit_use = limit_use;
-        ProductType = productType;
         Expiration_date = expiration_date;
         Created_date = created_date;
         Created_by = created_by;

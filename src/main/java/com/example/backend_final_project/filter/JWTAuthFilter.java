@@ -34,6 +34,7 @@ public class JWTAuthFilter extends BasicAuthenticationFilter {
     private TokenFactory tokenFactory;
     @Autowired
     private UserServicelmpl userServicelmpl;
+    @Autowired
     private final  AuthService authService;
     public JWTAuthFilter(AuthenticationManager authManager, AuthService authService) {
         super(authManager);

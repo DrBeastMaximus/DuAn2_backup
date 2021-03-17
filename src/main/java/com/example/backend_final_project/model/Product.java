@@ -30,13 +30,6 @@ public class Product {
     @Column(name = "description")
     private String Description;
 
-    @ManyToOne()
-    @JoinColumn(name = "product_types_id")
-    private Product_type productType;
-
-    @ManyToOne()
-    @JoinColumn(name = "brand_id")
-    private Brand Brand;
 
     @Column(name = "issale")
     private boolean Issale;
@@ -127,21 +120,6 @@ public class Product {
         Description = description;
     }
 
-    public Product_type getProductType() {
-        return productType;
-    }
-
-    public void setProductType(Product_type productType) {
-        this.productType = productType;
-    }
-
-    public Brand getBrand() {
-        return Brand;
-    }
-
-    public void setBrand(Brand brand) {
-        Brand = brand;
-    }
 
     public boolean isIssale() {
         return Issale;
@@ -270,15 +248,13 @@ public class Product {
 //        Wishlish = wishlish;
 //    }
 
-    public Product(int ID, String code, String name, float price, float price_sale, String description, Product_type productType, com.example.backend_final_project.model.Brand brand, boolean issale, Date created_date, String creatd_by, boolean isdelete, boolean gender) {
+    public Product(int ID, String code, String name, float price, float price_sale, String description, boolean issale, Date created_date, String creatd_by, boolean isdelete, boolean gender) {
         this.ID = ID;
         Code = code;
         Name = name;
         Price = price;
         Price_sale = price_sale;
         Description = description;
-        this.productType = productType;
-        Brand = brand;
         Issale = issale;
         Created_date = created_date;
         Creatd_by = creatd_by;

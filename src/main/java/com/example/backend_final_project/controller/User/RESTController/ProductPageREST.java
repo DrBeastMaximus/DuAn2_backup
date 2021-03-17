@@ -26,7 +26,7 @@ public class ProductPageREST {
 //        }
 //        return ResponseEntity.ok(prod);
 //    }
-    @GetMapping("/gender/male/totalRecordFiltered/{page}/{size}/{propertyids}")
+    @GetMapping("/gender/male/totalRecord/{page}/{size}/{propertyids}")
     public ResponseEntity<Integer> totalMaleProdRecordsFiltered(@PathVariable Integer page,@PathVariable Integer size,@PathVariable List<Integer> propertyids){
         List<Product> usn = new ArrayList<>();
         for(Integer x: propertyids){
@@ -39,7 +39,7 @@ public class ProductPageREST {
 
         return ResponseEntity.ok(pg.getPageCount());
     }
-    @GetMapping("/gender/male/totalRecordFiltered/{page}/{size}/{min}/{max}/{propertyids}")
+    @GetMapping("/gender/male/totalRecord/{page}/{size}/{min}/{max}/{propertyids}")
     public ResponseEntity<Integer> totalMaleProdRecordsFilteredInRange(@PathVariable Integer page,@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max,@PathVariable List<Integer> propertyids){
         List<Product> usn = new ArrayList<>();
         for(Integer x: propertyids){
@@ -52,7 +52,7 @@ public class ProductPageREST {
 
         return ResponseEntity.ok(pg.getPageCount());
     }
-    @GetMapping("/gender/female/totalRecordFiltered/{page}/{size}/{min}/{max}/{propertyids}")
+    @GetMapping("/gender/female/totalRecord/{page}/{size}/{min}/{max}/{propertyids}")
     public ResponseEntity<Integer> totalFemaleProdRecordsFilteredInRange(@PathVariable Integer page,@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max,@PathVariable List<Integer> propertyids){
         List<Product> usn = new ArrayList<>();
         for(Integer x: propertyids){
@@ -84,7 +84,7 @@ public class ProductPageREST {
         return ResponseEntity.ok(pg.getPageCount());
     }
 
-    @GetMapping("/gender/female/totalRecordFiltered/{page}/{size}/{propertyids}")
+    @GetMapping("/gender/female/totalRecord/{page}/{size}/{propertyids}")
     public ResponseEntity<Integer> totalFemaleProdRecordsFiltered(@PathVariable Integer page,@PathVariable Integer size,@PathVariable List<Integer> propertyids){
         List<Product> usn = new ArrayList<>();
         for(Integer x: propertyids){
