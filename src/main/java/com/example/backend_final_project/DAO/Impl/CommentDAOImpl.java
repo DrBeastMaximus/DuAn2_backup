@@ -41,7 +41,7 @@ public class CommentDAOImpl implements CommentDAO {
     @Override
     public List<Comment> getCommentListByProductId(int prodID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Comment where Product.ID = :id and isdelete=false";
+        String hql = "FROM Comment where product.ID = :id and isdelete=false";
         Query query = session.createQuery(hql);
         query.setParameter("id", prodID);
         List<Comment> list = query.list();

@@ -35,6 +35,16 @@ public class ProductImageServiceImpl implements ProductImageService {
     }
 
     @Override
+    public List<Product_Image> getProductImagesByProdId(int prodID) {
+        return productImageDAOlmpl.getProductImagesByProdId(prodID);
+    }
+
+    @Override
+    public List<Product_Image> getProductImagesIndexByProdId(int prodID) {
+        return productImageDAOlmpl.getProductImagesIndexByProdId(prodID);
+    }
+
+    @Override
     public void addProductImage(Product_Image productImage) {
     productImageDAOlmpl.addProductImage(productImage);
     }

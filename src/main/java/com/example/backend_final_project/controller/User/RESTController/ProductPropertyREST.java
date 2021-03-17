@@ -1,4 +1,4 @@
-package com.example.backend_final_project.DAO.Impl;
+package com.example.backend_final_project.controller.User.RESTController;
 
 import com.example.backend_final_project.service.ProductPropertyDetailService;
 import com.example.backend_final_project.service.ProductPropertyService;

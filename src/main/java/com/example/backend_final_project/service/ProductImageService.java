@@ -11,6 +11,10 @@ public interface ProductImageService {
 
     List<Product_Image> getProductImageByProdId(int prodID);
 
+    List<Product_Image> getProductImagesByProdId(int prodID);
+
+    List<Product_Image> getProductImagesIndexByProdId(int prodID);
+
     void addProductImage(Product_Image productImage);
 
     void updateProductImage(Product_Image productImage);

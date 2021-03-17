@@ -30,9 +30,9 @@ public class CheckoutPageREST {
     public Integer checkVoucher(@PathVariable String code){
         List<Voucher> voucher = voucherService.getVoucherByCode(code);
         if(voucher!=null){
-            if(voucher.get(1).isStatus()){
-                if(voucher.get(1).getLimit_use()>0){
-                    return voucher.get(1).getValue();
+            if(voucher.get(0).isStatus()){
+                if(voucher.get(0).getLimit_use()>0){
+                    return voucher.get(0).getValue();
                 }else{
                     return null;
                 }
@@ -65,7 +65,7 @@ public class CheckoutPageREST {
             float total = cart.getTotal() * ((100 - discontValue)/100);
             invoice.setTotal(total);
             invoice.setPayment("Trực tiếp");
-            invoice.setVoucher(voucherService.getVoucherByCode(voucherCode).get(1));
+            invoice.setVoucher(voucherService.getVoucherByCode(voucherCode).get(0));
             invoice.setUpdate_by("System");
             invoice.setStatus(1);
             invoiceService.addInvoice(invoice);

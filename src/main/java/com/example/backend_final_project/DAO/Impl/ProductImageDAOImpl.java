@@ -49,6 +49,25 @@ public class ProductImageDAOImpl implements ProductImageDAO {
     }
 
     @Override
+    public List<Product_Image> getProductImagesByProdId(int prodID) {
+        Session session = this.sessionFactory.openSession();
+        String hql = "FROM Product_Image where Product.ID = :id and isdelete=false and Proiority=0";
+        Query query = session.createQuery(hql);
+        query.setParameter("id", prodID);
+        List<Product_Image> list = query.list();
+        return list;
+    }
+    @Override
+    public List<Product_Image> getProductImagesIndexByProdId(int prodID) {
+        Session session = this.sessionFactory.openSession();
+        String hql = "FROM Product_Image where Product.ID = :id and isdelete=false and Proiority=1 ";
+        Query query = session.createQuery(hql);
+        query.setParameter("id", prodID);
+        List<Product_Image> list = query.list();
+        return list;
+    }
+
+    @Override
     @ExceptionHandler({SaveDataErrorException.class})
     public void addProductImage(Product_Image productImage) {
         Session session = this.sessionFactory.openSession();

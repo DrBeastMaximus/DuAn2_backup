@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -18,6 +19,8 @@ import java.util.List;
 public class DashboardREST {
     @Autowired
     private CartServiceImpl cartService;
+    @Autowired
+    private ProductServiceImpl productService;
     @Autowired
     private UserServicelmpl userService;
     @Autowired
@@ -28,6 +31,8 @@ public class DashboardREST {
     private InvoiceDetailServiceImpl invoiceDetailService;
     @Autowired
     private VoucherServiceImpl voucherService;
+    @Autowired
+    private CommentServiceImpl commentService;
 
     @GetMapping("/viewInfo")
     public ResponseEntity<?> viewUserInfo(HttpServletRequest request) {
@@ -95,6 +100,26 @@ public class DashboardREST {
             } else {
                 return ResponseEntity.ok("Không có lịch sử mua hàng!");
             }
+        }{return ResponseEntity.ok("Không có lịch sử mua hàng!");}
+    }
+
+    @PostMapping("/rateProduct")
+    public ResponseEntity<?> rateProduct(@RequestBody JsonNode json, HttpServletRequest request){
+        int productID = json.get("product_id").asInt();
+        int rate = json.get("rate").asInt();
+        String content = json.get("content").asText();
+        String token = TokenFactory.getJwtFromRequest(request);
+        if (StringUtils.hasText(token) && TokenFactory.validateToken(token)) {
+            int userId = Integer.parseInt(TokenFactory.getUserIdFromJWT(token));
+            Comment comment = new Comment();
+            comment.setUser(userService.getUserById(userId));
+            comment.setContent(content);
+            comment.setRate(rate);
+            comment.setCreated_date(new Date());
+            comment.setUpdate_Date(new Date());
+            comment.setProduct(productService.getProductById(productID));
+            comment.setIsdelete(false);
+            commentService.addComment(comment);
         }{return ResponseEntity.ok("Không có lịch sử mua hàng!");}
     }
 }

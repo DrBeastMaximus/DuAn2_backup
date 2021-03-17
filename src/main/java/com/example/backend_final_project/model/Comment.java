@@ -15,7 +15,7 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(name ="user_id")
-    private   User User;
+    private User User;
 
     @ManyToOne
     @JoinColumn(name ="product_id")
@@ -48,12 +48,12 @@ public class Comment {
         Id = id;
     }
 
-    public User getCart() {
+    public User getUser() {
         return User;
     }
 
-    public void setCart(User cart) {
-        User = cart;
+    public void setUser(User user) {
+        User = user;
     }
 
     public Product getProduct() {
