@@ -100,6 +100,9 @@ public class CartPageREST {
                     cartDetail.setTotal(total);
                     cartDetail.setUpdate_Date(new Date());
                     cartDetailService.addCartDetail(cartDetail);
+                    cart.setUpdate_Date(new Date());
+                    cart.setTotal(cart.getTotal()+total);
+                    cartService.updateCart(cart);
                     return ResponseEntity.ok("Đã thêm sản phẩm vào giỏ hàng!");
                 } else{
                     return ResponseEntity.ok("Không có giỏ hàng nào!");
@@ -120,6 +123,9 @@ public class CartPageREST {
                 if(cart!=null){
                     cartDetail.setUpdate_Date(new Date());
                     cartDetailService.updateCartDetail(cartDetail);
+                    cart.setUpdate_Date(new Date());
+                    cart.setTotal(cart.getTotal()+cartDetail.getTotal());
+                    cartService.updateCart(cart);
                     return ResponseEntity.ok("Cập nhật sản phẩm vào giỏ hàng!");
                 } else{
                     return ResponseEntity.ok("Không có giỏ hàng nào!");
