@@ -39,7 +39,7 @@ public class ForgotPassREST {
             tokenService.updateToken(tokens);
             MailSender.sendText(user.getEmail(),
                     "Link khôi phục tài khoản DW Fashion của bạn",
-                    "Link:"+request.getContextPath()+ "/api/auth/forgot/emailconfirm/"+token);
+                    "Link:"+"http://dwhigh.tech:8080"+ "/api/auth/forgot/emailconfirm/"+token);
             return true;
         } else{
             return false;
