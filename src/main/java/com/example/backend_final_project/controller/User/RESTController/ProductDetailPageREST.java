@@ -29,6 +29,12 @@ public class ProductDetailPageREST {
     @GetMapping("/checkStatus/{productID}")
     public ResponseEntity<?> checkStatus(@PathVariable Integer productID){
         List<Storage> storage = storageService.getStorageByProdID(productID);
-        return ResponseEntity.ok(storage.get(0));
+        int q = storage.get(0).getQuantity();
+        if(q>0){
+            return ResponseEntity.ok(true);
+        } else{
+            return ResponseEntity.ok(false);
+        }
+
     }
 }

@@ -58,6 +58,7 @@ public class NewsletterDAOImpl implements NewsletterDAO {
             t.commit();
         } catch (Exception e) {
             t.rollback();
+            e.printStackTrace();
         } finally {
             session.close();
         }

@@ -22,6 +22,7 @@ import java.util.Date;
 public class ForgotPassREST {
     @Autowired
     private UserServicelmpl userService;
+    @Autowired
     private UsersTokenServiceImpl tokenService;
 
     @GetMapping("/{email}")
@@ -35,7 +36,7 @@ public class ForgotPassREST {
             UsersToken tokens = tokenService.getUserTokenByUID(user.getId());
             tokens.setPasswordReminderToken(token);
             tokens.setPasswordReminderExpire(c.getTime());
-            tokenService.addToken(tokens);
+            tokenService.updateToken(tokens);
             MailSender.sendText(user.getEmail(),
                     "Link khôi phục tài khoản DW Fashion của bạn",
                     "Link:"+request.getContextPath()+ "/api/auth/forgot/emailconfirm/"+token);
@@ -49,18 +50,20 @@ public class ForgotPassREST {
         if(TokenFactory.validateToken(token)) {
             String id = TokenFactory.getUserIdFromJWT(token);
             User user = userService.getUserById(Integer.parseInt(id));
-            Date date = new Date();
+
             if (user != null) {
                 UsersToken tokens = tokenService.getUserTokenByUID(Integer.parseInt(id));
-                if (tokens.getPasswordReminderExpire().after(date)) {
+                if (tokens.getPasswordReminderExpire().equals(new Date())) {
                     tokens.setPasswordReminderExpire(null);
                     tokens.setPasswordReminderToken(null);
                     tokenService.updateToken(tokens);
+                    return false;
                 } else {
                     tokens.setAccountStatus(3);
                     tokenService.updateToken(tokens);
+                    return true;
                 }
-                return true;
+
             } else {
                 return false;
             }
@@ -78,7 +81,7 @@ public class ForgotPassREST {
             if (usr != null) {
                 UsersToken tokens = tokenService.getUserTokenByUID(userId);
                 if(tokens.getAccountStatus()==3){
-                    if(confirm==newPass){
+                    if(confirm.equals(newPass)){
                         usr.setPassword(newPass);
                         userService.updateUser(usr);
                         tokens.setPasswordReminderExpire(null);

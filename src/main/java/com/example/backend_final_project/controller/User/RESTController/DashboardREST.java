@@ -74,7 +74,8 @@ public class DashboardREST {
             User usr = userService.getUserById(userId);
             if (usr != null) {
                 if(oldPass.equals(usr.getPassword())){
-                    if(confirm==newPass){
+                    if(confirm.equals(newPass)){
+                        usr.setPassword(newPass);
                         userService.updateUser(usr);
                         return ResponseEntity.ok("Đã cập nhật thông tin!");
                     } else{return ResponseEntity.ok("Xác nhận và mật khẩu mới không đúng!");}
@@ -92,8 +93,8 @@ public class DashboardREST {
             int userId = Integer.parseInt(TokenFactory.getUserIdFromJWT(token));
             List<Invoice> invc = invoiceService.getInvoiceListByUserId(userId);
             List<Invoice_Detail> invcD = new ArrayList<>();
-            if (invc != null) {
-                for(int i=0;i>invc.size();i++){
+            if (invc.get(0) != null) {
+                for(int i=0;i<invc.size();i++){
                     invcD.addAll(invoiceDetailService.getInvoiceDetailListByInvoiceId(invc.get(i).getID()));
                 }
                 return ResponseEntity.ok(invcD);
@@ -111,15 +112,21 @@ public class DashboardREST {
         String token = TokenFactory.getJwtFromRequest(request);
         if (StringUtils.hasText(token) && TokenFactory.validateToken(token)) {
             int userId = Integer.parseInt(TokenFactory.getUserIdFromJWT(token));
-            Comment comment = new Comment();
-            comment.setUser(userService.getUserById(userId));
-            comment.setContent(content);
-            comment.setRate(rate);
-            comment.setCreated_date(new Date());
-            comment.setUpdate_Date(new Date());
-            comment.setProduct(productService.getProductById(productID));
-            comment.setIsdelete(false);
-            commentService.addComment(comment);
-        }{return ResponseEntity.ok("Không có lịch sử mua hàng!");}
+            Comment cmt = commentService.getCommentListByProductIdandUserId(productID, userId);
+            if (cmt == null) {
+                Comment comment = new Comment();
+                comment.setUser(userService.getUserById(userId));
+                comment.setContent(content);
+                comment.setRate(rate);
+                comment.setCreated_date(new Date());
+                comment.setUpdate_Date(new Date());
+                comment.setProduct(productService.getProductById(productID));
+                comment.setIsdelete(false);
+                commentService.addComment(comment);
+                return ResponseEntity.ok("Comment thành công!");
+            } else {
+                return ResponseEntity.ok("Đã đánh giá mặt hàng này từ trước!");
+            }
+        } else{return ResponseEntity.ok("Không có lịch sử mua hàng!");}
     }
 }

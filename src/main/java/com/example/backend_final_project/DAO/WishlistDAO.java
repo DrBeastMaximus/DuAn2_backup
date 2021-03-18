@@ -13,6 +13,8 @@ public interface WishlistDAO {
 
     List<Wishlish> getWishlishByUserID(int userID);
 
+    Wishlish getWishlishByUserIDAndProdID(int userID, int prodID);
+
     void addWishlish(Wishlish wishlish);
 
     void updateWishlish(Wishlish wishlish);
@@ -20,5 +22,5 @@ public interface WishlistDAO {
     void deleteWishlish(int wishlishID);
 
     @ExceptionHandler({DeleteDataException.class})
-    void deleteWishlishByProductID(int userID, int productID);
+    int deleteWishlishByProductID(int userID, int productID);
 }

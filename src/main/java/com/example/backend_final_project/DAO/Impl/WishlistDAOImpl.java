@@ -42,11 +42,21 @@ public class WishlistDAOImpl implements WishlistDAO {
     @Override
     public List<Wishlish> getWishlishByUserID(int userID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "from Wishlish where User = :id";
+        String hql = "from Wishlish where User.Id = :id";
         Query query = session.createQuery(hql);
         query.setParameter("id", userID);
         List<Wishlish> list = query.list();
         return list;
+    }
+
+    @Override
+    public Wishlish getWishlishByUserIDAndProdID(int userID, int prodID) {
+        Session session = this.sessionFactory.openSession();
+        String queryString = "from Wishlish where User.Id = :id and product.id = :prodID";
+        return (Wishlish) session.createQuery(queryString)
+                .setParameter("id", userID)
+                .setParameter("prodID", prodID)
+                .uniqueResult();
     }
 
     @Override
@@ -90,17 +100,18 @@ public class WishlistDAOImpl implements WishlistDAO {
             t.commit();
         } catch (Exception e) {
             t.rollback();
-            e.printStackTrace();
         } finally {
             session.close();
         }
     }
     @Override
     @ExceptionHandler({DeleteDataException.class})
-    public void deleteWishlishByProductID(int userID, int productID) {
-        Session session = this.sessionFactory.openSession();
-        session.createQuery("delete from Wishlish where Wishlish.User = :userID and Wishlish.product = :productID", Wishlish.class)
+    public int deleteWishlishByProductID(int userID, int productID) {
+        String hql = ("delete from Wishlish where User.Id = :userID and product.ID = :productID");
+        Query query = sessionFactory.openSession().createQuery(hql)
                 .setParameter("userID",userID)
                 .setParameter("productID",productID);
+              int record = query.executeUpdate();
+         return record;
     }
 }

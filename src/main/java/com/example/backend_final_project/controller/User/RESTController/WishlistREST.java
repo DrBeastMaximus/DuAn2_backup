@@ -24,21 +24,24 @@ public class WishlistREST {
     @Autowired
     private ProductServiceImpl productService;
 
-    @PostMapping("/addToList/{idProduct}")
+    @GetMapping("/addToList/{idProduct}")
     public ResponseEntity<?> create(@PathVariable int idProduct, HttpServletRequest request){
         String token = TokenFactory.getJwtFromRequest(request);
         if (StringUtils.hasText(token) && TokenFactory.validateToken(token)) {
             int userId = Integer.parseInt(TokenFactory.getUserIdFromJWT(token));
             User usr = userService.getUserById(userId);
+            Wishlish wls = wishlistService.getWishlishByUserIDAndProdID(userId,idProduct);
             if (usr != null) {
-                Wishlish wl = new Wishlish();
-                wl.setCreated_date(new Date());
-                wl.setUpdate_Date(new Date());
-                Product prod = productService.getProductById(idProduct);
-                wl.setProduct(prod);
-                wl.setUser(usr);
-                wishlistService.addWishlish(wl);
-                return ResponseEntity.ok("Đã cập nhật Wishlist!");
+                if(wls==null) {
+                    Wishlish wl = new Wishlish();
+                    wl.setCreated_date(new Date());
+                    wl.setUpdate_Date(new Date());
+                    Product prod = productService.getProductById(idProduct);
+                    wl.setProduct(prod);
+                    wl.setUser(usr);
+                    wishlistService.addWishlish(wl);
+                    return ResponseEntity.ok("Đã cập nhật Wishlist!");
+                } else {return ResponseEntity.ok("Sản phẩm đã có trong Wishlist!");}
             } else {
                 return ResponseEntity.ok("Thêm Wishlist thất bại!");
             }
@@ -46,7 +49,7 @@ public class WishlistREST {
     }
 
 
-    @PutMapping("/readList")
+    @GetMapping("/readList")
     public ResponseEntity<?> read(HttpServletRequest request){
         String token = TokenFactory.getJwtFromRequest(request);
         if (StringUtils.hasText(token) && TokenFactory.validateToken(token)) {
@@ -61,15 +64,15 @@ public class WishlistREST {
         }{return ResponseEntity.ok("Wishlist trống!");}
     }
 
-    @DeleteMapping("/removeProduct/{idProduct}")
-    public ResponseEntity<?> removeProduct(HttpServletRequest request, @PathVariable int idProduct){
+    @DeleteMapping("/removeProduct/{wishlistID}")
+    public ResponseEntity<?> removeProduct(HttpServletRequest request, @PathVariable int wishlistID){
         String token = TokenFactory.getJwtFromRequest(request);
         if (StringUtils.hasText(token) && TokenFactory.validateToken(token)) {
             int userId = Integer.parseInt(TokenFactory.getUserIdFromJWT(token));
             User usr = userService.getUserById(userId);
             if (usr != null) {
-                wishlistService.deleteWishlishByProductID(userId,idProduct);
-                return ResponseEntity.ok("Remove sản phẩm thành công");
+                        wishlistService.deleteWishlish(wishlistID);
+                        return ResponseEntity.ok("Remove sản phẩm thành công");
             } else {
                 return ResponseEntity.ok("Không thể remove sản phẩm!");
             }

@@ -35,6 +35,11 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
+    public Comment getCommentListByProductIdandUserId(int prodID, int userID) {
+        return commentDAOlmpl.getCommentListByProductIdandUserId(prodID, userID);
+    }
+
+    @Override
     public void addComment(Comment comment) {
     commentDAOlmpl.addComment(comment);
     }

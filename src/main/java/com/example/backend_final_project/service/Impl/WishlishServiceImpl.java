@@ -35,6 +35,11 @@ public class WishlishServiceImpl implements WishlishService {
     }
 
     @Override
+    public Wishlish getWishlishByUserIDAndProdID(int userID, int prodID) {
+        return wishlistDAOlmpl.getWishlishByUserIDAndProdID(userID, prodID);
+    }
+
+    @Override
     public void addWishlish(Wishlish wishlish) {
     wishlistDAOlmpl.addWishlish(wishlish);
     }
@@ -50,7 +55,7 @@ public class WishlishServiceImpl implements WishlishService {
     }
 
     @Override
-    public void deleteWishlishByProductID(int userID, int productID) {
-        wishlistDAOlmpl.deleteWishlishByProductID(userID, productID);
+    public int deleteWishlishByProductID(int userID, int productID) {
+        return wishlistDAOlmpl.deleteWishlishByProductID(userID, productID);
     }
 }

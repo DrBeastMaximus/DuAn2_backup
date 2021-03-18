@@ -45,7 +45,6 @@ public class CartDetailDAOImpl implements CartDetailDAO {
     public List<Cart_Detail> getCartDetailListByCardID(int cartID) {
         Session session = this.sessionFactory.openSession();
         return session.createQuery("FROM Cart_Detail WHERE Cart.Id = :id", Cart_Detail.class).setParameter("id",cartID).getResultList();
-
     }
 
     @Override
@@ -102,4 +101,6 @@ public class CartDetailDAOImpl implements CartDetailDAO {
             session.close();
         }
     }
+
+
 }

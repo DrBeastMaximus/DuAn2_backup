@@ -4,7 +4,11 @@ import com.example.backend_final_project.DAO.Impl.UsersTokenDAOImpl;
 import com.example.backend_final_project.model.UsersToken;
 import com.example.backend_final_project.service.UsersTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+@Service
+@Transactional
 public class UsersTokenServiceImpl implements UsersTokenService {
     @Autowired
     private UsersTokenDAOImpl userTokenDAO;

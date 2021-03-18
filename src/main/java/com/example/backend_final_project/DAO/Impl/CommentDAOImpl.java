@@ -49,6 +49,16 @@ public class CommentDAOImpl implements CommentDAO {
     }
 
     @Override
+    public Comment getCommentListByProductIdandUserId(int prodID, int userID) {
+        Session session = this.sessionFactory.openSession();
+        String queryString = "FROM Comment WHERE product.id = :prodID and User.Id = :userID and isdelete=false";
+        return (Comment) session.createQuery(queryString)
+                .setParameter("prodID", prodID)
+                .setParameter("userID", userID)
+                .uniqueResult();
+    }
+
+    @Override
     @ExceptionHandler({SaveDataErrorException.class})
     public void addComment(Comment comment) {
         Session session = this.sessionFactory.openSession();

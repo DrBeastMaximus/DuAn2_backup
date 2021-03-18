@@ -11,11 +11,13 @@ public interface WishlishService {
 
     List<Wishlish> getWishlishByUserID(int userID);
 
+    Wishlish getWishlishByUserIDAndProdID(int userID, int prodID);
+
     void addWishlish(Wishlish wishlish);
 
     void updateWishlish(Wishlish wishlish);
 
     void deleteWishlish(int wishlishID);
 
-    void deleteWishlishByProductID(int userID, int productID);
+    int deleteWishlishByProductID(int userID, int productID);
 }

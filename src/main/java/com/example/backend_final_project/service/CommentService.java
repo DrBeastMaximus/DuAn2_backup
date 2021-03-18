@@ -12,6 +12,8 @@ public interface CommentService {
 
     List<Comment> getCommentListByProductId(int prodID);
 
+    Comment getCommentListByProductIdandUserId(int prodID, int userID);
+
     void addComment(Comment comment);
 
     void updateComment(Comment comment);

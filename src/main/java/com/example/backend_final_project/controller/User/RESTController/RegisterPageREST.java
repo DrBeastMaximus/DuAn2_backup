@@ -7,6 +7,7 @@ import com.example.backend_final_project.model.UsersToken;
 import com.example.backend_final_project.service.Impl.UserServicelmpl;
 import com.example.backend_final_project.service.Impl.UsersTokenServiceImpl;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -21,14 +22,27 @@ import java.util.Date;
 public class RegisterPageREST {
     @Autowired
     private UserServicelmpl userService;
+    @Autowired
     private UsersTokenServiceImpl tokenService;
 
     @PostMapping("/createUser")
-    public ResponseEntity<?> createUser(@Validated @RequestBody User user, HttpServletRequest request) throws MessagingException {
-        User users = userService.getUserByUsername(user.getUsername());
-        User usr = userService.getUserByEmail(user.getEmail());
-        if(users!=null){
-            if(usr!=null){
+    public ResponseEntity<?> createUser(@Validated @RequestBody JsonNode json, HttpServletRequest request) throws MessagingException {
+        String name = json.get("name").asText();
+        String email = json.get("email").asText();
+        String username = json.get("email").asText();
+        String password = json.get("password").asText();
+        User users = userService.getUserByUsername(username);
+        User usr = userService.getUserByEmail(email);
+        if(users==null){
+            if(usr==null){
+                User user = new User();
+                user.setPassword(password);
+                user.setUsername(username);
+                user.setFullname(name);
+                user.setEmail(email);
+                user.setCreated_date(new Date());
+                user.setUpdate_date(new Date());
+                user.setIsdelete(false);
                 userService.addUser(user);
                 Date date = new Date();
                 UsersToken tokens = new UsersToken();
@@ -37,13 +51,21 @@ public class RegisterPageREST {
                 tokens.setRegistrationTime(date);
                 tokens.setEmailConfirmToken(token);
                 tokens.setAccountStatus(0);
-                tokenService.addToken(tokens);
+                UsersToken tk = tokenService.getUserTokenByUID(userService.getUserByUsername(username).getId());
+                if(tk!=null){
+                    tokenService.updateToken(tokens);
+                } else{
+                tokenService.addToken(tokens);}
                 MailSender.sendText(user.getEmail(),
                         "Link kích hoạt tài khoản DW Fashion của bạn",
-                        "Link:"+request.getContextPath()+ "/api/auth/register/emailconfirm/"+token);
+                        "Link:"+"http://dwhigh.tech:8080"+ "/api/auth/register/emailconfirm/"+token);
                 return ResponseEntity.accepted().body("Tạo User thành công");
-            } else {return ResponseEntity.badRequest().body("Email đã được sử dụng");}
-        } else {return ResponseEntity.badRequest().body("Username đã được sử dụng");}
+            } else {
+                return ResponseEntity.badRequest().body("Email đã được sử dụng");
+            }
+        } else {
+            return ResponseEntity.badRequest().body("Username đã được sử dụng");
+        }
 
     }
 
@@ -54,10 +76,12 @@ public class RegisterPageREST {
         User user = userService.getUserById(Integer.parseInt(id));
         if(user!=null){
             UsersToken tokens = tokenService.getUserTokenByUID(Integer.parseInt(id));
-            tokens.setEmailConfirmToken(null);
-            tokens.setAccountStatus(1);
-            tokenService.updateToken(tokens);
-            return true;
+            if(token.equals(tokens.getEmailConfirmToken())) {
+                tokens.setEmailConfirmToken(null);
+                tokens.setAccountStatus(1);
+                tokenService.updateToken(tokens);
+                return true;
+            } else {return false;}
         }else{
             return false;
             }
