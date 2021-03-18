@@ -395,7 +395,7 @@ public class ProductPageREST {
 
         return ResponseEntity.ok(pg.getPageList());
     }
-    @GetMapping("/search/result/totalRecord")
+    @GetMapping("/search/result/totalRecord/{page}/{size}/{keyword}")
     public ResponseEntity<Integer> totalSearchResultRecords(@PathVariable Integer page,@PathVariable Integer size,@PathVariable String keyword){
         List<Product> usn = productService.getProductListByKeyword(keyword);
         PagedListHolder pg = new PagedListHolder(usn);
