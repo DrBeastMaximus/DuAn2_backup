@@ -58,7 +58,7 @@ public class RegisterPageREST {
                 tokenService.addToken(tokens);}
                 MailSender.sendText(user.getEmail(),
                         "Link kích hoạt tài khoản DW Fashion của bạn",
-                        "Link:"+"http://dwhigh.tech:8080"+ "/api/auth/register/emailconfirm/"+token);
+                        "Link: "+"http://dwhigh.tech:8080"+ "/api/auth/register/emailconfirm/"+token);
                 return ResponseEntity.accepted().body("Tạo User thành công");
             } else {
                 return ResponseEntity.badRequest().body("Email đã được sử dụng");

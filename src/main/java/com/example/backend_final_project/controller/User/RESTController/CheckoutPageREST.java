@@ -1,11 +1,13 @@
 package com.example.backend_final_project.controller.User.RESTController;
 
+import com.example.backend_final_project.Utils.MailSender;
 import com.example.backend_final_project.model.*;
 import com.example.backend_final_project.service.Impl.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
 import java.util.Date;
 import java.util.List;
 
@@ -50,7 +52,7 @@ public class CheckoutPageREST {
     }
 
     @PostMapping("/order/{userID}/{voucherCode}")
-    public Boolean orderwithVoucher(@PathVariable int userID, @PathVariable String voucherCode, @RequestBody JsonNode json){
+    public Boolean orderwithVoucher(@PathVariable int userID, @PathVariable String voucherCode, @RequestBody JsonNode json) throws MessagingException {
         int discontValue = checkVoucher(voucherCode);
         User user = userService.getUserById(userID);
         if(user!=null) {
@@ -86,6 +88,9 @@ public class CheckoutPageREST {
                     cartDetailService.deleteCartDetail(cartDetail.get(i).getId());
                 }
                 cartService.deleteCart(cart.getId());
+                MailSender.sendText(user.getEmail(),
+                        "DWFashion Chân Thành Cảm Ơn Bạn Đã Đặt Hàng",
+                        "Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.");
                 return true;
             } else {return false;}
         } else{
@@ -94,7 +99,7 @@ public class CheckoutPageREST {
 
     }
     @PostMapping("/order/{userID}")
-    public Boolean orderwithoutVoucher(@PathVariable int userID, @RequestBody JsonNode json){
+    public Boolean orderwithoutVoucher(@PathVariable int userID, @RequestBody JsonNode json) throws MessagingException {
         User user = userService.getUserById(userID);
         if(user!=null) {
             user.setFullname(json.get("name").asText());
@@ -130,6 +135,9 @@ public class CheckoutPageREST {
 
                 }
                 cartService.deleteCart(cart.getId());
+                MailSender.sendText(user.getEmail(),
+                        "DWFashion Chân Thành Cảm Ơn Bạn Đã Đặt Hàng",
+                        "Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.");
                 return true;
             } else{
                 return false;}
