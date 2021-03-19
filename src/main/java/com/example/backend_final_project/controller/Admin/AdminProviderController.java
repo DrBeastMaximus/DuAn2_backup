@@ -21,8 +21,8 @@ public class AdminProviderController {
     public String Home(ModelMap model){
         model.addAttribute("insert",new Provider());
         model.addAttribute("update",new Provider());
-        model.addAttribute("delete",new Provider());
-        return "main/tables/tk";
+
+        return "main/tables/nhacungcap";
     }
 
     @GetMapping("/list")
@@ -38,8 +38,8 @@ public class AdminProviderController {
         providerServiceImpl.addProvider(provider);
         model.addAttribute("insert",new Provider());
         model.addAttribute("update",new Provider());
-        model.addAttribute("delete",new Provider());
-        return "main/tables/tk";
+
+        return "main/tables/nhacungcap";
     }
 
     @PostMapping("/update")
@@ -48,17 +48,20 @@ public class AdminProviderController {
         providerServiceImpl.updateProvider(provider);
         model.addAttribute("insert",new Provider());
         model.addAttribute("update",new Provider());
-        model.addAttribute("delete",new Provider());
-        return "main/tables/tk";
+
+        return "main/tables/nhacungcap";
     }
 
-    @PostMapping("delete/{id}")
+    @GetMapping("delete")
     public String Delete(ModelMap model,@RequestParam("id") int id){
-        providerServiceImpl.deleteProvider(id);
+        Provider provider = providerServiceImpl.getProviderById(id);
+        provider.setUpdated_date(new Date());
+        provider.setIsdelete(true);
+        providerServiceImpl.updateProvider(provider);
         model.addAttribute("insert",new Provider());
         model.addAttribute("update",new Provider());
-        model.addAttribute("delete",new Provider());
-        return "main/tables/tk";
+
+        return "main/tables/nhacungcap";
 
     }
 }

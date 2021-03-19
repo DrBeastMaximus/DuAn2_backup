@@ -23,31 +23,39 @@ public class AdminProductController {
     @Autowired
     private ProductServiceImpl productServiceImpl;
 
-    @Autowired
-    private ProductPropertyDetailServiceImpl productPropertyDetailServiceImpl;
-
-    @Autowired
-    private ProductImageServiceImpl productImageServiceImpl;
+//    @Autowired
+//    private ProductPropertyDetailServiceImpl productPropertyDetailServiceImpl;
+//
+//    @Autowired
+//    private ProductImageServiceImpl productImageServiceImpl;
 
     @GetMapping("/list")
     @ResponseBody
-    public List<ProductRespone> getProductRespone(){
-        List<ProductRespone> productResponesList = new ArrayList<ProductRespone>();
+    public List<Product> getproduct(){
         List<Product> product = productServiceImpl.getProductList();
-//        System.out.println(productImageServiceImpl.getProductImageByProdId(1));
-        System.out.println(productPropertyDetailServiceImpl.getProductPropertyDetailList());
-        for(int i = 0; i < product.size();i++){
-            ProductRespone productRespones = new ProductRespone();
-            List<Product_Property_Detail> product_property_details = productPropertyDetailServiceImpl.getByProductId(product.get(i).getID());
-            List<Product_Image> product_images = productImageServiceImpl.getProductImageByProdId(product.get(i).getID());
-            productRespones.setProduct(product.get(i));
-            productRespones.setProduct_Property_Detail(product_property_details);
-            productRespones.setProduct_images(product_images);
-
-            productResponesList.add(productRespones);
-        }
-
-
-        return productResponesList;
+        return product;
     }
+
+
+//    @GetMapping("/list")
+//    @ResponseBody
+//    public List<ProductRespone> getProductRespone(){
+//        List<ProductRespone> productResponesList = new ArrayList<ProductRespone>();
+//        List<Product> product = productServiceImpl.getProductList();
+////        System.out.println(productImageServiceImpl.getProductImageByProdId(1));
+//        System.out.println(productPropertyDetailServiceImpl.getProductPropertyDetailList());
+//        for(int i = 0; i < product.size();i++){
+//            ProductRespone productRespones = new ProductRespone();
+//            List<Product_Property_Detail> product_property_details = productPropertyDetailServiceImpl.getByProductId(product.get(i).getID());
+//            List<Product_Image> product_images = productImageServiceImpl.getProductImageByProdId(product.get(i).getID());
+//            productRespones.setProduct(product.get(i));
+//            productRespones.setProduct_Property_Detail(product_property_details);
+//            productRespones.setProduct_images(product_images);
+//
+//            productResponesList.add(productRespones);
+//        }
+//
+//
+//        return productResponesList;
+//    }
 }

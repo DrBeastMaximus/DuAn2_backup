@@ -100,7 +100,7 @@
                     navStep: 100
                 }
             ],
-            viewModes = ['days', 'months', 'years', 'decades'],
+            viewModes = ['years', 'months', 'days', 'decades'],
             verticalModes = ['top', 'bottom', 'auto'],
             horizontalModes = ['left', 'right', 'auto'],
             toolbarPlacements = ['default', 'top', 'bottom'],

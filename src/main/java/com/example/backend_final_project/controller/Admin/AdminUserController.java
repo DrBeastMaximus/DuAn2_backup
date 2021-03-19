@@ -21,8 +21,9 @@ public class AdminUserController {
     public String Home(ModelMap model){
         model.addAttribute("insert",new User());
         model.addAttribute("update",new User());
-        model.addAttribute("delete",new User());
-        return "main/tables/tk";
+        model.addAttribute("message","");
+
+        return "main/tables/user";
     }
 
     @GetMapping("/list")
@@ -34,31 +35,61 @@ public class AdminUserController {
 
     @PostMapping("/insert")
     public String InsertAdmin(ModelMap model, @ModelAttribute User user){
-        user.setCreated_date(new Date());
-        userServicelmpl.addUser(user);
-        model.addAttribute("insert",new User());
-        model.addAttribute("update",new User());
-        model.addAttribute("delete",new User());
-        return "main/tables/tk";
+        User kiemtra = userServicelmpl.getUserByUsernameNoCheck(user.getUsername());
+        if(kiemtra !=null){
+            if(kiemtra.isIsdelete() == false){
+                model.addAttribute("message","User Đã Tồn Tại");
+                model.addAttribute("insert", new User());
+                model.addAttribute("update", new User());
+                return "main/tables/user";
+            }else{
+                model.addAttribute("message","User Đã Tồn Tại Trong Thùng rác");
+                model.addAttribute("insert", new User());
+                model.addAttribute("update", new User());
+                return "main/tables/user";
+            }
+        }else {
+
+            user.setCreated_date(new Date());
+            userServicelmpl.addUser(user);
+            model.addAttribute("message","");
+            model.addAttribute("insert", new User());
+            model.addAttribute("update", new User());
+            return "main/tables/user";
+        }
+//        return "main/tables/user";
     }
 
     @PostMapping("/update")
     public String UpdateAdmin(ModelMap model, @ModelAttribute User user){
         user.setUpdate_date(new Date());
         userServicelmpl.updateUser(user);
+//        System.out.println(user.getId());
+//        System.out.println(user.getUsername());
+//        System.out.println(user.getPassword());
+//        System.out.println(user.getFullname());
+//        System.out.println(user.getAddress());
+//        System.out.println(user.getPhone());
+//        System.out.println(user.getEmail());
+//        System.out.println(user.isGender());
+        model.addAttribute("message","");
         model.addAttribute("insert",new User());
         model.addAttribute("update",new User());
-        model.addAttribute("delete",new User());
-        return "main/tables/tk";
+
+        return "main/tables/user";
     }
 
-    @PostMapping("delete/{id}")
+    @GetMapping("/delete")
     public String Delete(ModelMap model,@RequestParam("id") int id){
-        userServicelmpl.deleteUser(id);
+        User user = userServicelmpl.getUserById(id);
+        user.setIsdelete(true);
+        user.setUpdate_date(new Date());
+        userServicelmpl.updateUser(user);
+        model.addAttribute("message","");
         model.addAttribute("insert",new User());
         model.addAttribute("update",new User());
-        model.addAttribute("delete",new User());
-        return "main/tables/tk";
+
+        return "main/tables/user";
 
     }
 }

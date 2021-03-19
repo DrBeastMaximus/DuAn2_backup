@@ -17,15 +17,15 @@ public class AdminTaiKhoanController {
 
     @GetMapping("/home")
     public String Home(ModelMap model){
-    model.addAttribute("insert",new Admin());
-    model.addAttribute("update",new Admin());
-    model.addAttribute("message","");
+        model.addAttribute("insert",new Admin());
+        model.addAttribute("update",new Admin());
+        model.addAttribute("message","");
 
 
         System.out.println(new Date()+ "aaa");
         return "main/tables/tk";
     }
-    
+
     @GetMapping("/list")
     @ResponseBody
     public List<Admin> getAdmin(){
@@ -34,14 +34,14 @@ public class AdminTaiKhoanController {
     }
 
     @PostMapping("/insert")
-   public String InsertAdmin(ModelMap model, @ModelAttribute Admin admin){
+    public String InsertAdmin(ModelMap model, @ModelAttribute Admin admin){
 
         Admin admintest = loginAdminService.getAdminUsername(admin.getUsername());
         if(admintest != null){
             if(admintest.isIsdelete() == false ){
-            model.addAttribute("insert",new Admin());
-            model.addAttribute("update",new Admin());
-            model.addAttribute("message","Tài Khoản Đã Tồn Tại");
+                model.addAttribute("insert",new Admin());
+                model.addAttribute("update",new Admin());
+                model.addAttribute("message","Tài Khoản Đã Tồn Tại");
             }else{
                 model.addAttribute("insert",new Admin());
                 model.addAttribute("update",new Admin());
@@ -66,14 +66,15 @@ public class AdminTaiKhoanController {
         model.addAttribute("insert",new Admin());
         model.addAttribute("update",new Admin());
         model.addAttribute("message","");
-    System.out.println(admin);
+        System.out.println(admin);
         return "main/tables/tk";
     }
 
     @GetMapping("/delete")
     public String Delete(ModelMap model,@RequestParam("id") int id){
-      Admin admin =  loginAdminService.getAdminId(id);
-      admin.setIsdelete(true);
+        Admin admin =  loginAdminService.getAdminId(id);
+        admin.setIsdelete(true);
+        admin.setUpdated_date(new Date());
         loginAdminService.updateAdmin(admin);
         model.addAttribute("insert",new Admin());
         model.addAttribute("update",new Admin());

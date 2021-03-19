@@ -1,5 +1,6 @@
 package com.example.backend_final_project.controller.Admin;
 
+
 import com.example.backend_final_project.model.Product_Property;
 import com.example.backend_final_project.service.Impl.ProductPropertyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,8 @@ public class AdminProduct_PropertyController {
     public String Home(ModelMap model){
         model.addAttribute("insert",new Product_Property());
         model.addAttribute("update",new Product_Property());
-        model.addAttribute("delete",new Product_Property());
-        return "main/tables/tk";
+
+        return "main/tables/product_pr";
     }
 
     @GetMapping("/list")
@@ -37,27 +38,30 @@ public class AdminProduct_PropertyController {
         productPropertyServiceImpl.addProductProperty(product_Property);
         model.addAttribute("insert",new Product_Property());
         model.addAttribute("update",new Product_Property());
-        model.addAttribute("delete",new Product_Property());
-        return "main/tables/tk";
+
+        return "main/tables/product_pr";
     }
 
     @PostMapping("/update")
     public String UpdateAdmin(ModelMap model, @ModelAttribute Product_Property product_Property){
+        System.out.println(product_Property.getID());
+        System.out.println(product_Property.getName());
+        System.out.println(product_Property.getCreated_date());
         product_Property.setUpdated_date(new Date());
         productPropertyServiceImpl.updateProductProperty(product_Property);
         model.addAttribute("insert",new Product_Property());
         model.addAttribute("update",new Product_Property());
-        model.addAttribute("delete",new Product_Property());
-        return "main/tables/tk";
+
+        return "main/tables/product_pr";
     }
 
-    @PostMapping("delete/{id}")
+    @GetMapping("delete")
     public String Delete(ModelMap model,@RequestParam("id") int id){
         productPropertyServiceImpl.deleteProductProperty(id);
         model.addAttribute("insert",new Product_Property());
         model.addAttribute("update",new Product_Property());
-        model.addAttribute("delete",new Product_Property());
-        return "main/tables/tk";
+
+        return "main/tables/product_pr";
 
     }
 }

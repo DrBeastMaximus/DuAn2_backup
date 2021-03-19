@@ -41,7 +41,7 @@ public class VoucherDAOImpl implements VoucherDAO {
     @Override
     public List<Voucher> getVoucherByCode(String code) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Voucher where Code like :code";
+        String hql = "FROM Voucher where Code = :code";
         Query query = session.createQuery(hql);
         query.setParameter("code", code);
         List<Voucher> list = query.list();

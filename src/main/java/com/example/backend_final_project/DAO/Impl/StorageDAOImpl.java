@@ -4,6 +4,8 @@ import com.example.backend_final_project.DAO.StorageDAO;
 import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
+import com.example.backend_final_project.model.Product;
+import com.example.backend_final_project.model.Provider;
 import com.example.backend_final_project.model.Storage;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -41,9 +43,10 @@ public class StorageDAOImpl implements StorageDAO {
     @Override
     public List<Storage> getStorageByProdID(int prodID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Storage where product.ID = :id";
+        Product product = session.get(Product.class, prodID);
+        String hql = "FROM Storage where product = :id";
         Query query = session.createQuery(hql);
-        query.setParameter("id", prodID);
+        query.setParameter("id", product);
         List<Storage> list = query.list();
         return list;
     }
@@ -51,9 +54,10 @@ public class StorageDAOImpl implements StorageDAO {
     @Override
     public List<Storage> getStorageByProviderID(int providerID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Storage where Provider.Id = :id";
+        Provider provider = session.get(Provider.class, providerID);
+        String hql = "FROM Storage where Provider = :id";
         Query query = session.createQuery(hql);
-        query.setParameter("id", providerID);
+        query.setParameter("id", provider);
         List<Storage> list = query.list();
         return list;
     }

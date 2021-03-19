@@ -113,6 +113,15 @@ public class UserDAOlmpl implements UserDAO {
         return list;
     }
     @Override
+    public User getUserByUsernameNoCheck(String username) {
+        Session session = this.sessionFactory.openSession();
+        String queryString = "FROM User WHERE Username = :username";
+        return (User) session.createQuery(queryString)
+                .setParameter("username", username)
+                .uniqueResult();
+    }
+
+    @Override
     @ExceptionHandler({UpdateDataException.class})
     public void updateUser(User user) {
         Session session = this.sessionFactory.openSession();

@@ -62,6 +62,12 @@ public class UserServicelmpl implements UserService {
     }
 
     @Override
+    public User getUserByUsernameNoCheck(String username) {
+        return userDAOlmpl.getUserByUsernameNoCheck(username);
+    }
+
+
+    @Override
     public void addUser(User user) {
         userDAOlmpl.addUser(user);
     }

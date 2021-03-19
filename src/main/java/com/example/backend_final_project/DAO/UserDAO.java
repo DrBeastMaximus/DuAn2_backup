@@ -24,7 +24,7 @@ public interface UserDAO {
     User getUserByEmail(String email);
 
     User getUserByUsername(String username);
-
+    User getUserByUsernameNoCheck(String username);
     void addUser(User user);
 
     void updateUser(User user);
