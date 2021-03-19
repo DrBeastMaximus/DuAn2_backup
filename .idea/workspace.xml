@@ -22,7 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="" />
+    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +178,7 @@
       <workItem from="1615967016466" duration="1188000" />
       <workItem from="1615969091741" duration="48965000" />
       <workItem from="1616074845243" duration="767000" />
-      <workItem from="1616168464389" duration="7283000" />
+      <workItem from="1616168464389" duration="7868000" />
     </task>
     <task id="LOCAL-00001" summary="Thêm Class DAO">
       <created>1613982667329</created>
@@ -303,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616175682834</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix API theo yêu cầu">
+      <created>1616175802765</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1616175802765</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,10 +378,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="689" y="285" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1616169033581" />
-    <state x="584" y="132" key="CommitChangelistDialog2" timestamp="1616175762499">
+    <state x="584" y="132" key="CommitChangelistDialog2" timestamp="1616175800545">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="584" y="132" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1616175762499" />
+    <state x="584" y="132" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1616175800545" />
     <state x="739" y="293" key="FileChooserDialogImpl" timestamp="1615965594778">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -449,10 +459,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="235" y="198" width="1465" height="719" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1615965598310" />
-    <state x="551" y="259" key="Vcs.Push.Dialog.v2" timestamp="1616175690204">
+    <state x="551" y="259" key="Vcs.Push.Dialog.v2" timestamp="1616175805451">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="551" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1616175690204" />
+    <state x="551" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1616175805451" />
     <state x="768" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616168717874">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
