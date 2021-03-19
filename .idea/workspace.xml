@@ -22,63 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/SupplierDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/SupplierService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_11_23_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_11_23_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newdb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/newdb.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductDetailDAOImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProviderDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/SupplierDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/StorageDAOImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/ProductDetailDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/ProviderDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/StorageDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProviderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProviderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminStorageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminStorageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Invoice_Detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Invoice_Detail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Product_Detail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Supplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Storage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProductDetailServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProviderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/SupplierServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/StorageServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/ProductDetailService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/ProviderService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/StorageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/StorageRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/StorageRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/kho.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/kho.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/nhacungcap.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/nhacungcap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductDetailDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProviderDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/StorageDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductDetailDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProviderDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/StorageDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProviderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProviderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminStorageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Invoice_Detail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Invoice_Detail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product_Detail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Provider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Storage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/ProductDetailServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/ProviderServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/StorageServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/ProductDetailService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/ProviderService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/StorageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/dto/StorageRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/dto/StorageRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/kho.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/kho.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/nhacungcap.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/nhacungcap.html" afterDir="false" />
-    </list>
+    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -231,7 +175,7 @@
       <workItem from="1615967016466" duration="1188000" />
       <workItem from="1615969091741" duration="48965000" />
       <workItem from="1616074845243" duration="767000" />
-      <workItem from="1616168464389" duration="7017000" />
+      <workItem from="1616168464389" duration="7283000" />
     </task>
     <task id="LOCAL-00001" summary="Thêm Class DAO">
       <created>1613982667329</created>
@@ -352,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615995630843</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix API theo yêu cầu">
+      <created>1616175682834</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1616175682834</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,7 +335,8 @@
     <MESSAGE value="Update 17/3/2021" />
     <MESSAGE value="API hoàn thành. Test 30%" />
     <MESSAGE value="API hoàn thành. Test 30% ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="API hoàn thành. Test 30% ok" />
+    <MESSAGE value="fix API theo yêu cầu" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix API theo yêu cầu" />
   </component>
   <component name="WindowStateProjectService">
     <state x="551" y="196" key="#Assign_Data_Sources" timestamp="1615977043573">
@@ -416,55 +368,55 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="689" y="285" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1616169033581" />
-    <state x="584" y="132" key="CommitChangelistDialog2" timestamp="1616094220978">
+    <state x="584" y="132" key="CommitChangelistDialog2" timestamp="1616175762499">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="584" y="132" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1616094220978" />
+    <state x="584" y="132" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1616175762499" />
     <state x="739" y="293" key="FileChooserDialogImpl" timestamp="1615965594778">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="739" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615606839166" />
     <state x="739" y="293" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1615965594778" />
-    <state width="1875" height="177" key="GridCell.Tab.0.bottom" timestamp="1616175493291">
+    <state width="1875" height="177" key="GridCell.Tab.0.bottom" timestamp="1616175728095">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="177" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493291" />
-    <state width="1875" height="177" key="GridCell.Tab.0.center" timestamp="1616175493291">
+    <state width="1875" height="177" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1616175728095" />
+    <state width="1875" height="177" key="GridCell.Tab.0.center" timestamp="1616175728095">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="177" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493291" />
-    <state width="1875" height="177" key="GridCell.Tab.0.left" timestamp="1616175493291">
+    <state width="1875" height="177" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1616175728095" />
+    <state width="1875" height="177" key="GridCell.Tab.0.left" timestamp="1616175728094">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="177" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493291" />
-    <state width="1875" height="177" key="GridCell.Tab.0.right" timestamp="1616175493291">
+    <state width="1875" height="177" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1616175728094" />
+    <state width="1875" height="177" key="GridCell.Tab.0.right" timestamp="1616175728095">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="177" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493291" />
-    <state width="1875" height="177" key="GridCell.Tab.1.bottom" timestamp="1616175493292">
+    <state width="1875" height="177" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1616175728095" />
+    <state width="1875" height="177" key="GridCell.Tab.1.bottom" timestamp="1616175728095">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="177" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493292" />
-    <state width="1875" height="177" key="GridCell.Tab.1.center" timestamp="1616175493292">
+    <state width="1875" height="177" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1616175728095" />
+    <state width="1875" height="177" key="GridCell.Tab.1.center" timestamp="1616175728095">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="177" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493292" />
-    <state width="1875" height="177" key="GridCell.Tab.1.left" timestamp="1616175493292">
+    <state width="1875" height="177" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1616175728095" />
+    <state width="1875" height="177" key="GridCell.Tab.1.left" timestamp="1616175728095">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="177" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493292" />
-    <state width="1875" height="177" key="GridCell.Tab.1.right" timestamp="1616175493292">
+    <state width="1875" height="177" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1616175728095" />
+    <state width="1875" height="177" key="GridCell.Tab.1.right" timestamp="1616175728095">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="223" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
-    <state width="1875" height="177" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493292" />
+    <state width="1875" height="177" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1616175728095" />
     <state width="1875" height="333" key="GridCell.Tab.2.bottom" timestamp="1616174717179">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -485,14 +437,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="489" y="193" key="Maven.ArtifactSearchDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1616172851310" />
+    <state x="183" y="88" key="MergeDialog" timestamp="1616175717614">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="183" y="88" key="MergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1616175717614" />
+    <state x="671" y="253" key="MultipleFileMergeDialog" timestamp="1616175717624">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="671" y="253" key="MultipleFileMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1616175717624" />
     <state x="235" y="198" width="1465" height="719" key="SettingsEditor" timestamp="1615965598310">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="235" y="198" width="1465" height="719" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1615965598310" />
-    <state x="551" y="259" key="Vcs.Push.Dialog.v2" timestamp="1615995633544">
+    <state x="551" y="259" key="Vcs.Push.Dialog.v2" timestamp="1616175690204">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="551" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1615995633544" />
+    <state x="551" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1616175690204" />
     <state x="768" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616168717874">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
