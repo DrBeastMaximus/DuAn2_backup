@@ -9,12 +9,14 @@ import com.example.backend_final_project.service.Impl.UsersTokenServiceImpl;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
+import java.net.URI;
 import java.util.Date;
 
 @RestController
@@ -70,7 +72,7 @@ public class RegisterPageREST {
     }
 
     @GetMapping("/emailconfirm/{token}")
-    public boolean confirmEmail(@PathVariable String token){
+    public ResponseEntity<?> confirmEmail(@PathVariable String token){
         if(TokenFactory.validateToken(token)){
         String id = TokenFactory.getUserIdFromJWT(token);
         User user = userService.getUserById(Integer.parseInt(id));
@@ -80,13 +82,13 @@ public class RegisterPageREST {
                 tokens.setEmailConfirmToken(null);
                 tokens.setAccountStatus(1);
                 tokenService.updateToken(tokens);
-                return true;
-            } else {return false;}
+                return ResponseEntity.status(HttpStatus.FOUND).location(URI.create("https://dwhigh.tech/")).build();
+            } else {return ResponseEntity.ok("Token is not valid");}
         }else{
-            return false;
+            return ResponseEntity.ok("Token is not valid");
             }
         } else{
-            return false;
+            return ResponseEntity.ok("Token is not valid");
         }
     }
 }

@@ -8,12 +8,14 @@ import com.example.backend_final_project.service.Impl.UserServicelmpl;
 import com.example.backend_final_project.service.Impl.UsersTokenServiceImpl;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
+import java.net.URI;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -46,7 +48,7 @@ public class ForgotPassREST {
         }
     }
     @GetMapping("/emailconfirm/{token}")
-    public boolean confirmEmail(@PathVariable String token){
+    public ResponseEntity<?> confirmEmail(@PathVariable String token){
         if(TokenFactory.validateToken(token)) {
             String id = TokenFactory.getUserIdFromJWT(token);
             User user = userService.getUserById(Integer.parseInt(id));
@@ -57,17 +59,17 @@ public class ForgotPassREST {
                     tokens.setPasswordReminderExpire(null);
                     tokens.setPasswordReminderToken(null);
                     tokenService.updateToken(tokens);
-                    return false;
+                    return ResponseEntity.ok("Token is out of date");
                 } else {
                     tokens.setAccountStatus(3);
                     tokenService.updateToken(tokens);
-                    return true;
+                    return ResponseEntity.status(HttpStatus.FOUND).location(URI.create("https://dwhigh.tech/resetpass")).build();
                 }
 
             } else {
-                return false;
+                return ResponseEntity.ok("Token is not valid");
             }
-        } else{return false;}
+        } else{return ResponseEntity.ok("Token is not valid");}
     }
 
     @PostMapping("/recover")
