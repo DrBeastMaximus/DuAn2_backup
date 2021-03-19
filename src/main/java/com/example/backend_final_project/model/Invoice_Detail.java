@@ -30,6 +30,9 @@ public class Invoice_Detail {
     @Column(name ="total")
     private float Total;
 
+    @Column(name ="price_sale")
+    private float Price_sale;
+
     @Column(name = "created_date")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -88,6 +91,14 @@ public class Invoice_Detail {
         Total = total;
     }
 
+    public float getPrice_sale() {
+        return Price_sale;
+    }
+
+    public void setPrice_sale(float price_sale) {
+        this.Price_sale = price_sale;
+    }
+
     public Date getCreated_date() {
         return Created_date;
     }
@@ -104,7 +115,7 @@ public class Invoice_Detail {
         Update_Date = update_Date;
     }
 
-    public Invoice_Detail(int ID, Invoice invoice, Product product, float product_Price, int quantity, float total, Date created_date, Date update_Date) {
+    public Invoice_Detail(int ID, Invoice invoice, Product product, float product_Price, int quantity, float total,float price_sale, Date created_date, Date update_Date) {
         this.ID = ID;
         Invoice = invoice;
         Product = product;
@@ -113,6 +124,7 @@ public class Invoice_Detail {
         Total = total;
         Created_date = created_date;
         Update_Date = update_Date;
+        Price_sale = price_sale;
     }
 
     public Invoice_Detail() {

@@ -1,8 +1,7 @@
 package com.example.backend_final_project.controller.Admin;
 
-import com.example.backend_final_project.model.Provider;
-import com.example.backend_final_project.model.Voucher;
-import com.example.backend_final_project.service.Impl.ProviderServiceImpl;
+import com.example.backend_final_project.model.Supplier;
+import com.example.backend_final_project.service.Impl.SupplierServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,51 +14,51 @@ import java.util.List;
 @RequestMapping("admin/provider")
 public class AdminProviderController {
     @Autowired
-    private ProviderServiceImpl providerServiceImpl;
+    private SupplierServiceImpl providerServiceImpl;
 
     @GetMapping("/home")
     public String Home(ModelMap model){
-        model.addAttribute("insert",new Provider());
-        model.addAttribute("update",new Provider());
+        model.addAttribute("insert",new Supplier());
+        model.addAttribute("update",new Supplier());
 
         return "main/tables/nhacungcap";
     }
 
     @GetMapping("/list")
     @ResponseBody
-    public List<Provider> getAdmin(){
-        List<Provider> ds = providerServiceImpl.getProviderList();
+    public List<Supplier> getAdmin(){
+        List<Supplier> ds = providerServiceImpl.getSupplierList();
         return ds;
     }
 
     @PostMapping("/insert")
-    public String InsertAdmin(ModelMap model, @ModelAttribute Provider provider){
-        provider.setCreated_date(new Date());
-        providerServiceImpl.addProvider(provider);
-        model.addAttribute("insert",new Provider());
-        model.addAttribute("update",new Provider());
+    public String InsertAdmin(ModelMap model, @ModelAttribute Supplier supplier){
+        supplier.setCreated_date(new Date());
+        providerServiceImpl.addSupplier(supplier);
+        model.addAttribute("insert",new Supplier());
+        model.addAttribute("update",new Supplier());
 
         return "main/tables/nhacungcap";
     }
 
     @PostMapping("/update")
-    public String UpdateAdmin(ModelMap model, @ModelAttribute Provider provider){
-        provider.setUpdated_date(new Date());
-        providerServiceImpl.updateProvider(provider);
-        model.addAttribute("insert",new Provider());
-        model.addAttribute("update",new Provider());
+    public String UpdateAdmin(ModelMap model, @ModelAttribute Supplier supplier){
+        supplier.setUpdated_date(new Date());
+        providerServiceImpl.updateSupplier(supplier);
+        model.addAttribute("insert",new Supplier());
+        model.addAttribute("update",new Supplier());
 
         return "main/tables/nhacungcap";
     }
 
     @GetMapping("delete")
     public String Delete(ModelMap model,@RequestParam("id") int id){
-        Provider provider = providerServiceImpl.getProviderById(id);
-        provider.setUpdated_date(new Date());
-        provider.setIsdelete(true);
-        providerServiceImpl.updateProvider(provider);
-        model.addAttribute("insert",new Provider());
-        model.addAttribute("update",new Provider());
+        Supplier supplier = providerServiceImpl.getSupplierById(id);
+        supplier.setUpdated_date(new Date());
+        supplier.setIsdelete(true);
+        providerServiceImpl.updateSupplier(supplier);
+        model.addAttribute("insert",new Supplier());
+        model.addAttribute("update",new Supplier());
 
         return "main/tables/nhacungcap";
 

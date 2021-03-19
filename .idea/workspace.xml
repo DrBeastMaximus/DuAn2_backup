@@ -23,10 +23,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/SupplierDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/SupplierService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_11_23_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_11_23_AM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newdb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/newdb.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductDetailDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProviderDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/SupplierDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/StorageDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/ProductDetailDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/ProviderDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/StorageDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProviderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProviderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminStorageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminStorageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Invoice_Detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Invoice_Detail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Product_Detail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Supplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Storage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProductDetailServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProviderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/SupplierServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/StorageServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/ProductDetailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/ProviderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/StorageService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/StorageRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/StorageRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/kho.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/kho.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/nhacungcap.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/nhacungcap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductDetailDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProviderDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/StorageDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductDetailDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProviderDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/StorageDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProviderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProviderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminStorageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Invoice_Detail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Invoice_Detail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product_Detail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Provider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Storage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/ProductDetailServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/ProviderServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/StorageServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/ProductDetailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/ProviderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/StorageService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/dto/StorageRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/dto/StorageRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/kho.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/kho.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/nhacungcap.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/nhacungcap.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +106,9 @@
     </expand>
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="DuAn2_backup" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -67,6 +121,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:\inel\IntelliJ IDEA 2020.2.1\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1oohJ2V4NQrxYSILDMBFwEqDWJv" />
   <component name="ProjectViewState">
@@ -95,14 +161,7 @@
       <recent name="D:\DuAn2_backup\src\main\resources\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication (1)">
-    <configuration name="BackendFinalProjectApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="backend_final_project" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.backend_final_project.BackendFinalProjectApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="BackendFinalProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="DuAn2_backup" />
       <extension name="coverage">
@@ -134,7 +193,7 @@
       </list>
     </option>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -172,7 +231,7 @@
       <workItem from="1615967016466" duration="1188000" />
       <workItem from="1615969091741" duration="48965000" />
       <workItem from="1616074845243" duration="767000" />
-      <workItem from="1616094396592" duration="2402000" />
+      <workItem from="1616168464389" duration="7017000" />
     </task>
     <task id="LOCAL-00001" summary="Thêm Class DAO">
       <created>1613982667329</created>
@@ -297,19 +356,20 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Thêm Class DAO" />
@@ -325,6 +385,134 @@
     <MESSAGE value="API hoàn thành. Test 30%" />
     <MESSAGE value="API hoàn thành. Test 30% ok" />
     <option name="LAST_COMMIT_MESSAGE" value="API hoàn thành. Test 30% ok" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="551" y="196" key="#Assign_Data_Sources" timestamp="1615977043573">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="551" y="196" key="#Assign_Data_Sources/0.0.1920.1080@0.0.1920.1080" timestamp="1615977043573" />
+    <state x="904" y="203" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615967279107">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="904" y="203" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1615967279107" />
+    <state x="764" y="247" key="#com.intellij.ide.util.MemberChooser" timestamp="1616170405981">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="764" y="238" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1615643147386" />
+    <state x="764" y="247" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1616170405981" />
+    <state x="668" y="290" key="#com.intellij.refactoring.memberPullUp.PullUpDialog" timestamp="1615354311174">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="668" y="290" key="#com.intellij.refactoring.memberPullUp.PullUpDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1615354311174" />
+    <state x="690" y="389" width="539" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1615627648388">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="389" width="539" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1615627648388" />
+    <state x="549" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1616169110749">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="549" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1616169110749" />
+    <state x="689" y="285" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616169033581">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="689" y="285" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1616169033581" />
+    <state x="584" y="132" key="CommitChangelistDialog2" timestamp="1616094220978">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="584" y="132" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1616094220978" />
+    <state x="739" y="293" key="FileChooserDialogImpl" timestamp="1615965594778">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="739" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615606839166" />
+    <state x="739" y="293" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1615965594778" />
+    <state width="1875" height="177" key="GridCell.Tab.0.bottom" timestamp="1616175493291">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
+    <state width="1875" height="177" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493291" />
+    <state width="1875" height="177" key="GridCell.Tab.0.center" timestamp="1616175493291">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="223" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
+    <state width="1875" height="177" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493291" />
+    <state width="1875" height="177" key="GridCell.Tab.0.left" timestamp="1616175493291">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="223" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
+    <state width="1875" height="177" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493291" />
+    <state width="1875" height="177" key="GridCell.Tab.0.right" timestamp="1616175493291">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="223" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
+    <state width="1875" height="177" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493291" />
+    <state width="1875" height="177" key="GridCell.Tab.1.bottom" timestamp="1616175493292">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="223" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
+    <state width="1875" height="177" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493292" />
+    <state width="1875" height="177" key="GridCell.Tab.1.center" timestamp="1616175493292">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="223" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
+    <state width="1875" height="177" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493292" />
+    <state width="1875" height="177" key="GridCell.Tab.1.left" timestamp="1616175493292">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="223" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
+    <state width="1875" height="177" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493292" />
+    <state width="1875" height="177" key="GridCell.Tab.1.right" timestamp="1616175493292">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="223" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615645028232" />
+    <state width="1875" height="177" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1616175493292" />
+    <state width="1875" height="333" key="GridCell.Tab.2.bottom" timestamp="1616174717179">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1875" height="333" key="GridCell.Tab.2.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1616174717179" />
+    <state width="1875" height="333" key="GridCell.Tab.2.center" timestamp="1616174717178">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1875" height="333" key="GridCell.Tab.2.center/0.0.1920.1080@0.0.1920.1080" timestamp="1616174717178" />
+    <state width="1875" height="333" key="GridCell.Tab.2.left" timestamp="1616174717178">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1875" height="333" key="GridCell.Tab.2.left/0.0.1920.1080@0.0.1920.1080" timestamp="1616174717178" />
+    <state width="1875" height="333" key="GridCell.Tab.2.right" timestamp="1616174717179">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1875" height="333" key="GridCell.Tab.2.right/0.0.1920.1080@0.0.1920.1080" timestamp="1616174717179" />
+    <state x="489" y="193" key="Maven.ArtifactSearchDialog" timestamp="1616172851310">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="489" y="193" key="Maven.ArtifactSearchDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1616172851310" />
+    <state x="235" y="198" width="1465" height="719" key="SettingsEditor" timestamp="1615965598310">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="235" y="198" width="1465" height="719" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1615965598310" />
+    <state x="551" y="259" key="Vcs.Push.Dialog.v2" timestamp="1615995633544">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="551" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1615995633544" />
+    <state x="768" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616168717874">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="768" y="455" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1616168717874" />
+    <state x="692" y="256" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1613982297106">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="692" y="256" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1613982297106" />
+    <state x="689" y="303" key="extract.method.dialog" timestamp="1616072450185">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="689" y="303" key="extract.method.dialog/0.0.1920.1080@0.0.1920.1080" timestamp="1616072450185" />
+    <state x="657" y="277" width="615" height="526" key="find.popup" timestamp="1616171257770">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="657" y="277" width="615" height="526" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1616171257770" />
+    <state x="701" y="157" key="refactoring.ChangeSignatureDialog" timestamp="1615476631860">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="701" y="157" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1615476631860" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -450,54 +638,59 @@
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>127</line>
-          <option name="timeStamp" value="81" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>124</line>
-          <option name="timeStamp" value="82" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>123</line>
-          <option name="timeStamp" value="83" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>122</line>
-          <option name="timeStamp" value="84" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>120</line>
-          <option name="timeStamp" value="85" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>121</line>
-          <option name="timeStamp" value="86" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="87" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/Utils/ImageUtil.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>118</line>
-          <option name="timeStamp" value="88" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/Utils/ImageUtil.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>116</line>
-          <option name="timeStamp" value="89" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>117</line>
-          <option name="timeStamp" value="90" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="95" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

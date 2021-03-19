@@ -294,7 +294,7 @@
                                                 </tr>
                                             </tfoot>
                                             <tbody>
-                                                <tr ng-repeat="pro in provider| filter:search|limitTo:8:begin">
+                                                <tr ng-repeat="pro in supplier| filter:search|limitTo:8:begin">
                                                     <td>{{pro.id}}</td>
                                                     <td>{{pro.name}}</td>
                                                     <td>{{pro.address}}</td>
@@ -450,19 +450,19 @@
 <script>
     var app = angular.module("myapp", []);
     app.controller("myctrl", function($scope, $http) {
-        $scope.provider = [];
-        $http.get("../provider/list").then(function(response) {
-            $scope.provider = response.data;
+        $scope.supplier = [];
+        $http.get("../supplier/list").then(function(response) {
+            $scope.supplier = response.data;
         });
 
 
         $scope.provider1= {};
 
         $scope.update = function (index) {
-            $scope.provider1 = $scope.provider[index];
+            $scope.provider1 = $scope.supplier[index];
         }
         $scope.begin = 0;
-        $scope.pageCount = Math.ceil($scope.provider.length / 8);
+        $scope.pageCount = Math.ceil($scope.supplier.length / 8);
         $scope.first = function() {
             $scope.begin = 0;
         }

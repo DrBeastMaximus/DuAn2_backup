@@ -1,11 +1,10 @@
 package com.example.backend_final_project.DAO.Impl;
 
-import com.example.backend_final_project.DAO.ProductDetailDAO;
+import com.example.backend_final_project.DAO.SupplierDAO;
 import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
-import com.example.backend_final_project.model.Invoice;
-import com.example.backend_final_project.model.Product_Detail;
+import com.example.backend_final_project.model.Supplier;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,44 +16,66 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.List;
+
 @Repository
 @Transactional
 @EnableTransactionManagement
-public class ProductDetailDAOImpl implements ProductDetailDAO {
+public class SupplierDAOImpl implements SupplierDAO {
     @Autowired
     private SessionFactory sessionFactory;
+
     @Override
-    public List<Product_Detail> getProductDetailList() {
+    public List<Supplier> getSupplierList() {
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from Product_Detail ", Product_Detail.class).getResultList();
+        return session.createQuery("from Supplier where isdelete=false", Supplier.class).getResultList();
     }
 
     @Override
-    public Product_Detail getProductDetailById(int id) {
+    public Supplier getSupplierById(int id) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "from Product_Detail where id = :id";
-        return (Product_Detail) session.createQuery(queryString)
+        String queryString = "from Supplier where isdelete=false and id = :id";
+        return (Supplier) session.createQuery(queryString)
                 .setParameter("id", id)
                 .uniqueResult();
     }
 
     @Override
-    public List<Product_Detail> getProductDetailListByProductId(int prodID) {
+    public List<Supplier> getSupplierByName(String name) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Product_Detail where Product.ID = :id";
+        String hql = "FROM Supplier where Name like :name and isdelete=false ";
         Query query = session.createQuery(hql);
-        query.setParameter("id", prodID);
-        List<Product_Detail> list = query.list();
+        query.setParameter("name", name);
+        List<Supplier> list = query.list();
+        return list;
+    }
+
+    @Override
+    public List<Supplier> getSupplierByPhone(String phone) {
+        Session session = this.sessionFactory.openSession();
+        String hql = "FROM Supplier where Phone like :phone and isdelete=false ";
+        Query query = session.createQuery(hql);
+        query.setParameter("phone", phone);
+        List<Supplier> list = query.list();
+        return list;
+    }
+
+    @Override
+    public List<Supplier> getSupplierByEmail(String email) {
+        Session session = this.sessionFactory.openSession();
+        String hql = "FROM Supplier where Email like :email and isdelete=false ";
+        Query query = session.createQuery(hql);
+        query.setParameter("email", email);
+        List<Supplier> list = query.list();
         return list;
     }
 
     @Override
     @ExceptionHandler({SaveDataErrorException.class})
-    public void addProductDetail(Product_Detail productDetail) {
+    public void addSupplier(Supplier supplier) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();
         try {
-            session.save(productDetail);
+            session.save(supplier);
             t.commit();
         } catch (Exception e) {
             t.rollback();
@@ -65,11 +86,11 @@ public class ProductDetailDAOImpl implements ProductDetailDAO {
 
     @Override
     @ExceptionHandler({UpdateDataException.class})
-    public void updateProductDetail(Product_Detail productDetail) {
+    public void updateSupplier(Supplier supplier) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();
         try {
-            session.update(productDetail);
+            session.update(supplier);
             t.commit();
         } catch (Exception e) {
             t.rollback();
@@ -80,12 +101,12 @@ public class ProductDetailDAOImpl implements ProductDetailDAO {
 
     @Override
     @ExceptionHandler({DeleteDataException.class})
-    public void deleteProductDetail(int productDetailID) {
+    public void deleteSupplier(int SupplierID) {
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();
         try {
-            Product_Detail productDetail = session.get(Product_Detail.class, productDetailID);
-            session.delete(productDetail);
+            Supplier supplier = session.get(Supplier.class, SupplierID);
+            session.delete(supplier);
             t.commit();
         } catch (Exception e) {
             t.rollback();

@@ -82,7 +82,7 @@ public class RegisterPageREST {
                 tokens.setEmailConfirmToken(null);
                 tokens.setAccountStatus(1);
                 tokenService.updateToken(tokens);
-                return ResponseEntity.status(HttpStatus.FOUND).location(URI.create("https://dwhigh.tech/")).build();
+                return ResponseEntity.status(HttpStatus.FOUND).location(URI.create("http://dwhigh.tech/")).build();
             } else {return ResponseEntity.ok("Token is not valid");}
         }else{
             return ResponseEntity.ok("Token is not valid");

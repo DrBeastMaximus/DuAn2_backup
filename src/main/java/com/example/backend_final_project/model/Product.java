@@ -34,6 +34,12 @@ public class Product {
     @Column(name = "issale")
     private boolean Issale;
 
+    @Column(name ="supplier_id")
+    private int Supplier_id;
+
+    @Column(name ="quantity")
+    private float Quantity;
+
     @Column(name = "created_date")
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -104,13 +110,6 @@ public class Product {
         Price = price;
     }
 
-    public float getPrice_slae() {
-        return Price_sale;
-    }
-
-    public void setPrice_slae(float price_slae) {
-        Price_sale = price_slae;
-    }
 
     public String getDescription() {
         return Description;
@@ -161,7 +160,30 @@ public class Product {
         this.gender = gender;
     }
 
-//    public Collection<Product_Detail> getProduct_Detail() {
+    public float getPrice_sale() {
+        return Price_sale;
+    }
+
+    public void setPrice_sale(float price_sale) {
+        Price_sale = price_sale;
+    }
+
+    public int getSupplier_id() {
+        return Supplier_id;
+    }
+
+    public void setSupplier_id(int supplier_id) {
+        this.Supplier_id = supplier_id;
+    }
+
+    public float getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(float quantity) {
+        this.Quantity = quantity;
+    }
+    //    public Collection<Product_Detail> getProduct_Detail() {
 //        return Product_Detail;
 //    }
 //
@@ -248,7 +270,7 @@ public class Product {
 //        Wishlish = wishlish;
 //    }
 
-    public Product(int ID, String code, String name, float price, float price_sale, String description, boolean issale, Date created_date, String creatd_by, boolean isdelete, boolean gender) {
+    public Product(int ID, String code, String name, float price, float price_sale, String description, boolean issale, Date created_date, String creatd_by, boolean isdelete, boolean gender, int supplier_id, float quantity) {
         this.ID = ID;
         Code = code;
         Name = name;
@@ -260,6 +282,8 @@ public class Product {
         Creatd_by = creatd_by;
         this.isdelete = isdelete;
         this.gender = gender;
+        Supplier_id = supplier_id;
+        Quantity = quantity;
     }
 
     public Product() {

@@ -202,7 +202,7 @@
                                                             <label class="control-label">Nhà cung cấp<star>*</star>
                                                             </label>
                                                             <select class="form-control" th:field="*{id_provider}">
-                                                                <option ng-repeat="pro in provider" type="number" value="{{pro.id}}">{{pro.name}}</option>
+                                                                <option ng-repeat="pro in supplier" type="number" value="{{pro.id}}">{{pro.name}}</option>
                                                                 <!--                                                                  <option value="false">Nữ</option>-->
                                                             </select>
 <!--                                                            <input class="form-control" name="password" type="password" required="true" aria-required="true">-->
@@ -251,8 +251,8 @@
                                                             <label class="control-label">Tên nhà cung cấp<star>*</star>
                                                             </label>
                                                             <select class="form-control" id="id_provider" name="id_provider">
-                                                                <option  type="number" value="{{storage1.provider.id}}" selected>{{storage1.provider.name}}</option>
-                                                                <option ng-repeat="pro in provider" type="number" value="{{pro.id}}">{{pro.name}}</option>
+                                                                <option  type="number" value="{{storage1.supplier.id}}" selected>{{storage1.supplier.name}}</option>
+                                                                <option ng-repeat="pro in supplier" type="number" value="{{pro.id}}">{{pro.name}}</option>
                                                                            </select>
                                                         <span class="material-input"></span></div>
                                                         <div class="label-floating is-empty">
@@ -299,7 +299,7 @@
                                                 <tr ng-repeat="st in storage| filter:search|limitTo:8:begin">
                                                     <td>{{st.id}}</td>
                                                     <td>{{st.product.code}}</td>
-                                                    <td>{{st.provider.name}}</td>
+                                                    <td>{{st.supplier.name}}</td>
                                                     <td>{{st.quantity}}</td>
                                                     <td class="td-actions text-right">        
 <!--                                                        <button type="button" rel="tooltip" class="btn btn-info btn-simple" data-original-title="" title="">-->

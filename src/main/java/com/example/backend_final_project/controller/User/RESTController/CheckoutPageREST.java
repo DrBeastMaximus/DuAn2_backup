@@ -26,6 +26,8 @@ public class CheckoutPageREST {
     private InvoiceDetailServiceImpl invoiceDetailService;
     @Autowired
     private VoucherServiceImpl voucherService;
+    @Autowired
+    private ProductServiceImpl productService;
 
 
     @GetMapping("/getVoucherInfo/{code}")
@@ -80,10 +82,15 @@ public class CheckoutPageREST {
                     invoiceD.setInvoice(invoice);
                     invoiceD.setQuantity(cartDetail.get(i).getQuantity());
                     invoiceD.setProduct(cartDetail.get(i).getProduct());
+
                     invoiceD.setProduct_Price(cartDetail.get(i).getProduct_Price());
                     invoiceD.setTotal(cartDetail.get(i).getTotal());
                     invoiceD.setCreated_date(new Date());
                     invoiceD.setUpdate_Date(new Date());
+                    Product p = productService.getProductById(cartDetail.get(i).getProduct().getID());
+                    p.setQuantity(p.getQuantity()-1);
+                    productService.updateProduct(p);
+                    invoiceD.setPrice_sale(p.getPrice_sale());
                     invoiceDetailService.addInvoiceDetail(invoiceD);
                     cartDetailService.deleteCartDetail(cartDetail.get(i).getId());
                 }
@@ -130,6 +137,10 @@ public class CheckoutPageREST {
                     invoiceD.setTotal(cartDetail.get(i).getTotal());
                     invoiceD.setCreated_date(new Date());
                     invoiceD.setUpdate_Date(new Date());
+                    Product p = productService.getProductById(cartDetail.get(i).getProduct().getID());
+                    p.setQuantity(p.getQuantity()-1);
+                    productService.updateProduct(p);
+                    invoiceD.setPrice_sale(p.getPrice_sale());
                     invoiceDetailService.addInvoiceDetail(invoiceD);
                     cartDetailService.deleteCartDetail(cartDetail.get(i).getId());
 

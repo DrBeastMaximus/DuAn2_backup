@@ -7,8 +7,8 @@ import java.util.Collection;
 import java.util.Date;
 
 @Entity
-@Table(name ="provider")
-public class Provider {
+@Table(name ="suppliers")
+public class Supplier {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -137,7 +137,7 @@ public class Provider {
 //        Storage = storage;
 //    }
 
-//    public Provider(int id, String name, String email, String phone, String address, boolean isdelete, Date created_date, String created_by, Date updated_date, String updated_by, Collection<Storage> storage) {
+//    public Supplier(int id, String name, String email, String phone, String address, boolean isdelete, Date created_date, String created_by, Date updated_date, String updated_by, Collection<Storage> storage) {
 //        Id = id;
 //        Name = name;
 //        Email = email;
@@ -151,7 +151,7 @@ public class Provider {
 //        Storage = storage;
 //    }
 
-    public Provider(int id, String name, String email, String phone, String address, boolean isdelete, Date created_date, String created_by, Date updated_date, String updated_by) {
+    public Supplier(int id, String name, String email, String phone, String address, boolean isdelete, Date created_date, String created_by, Date updated_date, String updated_by) {
         Id = id;
         Name = name;
         Email = email;
@@ -164,6 +164,6 @@ public class Provider {
         Updated_by = updated_by;
     }
 
-    public Provider() {
+    public Supplier() {
     }
 }
