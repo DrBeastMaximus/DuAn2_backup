@@ -29,7 +29,7 @@ public class NewsletterREST {
             newsletterService.addNewsletterEmail(newsletter);
             return ResponseEntity.ok("Đã đăng kí nhận tin thành công");
         } else{
-            return ResponseEntity.ok("Mail đã đăng kí nhận tin!");
+            return ResponseEntity.badRequest().body("Mail đã đăng kí nhận tin!");
         }
     }
 }

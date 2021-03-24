@@ -100,28 +100,34 @@
                                         <span class="sidebar-normal"> Tài khoản </span>
                                     </a>
                                 </li>
-                                <li class="active">
-                                    <a th:href="@{../user/home}">
+                                <li >
+                                    <a th:href="@{../user/home}" class="active">
                                         <span class="sidebar-mini"> US </span>
-                                        <span class="sidebar-normal">User</span>
+                                        <span class="sidebar-normal"> User </span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="../tables/sp.html">
-                                        <span class="sidebar-mini"> SP </span>
-                                        <span class="sidebar-normal"> Sản phẩm </span>
+                                    <a th:href="@{../productproperty/home}">
+                                        <span class="sidebar-mini"> TT </span>
+                                        <span class="sidebar-normal"> Thuộc Tính Sản Phẩm </span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="../tables/th.html">
-                                        <span class="sidebar-mini"> TH </span>
-                                        <span class="sidebar-normal"> Thương hiệu </span>
+                                    <a th:href="@{../provider/home}">
+                                        <span class="sidebar-mini"> NCC </span>
+                                        <span class="sidebar-normal"> Nhà Cung Cấp </span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="../tables/k.html">
+                                    <a th:href="@{../storage/home}">
                                         <span class="sidebar-mini"> K </span>
                                         <span class="sidebar-normal"> Kho </span>
+                                    </a>
+                                </li>
+                                <li >
+                                    <a th:href="@{../voucher/home}">
+                                        <span class="sidebar-mini"> V </span>
+                                        <span class="sidebar-normal"> Voucher </span>
                                     </a>
                                 </li>
                                 <li>
@@ -231,9 +237,9 @@
                                     <div class="toolbar">
                                         <!--        Here you can write extra buttons/actions for the toolbar              -->
                                         <button class="btn btn-warning" data-toggle="modal" data-target="#myModal">Thêm mới</button>
-<!--                                        <div class="input-group" style="margin-left: 1350px">-->
-<!--                                            <input type="search" ng-model="search" id="form1" class="form-control" placeholder="Search for..." ng-click="first()"/>-->
-<!--                                        </div>-->
+                                        <div class="input-group" style="margin-left: 1350px">
+                                            <input type="search" ng-model="search" id="form1" class="form-control" placeholder="Search for..." ng-click="first()"/>
+                                        </div>
                                         <div id="myModal" class="modal fade" role="dialog">                                                                                        
                                             <div class="container d-flex justify-content-center">
                                             <div class="card">
@@ -430,7 +436,7 @@
                                                 </tr>
                                             </tfoot>
                                             <tbody>
-                                                <tr ng-repeat="us in users">
+                                                <tr ng-repeat="us in users| filter:search|limitTo:8:begin">
                                                     <td>{{us.id}}</td>
                                                     <td>{{us.username}}</td>
                                                     <td>{{us.password}}</td>
@@ -457,15 +463,15 @@
                                                                                           
                                             </tbody>
                                         </table>
-<!--                                        <nav aria-label="Page navigation example">-->
-<!--                                            <ul class="pagination justify-content-center">-->
-<!--                                                <li class="page-item" ><a class="page-link" ng-click="first()">First</a></li>-->
-<!--                                                <li class="page-item"  ><a class="page-link" ng-click="prev()">Prev</a></li>-->
-<!--                                                <li class="page-item" ><a class="page-link" ng-click="next()">Next</a></li>-->
-<!--                                                <li class="page-item" ><a class="page-link" ng-click="last()">Last</a></li>-->
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item" ><a class="page-link" ng-click="first()">First</a></li>
+                                                <li class="page-item"  ><a class="page-link" ng-click="prev()">Prev</a></li>
+                                                <li class="page-item" ><a class="page-link" ng-click="next()">Next</a></li>
+                                                <li class="page-item" ><a class="page-link" ng-click="last()">Last</a></li>
 
-<!--                                            </ul>-->
-<!--                                        </nav>-->
+                                            </ul>
+                                        </nav>
                                     </div>
                                 </div>
                                 <!-- end content-->

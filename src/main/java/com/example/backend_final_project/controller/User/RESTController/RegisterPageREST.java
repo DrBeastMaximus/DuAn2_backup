@@ -85,10 +85,10 @@ public class RegisterPageREST {
                 return ResponseEntity.status(HttpStatus.FOUND).location(URI.create("http://dwhigh.tech/")).build();
             } else {return ResponseEntity.ok("Token is not valid");}
         }else{
-            return ResponseEntity.ok("Token is not valid");
+            return ResponseEntity.badRequest().body("Token is not valid");
             }
         } else{
-            return ResponseEntity.ok("Token is not valid");
+            return ResponseEntity.badRequest().body("Token is not valid");
         }
     }
 }

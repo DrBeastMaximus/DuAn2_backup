@@ -26,7 +26,9 @@ public class CartDAOImpl implements CartDAO {
     @Override
     public List<Cart> getCartList() {
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from Cart", Cart.class).getResultList();
+        List<Cart> list = session.createQuery("from Cart", Cart.class).getResultList();
+        session.close();
+        return list;
     }
 
     @Override

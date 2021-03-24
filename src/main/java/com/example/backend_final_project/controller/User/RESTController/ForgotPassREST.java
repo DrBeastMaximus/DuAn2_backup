@@ -67,9 +67,9 @@ public class ForgotPassREST {
                 }
 
             } else {
-                return ResponseEntity.ok("Token is not valid");
+                return ResponseEntity.badRequest().body("Token is not valid");
             }
-        } else{return ResponseEntity.ok("Token is not valid");}
+        } else{return ResponseEntity.badRequest().body("Token is not valid");}
     }
 
     @PostMapping("/recover")
@@ -91,13 +91,13 @@ public class ForgotPassREST {
                         tokens.setAccountStatus(1);
                         tokenService.updateToken(tokens);
                         return ResponseEntity.ok("Đã khôi phục tài khoản thành công");
-                    } else{return ResponseEntity.ok("Mật khẩu không đúng với xác nhận");}
+                    } else{return ResponseEntity.badRequest().body("Mật khẩu không đúng với xác nhận");}
                 } else {
-                return ResponseEntity.ok("Link khôi phục tài khoản sai hoặc hết hạn");}
+                return ResponseEntity.badRequest().body("Link khôi phục tài khoản sai hoặc hết hạn");}
             } else {
-                return ResponseEntity.ok("Link khôi phục tài khoản sai hoặc hết hạn");
+                return ResponseEntity.badRequest().body("Link khôi phục tài khoản sai hoặc hết hạn");
             }
-        }{return ResponseEntity.ok("Link khôi phục tài khoản sai hoặc hết hạn");}
+        }{return ResponseEntity.badRequest().body("Link khôi phục tài khoản sai hoặc hết hạn");}
     }
 
 

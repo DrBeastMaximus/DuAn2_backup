@@ -41,11 +41,11 @@ public class WishlistREST {
                     wl.setUser(usr);
                     wishlistService.addWishlish(wl);
                     return ResponseEntity.ok("Đã cập nhật Wishlist!");
-                } else {return ResponseEntity.ok("Sản phẩm đã có trong Wishlist!");}
+                } else {return ResponseEntity.badRequest().body("Sản phẩm đã có trong Wishlist!");}
             } else {
-                return ResponseEntity.ok("Thêm Wishlist thất bại!");
+                return ResponseEntity.badRequest().body("Thêm Wishlist thất bại!");
             }
-        }{return ResponseEntity.ok("Thêm Wishlist thất bại!");}
+        }{return ResponseEntity.badRequest().body("Thêm Wishlist thất bại!");}
     }
 
 
@@ -59,9 +59,9 @@ public class WishlistREST {
                 List<Wishlish> chk = wishlistService.getWishlishByUserID(userId);
                 return ResponseEntity.ok(chk);
             } else {
-                return ResponseEntity.ok("Wishlist trống!");
+                return ResponseEntity.badRequest().body("Wishlist trống!");
             }
-        }{return ResponseEntity.ok("Wishlist trống!");}
+        }{return ResponseEntity.badRequest().body("Wishlist trống!");}
     }
 
     @DeleteMapping("/removeProduct/{wishlistID}")
@@ -74,8 +74,8 @@ public class WishlistREST {
                         wishlistService.deleteWishlish(wishlistID);
                         return ResponseEntity.ok("Remove sản phẩm thành công");
             } else {
-                return ResponseEntity.ok("Không thể remove sản phẩm!");
+                return ResponseEntity.badRequest().body("Không thể remove sản phẩm!");
             }
-        }{return ResponseEntity.ok("Không thể remove sản phẩm!");}
+        }{return ResponseEntity.badRequest().body("Không thể remove sản phẩm!");}
     }
 }

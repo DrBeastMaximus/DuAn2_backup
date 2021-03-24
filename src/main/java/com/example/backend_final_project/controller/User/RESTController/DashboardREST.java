@@ -43,9 +43,9 @@ public class DashboardREST {
             if (user != null) {
                 return ResponseEntity.ok(user);
             } else {
-                return ResponseEntity.ok("Không có thông tin!");
+                return ResponseEntity.badRequest().body("Không có thông tin!");
             }
-        } else{return ResponseEntity.ok("Không có thông tin!");}
+        } else{return ResponseEntity.badRequest().body("Không có thông tin!");}
     }
 
     @PostMapping("/updateInfo")
@@ -58,9 +58,9 @@ public class DashboardREST {
                 userService.updateUser(user);
                 return ResponseEntity.ok("Đã cập nhật thông tin!");
             } else {
-                return ResponseEntity.ok("Cập nhật thông tin thất bại!");
+                return ResponseEntity.badRequest().body("Cập nhật thông tin thất bại!");
             }
-        }{return ResponseEntity.ok("Cập nhật thông tin thất bại!");}
+        }{return ResponseEntity.badRequest().body("Cập nhật thông tin thất bại!");}
     }
 
     @PostMapping("/changePassword")
@@ -78,12 +78,12 @@ public class DashboardREST {
                         usr.setPassword(newPass);
                         userService.updateUser(usr);
                         return ResponseEntity.ok("Đã cập nhật thông tin!");
-                    } else{return ResponseEntity.ok("Xác nhận và mật khẩu mới không đúng!");}
-                } else {return ResponseEntity.ok("Mật khẩu cũ không hợp lệ!");}
+                    } else{return ResponseEntity.badRequest().body("Xác nhận và mật khẩu mới không đúng!");}
+                } else {return ResponseEntity.badRequest().body("Mật khẩu cũ không hợp lệ!");}
             } else {
-                return ResponseEntity.ok("Cập nhật thông tin thất bại!");
+                return ResponseEntity.badRequest().body("Cập nhật thông tin thất bại!");
             }
-        }{return ResponseEntity.ok("Cập nhật thông tin thất bại!");}
+        }{return ResponseEntity.badRequest().body("Cập nhật thông tin thất bại!");}
     }
 
     @GetMapping("/viewPurchaseHistory")
@@ -99,9 +99,9 @@ public class DashboardREST {
                 }
                 return ResponseEntity.ok(invcD);
             } else {
-                return ResponseEntity.ok("Không có lịch sử mua hàng!");
+                return ResponseEntity.badRequest().body("Không có lịch sử mua hàng!");
             }
-        }{return ResponseEntity.ok("Không có lịch sử mua hàng!");}
+        }{return ResponseEntity.badRequest().body("Không có lịch sử mua hàng!");}
     }
 
     @PostMapping("/rateProduct")
@@ -125,8 +125,8 @@ public class DashboardREST {
                 commentService.addComment(comment);
                 return ResponseEntity.ok("Comment thành công!");
             } else {
-                return ResponseEntity.ok("Đã đánh giá mặt hàng này từ trước!");
+                return ResponseEntity.badRequest().body("Đã đánh giá mặt hàng này từ trước!");
             }
-        } else{return ResponseEntity.ok("Không có lịch sử mua hàng!");}
+        } else{return ResponseEntity.badRequest().body("Không có lịch sử mua hàng!");}
     }
 }

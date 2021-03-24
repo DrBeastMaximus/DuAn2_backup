@@ -32,7 +32,7 @@ public class DownloadImageREST {
     public ResponseEntity<byte[]> downloadImage (@PathVariable int productID, @PathVariable int pos, HttpServletResponse resp){
         List<Product_Image> prodImg = productImageService.getProductImagesByProdId(productID);
         resp.setHeader("Content-Disposition","attachment;filename="+ prodImg.get(pos).getImage());
-        return ResponseEntity.ok(ImageUtil.open(prodImg.get(pos).getImage()));
+        return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(ImageUtil.open(prodImg.get(pos).getImage()));
     }
 
     @GetMapping("/getIndexImages/{productID}")

@@ -32,15 +32,14 @@ public class CommentREST {
 
         return ResponseEntity.ok(usn);}
         else{
-            return ResponseEntity.ok("Không có comment");
+            return ResponseEntity.badRequest().body("Không có comment");
         }
     }
-    @GetMapping("/loadProductComment/pageCount/{page}/{size}/{prodID}")
-    public ResponseEntity<Integer> loadProductCommentPageCount(@PathVariable Integer page, @PathVariable Integer size,@PathVariable Integer prodID){
+    @GetMapping("/loadProductComment/pageCount/{size}/{prodID}")
+    public ResponseEntity<Integer> loadProductCommentPageCount( @PathVariable Integer size,@PathVariable Integer prodID){
         List<Comment> usn = commentService.getCommentListByProductId(prodID);
         PagedListHolder pg = new PagedListHolder(usn);
         pg.setPageSize(size);
-        pg.setPage(page);
 
         return ResponseEntity.ok(pg.getPageCount());
     }

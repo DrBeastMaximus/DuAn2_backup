@@ -48,11 +48,11 @@ public class CartPageREST {
                     cartService.addCart(cart);
                     return ResponseEntity.ok("Đã tạo giỏ hàng!");
                 } else {
-                    return ResponseEntity.ok("Giỏ hàng đã có sẵn!");
+                    return ResponseEntity.badRequest().body("Giỏ hàng đã có sẵn!");
                 }
-            } else {return ResponseEntity.ok("Không có user này!");}
+            } else {return ResponseEntity.badRequest().body("Không có user này!");}
         }else {
-            return ResponseEntity.ok("Tạo giỏ hàng thất bại!");
+            return ResponseEntity.badRequest().body("Tạo giỏ hàng thất bại!");
         }
     }
     @GetMapping("/viewCart")
@@ -68,16 +68,20 @@ public class CartPageREST {
                     if(cartD!=null || cart!=null){
                         return ResponseEntity.ok(cartD);
                     } else{
-                        return ResponseEntity.ok("Không có hàng trong giỏ!");
+                        return ResponseEntity.badRequest().body("Không có hàng trong giỏ!");
                     }
                 } else{
-                    return ResponseEntity.ok("Không có giỏ hàng nào!");
+                    return ResponseEntity.badRequest().body("Không có giỏ hàng nào!");
                 }
             }
-        }{return ResponseEntity.ok("Không có giỏ hàng này!");}
+        }{return ResponseEntity.badRequest().body("Không có giỏ hàng này!");}
 
     }
-
+//    @GetMapping("/test")
+//    public ResponseEntity<?> test(){
+//    List<Cart> b = cartService.getCartList();
+//        return ResponseEntity.ok(b);
+//    }
 
     @PutMapping("/addProduct")
     public ResponseEntity<?> addProduct(HttpServletRequest request, @RequestBody JsonNode json){
@@ -105,10 +109,10 @@ public class CartPageREST {
                     cartService.updateCart(cart);
                     return ResponseEntity.ok("Đã thêm sản phẩm vào giỏ hàng!");
                 } else{
-                    return ResponseEntity.ok("Không có giỏ hàng nào!");
+                    return ResponseEntity.badRequest().body("Không có giỏ hàng nào!");
                 }
             }
-        }{return ResponseEntity.ok("Không có giỏ hàng này!");}
+        }{return ResponseEntity.badRequest().body("Không có giỏ hàng này!");}
 
     }
 
@@ -128,10 +132,10 @@ public class CartPageREST {
                     cartService.updateCart(cart);
                     return ResponseEntity.ok("Cập nhật sản phẩm vào giỏ hàng!");
                 } else{
-                    return ResponseEntity.ok("Không có giỏ hàng nào!");
+                    return ResponseEntity.badRequest().body("Không có giỏ hàng nào!");
                 }
             }
-        }{return ResponseEntity.ok("Không có giỏ hàng này!");}
+        }{return ResponseEntity.badRequest().body("Không có giỏ hàng này!");}
     }
 
     @DeleteMapping("/removeProduct/{cartDetailID}")
@@ -146,9 +150,9 @@ public class CartPageREST {
                     cartDetailService.deleteCartDetail(cartDetailID);
                     return ResponseEntity.ok("Đã bỏ sản phẩm khỏi giỏ hàng!");
                 } else{
-                    return ResponseEntity.ok("Không có giỏ hàng nào!");
+                    return ResponseEntity.badRequest().body("Không có giỏ hàng nào!");
                 }
             }
-        }{return ResponseEntity.ok("Không có giỏ hàng này!");}
+        }{return ResponseEntity.badRequest().body("Không có giỏ hàng này!");}
     }
 }
