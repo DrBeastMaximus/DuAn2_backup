@@ -50,6 +50,16 @@ public class ProductPropertyDetailDAOImpl implements ProductPropertyDetailDAO {
     }
 
     @Override
+    public List<Product_Property_Detail> getNameByProductPropertyId(int id) {
+        Session session = this.sessionFactory.openSession();
+        String hql = "SELECT DISTINCT PD.Description FROM Product_Property_Detail PD where Product_Property.ID = :id";
+        Query query = session.createQuery(hql);
+        query.setParameter("id", id);
+        List<Product_Property_Detail> list = query.list();
+        return list;
+    }
+
+    @Override
     public List<Product_Property_Detail> getByProductId(int prodID) {
         Session session = this.sessionFactory.openSession();
         String hql = "FROM Product_Property_Detail where Product.ID = :id";
@@ -58,6 +68,7 @@ public class ProductPropertyDetailDAOImpl implements ProductPropertyDetailDAO {
         List<Product_Property_Detail> list = query.list();
         return list;
     }
+
 
     @Override
     public List<Product_Property_Detail> getByProductIdAndPropertyRoot(int prodID, int propertyRootID) {

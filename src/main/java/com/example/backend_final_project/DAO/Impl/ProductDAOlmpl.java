@@ -88,37 +88,37 @@ public class ProductDAOlmpl implements ProductDAO {
         return session.createQuery("from Product where isdelete=0 and gender=1", Product.class).getResultList();
     }
     @Override
-    public List<Product> getHotMaleProductListFiltered(int pdID) {
+    public List<Product> getHotMaleProductListFiltered(String pdID) {
         Session session = this.sessionFactory.openSession();
         return session.createQuery("FROM Product where isdelete=0 and gender=1 and id in (\n" +
-                "SELECT Product FROM Product_Property_Detail WHERE id = : pdID)", Product.class).setParameter("pdID", pdID)
+                "SELECT Product FROM Product_Property_Detail WHERE Description = : pdID)", Product.class).setParameter("pdID", pdID)
                 .list();
 
     }
 
     @Override
-    public List<Product> getHotFemaleProductListFiltered(int pdID) {
+    public List<Product> getHotFemaleProductListFiltered(String pdID) {
         Session session = this.sessionFactory.openSession();
         return session.createQuery("FROM Product where isdelete=0 and gender=0 and id in (\n" +
-                "SELECT Product FROM Product_Property_Detail WHERE id = : pdID)", Product.class).setParameter("pdID", pdID)
+                "SELECT Product FROM Product_Property_Detail WHERE Description = : pdID)", Product.class).setParameter("pdID", pdID)
                 .list();
 
     }
 
     @Override
-    public List<Product> getHotFemaleProductListFilteredInRange(int pdID, long min, long max) {
+    public List<Product> getHotFemaleProductListFilteredInRange(String pdID, long min, long max) {
         Session session = this.sessionFactory.openSession();
         return session.createQuery("FROM Product where isdelete=0 and gender=0 and (price Between :min and :max) and id in (\n" +
-                "SELECT Product FROM Product_Property_Detail WHERE id = : pdID)", Product.class).setParameter("pdID", pdID).setParameter("min", min).setParameter("max",max)
+                "SELECT Product FROM Product_Property_Detail WHERE Description = : pdID)", Product.class).setParameter("pdID", pdID).setParameter("min", min).setParameter("max",max)
                 .list();
 
     }
 
     @Override
-    public List<Product> getHotMaleProductListFilteredInRange(int pdID, long min, long max) {
+    public List<Product> getHotMaleProductListFilteredInRange(String pdID, long min, long max) {
         Session session = this.sessionFactory.openSession();
         return session.createQuery("FROM Product where isdelete=0 and gender=1 and (price Between :min and :max) and id in (\n" +
-                "SELECT Product FROM Product_Property_Detail WHERE id = : pdID)", Product.class).setParameter("pdID", pdID).setParameter("min", min).setParameter("max",max)
+                "SELECT Product FROM Product_Property_Detail WHERE Description = : pdID)", Product.class).setParameter("pdID", pdID).setParameter("min", min).setParameter("max",max)
                 .list();
 
     }
@@ -157,15 +157,15 @@ public class ProductDAOlmpl implements ProductDAO {
         return session.createQuery("from Product where isdelete=false and issale=1 ", Product.class).getResultList();
     }
 
-    @Override
-    public List<Product> getProductListByBrandId(int brandID) {
-        Session session = this.sessionFactory.openSession();
-        String hql = "FROM Product where Brand like :brandID and isdelete=false";
-        Query query = session.createQuery(hql);
-        query.setParameter("brandID", brandID);
-        List<Product> list = query.list();
-        return list;
-    }
+//    @Override
+//    public List<Product> getProductListByBrandId(int brandID) {
+//        Session session = this.sessionFactory.openSession();
+//        String hql = "FROM Product where Brand like :brandID and isdelete=false";
+//        Query query = session.createQuery(hql);
+//        query.setParameter("brandID", brandID);
+//        List<Product> list = query.list();
+//        return list;
+//    }
 
     @Override
     public List<Product> getProductListByGender(Boolean gender) {
@@ -177,15 +177,15 @@ public class ProductDAOlmpl implements ProductDAO {
         return list;
     }
 
-    @Override
-    public List<Product> getProductListByProdTypeId(int prodTypeID) {
-        Session session = this.sessionFactory.openSession();
-        String hql = "FROM Product where Product_type = :prodTypeID and isdelete=false";
-        Query query = session.createQuery(hql);
-        query.setParameter("prodTypeID", prodTypeID);
-        List<Product> list = query.list();
-        return list;
-    }
+//    @Override
+//    public List<Product> getProductListByProdTypeId(int prodTypeID) {
+//        Session session = this.sessionFactory.openSession();
+//        String hql = "FROM Product where Product_type = :prodTypeID and isdelete=false";
+//        Query query = session.createQuery(hql);
+//        query.setParameter("prodTypeID", prodTypeID);
+//        List<Product> list = query.list();
+//        return list;
+//    }
 
     @Override
     public List<Product> getProductListByKeyword(String keyword) {

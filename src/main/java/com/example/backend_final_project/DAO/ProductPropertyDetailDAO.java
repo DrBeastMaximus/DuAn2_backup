@@ -11,6 +11,8 @@ public interface ProductPropertyDetailDAO {
 
     List<Product_Property_Detail> getByProductPropertyId(int id);
 
+    List<Product_Property_Detail> getNameByProductPropertyId(int id);
+
     List<Product_Property_Detail> getByProductId(int prodID);
 
     List<Product_Property_Detail> getByProductIdAndPropertyRoot(int prodID, int propertyRootID);

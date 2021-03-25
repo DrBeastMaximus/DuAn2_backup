@@ -20,4 +20,6 @@ public interface ProductPropertyDetailService {
     void deleteProductPropertyD(int productPropertyDetailID);
 
     List<Product_Property_Detail> getByProductIdAndPropertyRoot(int prodID, int propertyRootID);
+
+    List<Product_Property_Detail> getNameByProductPropertyId(int id);
 }

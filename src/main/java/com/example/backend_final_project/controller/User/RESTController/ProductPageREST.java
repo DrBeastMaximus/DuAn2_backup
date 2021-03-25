@@ -27,9 +27,9 @@ public class ProductPageREST {
 //        return ResponseEntity.ok(prod);
 //    }
     @GetMapping("/gender/male/totalRecord/{page}/{size}/{propertyids}")
-    public ResponseEntity<Integer> totalMaleProdRecordsFiltered(@PathVariable Integer page,@PathVariable Integer size,@PathVariable List<Integer> propertyids){
+    public ResponseEntity<Integer> totalMaleProdRecordsFiltered(@PathVariable Integer page,@PathVariable Integer size,@PathVariable List<String> propertyids){
         List<Product> usn = new ArrayList<>();
-        for(Integer x: propertyids){
+        for(String x: propertyids){
             usn.addAll(productService.getHotMaleProductListFiltered(x));
 
         }
@@ -40,9 +40,9 @@ public class ProductPageREST {
         return ResponseEntity.ok(pg.getPageCount());
     }
     @GetMapping("/gender/male/totalRecord/{page}/{size}/{min}/{max}/{propertyids}")
-    public ResponseEntity<Integer> totalMaleProdRecordsFilteredInRange(@PathVariable Integer page,@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max,@PathVariable List<Integer> propertyids){
+    public ResponseEntity<Integer> totalMaleProdRecordsFilteredInRange(@PathVariable Integer page,@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max,@PathVariable List<String> propertyids){
         List<Product> usn = new ArrayList<>();
-        for(Integer x: propertyids){
+        for(String x: propertyids){
             usn.addAll(productService.getHotMaleProductListFilteredInRange(x,min,max));
 
         }
@@ -53,9 +53,9 @@ public class ProductPageREST {
         return ResponseEntity.ok(pg.getPageCount());
     }
     @GetMapping("/gender/female/totalRecord/{page}/{size}/{min}/{max}/{propertyids}")
-    public ResponseEntity<Integer> totalFemaleProdRecordsFilteredInRange(@PathVariable Integer page,@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max,@PathVariable List<Integer> propertyids){
+    public ResponseEntity<Integer> totalFemaleProdRecordsFilteredInRange(@PathVariable Integer page,@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max,@PathVariable List<String> propertyids){
         List<Product> usn = new ArrayList<>();
-        for(Integer x: propertyids){
+        for(String x: propertyids){
             usn.addAll(productService.getHotFemaleProductListFilteredInRange(x,min,max));
 
         }
@@ -85,9 +85,9 @@ public class ProductPageREST {
     }
 
     @GetMapping("/gender/female/totalRecord/{page}/{size}/{propertyids}")
-    public ResponseEntity<Integer> totalFemaleProdRecordsFiltered(@PathVariable Integer page,@PathVariable Integer size,@PathVariable List<Integer> propertyids){
+    public ResponseEntity<Integer> totalFemaleProdRecordsFiltered(@PathVariable Integer page,@PathVariable Integer size,@PathVariable List<String> propertyids){
         List<Product> usn = new ArrayList<>();
-        for(Integer x: propertyids){
+        for(String x: propertyids){
             usn.addAll(productService.getHotFemaleProductListFiltered(x));
 
         }
@@ -220,10 +220,10 @@ public class ProductPageREST {
             @PathVariable Integer page,
             @PathVariable Integer size,
             @PathVariable String sort,
-            @PathVariable List<Integer> propertyids) {
+            @PathVariable List<String> propertyids) {
 
         List<Product> usn = new ArrayList<>();
-        for(Integer x: propertyids){
+        for(String x: propertyids){
             usn.addAll(productService.getHotMaleProductListFiltered(x));
 
         }
@@ -257,10 +257,10 @@ public class ProductPageREST {
             @PathVariable Integer page,
             @PathVariable Integer size,
             @PathVariable String sort,@PathVariable Long min, @PathVariable Long max,
-            @PathVariable List<Integer> propertyids) {
+            @PathVariable List<String> propertyids) {
 
         List<Product> usn = new ArrayList<>();
-        for(Integer x: propertyids){
+        for(String x: propertyids){
             usn.addAll(productService.getHotMaleProductListFilteredInRange(x,min,max));
 
         }
@@ -294,10 +294,10 @@ public class ProductPageREST {
             @PathVariable Integer page,
             @PathVariable Integer size,
             @PathVariable String sort,@PathVariable Long min, @PathVariable Long max,
-            @PathVariable List<Integer> propertyids) {
+            @PathVariable List<String> propertyids) {
 
         List<Product> usn = new ArrayList<>();
-        for(Integer x: propertyids){
+        for(String x: propertyids){
             usn.addAll(productService.getHotFemaleProductListFilteredInRange(x,min,max));
 
         }
@@ -331,10 +331,10 @@ public class ProductPageREST {
             @PathVariable Integer page,
             @PathVariable Integer size,
             @PathVariable String sort,
-            @PathVariable List<Integer> propertyids) {
+            @PathVariable List<String> propertyids) {
 
         List<Product> usn = new ArrayList<>();
-        for(Integer x: propertyids){
+        for(String x: propertyids){
             usn.addAll(productService.getHotFemaleProductListFiltered(x));
 
         }

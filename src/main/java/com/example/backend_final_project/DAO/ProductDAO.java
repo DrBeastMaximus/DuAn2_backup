@@ -16,8 +16,6 @@ public interface ProductDAO {
     List<Product> getHotFemaleProductPage(int pos, int pageSize);
 
 
-
-
     List<Product> getMaleProductList();
 
     List<Product> getFemaleProductList();
@@ -26,13 +24,13 @@ public interface ProductDAO {
 
     List<Product> getHotMaleProductList();
 
-    List<Product> getHotMaleProductListFiltered(int pdID);
+    List<Product> getHotMaleProductListFiltered(String pdID);
 
-    List<Product> getHotFemaleProductListFiltered(int pdID);
+    List<Product> getHotFemaleProductListFiltered(String pdID);
 
-    List<Product> getHotFemaleProductListFilteredInRange(int pdID, long min, long max);
+    List<Product> getHotFemaleProductListFilteredInRange(String pdID, long min, long max);
 
-    List<Product> getHotMaleProductListFilteredInRange(int pdID, long min, long max);
+    List<Product> getHotMaleProductListFilteredInRange(String pdID, long min, long max);
 
     List<Product> getHotFemaleProductListInRange(long min, long max);
 
@@ -44,11 +42,9 @@ public interface ProductDAO {
 
     List<Product> getSalesProductList();
 
-    List<Product> getProductListByBrandId(int brandID);
 
     List<Product> getProductListByGender(Boolean gender);
 
-    List<Product> getProductListByProdTypeId(int prodTypeID);
 
     List<Product> getProductListByKeyword(String keyword);
 

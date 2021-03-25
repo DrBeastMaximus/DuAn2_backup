@@ -59,4 +59,11 @@ public class ProductPropertyDetailServiceImpl implements ProductPropertyDetailSe
     public List<Product_Property_Detail> getByProductIdAndPropertyRoot(int prodID, int propertyRootID) {
         return productPropertyDetailDAOlmpl.getByProductIdAndPropertyRoot(prodID,propertyRootID);
     }
+
+    @Override
+    public List<Product_Property_Detail> getNameByProductPropertyId(int id) {
+        return productPropertyDetailDAOlmpl.getNameByProductPropertyId(id);
+    }
+
+
 }

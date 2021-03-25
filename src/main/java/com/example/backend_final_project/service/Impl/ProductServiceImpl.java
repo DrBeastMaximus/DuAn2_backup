@@ -43,12 +43,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getHotFemaleProductListFilteredInRange(int pdID, long min, long max) {
+    public List<Product> getHotFemaleProductListFilteredInRange(String pdID, long min, long max) {
         return productDAOlmpl.getHotFemaleProductListFilteredInRange(pdID,min,max);
     }
 
     @Override
-    public List<Product> getHotMaleProductListFilteredInRange(int pdID, long min, long max) {
+    public List<Product> getHotMaleProductListFilteredInRange(String pdID, long min, long max) {
         return productDAOlmpl.getHotMaleProductListFilteredInRange(pdID,min,max);
     }
 
@@ -63,12 +63,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getHotMaleProductListFiltered(int pdID) {
+    public List<Product> getHotMaleProductListFiltered(String pdID) {
         return productDAOlmpl.getHotMaleProductListFiltered(pdID);
     }
 
     @Override
-    public List<Product> getHotFemaleProductListFiltered(int pdID) {
+    public List<Product> getHotFemaleProductListFiltered(String pdID) {
         return  productDAOlmpl.getHotFemaleProductListFiltered(pdID);
     }
 
@@ -107,19 +107,10 @@ public class ProductServiceImpl implements ProductService {
         return productDAOlmpl.getSalesProductList();
     }
 
-    @Override
-    public List<Product> getProductListByBrandId(int brandID) {
-        return productDAOlmpl.getProductListByBrandId(brandID);
-    }
 
     @Override
     public List<Product> getProductListByGender(Boolean gender) {
         return productDAOlmpl.getProductListByGender(gender);
-    }
-
-    @Override
-    public List<Product> getProductListByProdTypeId(int prodTypeID) {
-        return productDAOlmpl.getProductListByProdTypeId(prodTypeID);
     }
 
     @Override
