@@ -54,4 +54,9 @@ public class ProductPropertyDetailServiceImpl implements ProductPropertyDetailSe
     public void deleteProductPropertyD(int productPropertyDetailID) {
         productPropertyDetailDAOlmpl.deleteProductPropertyD(productPropertyDetailID);
     }
+
+    @Override
+    public List<Product_Property_Detail> getByProductIdAndPropertyRoot(int prodID, int propertyRootID) {
+        return productPropertyDetailDAOlmpl.getByProductIdAndPropertyRoot(prodID,propertyRootID);
+    }
 }

@@ -13,6 +13,8 @@ public interface ProductPropertyDetailDAO {
 
     List<Product_Property_Detail> getByProductId(int prodID);
 
+    List<Product_Property_Detail> getByProductIdAndPropertyRoot(int prodID, int propertyRootID);
+
     void addProductPropertyD(Product_Property_Detail productPropertyD);
 
     void updateProductPropertyD(Product_Property_Detail productPropertyD);

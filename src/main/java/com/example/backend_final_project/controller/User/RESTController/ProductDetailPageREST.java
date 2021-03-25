@@ -2,8 +2,11 @@ package com.example.backend_final_project.controller.User.RESTController;
 
 import com.example.backend_final_project.model.Product;
 import com.example.backend_final_project.model.Product_Image;
+import com.example.backend_final_project.model.Product_Property_Detail;
 import com.example.backend_final_project.model.Supplier;
 import com.example.backend_final_project.service.Impl.*;
+import com.example.backend_final_project.service.ProductPropertyDetailService;
+import com.example.backend_final_project.service.ProductPropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +28,11 @@ public class ProductDetailPageREST {
     private ProductImageServiceImpl productImageService;
     @Autowired
     private SupplierServiceImpl supplierService;
+    @Autowired
+    private ProductPropertyService ppService;
+    @Autowired
+    private ProductPropertyDetailService ppdService;
+
     @GetMapping("{productID}")
     public ResponseEntity<?> viewProduct(@PathVariable Integer productID){
         Product product = productService.getProductById(productID);
@@ -32,12 +40,14 @@ public class ProductDetailPageREST {
         String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+productID;
         Supplier supplier = supplierService.getSupplierById(product.getSupplier_id());
         List listImg = new ArrayList();
+        List<Product_Property_Detail> ppD = ppdService.getByProductIdAndPropertyRoot(productID,13);
         for(int i=0;i<productImage.size();i++){
             listImg.add("http://dwhigh.tech:8080/api/image/getImages/"+productID+"/"+i);
         }
         Map<String, Object> obj = new LinkedHashMap<>();
 
         obj.put("product",product);
+        obj.put("brand",ppD.get(0).getDescription());
         obj.put("supplier_name",supplier);
         obj.put("indexImage", indexImg);
         obj.put("addtionalImages",listImg);

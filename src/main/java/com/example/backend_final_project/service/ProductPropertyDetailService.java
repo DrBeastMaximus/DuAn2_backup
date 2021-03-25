@@ -18,4 +18,6 @@ public interface ProductPropertyDetailService {
     void updateProductPropertyD(Product_Property_Detail productPropertyD);
 
     void deleteProductPropertyD(int productPropertyDetailID);
+
+    List<Product_Property_Detail> getByProductIdAndPropertyRoot(int prodID, int propertyRootID);
 }

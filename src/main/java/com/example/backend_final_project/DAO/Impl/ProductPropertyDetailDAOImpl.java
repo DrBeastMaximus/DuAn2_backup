@@ -60,6 +60,17 @@ public class ProductPropertyDetailDAOImpl implements ProductPropertyDetailDAO {
     }
 
     @Override
+    public List<Product_Property_Detail> getByProductIdAndPropertyRoot(int prodID, int propertyRootID) {
+        Session session = this.sessionFactory.openSession();
+        String hql = "FROM Product_Property_Detail where Product.ID = :id and Product_Property.ID = :id2";
+        Query query = session.createQuery(hql);
+        query.setParameter("id", prodID);
+        query.setParameter("id2", propertyRootID);
+        List<Product_Property_Detail> list = query.list();
+        return list;
+    }
+
+    @Override
     @ExceptionHandler({SaveDataErrorException.class})
     public void addProductPropertyD(Product_Property_Detail productPropertyD) {
         Session session = this.sessionFactory.openSession();
