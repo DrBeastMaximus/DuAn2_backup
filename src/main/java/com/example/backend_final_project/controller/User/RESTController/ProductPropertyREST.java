@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,15 +27,15 @@ public class ProductPropertyREST {
     @GetMapping("/getProperty")
     public ResponseEntity getRoot(){
         List<Product_Property> pd = ppService.getProductPropertyList();
-        Map<String, Object> obj = new LinkedHashMap<>();
+        List ls = new ArrayList();
         for(int i=0;i<pd.size();i++){
-            obj.put("propertyRoot",pd);
+            Map<String, Object> obj = new LinkedHashMap<>();
+            obj.put("propertyRootName",pd.get(i).getName());
+            obj.put("propertyRootID",pd.get(i).getID());
             obj.put("propertyDetail",ppdService.getNameByProductPropertyId(pd.get(i).getID()));
+            ls.add(obj);
         }
-
-
-
-        return ResponseEntity.ok(obj);
+        return ResponseEntity.ok(ls);
     }
 
 //    @GetMapping("/getBranchProperty/{rootID}")
