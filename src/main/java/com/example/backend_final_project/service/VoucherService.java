@@ -19,5 +19,5 @@ public interface VoucherService {
 
     void updateVoucher(Voucher voucher);
 
-    void deleteVoucher(int voucherID);
+    boolean deleteVoucher(int voucherID);
 }

@@ -100,18 +100,23 @@ public class VoucherDAOImpl implements VoucherDAO {
 
     @Override
     @ExceptionHandler({DeleteDataException.class})
-    public void deleteVoucher(int voucherID) {
+    public boolean deleteVoucher(int voucherID) {
+        boolean ketqua = false;
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();
         try {
             Voucher voucher = session.get(Voucher.class, voucherID);
             session.delete(voucher);
             t.commit();
+            ketqua = true;
         } catch (Exception e) {
-            t.rollback();
-            e.printStackTrace();
+//            t.rollback();
+//            e.printStackTrace();
+            ketqua = false;
         } finally {
             session.close();
         }
+        return ketqua;
     }
+
 }

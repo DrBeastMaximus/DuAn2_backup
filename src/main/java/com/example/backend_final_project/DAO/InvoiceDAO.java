@@ -12,7 +12,7 @@ public interface InvoiceDAO {
     Invoice getInvoiceById(int id);
 
     List<Invoice> getInvoiceListByUserId(int userID);
-
+    List<Invoice> getInvoiceListByStatus(int status);
     List<Invoice> getInvoiceListByVoucherId(int voucherID);
 
     void addInvoice(Invoice invoice);

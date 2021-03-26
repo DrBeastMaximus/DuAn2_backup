@@ -33,6 +33,11 @@ public class InvoiceServiceImpl implements InvoiceService {
 
         return invoiceDAOlmpl.getInvoiceListByUserId(userID);
     }
+    @Override
+    public List<Invoice> getInvoiceListByStatus(int status) {
+        return invoiceDAOlmpl.getInvoiceListByStatus(status);
+    }
+
 
     @Override
     public List<Invoice> getInvoiceListByVoucherId(int voucherID) {

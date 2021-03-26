@@ -45,7 +45,9 @@ public class ProductPropertyServiceImpl implements ProductPropertyService {
     }
 
     @Override
-    public void deleteProductProperty(int productPropertyID) {
-    productPropertyDAOlmpl.deleteProductProperty(productPropertyID);
+    public boolean deleteProductProperty(int productPropertyID) {
+        boolean ketqua = productPropertyDAOlmpl.deleteProductProperty(productPropertyID);
+        return ketqua;
     }
+
 }

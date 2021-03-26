@@ -78,7 +78,9 @@ public class UserServicelmpl implements UserService {
     }
 
     @Override
-    public void deleteUser(int userID) {
-        userDAOlmpl.deleteUser(userID);
+    public boolean deleteUser(int userID) {
+
+        boolean ketqua  = userDAOlmpl.deleteUser(userID);
+        return ketqua;
     }
 }

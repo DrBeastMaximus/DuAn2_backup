@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-@RequestMapping("admin/provider")
+@RequestMapping("admin/supplier")
 public class AdminProviderController {
     @Autowired
     private SupplierServiceImpl providerServiceImpl;
@@ -29,6 +29,28 @@ public class AdminProviderController {
     public List<Supplier> getAdmin(){
         List<Supplier> ds = providerServiceImpl.getSupplierList();
         return ds;
+    }
+
+    @GetMapping("/insert")
+    public String insert(ModelMap model){
+        model.addAttribute("insert",new Supplier());
+        model.addAttribute("update",new Supplier());
+
+        return "main/tables/nhacungcap";
+    }
+    @GetMapping("/update")
+    public String update(ModelMap model){
+        model.addAttribute("insert",new Supplier());
+        model.addAttribute("update",new Supplier());
+
+        return "main/tables/nhacungcap";
+    }
+    @GetMapping("/delete")
+    public String delete(ModelMap model){
+        model.addAttribute("insert",new Supplier());
+        model.addAttribute("update",new Supplier());
+
+        return "main/tables/nhacungcap";
     }
 
     @PostMapping("/insert")
@@ -51,12 +73,17 @@ public class AdminProviderController {
         return "main/tables/nhacungcap";
     }
 
-    @GetMapping("delete")
-    public String Delete(ModelMap model,@RequestParam("id") int id){
-        Supplier supplier = providerServiceImpl.getSupplierById(id);
-        supplier.setUpdated_date(new Date());
-        supplier.setIsdelete(true);
-        providerServiceImpl.updateSupplier(supplier);
+    @PostMapping("delete")
+    public String Delete(ModelMap model,@RequestParam("id_delete") int id_delete){
+        boolean ketqua = providerServiceImpl.deleteSupplier(id_delete);
+        if(ketqua == true){
+
+        }else {
+            Supplier supplier = providerServiceImpl.getSupplierById(id_delete);
+            supplier.setUpdated_date(new Date());
+            supplier.setIsdelete(true);
+            providerServiceImpl.updateSupplier(supplier);
+        }
         model.addAttribute("insert",new Supplier());
         model.addAttribute("update",new Supplier());
 

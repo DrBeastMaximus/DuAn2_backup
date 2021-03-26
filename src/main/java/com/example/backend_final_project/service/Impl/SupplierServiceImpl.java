@@ -57,7 +57,9 @@ public class SupplierServiceImpl implements SupplierService {
     }
 
     @Override
-    public void deleteSupplier(int SupplierID) {
-        supplierDAOlmpl.deleteSupplier(SupplierID);
+    public boolean deleteSupplier(int SupplierID) {
+
+        boolean ketqua = supplierDAOlmpl.deleteSupplier(SupplierID);
+        return ketqua;
     }
 }

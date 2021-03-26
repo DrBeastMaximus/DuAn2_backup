@@ -34,8 +34,10 @@ public class Product {
     @Column(name = "issale")
     private boolean Issale;
 
-    @Column(name ="supplier_id")
-    private int Supplier_id;
+    @ManyToOne
+//    @Column(name ="supplier_id")
+    @JoinColumn(name ="supplier_id")
+    private Supplier Supplier_id;
 
     @Column(name ="quantity")
     private float Quantity;
@@ -168,12 +170,12 @@ public class Product {
         Price_sale = price_sale;
     }
 
-    public int getSupplier_id() {
+    public Supplier getSupplier_id() {
         return Supplier_id;
     }
 
-    public void setSupplier_id(int supplier_id) {
-        this.Supplier_id = supplier_id;
+    public void setSupplier_id(Supplier supplier_id) {
+        Supplier_id = supplier_id;
     }
 
     public float getQuantity() {
@@ -270,7 +272,7 @@ public class Product {
 //        Wishlish = wishlish;
 //    }
 
-    public Product(int ID, String code, String name, float price, float price_sale, String description, boolean issale, Date created_date, String creatd_by, boolean isdelete, boolean gender, int supplier_id, float quantity) {
+    public Product(int ID, String code, String name, float price, float price_sale, String description, boolean issale, Supplier supplier_id, float quantity, Date created_date, String creatd_by, boolean isdelete, boolean gender) {
         this.ID = ID;
         Code = code;
         Name = name;
@@ -278,14 +280,13 @@ public class Product {
         Price_sale = price_sale;
         Description = description;
         Issale = issale;
+        Supplier_id = supplier_id;
+        Quantity = quantity;
         Created_date = created_date;
         Creatd_by = creatd_by;
         this.isdelete = isdelete;
         this.gender = gender;
-        Supplier_id = supplier_id;
-        Quantity = quantity;
     }
-
     public Product() {
     }
 }

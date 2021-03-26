@@ -250,19 +250,23 @@ public class ProductDAOlmpl implements ProductDAO {
 
     @Override
     @ExceptionHandler({DeleteDataException.class})
-    public void deleteProduct(int productID) {
+    public boolean deleteProduct(int productID) {
+        boolean ketqua = false;
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();
         try {
             Product product = session.get(Product.class, productID);
             session.delete(product);
             t.commit();
+            ketqua = true;
         } catch (Exception e) {
-            t.rollback();
-            e.printStackTrace();
+//            t.rollback();
+//            e.printStackTrace();
+            ketqua = false;
         } finally {
             session.close();
         }
+        return ketqua;
     }
 
 }

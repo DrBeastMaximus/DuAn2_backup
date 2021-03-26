@@ -81,18 +81,22 @@ public class ProductPropertyDAOImpl implements ProductPropertyDAO {
 
     @Override
     @ExceptionHandler({DeleteDataException.class})
-    public void deleteProductProperty(int productPropertyID) {
+    public boolean deleteProductProperty(int productPropertyID) {
+        boolean ketqua = false;
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();
         try {
             Product_Property productProperty = session.get(Product_Property.class, productPropertyID);
             session.delete(productProperty);
             t.commit();
+            ketqua = true;
         } catch (Exception e) {
-            t.rollback();
-            e.printStackTrace();
+//            t.rollback();
+//            e.printStackTrace();
+            ketqua = false;
         } finally {
             session.close();
         }
+        return ketqua;
     }
 }

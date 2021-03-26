@@ -57,7 +57,9 @@ public class VoucherServiceImpl implements VoucherService {
     }
 
     @Override
-    public void deleteVoucher(int voucherID) {
-    voucherDAOlmpl.deleteVoucher(voucherID);
+    public boolean deleteVoucher(int voucherID) {
+
+        boolean ketqua = voucherDAOlmpl.deleteVoucher(voucherID);
+        return ketqua;
     }
 }

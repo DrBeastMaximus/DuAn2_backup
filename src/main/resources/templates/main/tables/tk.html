@@ -78,24 +78,21 @@
                 </div>
             </div>
             <ul class="nav">
-                <li>
-                    <a href="../dashboard.html">
-                        <i class="material-icons">dashboard</i>
-                        <p> Dashboard </p>
-                    </a>
-                </li>
-
-
-
-                <li class="active">
+                <li >
                     <a data-toggle="collapse" href="#tablesExamples" aria-expanded="true">
-                        <i class="material-icons">grid_on</i>
-                        <p> Tables
+                        <i class="material-icons">manage_accounts</i>
+                        <p> Quản Lý
                             <b class="caret"></b>
                         </p>
                     </a>
                     <div class="collapse in" id="tablesExamples">
                         <ul class="nav">
+                            <li >
+                                <a th:href="@{../invoice/home/cho-xac-nhan}">
+                                    <span class="sidebar-mini"> ĐH </span>
+                                    <span class="sidebar-normal"> Đơn Hàng </span>
+                                </a>
+                            </li>
                             <li class="active">
                                 <a th:href="@{../taikhoan/home}">
                                     <span class="sidebar-mini"> TK </span>
@@ -115,40 +112,77 @@
                                 </a>
                             </li>
                             <li>
-                                <a th:href="@{../provider/home}">
-                                    <span class="sidebar-mini"> NCC </span>
+                                <a th:href="@{../supplier/home}">
+                                    <span class="sidebar-mini"> NC </span>
                                     <span class="sidebar-normal"> Nhà Cung Cấp </span>
                                 </a>
                             </li>
-                            <li>
-                                <a th:href="@{../storage/home}">
-                                    <span class="sidebar-mini"> K </span>
-                                    <span class="sidebar-normal"> Kho </span>
-                                </a>
-                            </li>
+
                             <li >
                                 <a th:href="@{../voucher/home}">
                                     <span class="sidebar-mini"> V </span>
                                     <span class="sidebar-normal"> Voucher </span>
                                 </a>
                             </li>
+                            <li >
+                                <a th:href="@{../product/home}">
+                                    <span class="sidebar-mini"> SP </span>
+                                    <span class="sidebar-normal"> Sản Phẩm </span>
+                                </a>
+                            </li>
+                            <li >
+                                <a th:href="@{../newsletter/home}">
+                                    <span class="sidebar-mini"> E </span>
+                                    <span class="sidebar-normal"> Email </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" href="#pagesExamples">
+                        <i class="material-icons">delete</i>
+                        <p> Thùng Rác
+                            <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse" id="pagesExamples">
+                        <ul class="nav">
                             <li>
-                                <a href="../tables/đh.html">
-                                    <span class="sidebar-mini"> ĐH </span>
-                                    <span class="sidebar-normal"> Đơn hàng </span>
+                                <a th:href="@{../trashcon/trashconadmin}">
+                                    <span class="sidebar-mini"> TK </span>
+                                    <span class="sidebar-normal"> Tài Khoản </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{../trashcon/trashconuser}">
+                                    <span class="sidebar-mini"> US</span>
+                                    <span class="sidebar-normal"> User </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{../trashcon/trashconproduct}">
+                                    <span class="sidebar-mini"> SP</span>
+                                    <span class="sidebar-normal"> Sản Phẩm </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{../trashcon/trashconsupplier}">
+                                    <span class="sidebar-mini"> NC</span>
+                                    <span class="sidebar-normal"> Nhà Cung Cấp </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{../trashcon/trashconvoucher}">
+                                    <span class="sidebar-mini"> V</span>
+                                    <span class="sidebar-normal"> Voucher </span>
                                 </a>
                             </li>
 
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <a href="./charts.html">
-                        <i class="material-icons">timeline</i>
-                        <p> Thống kê </p>
-                    </a>
-                </li>
-
             </ul>
         </div>
     </div>
@@ -291,7 +325,7 @@
                                                         <div class="text-center">
                                                             <!--                                                                <button class="btn btn-success" ng-hide="insert.$valid" type="button">Thêm</button>-->
                                                             <button class="btn btn-success"  type="submit">Thêm</button>
-                                                            <button class="btn btn-danger"  type="reset" data-dismiss="modal" onclick="location.href='home';">Hủy</button>
+                                                            <button class="btn btn-danger"  type="reset" data-dismiss="modal" onClick="window.location.reload();">Hủy</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -337,14 +371,14 @@
                                                         <!--                                                            <div ng-show="update1.password.$invalid">Password Không được bỏ trống</div>-->
 
                                                     </div>
-                                                    <div class=" label-floating is-empty">
+                                                    <div class="card-content">
                                                         <label class="">Vai Trò<star>:  </star>
                                                         </label>
                                                         <select class="form-control" id="role" name="role">
                                                             <option ng-if="admin1.role == 0" selected="selected" value="0">Nhân Viên</option>
                                                             <option ng-show="admin1.role == 1" selected="selected" value="1">Quản Lý</option>
-                                                            <option value="0">Nhân Viên</option>
-                                                            <option value="1">Quản Lý</option>
+                                                            <option ng-if="admin1.role == 0"  value="1">Quản Lý</option>
+                                                            <option ng-if="admin1.role == 1"  value="0">Nhân Viên</option>
                                                         </select>
                                                         <!--                                                                <input type="text" value="{{admin1.role}}">-->
                                                         <span class="material-input"></span>
@@ -356,7 +390,7 @@
                                                             <!--                                                                <button class="btn btn-success" ng-show="update1.$valid" type="submit">Thêm</button>-->
                                                             <button class="btn btn-success" type="submit">Cập nhật</button>
 
-                                                            <button class="btn btn-danger" type="button" data-dismiss="modal" onclick="location.href='home';">Hủy</button>
+                                                            <button class="btn btn-danger" type="button" data-dismiss="modal" onClick="window.location.reload();">Hủy</button>
 
                                                         </div>
                                                     </div>
@@ -404,14 +438,19 @@
                                                 <!--                                                        <button type="button" rel="tooltip" class="btn btn-info btn-simple" data-original-title="" title="">-->
                                                 <!--                                                            <i class="material-icons">person</i>-->
                                                 <!--                                                        </button>-->
-                                                <button type="button" rel="tooltip" data-toggle="modal" data-target="#myModal2"  ng-click="update($index)" class="btn btn-success btn-simple" >
-                                                    <i class="material-icons">edit</i>
-                                                </button>
 
-                                                <button type="button" rel="tooltip" class="btn btn-danger btn-simple"  >
-                                                    <a class="material-icons"  th:href="@{./delete?id={{ad.id}}}"> close</a>
+                                                <form th:action="@{./delete}" method="post" >
+                                                    <input hidden id="id_delete" name="id_delete" value="{{ad.id}}">
+                                                    <button type="button" rel="tooltip" data-toggle="modal" data-target="#myModal2"  ng-click="update(ad.id)" class="btn btn-success btn-simple" >
+                                                        <i class="material-icons">edit</i>
+                                                    </button>
 
-                                                </button>
+                                                    <button type="submit" rel="tooltip" class="btn btn-danger btn-simple"  >
+                                                        <i class="material-icons">close</i>
+                                                        <!--                                                    <a class="material-icons"  th:href="@{./delete?id={{ad.id}}}"> close</a>-->
+
+                                                    </button>
+                                                </form>
                                             </td>
                                         </tr>
 
@@ -568,7 +607,12 @@
         $scope.admin1= {};
 
         $scope.update = function (index) {
-            $scope.admin1 = $scope.admins[index];
+            // $scope.admin1 = $scope.admins[index];
+            for(var i = 0; i < $scope.admins.length; i++){
+                if( $scope.admins[i].id == index){
+                    $scope.admin1 = $scope.admins[i];
+                }
+            }
         }
         $scope.begin = 0;
         $scope.pageCount = Math.ceil($scope.admins.length / 8);

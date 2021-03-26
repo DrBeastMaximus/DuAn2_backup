@@ -101,18 +101,22 @@ public class SupplierDAOImpl implements SupplierDAO {
 
     @Override
     @ExceptionHandler({DeleteDataException.class})
-    public void deleteSupplier(int SupplierID) {
+    public boolean deleteSupplier(int SupplierID) {
+        boolean ketqua = false;
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();
         try {
             Supplier supplier = session.get(Supplier.class, SupplierID);
             session.delete(supplier);
             t.commit();
+            ketqua = true;
         } catch (Exception e) {
-            t.rollback();
-            e.printStackTrace();
+//            t.rollback();
+//            e.printStackTrace();
+            ketqua = false;
         } finally {
             session.close();
         }
+        return ketqua;
     }
 }

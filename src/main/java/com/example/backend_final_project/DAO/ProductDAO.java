@@ -56,6 +56,6 @@ public interface ProductDAO {
 
     void updateProduct(Product product);
 
-    void deleteProduct(int productID);
+    boolean deleteProduct(int productID);
 
 }

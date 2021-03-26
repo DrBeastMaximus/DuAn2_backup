@@ -4,41 +4,133 @@ import com.example.backend_final_project.model.Product;
 import com.example.backend_final_project.model.Product_Image;
 import com.example.backend_final_project.model.Product_Property_Detail;
 
+import java.util.Date;
 import java.util.List;
 
 public class ProductRespone {
-    private Product product;
-    private List<Product_Property_Detail> product_Property_Detail;
-    private List<Product_Image> product_images;
+    private int id;
+    private String code;
+    private String name;
+    private float price;
+    private boolean issale;
+    private float price_sale;
+    private String description;
+    private boolean gender;
+    private int quantity;
+    private String supplier_id;
+    private Date Created_date;
+    private Date Created_by;
 
-    public Product getProduct() {
-        return product;
+    public int getId() {
+        return id;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public List<Product_Property_Detail> getProduct_Property_Detail() {
-        return product_Property_Detail;
+    public String getCode() {
+        return code;
     }
 
-    public void setProduct_Property_Detail(List<Product_Property_Detail> product_Property_Detail) {
-        this.product_Property_Detail = product_Property_Detail;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public List<Product_Image> getProduct_images() {
-        return product_images;
+    public String getName() {
+        return name;
     }
 
-    public void setProduct_images(List<Product_Image> product_images) {
-        this.product_images = product_images;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public ProductRespone(Product product, List<Product_Property_Detail> product_Property_Detail, List<Product_Image> product_images) {
-        this.product = product;
-        this.product_Property_Detail = product_Property_Detail;
-        this.product_images = product_images;
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public boolean isIssale() {
+        return issale;
+    }
+
+    public void setIssale(boolean issale) {
+        this.issale = issale;
+    }
+
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getSupplier_id() {
+        return supplier_id;
+    }
+
+    public void setSupplier_id(String supplier_id) {
+        this.supplier_id = supplier_id;
+    }
+
+    public Date getCreated_date() {
+        return Created_date;
+    }
+
+    public void setCreated_date(Date created_date) {
+        Created_date = created_date;
+    }
+
+    public Date getCreated_by() {
+        return Created_by;
+    }
+
+    public void setCreated_by(Date created_by) {
+        Created_by = created_by;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public float getPrice_sale() {
+        return price_sale;
+    }
+
+    public void setPrice_sale(float price_sale) {
+        this.price_sale = price_sale;
+    }
+
+    public boolean isGender() {
+        return gender;
+    }
+
+    public void setGender(boolean gender) {
+        this.gender = gender;
+    }
+
+    public ProductRespone(int id, String code, String name, float price, boolean issale, float price_sale, String description, boolean gender, int quantity, String supplier_id, Date created_date, Date created_by) {
+        this.id = id;
+        this.code = code;
+        this.name = name;
+        this.price = price;
+        this.issale = issale;
+        this.price_sale = price_sale;
+        this.description = description;
+        this.gender = gender;
+        this.quantity = quantity;
+        this.supplier_id = supplier_id;
+        Created_date = created_date;
+        Created_by = created_by;
     }
 
     public ProductRespone() {

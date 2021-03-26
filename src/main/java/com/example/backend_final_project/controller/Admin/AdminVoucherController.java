@@ -31,6 +31,27 @@ public class AdminVoucherController {
         List<Voucher> ds = voucherServiceImpl.getVoucherList();
         return ds;
     }
+    @GetMapping("/insert")
+    public String insert(ModelMap model){
+        model.addAttribute("insert",new Voucher());
+        model.addAttribute("update",new Voucher());
+        model.addAttribute("message","");
+        return "main/tables/voucher";
+    }
+    @GetMapping("/update")
+    public String update(ModelMap model){
+        model.addAttribute("insert",new Voucher());
+        model.addAttribute("update",new Voucher());
+        model.addAttribute("message","");
+        return "main/tables/voucher";
+    }
+    @GetMapping("/delete")
+    public String delete(ModelMap model){
+        model.addAttribute("insert",new Voucher());
+        model.addAttribute("update",new Voucher());
+        model.addAttribute("message","");
+        return "main/tables/voucher";
+    }
 
     @PostMapping("/insert")
     public String InsertAdmin(ModelMap model, @ModelAttribute Voucher voucher){
@@ -71,12 +92,17 @@ public class AdminVoucherController {
         return "main/tables/voucher";
     }
 
-    @GetMapping("delete")
-    public String Delete(ModelMap model,@RequestParam("id") int id){
-        Voucher voucher = voucherServiceImpl.getVoucherById(id);
-        voucher.setUpdated_date(new Date());
-        voucher.setStatus(true);
-        voucherServiceImpl.updateVoucher(voucher);
+    @PostMapping("delete")
+    public String Delete(ModelMap model,@RequestParam("id_delete") int id_delete){
+        boolean ketqua = voucherServiceImpl.deleteVoucher(id_delete);
+        if(ketqua == true){
+
+        }else {
+            Voucher voucher = voucherServiceImpl.getVoucherById(id_delete);
+            voucher.setUpdated_date(new Date());
+            voucher.setStatus(true);
+            voucherServiceImpl.updateVoucher(voucher);
+        }
         model.addAttribute("insert",new Voucher());
         model.addAttribute("update",new Voucher());
         model.addAttribute("message","");

@@ -24,42 +24,42 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getMaleProductPage(int pos, int pageSize) {
-        return  productDAOlmpl.getMaleProductPage(pos,pageSize);
+        return productDAOlmpl.getMaleProductPage(pos, pageSize);
     }
 
     @Override
     public List<Product> getFemaleProductPage(int pos, int pageSize) {
-        return productDAOlmpl.getFemaleProductPage(pos,pageSize);
+        return productDAOlmpl.getFemaleProductPage(pos, pageSize);
     }
 
     @Override
     public List<Product> getHotMaleProductPage(int pos, int pageSize) {
-        return productDAOlmpl.getHotMaleProductPage(pos,pageSize);
+        return productDAOlmpl.getHotMaleProductPage(pos, pageSize);
     }
 
     @Override
     public List<Product> getHotFemaleProductPage(int pos, int pageSize) {
-        return productDAOlmpl.getHotFemaleProductPage(pos,pageSize);
+        return productDAOlmpl.getHotFemaleProductPage(pos, pageSize);
     }
 
     @Override
     public List<Product> getHotFemaleProductListFilteredInRange(String pdID, long min, long max) {
-        return productDAOlmpl.getHotFemaleProductListFilteredInRange(pdID,min,max);
+        return productDAOlmpl.getHotFemaleProductListFilteredInRange(pdID, min, max);
     }
 
     @Override
     public List<Product> getHotMaleProductListFilteredInRange(String pdID, long min, long max) {
-        return productDAOlmpl.getHotMaleProductListFilteredInRange(pdID,min,max);
+        return productDAOlmpl.getHotMaleProductListFilteredInRange(pdID, min, max);
     }
 
     @Override
     public List<Product> getHotFemaleProductListInRange(long min, long max) {
-        return productDAOlmpl.getHotFemaleProductListInRange(min,max);
+        return productDAOlmpl.getHotFemaleProductListInRange(min, max);
     }
 
     @Override
     public List<Product> getHotMaleProductListInRange(long min, long max) {
-        return productDAOlmpl.getHotFemaleProductListInRange(min,max);
+        return productDAOlmpl.getHotFemaleProductListInRange(min, max);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getHotFemaleProductListFiltered(String pdID) {
-        return  productDAOlmpl.getHotFemaleProductListFiltered(pdID);
+        return productDAOlmpl.getHotFemaleProductListFiltered(pdID);
     }
 
     @Override
@@ -130,16 +130,18 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void addProduct(Product product) {
-    productDAOlmpl.addProduct(product);
+        productDAOlmpl.addProduct(product);
     }
 
     @Override
     public void updateProduct(Product product) {
-    productDAOlmpl.updateProduct(product);
+        productDAOlmpl.updateProduct(product);
     }
 
     @Override
-    public void deleteProduct(int productID) {
-    productDAOlmpl.deleteProduct(productID);
+    public boolean deleteProduct(int productID) {
+
+        boolean ketqua = productDAOlmpl.deleteProduct(productID);
+        return ketqua;
     }
 }

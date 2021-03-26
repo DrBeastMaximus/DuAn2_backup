@@ -50,6 +50,16 @@ public class InvoiceDAOImpl implements InvoiceDAO {
     }
 
     @Override
+    public List<Invoice> getInvoiceListByStatus(int status) {
+        Session session = this.sessionFactory.openSession();
+        String hql = "FROM Invoice where Status = :id and isdelete=false ";
+        Query query = session.createQuery(hql);
+        query.setParameter("id", status);
+        List<Invoice> list = query.list();
+        return list;
+    }
+
+    @Override
     public List<Invoice> getInvoiceListByVoucherId(int voucherID) {
         Session session = this.sessionFactory.openSession();
         String hql = "FROM Invoice where Voucher.Code = :id and isdelete=false ";

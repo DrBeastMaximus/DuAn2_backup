@@ -139,18 +139,22 @@ public class UserDAOlmpl implements UserDAO {
 
     @Override
     @ExceptionHandler({DeleteDataException.class})
-    public void deleteUser(int userID) {
+    public boolean deleteUser(int userID) {
+        boolean ketqua = false;
         Session session = this.sessionFactory.openSession();
         Transaction t = session.beginTransaction();
         try {
             User user = session.get(User.class, userID);
             session.delete(user);
             t.commit();
+            ketqua = true;
         } catch (Exception e) {
-            t.rollback();
-            e.printStackTrace();
+//            t.rollback();
+//            e.printStackTrace();
+            ketqua = false;
         } finally {
             session.close();
         }
+        return ketqua;
     }
 }

@@ -38,7 +38,7 @@ public class ProductDetailPageREST {
         Product product = productService.getProductById(productID);
         List<Product_Image> productImage = productImageService.getProductImageByProdId(productID);
         String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+productID;
-        Supplier supplier = supplierService.getSupplierById(product.getSupplier_id());
+//        Supplier supplier = supplierService.getSupplierById(product.getSupplier_id().getId());
         List listImg = new ArrayList();
         List<Product_Property_Detail> ppD = ppdService.getByProductIdAndPropertyRoot(productID,13);
         for(int i=0;i<productImage.size();i++){
@@ -48,7 +48,7 @@ public class ProductDetailPageREST {
 
         obj.put("product",product);
         obj.put("brand",ppD.get(0).getDescription());
-        obj.put("supplier_name",supplier);
+//        obj.put("supplier_name",supplier);
         obj.put("indexImage", indexImg);
         obj.put("addtionalImages",listImg);
         return ResponseEntity.ok(obj);

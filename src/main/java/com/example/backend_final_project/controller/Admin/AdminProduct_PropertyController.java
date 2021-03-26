@@ -21,7 +21,7 @@ public class AdminProduct_PropertyController {
     public String Home(ModelMap model){
         model.addAttribute("insert",new Product_Property());
         model.addAttribute("update",new Product_Property());
-
+        model.addAttribute("message","");
         return "main/tables/product_pr";
     }
 
@@ -31,6 +31,27 @@ public class AdminProduct_PropertyController {
         List<Product_Property> ds = productPropertyServiceImpl.getProductPropertyList();
         return ds;
     }
+    @GetMapping("/insert")
+    public String insert(ModelMap model){
+        model.addAttribute("insert",new Product_Property());
+        model.addAttribute("update",new Product_Property());
+        model.addAttribute("message","");
+        return "main/tables/product_pr";
+    }
+    @GetMapping("/update")
+    public String update(ModelMap model){
+        model.addAttribute("insert",new Product_Property());
+        model.addAttribute("update",new Product_Property());
+        model.addAttribute("message","");
+        return "main/tables/product_pr";
+    }
+    @GetMapping("/delete")
+    public String delete(ModelMap model){
+        model.addAttribute("insert",new Product_Property());
+        model.addAttribute("update",new Product_Property());
+        model.addAttribute("message","");
+        return "main/tables/product_pr";
+    }
 
     @PostMapping("/insert")
     public String InsertAdmin(ModelMap model, @ModelAttribute Product_Property product_Property){
@@ -38,7 +59,7 @@ public class AdminProduct_PropertyController {
         productPropertyServiceImpl.addProductProperty(product_Property);
         model.addAttribute("insert",new Product_Property());
         model.addAttribute("update",new Product_Property());
-
+        model.addAttribute("message","");
         return "main/tables/product_pr";
     }
 
@@ -51,13 +72,18 @@ public class AdminProduct_PropertyController {
         productPropertyServiceImpl.updateProductProperty(product_Property);
         model.addAttribute("insert",new Product_Property());
         model.addAttribute("update",new Product_Property());
-
+        model.addAttribute("message","");
         return "main/tables/product_pr";
     }
 
-    @GetMapping("delete")
-    public String Delete(ModelMap model,@RequestParam("id") int id){
-        productPropertyServiceImpl.deleteProductProperty(id);
+    @PostMapping("delete")
+    public String Delete(ModelMap model,@RequestParam("id_delete") int id_delete){
+        boolean ketqua = productPropertyServiceImpl.deleteProductProperty(id_delete);
+        if(ketqua == true){
+            model.addAttribute("message","");
+        }else{
+            model.addAttribute("message","Xóa thất bại");
+        }
         model.addAttribute("insert",new Product_Property());
         model.addAttribute("update",new Product_Property());
 
