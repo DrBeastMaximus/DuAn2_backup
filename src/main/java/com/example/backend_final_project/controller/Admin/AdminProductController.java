@@ -243,7 +243,7 @@ public class AdminProductController {
         System.out.println(file.toString());
         System.out.println(file.getOriginalFilename());
 //            String path = "./hinhanh";
-        String path = "./src/main/resources/static/assets/hinhanh";
+        String path = System.getProperty("user.dir")+"/hinhanh/";
         String filename= file.getOriginalFilename();
         System.out.println(path);
         try{
@@ -276,7 +276,7 @@ public class AdminProductController {
 
         if(file.getSize() != 0){
             //            String path = "./hinhanh";
-            String path = "./src/main/resources/static/assets/hinhanh";
+            String path = System.getProperty("user.dir")+"/hinhanh/";
 
             String filename= file.getOriginalFilename();
             try{

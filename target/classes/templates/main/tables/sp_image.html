@@ -562,7 +562,7 @@
             for(var i = 0; i < $scope.productimage.length; i++){
                 if( $scope.productimage[i].id == index){
                     $scope.productimage1 = $scope.productimage[i];
-                    $scope.urlimage= "../../../../assets/hinhanh/"+$scope.productimage1.image;
+                    $scope.urlimage= "/api/image/getImagesByID/"+$scope.productimage[i].id;
                 }
             }
             // $scope.productimage1 = $scope.productimage[index];

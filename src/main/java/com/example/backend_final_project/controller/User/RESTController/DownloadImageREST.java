@@ -42,6 +42,12 @@ public class DownloadImageREST {
         return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(ImageUtil.open(prodImg.get(0).getImage()));
     }
 
+    @GetMapping("/getImagesByID/{productimageID}")
+    public ResponseEntity<byte[]> downloadImageByID (@PathVariable int productimageID, HttpServletResponse resp){
+        Product_Image prodImg = productImageService.getProductImageById(productimageID);
+        resp.setHeader("Content-Disposition","attachment;filename="+ prodImg.getImage());
+        return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(ImageUtil.open(prodImg.getImage()));
+    }
 
     @GetMapping("/getImagesCount/{productID}")
     public ResponseEntity<?> getImageCount (@PathVariable int productID, HttpServletRequest req){
