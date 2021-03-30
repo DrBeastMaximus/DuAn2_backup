@@ -1,7 +1,9 @@
 package com.example.backend_final_project.controller.User.RESTController;
 
 import com.example.backend_final_project.model.Product;
+import com.example.backend_final_project.model.Product_Image;
 import com.example.backend_final_project.model.User;
+import com.example.backend_final_project.service.Impl.ProductImageServiceImpl;
 import com.example.backend_final_project.service.Impl.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.support.PagedListHolder;
@@ -9,9 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/product")
@@ -26,8 +26,8 @@ public class ProductPageREST {
 //        }
 //        return ResponseEntity.ok(prod);
 //    }
-    @GetMapping("/gender/male/totalRecord/{page}/{size}/{propertyids}")
-    public ResponseEntity<Integer> totalMaleProdRecordsFiltered(@PathVariable Integer page,@PathVariable Integer size,@PathVariable List<String> propertyids){
+    @GetMapping("/gender/male/totalRecord/{size}/{propertyids}")
+    public ResponseEntity<Integer> totalMaleProdRecordsFiltered(@PathVariable Integer size,@PathVariable List<String> propertyids){
         List<Product> usn = new ArrayList<>();
         for(String x: propertyids){
             usn.addAll(productService.getHotMaleProductListFiltered(x));
@@ -35,12 +35,11 @@ public class ProductPageREST {
         }
         PagedListHolder pg = new PagedListHolder(usn);
         pg.setPageSize(size);
-        pg.setPage(page);
 
         return ResponseEntity.ok(pg.getPageCount());
     }
-    @GetMapping("/gender/male/totalRecord/{page}/{size}/{min}/{max}/{propertyids}")
-    public ResponseEntity<Integer> totalMaleProdRecordsFilteredInRange(@PathVariable Integer page,@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max,@PathVariable List<String> propertyids){
+    @GetMapping("/gender/male/totalRecord/{size}/{min}/{max}/{propertyids}")
+    public ResponseEntity<Integer> totalMaleProdRecordsFilteredInRange(@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max,@PathVariable List<String> propertyids){
         List<Product> usn = new ArrayList<>();
         for(String x: propertyids){
             usn.addAll(productService.getHotMaleProductListFilteredInRange(x,min,max));
@@ -48,12 +47,11 @@ public class ProductPageREST {
         }
         PagedListHolder pg = new PagedListHolder(usn);
         pg.setPageSize(size);
-        pg.setPage(page);
 
         return ResponseEntity.ok(pg.getPageCount());
     }
-    @GetMapping("/gender/female/totalRecord/{page}/{size}/{min}/{max}/{propertyids}")
-    public ResponseEntity<Integer> totalFemaleProdRecordsFilteredInRange(@PathVariable Integer page,@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max,@PathVariable List<String> propertyids){
+    @GetMapping("/gender/female/totalRecord/{size}/{min}/{max}/{propertyids}")
+    public ResponseEntity<Integer> totalFemaleProdRecordsFilteredInRange(@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max,@PathVariable List<String> propertyids){
         List<Product> usn = new ArrayList<>();
         for(String x: propertyids){
             usn.addAll(productService.getHotFemaleProductListFilteredInRange(x,min,max));
@@ -61,31 +59,29 @@ public class ProductPageREST {
         }
         PagedListHolder pg = new PagedListHolder(usn);
         pg.setPageSize(size);
-        pg.setPage(page);
 
         return ResponseEntity.ok(pg.getPageCount());
     }
-    @GetMapping("/gender/female/totalRecord/{page}/{size}/{min}/{max}")
-    public ResponseEntity<Integer> totalFemaleProdRecordsInRange(@PathVariable Integer page,@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max){
+    @GetMapping("/gender/female/totalRecord/{size}/{min}/{max}")
+    public ResponseEntity<Integer> totalFemaleProdRecordsInRange(@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max){
         List<Product> usn = productService.getHotFemaleProductListInRange(min,max);
         PagedListHolder pg = new PagedListHolder(usn);
         pg.setPageSize(size);
-        pg.setPage(page);
 
         return ResponseEntity.ok(pg.getPageCount());
     }
-    @GetMapping("/gender/male/totalRecord/{page}/{size}/{min}/{max}")
-    public ResponseEntity<Integer> totalMaleProdRecordsInRange(@PathVariable Integer page,@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max){
+    @GetMapping("/gender/male/totalRecord/{size}/{min}/{max}")
+    public ResponseEntity<Integer> totalMaleProdRecordsInRange(@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max){
         List<Product> usn = productService.getHotMaleProductListInRange(min,max);
         PagedListHolder pg = new PagedListHolder(usn);
         pg.setPageSize(size);
-        pg.setPage(page);
+
 
         return ResponseEntity.ok(pg.getPageCount());
     }
 
-    @GetMapping("/gender/female/totalRecord/{page}/{size}/{propertyids}")
-    public ResponseEntity<Integer> totalFemaleProdRecordsFiltered(@PathVariable Integer page,@PathVariable Integer size,@PathVariable List<String> propertyids){
+    @GetMapping("/gender/female/totalRecord/{size}/{propertyids}")
+    public ResponseEntity<Integer> totalFemaleProdRecordsFiltered(@PathVariable Integer size,@PathVariable List<String> propertyids){
         List<Product> usn = new ArrayList<>();
         for(String x: propertyids){
             usn.addAll(productService.getHotFemaleProductListFiltered(x));
@@ -93,25 +89,22 @@ public class ProductPageREST {
         }
         PagedListHolder pg = new PagedListHolder(usn);
         pg.setPageSize(size);
-        pg.setPage(page);
 
         return ResponseEntity.ok(pg.getPageCount());
     }
-    @GetMapping("/gender/male/totalRecord/{page}/{size}")
-    public ResponseEntity<Integer> totalMaleProdRecords(@PathVariable Integer page,@PathVariable Integer size){
+    @GetMapping("/gender/male/totalRecord/{size}")
+    public ResponseEntity<Integer> totalMaleProdRecords(@PathVariable Integer size){
         List<Product> usn = productService.getMaleProductList();
         PagedListHolder pg = new PagedListHolder(usn);
         pg.setPageSize(size);
-        pg.setPage(page);
 
         return ResponseEntity.ok(pg.getPageCount());
     }
-    @GetMapping("/gender/female/totalRecord/{page}/{size}")
-    public ResponseEntity<Integer> totalFemaleProdRecords(@PathVariable Integer page,@PathVariable Integer size){
+    @GetMapping("/gender/female/totalRecord/{size}")
+    public ResponseEntity<Integer> totalFemaleProdRecords(@PathVariable Integer size){
         List<Product> usn = productService.getFemaleProductList();
         PagedListHolder pg = new PagedListHolder(usn);
         pg.setPageSize(size);
-        pg.setPage(page);
 
         return ResponseEntity.ok(pg.getPageCount());
     }
@@ -144,8 +137,17 @@ public class ProductPageREST {
         PagedListHolder pg = new PagedListHolder(usn);
         pg.setPageSize(size);
         pg.setPage(page);
+        List ls = new ArrayList();
+        List<Product> pd = pg.getPageList();
 
-        return ResponseEntity.ok(pg.getPageList());
+        for(int i=0;i<pd.size();i++){
+            Map<String, Object> obj = new LinkedHashMap<>();
+            obj.put("propduct",pd.get(i));
+            String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
+            obj.put("indexImage",indexImg);
+            ls.add(obj);
+        }
+        return ResponseEntity.ok(ls);
     }
     @GetMapping("/gender/male/{page}/{size}/{sort}/{min}/{max}")
     public ResponseEntity<List<Product>> getMaleProdInRange(
@@ -178,8 +180,17 @@ public class ProductPageREST {
         PagedListHolder pg = new PagedListHolder(usn);
         pg.setPageSize(size);
         pg.setPage(page);
+        List ls = new ArrayList();
+        List<Product> pd = pg.getPageList();
 
-        return ResponseEntity.ok(pg.getPageList());
+        for(int i=0;i<pd.size();i++){
+            Map<String, Object> obj = new LinkedHashMap<>();
+            obj.put("propduct",pd.get(i));
+            String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
+            obj.put("indexImage",indexImg);
+            ls.add(obj);
+        }
+        return ResponseEntity.ok(ls);
     }
     @GetMapping("/gender/female/{page}/{size}/{sort}/{min}/{max}")
     public ResponseEntity<List<Product>> getFemaleProdInRange(
@@ -213,7 +224,17 @@ public class ProductPageREST {
         pg.setPageSize(size);
         pg.setPage(page);
 
-        return ResponseEntity.ok(pg.getPageList());
+        List ls = new ArrayList();
+        List<Product> pd = pg.getPageList();
+
+        for(int i=0;i<pd.size();i++){
+            Map<String, Object> obj = new LinkedHashMap<>();
+            obj.put("propduct",pd.get(i));
+            String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
+            obj.put("indexImage",indexImg);
+            ls.add(obj);
+        }
+        return ResponseEntity.ok(ls);
     }
     @GetMapping("/gender/male/{page}/{size}/{sort}/{propertyids}")
     public ResponseEntity<List<Product>> getMaleProdFiltered(
@@ -250,7 +271,17 @@ public class ProductPageREST {
         pg.setPageSize(size);
         pg.setPage(page);
 
-        return ResponseEntity.ok(pg.getPageList());
+        List ls = new ArrayList();
+        List<Product> pd = pg.getPageList();
+
+        for(int i=0;i<pd.size();i++){
+            Map<String, Object> obj = new LinkedHashMap<>();
+            obj.put("propduct",pd.get(i));
+            String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
+            obj.put("indexImage",indexImg);
+            ls.add(obj);
+        }
+        return ResponseEntity.ok(ls);
     }
     @GetMapping("/gender/male/{page}/{size}/{sort}/{min}/{max}/{propertyids}")
     public ResponseEntity<List<Product>> getMaleProdFilteredInRange(
@@ -287,7 +318,17 @@ public class ProductPageREST {
         pg.setPageSize(size);
         pg.setPage(page);
 
-        return ResponseEntity.ok(pg.getPageList());
+        List ls = new ArrayList();
+        List<Product> pd = pg.getPageList();
+
+        for(int i=0;i<pd.size();i++){
+            Map<String, Object> obj = new LinkedHashMap<>();
+            obj.put("propduct",pd.get(i));
+            String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
+            obj.put("indexImage",indexImg);
+            ls.add(obj);
+        }
+        return ResponseEntity.ok(ls);
     }
     @GetMapping("/gender/female/{page}/{size}/{sort}/{min}/{max}/{propertyids}")
     public ResponseEntity<List<Product>> getFemaleProdFilteredInRange(
@@ -324,7 +365,17 @@ public class ProductPageREST {
         pg.setPageSize(size);
         pg.setPage(page);
 
-        return ResponseEntity.ok(pg.getPageList());
+        List ls = new ArrayList();
+        List<Product> pd = pg.getPageList();
+
+        for(int i=0;i<pd.size();i++){
+            Map<String, Object> obj = new LinkedHashMap<>();
+            obj.put("propduct",pd.get(i));
+            String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
+            obj.put("indexImage",indexImg);
+            ls.add(obj);
+        }
+        return ResponseEntity.ok(ls);
     }
     @GetMapping("/gender/female/{page}/{size}/{sort}/{propertyids}")
     public ResponseEntity<List<Product>> getFemaleProdFiltered(
@@ -361,7 +412,17 @@ public class ProductPageREST {
         pg.setPageSize(size);
         pg.setPage(page);
 
-        return ResponseEntity.ok(pg.getPageList());
+        List ls = new ArrayList();
+        List<Product> pd = pg.getPageList();
+
+        for(int i=0;i<pd.size();i++){
+            Map<String, Object> obj = new LinkedHashMap<>();
+            obj.put("propduct",pd.get(i));
+            String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
+            obj.put("indexImage",indexImg);
+            ls.add(obj);
+        }
+        return ResponseEntity.ok(ls);
     }
     @GetMapping("/gender/female/{page}/{size}/{sort}")
     public ResponseEntity<List<Product>> getFemaleProd(
@@ -393,14 +454,23 @@ public class ProductPageREST {
         pg.setPageSize(size);
         pg.setPage(page);
 
-        return ResponseEntity.ok(pg.getPageList());
+        List ls = new ArrayList();
+        List<Product> pd = pg.getPageList();
+
+        for(int i=0;i<pd.size();i++){
+            Map<String, Object> obj = new LinkedHashMap<>();
+            obj.put("propduct",pd.get(i));
+            String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
+            obj.put("indexImage",indexImg);
+            ls.add(obj);
+        }
+        return ResponseEntity.ok(ls);
     }
-    @GetMapping("/search/result/totalRecord/{page}/{size}/{keyword}")
-    public ResponseEntity<Integer> totalSearchResultRecords(@PathVariable Integer page,@PathVariable Integer size,@PathVariable String keyword){
+    @GetMapping("/search/result/totalRecord/{size}/{keyword}")
+    public ResponseEntity<Integer> totalSearchResultRecords(@PathVariable Integer size,@PathVariable String keyword){
         List<Product> usn = productService.getProductListByKeyword(keyword);
         PagedListHolder pg = new PagedListHolder(usn);
         pg.setPageSize(size);
-        pg.setPage(page);
 
         return ResponseEntity.ok(pg.getPageCount());
     }
@@ -432,7 +502,17 @@ public class ProductPageREST {
         pg.setPageSize(size);
         pg.setPage(page);
 
-        return ResponseEntity.ok(pg.getPageList());
+        List ls = new ArrayList();
+        List<Product> pd = pg.getPageList();
+
+        for(int i=0;i<pd.size();i++){
+            Map<String, Object> obj = new LinkedHashMap<>();
+            obj.put("propduct",pd.get(i));
+            String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
+            obj.put("indexImage",indexImg);
+            ls.add(obj);
+        }
+        return ResponseEntity.ok(ls);
     }
     @GetMapping("/getinfo/{id}")
     public ResponseEntity<Product> getProductInfoByID(@PathVariable Integer id){
