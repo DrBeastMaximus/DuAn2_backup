@@ -30,7 +30,7 @@ public class CommentREST {
         pg.setPageSize(size);
         pg.setPage(page);
 
-        return ResponseEntity.ok(usn);}
+        return ResponseEntity.ok(pg.getPageList());}
         else{
             return ResponseEntity.badRequest().body("Không có comment");
         }
