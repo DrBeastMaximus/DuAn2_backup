@@ -22,28 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 25/3/2021 .s">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/Utils/GlobalConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_46_PM_[Default_Changelist]/RegisterPageREST.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_46_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_46_PM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_53_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_53_PM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/config/AuthEntryPointJWT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/config/AuthEntryPointJWT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/config/CurrentUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/config/CurrentUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPropertyREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPropertyREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/pages/lock.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/pages/lock.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/pages/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/config/AuthEntryPointJWT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/config/AuthEntryPointJWT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductPropertyREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductPropertyREST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/pages/lock.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/pages/lock.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/pages/login.html" afterDir="false" />
+    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 30/3/2021">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -379,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616712891893</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fix 30/3/2021">
+      <created>1617081487888</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1617081487888</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +402,8 @@
     <MESSAGE value="Fix 24/3/2021 ." />
     <MESSAGE value="Fix 25/3/2021 ." />
     <MESSAGE value="Fix 25/3/2021." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix 25/3/2021." />
+    <MESSAGE value="Fix 30/3/2021" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix 30/3/2021" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -587,27 +575,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java</url>
-          <line>23</line>
+          <line>24</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java</url>
-          <line>24</line>
+          <line>25</line>
           <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java</url>
-          <line>27</line>
+          <line>28</line>
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java</url>
-          <line>28</line>
+          <line>29</line>
           <option name="timeStamp" value="101" />
         </line-breakpoint>
       </breakpoints>

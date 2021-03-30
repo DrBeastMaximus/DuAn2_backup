@@ -1,6 +1,7 @@
 package com.example.backend_final_project.controller.Admin;
 
 
+import com.example.backend_final_project.Utils.GlobalConstant;
 import com.example.backend_final_project.model.Admin;
 import com.example.backend_final_project.service.Impl.LoginAdminServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class AdminLoginController {
             Admin list = adminService.getAdminUsername(email);
             if (list!=null) {
                 if(list.getPassword().equals(pass)){
+                    GlobalConstant.setAdminID(list.getID());
+                    GlobalConstant.setRole(list.getRole());
+                    GlobalConstant.setUsername(list.getUsername());
                     return "redirect:/admin/invoice/home/cho-xac-nhan";
                 } else {
                     mm.addAttribute("message", "Wrong username or password!");
@@ -40,5 +44,10 @@ public class AdminLoginController {
         }
     }
 
-
+    @GetMapping("/logut")
+    public void logout(){
+        if(GlobalConstant.getUsername()!=null){
+            GlobalConstant.returnDefault();
+        }
+    }
 }
