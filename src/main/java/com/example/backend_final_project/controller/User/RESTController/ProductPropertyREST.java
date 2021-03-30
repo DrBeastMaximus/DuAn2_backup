@@ -43,11 +43,7 @@ public class ProductPropertyREST {
 //
 //        return ResponseEntity.ok(ppdService.getByProductPropertyId(rootID));
 //    }
-    @GetMapping("/test/{rootID}")
-    public ResponseEntity test(@PathVariable int rootID){
 
-        return ResponseEntity.ok(ppdService.getNameByProductPropertyId(rootID));
-    }
 
     @GetMapping("/getBranchPropertyFromProductID/{prodID}")
     public ResponseEntity getBranchPropertyFromProductID(@PathVariable int prodID){

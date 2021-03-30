@@ -1,9 +1,0 @@
-<changelist name="Uncommitted_changes_before_Update_at_3_19_2021_5_46_PM_[Default_Changelist]" date="1616175987511" recycled="true" deleted="true">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_46_PM_[Default_Changelist]/shelved.patch" />
-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 3/19/2021 5:46 PM [Default Changelist]" />
-  <binary>
-    <option name="BEFORE_PATH" value="target/classes/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.class" />
-    <option name="AFTER_PATH" value="target/classes/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.class" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_46_PM_[Default_Changelist]/RegisterPageREST.class" />
-  </binary>
-</changelist>

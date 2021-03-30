@@ -22,115 +22,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 25/3/2021.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/TrashcanDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/TrashcanDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminInvoiceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminStatisticalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminTrashconController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/TrashconServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/TrashconService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/InvoiceRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/InvoiceRespone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/Invoice_detetailRespone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/Product_Property_DetailRespone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/bootstrap-datetimepicker2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/charts2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/dh.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/mail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/nhacungcap_restore.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_image.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_property.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/tk_restore.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/user_restore.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_11_23_AM_[Default_Changelist]/CheckoutPageREST.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_11_23_AM_[Default_Changelist]/ForgotPassREST.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_11_23_AM_[Default_Changelist]/ProductPageREST.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_11_23_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_11_23_AM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_46_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_46_PM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_53_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_53_PM__Default_Changelist_.xml" afterDir="false" />
+    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 25/3/2021 .s">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/Utils/GlobalConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_46_PM_[Default_Changelist]/RegisterPageREST.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_46_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_46_PM__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_53_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_19_2021_5_53_PM__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductDAOlmpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductDAOlmpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductPropertyDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/ProductPropertyDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/SupplierDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/SupplierDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/UserDAOlmpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/UserDAOlmpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/VoucherDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/VoucherDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/InvoiceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/InvoiceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/ProductPropertyDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/ProductPropertyDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/SupplierDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/SupplierDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/VoucherDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/VoucherDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProduct_PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProduct_PropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProviderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProviderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminTaiKhoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminTaiKhoanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminVoucherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminVoucherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/InvoiceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/InvoiceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProductPropertyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProductPropertyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/SupplierServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/SupplierServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/UserServicelmpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/UserServicelmpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/VoucherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/VoucherServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/InvoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/InvoiceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/ProductPropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/ProductPropertyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/SupplierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/SupplierService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/VoucherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/VoucherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/ProductRespone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/ProductRespone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/nhacungcap.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/nhacungcap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/product_pr.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/product_pr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/tk.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/tk.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/voucher.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/voucher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/DuAn2_backup.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductDAOlmpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductDAOlmpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductPropertyDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/ProductPropertyDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/SupplierDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/SupplierDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/UserDAOlmpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/UserDAOlmpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/VoucherDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/VoucherDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/InvoiceDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/InvoiceDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductPropertyDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/ProductPropertyDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/SupplierDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/SupplierDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/VoucherDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/VoucherDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProduct_PropertyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProduct_PropertyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProviderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProviderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminTaiKhoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminTaiKhoanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminVoucherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminVoucherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductDetailPageREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/config/AuthEntryPointJWT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/config/AuthEntryPointJWT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/config/CurrentUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/config/CurrentUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPropertyREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPropertyREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/pages/lock.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/pages/lock.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/pages/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/config/AuthEntryPointJWT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/config/AuthEntryPointJWT.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductPropertyREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductPropertyREST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/InvoiceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/InvoiceServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/ProductPropertyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/ProductPropertyServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/ProductServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/SupplierServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/SupplierServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/UserServicelmpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/UserServicelmpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/VoucherServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/VoucherServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/InvoiceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/InvoiceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/ProductPropertyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/ProductPropertyService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/SupplierService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/SupplierService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/VoucherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/VoucherService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/dto/ProductRespone.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/dto/ProductRespone.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/nhacungcap.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/nhacungcap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/product_pr.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/product_pr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/tk.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/tk.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/voucher.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/voucher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/pages/lock.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/pages/lock.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/pages/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,12 +72,15 @@
     </expand>
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="DuAn2_backup" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -196,27 +112,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../AndroidSDK" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/assets/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../backup/DuAn2_backup" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.backend_final_project.service.Impl" />
-      <recent name="com.example.backend_final_project.DAO.Impl" />
-      <recent name="com.example.backend_final_project.DAO" />
-      <recent name="com.example.backend_final_project.service" />
-      <recent name="com.example.backend_final_project.controller.Admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\resources\static\assets\js" />
-      <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\resources\templates\main\tables" />
-      <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\java\com\example\backend_final_project\service\dto" />
       <recent name="D:\DuAn2_backup\src\main\resources\templates" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\DuAn2_backup\src\main\resources\templates\main\tables" />
+      <recent name="F:\DuAn2_backup\src\main\resources\templates\main\pages" />
+    </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication">
+  <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication (1)">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -258,12 +168,24 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.BackendFinalProjectApplication" />
         <item itemvalue="Spring Boot.BackendFinalProjectApplication (1)" />
+        <item itemvalue="Spring Boot.BackendFinalProjectApplication" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -302,7 +224,6 @@
       <workItem from="1615969091741" duration="48965000" />
       <workItem from="1616074845243" duration="767000" />
       <workItem from="1616168464389" duration="7283000" />
-      <workItem from="1616775085186" duration="2458000" />
     </task>
     <task id="LOCAL-00001" summary="Thêm Class DAO">
       <created>1613982667329</created>
@@ -462,7 +383,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -495,40 +416,6 @@
     <MESSAGE value="Fix 25/3/2021 ." />
     <MESSAGE value="Fix 25/3/2021." />
     <option name="LAST_COMMIT_MESSAGE" value="Fix 25/3/2021." />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="993" height="223" key="GridCell.Tab.0.bottom" timestamp="1616777562620">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="993" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616777562620" />
-    <state width="993" height="223" key="GridCell.Tab.0.center" timestamp="1616777562618">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="993" height="223" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616777562618" />
-    <state width="993" height="223" key="GridCell.Tab.0.left" timestamp="1616777562618">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="993" height="223" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616777562618" />
-    <state width="993" height="223" key="GridCell.Tab.0.right" timestamp="1616777562619">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="993" height="223" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616777562619" />
-    <state width="993" height="223" key="GridCell.Tab.1.bottom" timestamp="1616777562621">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="993" height="223" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616777562621" />
-    <state width="993" height="223" key="GridCell.Tab.1.center" timestamp="1616777562621">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="993" height="223" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616777562621" />
-    <state width="993" height="223" key="GridCell.Tab.1.left" timestamp="1616777562620">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="993" height="223" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616777562620" />
-    <state width="993" height="223" key="GridCell.Tab.1.right" timestamp="1616777562621">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="993" height="223" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616777562621" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -697,6 +584,31 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.java</url>
           <line>41</line>
           <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="101" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
