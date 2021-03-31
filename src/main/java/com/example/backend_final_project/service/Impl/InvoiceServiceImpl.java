@@ -44,6 +44,10 @@ public class InvoiceServiceImpl implements InvoiceService {
 
         return getInvoiceListByVoucherId(voucherID);
     }
+    @Override
+    public List<Object> getcountAll() {
+        return invoiceDAOlmpl.getcountAll();
+    }
 
     @Override
     public void addInvoice(Invoice invoice) {

@@ -36,7 +36,9 @@ public class TrashcanDAOImpl implements TrashcanDAO {
 
     @Override
     public List<Voucher> getVoucherdeleteList() {
-        return null;
+
+        Session session = this.sessionFactory.openSession();
+        return session.createQuery("from Voucher where Status = true", Voucher.class).getResultList();
     }
 
     @Override
@@ -93,7 +95,20 @@ public class TrashcanDAOImpl implements TrashcanDAO {
 
     @Override
     public void restoreVoucher(int id) {
-
+        Session session = this.sessionFactory.openSession();
+        Transaction t = session.beginTransaction();
+        try {
+            Voucher voucher = session.get(Voucher.class, id);
+            voucher.setUpdated_date(new Date());
+            voucher.setStatus(false);
+            session.update(voucher);
+            t.commit();
+        } catch (Exception e) {
+            t.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
     }
 
     @Override

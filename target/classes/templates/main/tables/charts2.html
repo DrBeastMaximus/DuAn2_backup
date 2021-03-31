@@ -22,10 +22,11 @@
     <!-- Chartlist -->
     <link rel="stylesheet" th:href="@{//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css}">
     <script th:src="@{//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js}"></script>
-
+    <script th:src="@{/assets/js/angular.min.js}"></script>
+    <script th:src="@{/assets/js/angular-route.js}"></script>
 </head>
 
-<body>
+<body ng-app="myapp" ng-controller="myctrl">
 
 <style>
     .ct-label{
@@ -185,7 +186,7 @@
                             </div>
                             <div class="card-content">
                                 <p class="category">Tổng đơn hàng</p>
-                                <h3 class="card-title">184</h3>
+                                <h3 class="card-title">{{totalbill1[0]}}</h3>
                             </div>
                             <div class="card-footer">
 
@@ -199,7 +200,7 @@
                             </div>
                             <div class="card-content">
                                 <p class="category">Tổng doanh thu</p>
-                                <h3 class="card-title">$34,245</h3>
+                                <h3 class="card-title">{{totalbill1[1]}}</h3>
                             </div>
                             <div class="card-footer">
 
@@ -802,18 +803,19 @@
 
 <script>
     // Tổng đơn hàng ------------------------------------------------------------------
-    var data = {
-        labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '12', '12'],
-        series: [
-            [5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8]
-        ]
-    };
-
-    var options = {
-        seriesBarDistance: 10
-    };
-
-    new Chartist.Bar('#chart2', data, options,);
+    // var a =['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '12', '12']
+    // var data = {
+    //     labels: a,
+    //     series: [
+    //         [5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8]
+    //     ]
+    // };
+    //
+    // var options = {
+    //     seriesBarDistance: 10
+    // };
+    //
+    // new Chartist.Bar('#chart2', data, options,);
 </script>
 
 <script>
@@ -866,6 +868,31 @@
             ]
         },{height: 500}
     );
+</script>
+<script>
+    var app = angular.module("myapp", []);
+    app.controller("myctrl", function($scope, $http) {
+        $scope.totalbill = [];
+        $http.get("../statistical/totalbill").then(function(response) {
+            $scope.totalbill = response.data;
+            $scope.totalbill1 =  $scope.totalbill[0];
+        });
+        //tổ
+        // ng đơn hàng
+        var a =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+        var data = {
+            labels: a,
+            series: [
+                [5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8]
+            ]
+        };
+
+        var options = {
+            seriesBarDistance: 10
+        };
+
+        new Chartist.Bar('#chart2', data, options,);
+    });
 </script>
 </body>
 <!--   Core JS Files   -->

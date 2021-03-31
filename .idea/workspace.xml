@@ -23,10 +23,152 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 31/3/2021 0:17AM">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductHotPageREST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/StatisticalDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/StatisticalDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/StatisticalSeviceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/StatisticalSevice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/SendEmailRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/product_restore.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/voucher_restore.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CommentREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CommentREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/100_anh_1617082596999anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/100_anh_1617082596999anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/10_anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/10_anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/11_anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/11_anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/12_anh_1616996679124anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/12_anh_1616996679124anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/13_anh_1616996828711anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/13_anh_1616996828711anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/14_anh_1616996951715anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/14_anh_1616996951715anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/15_anh_1616997055719anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/15_anh_1616997055719anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/16_anh_1616997210049anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/16_anh_1616997210049anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/17_anh_1616998838882anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/17_anh_1616998838882anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/18_anh_1616999283838anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/18_anh_1616999283838anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/19_anh_1616999604468anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/19_anh_1616999604468anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/20_anh_1616999973635anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/20_anh_1616999973635anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/21_anh_1617000567075anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/21_anh_1617000567075anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/22_anh_1617000875839anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/22_anh_1617000875839anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/23_anh_1617001178379anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/23_anh_1617001178379anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/24_anh_1617001477170anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/24_anh_1617001477170anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/25_anh_1617002130589anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/25_anh_1617002130589anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/26_anh_1617002936832anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/26_anh_1617002936832anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/27_anh_1617003216052anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/27_anh_1617003216052anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/28_anh_1617003465170anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/28_anh_1617003465170anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/29_anh_1617003743982anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/29_anh_1617003743982anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/2_anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/2_anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/30_anh_1617004026750anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/30_anh_1617004026750anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/32_anh_1617005927600anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/32_anh_1617005927600anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/33_anh_1617006247561anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/33_anh_1617006247561anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/34_anh_1617006525214anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/34_anh_1617006525214anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/35_anh_1617006823396anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/35_anh_1617006823396anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/36_anh_1617007138327anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/36_anh_1617007138327anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/37_anh_1617007374372anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/37_anh_1617007374372anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/38_anh_1617008028874anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/38_anh_1617008028874anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/39_anh_1617008270724anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/39_anh_1617008270724anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/3_anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/3_anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/40_anh_1617008845139anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/40_anh_1617008845139anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/41_anh_1617009257307anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/41_anh_1617009257307anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/42_anh_1617009534416anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/42_anh_1617009534416anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/43_anh_1617009920471anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/43_anh_1617009920471anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/44_anh_1617010198202anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/44_anh_1617010198202anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/46_anh_1617011005339anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/46_anh_1617011005339anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/47_anh_1617011301657anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/47_anh_1617011301657anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/48_anh_1617011574185anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/48_anh_1617011574185anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/49_anh_1617011811574anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/49_anh_1617011811574anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/4_anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/4_anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/50_anh_1617012239196anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/50_anh_1617012239196anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/51_anh_1617012484413anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/51_anh_1617012484413anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/52_anh_1617012922425anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/52_anh_1617012922425anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/53_anh_1617013954530anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/53_anh_1617013954530anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/54_anh_1617014194277anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/54_anh_1617014194277anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/55_anh_1617014460739anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/55_anh_1617014460739anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/56_anh_1617014785855anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/56_anh_1617014785855anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/57_anh_1617025313154anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/57_anh_1617025313154anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/58_anh_1617025623703anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/58_anh_1617025623703anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/59_anh_1617025875167anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/59_anh_1617025875167anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/5_anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/5_anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/60_anh_1617026122357anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/60_anh_1617026122357anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/61_anh_1617026467953anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/61_anh_1617026467953anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/62_anh_1617026884552anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/62_anh_1617026884552anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/63_anh_1617027176511anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/63_anh_1617027176511anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/64_anh_1617027426471anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/64_anh_1617027426471anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/65_anh_1617027684690anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/65_anh_1617027684690anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/66_anh_1617027908590anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/66_anh_1617027908590anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/67_anh_1617028167069anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/67_anh_1617028167069anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/68_anh_1617028499804anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/68_anh_1617028499804anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/69_anh_1617028819068anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/69_anh_1617028819068anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/6_anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/6_anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/70_anh_1617029140828anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/70_anh_1617029140828anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/71_anh_1617030188566anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/71_anh_1617030188566anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/72_anh_1617030499911anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/72_anh_1617030499911anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/73_anh_1617030743885anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/73_anh_1617030743885anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/74_anh_1617031118276anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/74_anh_1617031118276anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/75_anh_1617031460159anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/75_anh_1617031460159anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/76_anh_1617032034998anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/76_anh_1617032034998anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/77_anh_1617032431741anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/77_anh_1617032431741anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/78_anh_1617032712784anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/78_anh_1617032712784anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/79_anh_1617033026109anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/79_anh_1617033026109anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/7_anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/7_anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/80_anh_1617033414180anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/80_anh_1617033414180anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/81_anh_1617076106441anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/81_anh_1617076106441anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/82_anh_1617076437526anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/82_anh_1617076437526anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/83_anh_1617076803958anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/83_anh_1617076803958anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/85_anh_1617077151286anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/85_anh_1617077151286anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/86_anh_1617077469459anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/86_anh_1617077469459anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/87_anh_1617077889608anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/87_anh_1617077889608anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/88_anh_1617078186308anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/88_anh_1617078186308anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/89_anh_1617078532426anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/89_anh_1617078532426anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/8_anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/8_anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/90_anh_1617078796509anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/90_anh_1617078796509anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/91_anh_1617079083512anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/91_anh_1617079083512anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/92_anh_1617079397445anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/92_anh_1617079397445anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/93_anh_1617079723718anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/93_anh_1617079723718anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/94_anh_1617079953936anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/94_anh_1617079953936anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/95_anh_1617080193963anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/95_anh_1617080193963anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/96_anh_1617080929129anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/96_anh_1617080929129anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/97_anh_1617081214040anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/97_anh_1617081214040anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/98_anh_1617081871479anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/98_anh_1617081871479anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/99_anh_1617082178835anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/99_anh_1617082178835anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hinhanh/9_anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/hinhanh/9_anh1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/TrashcanDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/TrashcanDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/VoucherDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/VoucherDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/InvoiceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/InvoiceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/VoucherDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/VoucherDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminInvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminInvoiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminNewsletterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminNewsletterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminStatisticalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminStatisticalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminTrashconController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminTrashconController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/InvoiceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/InvoiceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/VoucherServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/VoucherServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/InvoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/InvoiceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/VoucherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/VoucherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/charts2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/charts2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/dh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/dh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/mail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/product_pr.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/product_pr.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_image.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_property.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_property.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/tk.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/tk.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/TrashcanDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/TrashcanDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/VoucherDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/VoucherDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/InvoiceDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/InvoiceDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/VoucherDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/VoucherDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminInvoiceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminInvoiceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminNewsletterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminNewsletterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminStatisticalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminStatisticalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminTrashconController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminTrashconController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/InvoiceServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/InvoiceServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/VoucherServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/VoucherServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/InvoiceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/InvoiceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/VoucherService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/VoucherService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/charts2.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/charts2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/dh.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/dh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/mail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/sp_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/sp_image.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/sp_property.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/sp_property.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/sp_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/sp_test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/tk.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/tk.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,15 +197,12 @@
     </expand>
     <select />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="DuAn2_backup" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -99,21 +238,27 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../AndroidSDK" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../backup/DuAn2_backup" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DuAn2_backup" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\DuAn2_backup\src\main\resources\templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\DuAn2_backup\src\main\resources\templates\main\tables" />
       <recent name="F:\DuAn2_backup\src\main\resources\templates\main\pages" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.backend_final_project.DAO.Impl" />
+      <recent name="com.example.backend_final_project.DAO" />
+      <recent name="com.example.backend_final_project.service.Impl" />
+      <recent name="com.example.backend_final_project.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DuAn2_backup\src\main\resources\templates" />
+    </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication (1)">
+  <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -155,24 +300,12 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.BackendFinalProjectApplication (1)" />
         <item itemvalue="Spring Boot.BackendFinalProjectApplication" />
+        <item itemvalue="Spring Boot.BackendFinalProjectApplication (1)" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -211,6 +344,7 @@
       <workItem from="1615969091741" duration="48965000" />
       <workItem from="1616074845243" duration="767000" />
       <workItem from="1616168464389" duration="7283000" />
+      <workItem from="1617175321337" duration="4627000" />
     </task>
     <task id="LOCAL-00001" summary="Thêm Class DAO">
       <created>1613982667329</created>
@@ -405,7 +539,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -443,6 +577,48 @@
     <MESSAGE value="Fix 30/3/2021 3:10PM" />
     <MESSAGE value="Fix 31/3/2021 0:17AM" />
     <option name="LAST_COMMIT_MESSAGE" value="Fix 31/3/2021 0:17AM" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1617176436129">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1617176436129" />
+    <state x="305" y="293" key="FileChooserDialogImpl" timestamp="1617175550653">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="305" y="293" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617175550653" />
+    <state width="1877" height="220" key="GridCell.Tab.0.bottom" timestamp="1617180020913">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617180020913" />
+    <state width="1877" height="220" key="GridCell.Tab.0.center" timestamp="1617180020913">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="220" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617180020913" />
+    <state width="1877" height="220" key="GridCell.Tab.0.left" timestamp="1617180020913">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="220" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617180020913" />
+    <state width="1877" height="220" key="GridCell.Tab.0.right" timestamp="1617180020913">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="220" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617180020913" />
+    <state width="1877" height="220" key="GridCell.Tab.1.bottom" timestamp="1617180020913">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="220" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1617180020913" />
+    <state width="1877" height="220" key="GridCell.Tab.1.center" timestamp="1617180020913">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="220" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1617180020913" />
+    <state width="1877" height="220" key="GridCell.Tab.1.left" timestamp="1617180020913">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="220" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1617180020913" />
+    <state width="1877" height="220" key="GridCell.Tab.1.right" timestamp="1617180020913">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="220" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1617180020913" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

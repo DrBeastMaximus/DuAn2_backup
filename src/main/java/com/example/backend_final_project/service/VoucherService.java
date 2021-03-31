@@ -13,7 +13,8 @@ public interface VoucherService {
 
     List<Voucher> getVoucherByProductTypeID(int prodTypeID);
 
-    List<Voucher> getVoucherByStatus(int status);
+    List<Voucher> getVoucherByStatus(boolean
+                                             status);
 
     void addVoucher(Voucher voucher);
 

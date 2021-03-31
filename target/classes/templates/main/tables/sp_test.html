@@ -354,7 +354,7 @@
                                                             <div class="checkbox pull-left">
                                                             </div>
                                                             <button class="btn btn-success">Thêm</button>.
-                                                            <button class="btn" type="button" onClick="window.location.reload();">Cancel</button>
+                                                            <button class="btn" type="button" data-dismiss="modal" onclick="location.href='home';">Cancel</button>
                                                         </div>
                                                     </div>
 
@@ -449,7 +449,7 @@
                                                                 <div class="checkbox pull-left">
                                                                 </div>
                                                                 <button class="btn btn-success">Cập nhật</button>.
-                                                                <button class="btn" type="button" onClick="window.location.reload();">Cancel</button>
+                                                                <button class="btn" type="button" data-dismiss="modal" onclick="location.href='home';">Cancel</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -537,7 +537,7 @@
                                             <td ng-if="pr.gender == 0">Nữ</td>
                                             <td ng-if="pr.gender == 1">Nam</td>
                                             <td>{{pr.quantity}}</td>
-                                            <td><button type="button" rel="tooltip" ng-click="contentid($index)"  data-toggle="modal" data-target="#myModal3" class="btn btn-success btn-simple" data-original-title="" title="">
+                                            <td><button type="button" rel="tooltip" ng-click="contentid(pr.id)"  data-toggle="modal" data-target="#myModal3" class="btn btn-success btn-simple" data-original-title="" title="">
                                                 <i class="material-icons">open_in_new</i>
                                             </button></td>
                                             <td>
@@ -734,7 +734,12 @@
         }
         $scope.content= "";
         $scope.contentid = function (index) {
-            $scope.content = $scope.product[index].description;
+            for(var i = 0; i < $scope.product.length; i++){
+                if( $scope.product[i].id == index){
+                    $scope.content = $scope.product[i].description;
+                }
+            }
+
         }
 
         $scope.begin = 0;

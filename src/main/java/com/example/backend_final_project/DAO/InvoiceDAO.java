@@ -14,7 +14,7 @@ public interface InvoiceDAO {
     List<Invoice> getInvoiceListByUserId(int userID);
     List<Invoice> getInvoiceListByStatus(int status);
     List<Invoice> getInvoiceListByVoucherId(int voucherID);
-
+    List<Object> getcountAll();
     void addInvoice(Invoice invoice);
 
     void updateInvoice(Invoice invoice);

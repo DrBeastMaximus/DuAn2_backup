@@ -24,6 +24,14 @@ public class AdminInvoiceController {
     @Autowired
     private InvoiceServiceImpl invoiceServiceImpl;
 
+    @GetMapping("/count/list")
+    @ResponseBody
+    public List<Object> getcountall(){
+        List<Object> list = invoiceServiceImpl.getcountAll();
+        return list;
+    }
+
+
     @GetMapping("/list/{status}")
     @ResponseBody
     public List<InvoiceRespone> getinvoice(@PathVariable("status") int status){
@@ -56,15 +64,25 @@ public class AdminInvoiceController {
 
         int status = 0;
         if(check.equals("cho-xac-nhan")) {
-             status = 0;
+            status = 0;
         }else{
             if (check.equals("cho-van-chuyen")){
-                 status = 1;
+                status = 1;
             }else{
                 if(check.equals( "dang-van-chuyen")){
-                     status = 2;
+                    status = 2;
                 }else{
-                    status = 0;
+                    if(check.equals("da-huy")){
+                        status = 4;
+                    }else{
+                        if(check.equals("da-hoan-thanh")){
+                            status = 3;
+                        }else{
+                            status = 0;
+                        }
+
+                    }
+
                 }
             }
         }
@@ -85,7 +103,17 @@ public class AdminInvoiceController {
                 if(check.equals( "dang-van-chuyen")){
                     status = 2;
                 }else{
-                    status = 0;
+                    if(check.equals("da-huy")){
+                        status = 4;
+                    }else{
+                        if(check.equals("da-hoan-thanh")){
+                            status = 3;
+                        }else{
+                            status = 0;
+                        }
+
+                    }
+
                 }
             }
         }

@@ -26,13 +26,13 @@ public class VoucherDAOImpl implements VoucherDAO {
     @Override
     public List<Voucher> getVoucherList() {
         Session session = this.sessionFactory.openSession();
-        return session.createQuery("from Voucher", Voucher.class).getResultList();
+        return session.createQuery("from Voucher where Status = false", Voucher.class).getResultList();
     }
 
     @Override
     public Voucher getVoucherById(int id) {
         Session session = this.sessionFactory.openSession();
-        String queryString = "from Voucher where id = :id";
+        String queryString = "from Voucher where id = :id and Status = false";
         return (Voucher) session.createQuery(queryString)
                 .setParameter("id", id)
                 .uniqueResult();
@@ -41,7 +41,7 @@ public class VoucherDAOImpl implements VoucherDAO {
     @Override
     public List<Voucher> getVoucherByCode(String code) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Voucher where Code = :code";
+        String hql = "FROM Voucher where Code = :code and Status = false";
         Query query = session.createQuery(hql);
         query.setParameter("code", code);
         List<Voucher> list = query.list();
@@ -51,7 +51,7 @@ public class VoucherDAOImpl implements VoucherDAO {
     @Override
     public List<Voucher> getVoucherByProductTypeID(int prodTypeID) {
         Session session = this.sessionFactory.openSession();
-        String hql = "FROM Voucher where Product_type like :id";
+        String hql = "FROM Voucher where Product_type like :id Status = false";
         Query query = session.createQuery(hql);
         query.setParameter("id", prodTypeID);
         List<Voucher> list = query.list();
@@ -59,7 +59,7 @@ public class VoucherDAOImpl implements VoucherDAO {
     }
 
     @Override
-    public List<Voucher> getVoucherByStatus(int status) {
+    public List<Voucher> getVoucherByStatus(boolean status) {
         Session session = this.sessionFactory.openSession();
         String hql = "FROM Voucher where Status like :status";
         Query query = session.createQuery(hql);

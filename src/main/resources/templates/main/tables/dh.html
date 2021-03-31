@@ -269,21 +269,26 @@
                                 <h4 class="card-title">Đơn hàng</h4>
                                 <div class="toolbar">
                                     <!--        Here you can write extra buttons/actions for the toolbar              -->
+                                    <button type="button" rel="tooltip" class="btn btn-danger" onclick="location.href='../home/da-huy';">
+                                        <i class="material-icons">event_busy</i>
+                                        Đơn hàng đã hủy: {{xoa}}
+                                    </button>
                                     <button type="button" rel="tooltip" class="btn" onclick="location.href='../home/cho-xac-nhan';">
                                         <i class="material-icons">event_available</i>
-                                        Đơn hàng chờ xác nhận
+                                        Đơn hàng chờ xác nhận: {{chapnhan}}
                                     </button>
                                     <button type="button" rel="tooltip" class="btn btn-info" onclick="location.href='../home/cho-van-chuyen';">
-                                        <i class="material-icons">event_note</i>
-                                        Đơn hàng chờ vận chuyển
+                                        <i class="material-icons">bus_alert</i>
+                                        Đơn hàng chờ vận chuyển: {{cho}}
                                     </button>
-                                    <!--                                        <button type="button" rel="tooltip" class="btn btn-danger">-->
-                                    <!--                                            <i class="material-icons">event_busy</i>-->
-                                    <!--                                        Hủy đơn hàng: 100  -->
-                                    <!--                                        </button>-->
-                                    <button type="button" rel="tooltip" class="btn btn-success" onclick="location.href='../home/dang-van-chuyen';">
+
+                                    <button type="button" rel="tooltip" class="btn btn-warning" onclick="location.href='../home/dang-van-chuyen';">
+                                        <i class="material-icons">directions_bus</i>
+                                        Đơn hàng đang vận chuyển: {{dang}}
+                                    </button>
+                                    <button type="button" rel="tooltip" class="btn btn-success" onclick="location.href='../home/da-hoan-thanh';">
                                         <i class="material-icons">beenhere</i>
-                                        Đơn hàng đang vận chuyển
+                                        Đơn hàng đã hoàn thành: {{hoanthanh}}
                                     </button>
                                     <div class="input-group" style="margin-left: 1350px">
                                         <input type="search" ng-model="search" id="form1" class="form-control" placeholder="Search for..." ng-click="first()"/>
@@ -336,7 +341,7 @@
                                     <table  class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                         <thead>
                                         <tr>
-                                            <th>ID{{urlinsert}}</th>
+                                            <th>ID{{test[0]}}</th>
                                             <th>Mã đơn</th>
                                             <th>Người đặt</th>
                                             <th>Email người đặt</th>
@@ -378,17 +383,19 @@
                                             <td>{{i.invoice.created_date}}</td>
                                             <td>{{i.invoice.total}}</td>
 
-                                            <td><button type="button" rel="tooltip" ng-click="chitiet($index)" data-toggle="modal" data-target="#myModal3" class="btn btn-success btn-simple" data-original-title="" title="">
+                                            <td><button type="button" rel="tooltip" ng-click="chitiet(i.invoice.id)" data-toggle="modal" data-target="#myModal3" class="btn btn-success btn-simple" data-original-title="" title="">
                                                 <i class="material-icons">open_in_new</i>
                                             </button>
                                             </td>
                                             <td ng-if="i.invoice.status == 0">Chờ xác nhận</td>
                                             <td ng-if="i.invoice.status == 1">Chờ vận chuyển</td>
                                             <td ng-if="i.invoice.status == 2">Đang vận chuyển</td>
+                                            <td ng-if="i.invoice.status == 3">Đã hoàn thành</td>
+                                            <td ng-if="i.invoice.status == 4">Đã hủy</td>
                                             <td class="td-actions text-right">
                                                 <form action="{{url}}" method="post" th:object="${status}">
-                                                    <input hidden id="id" name="id" type="number" value="{{i.invoice.id}}">
-                                                    <input hidden id="status" name="status" type="number" value="{{status}}">
+                                                    <textarea hidden id="id" name="id" type="number" >{{i.invoice.id}}</textarea>
+                                                    <textarea hidden id="status" name="status" type="number" >{{status}}</textarea>
                                                     <button type="submit" ng-click="tuchoi()" rel="tooltip" class="btn btn-danger btn-simple" ng-if="i.invoice.status== 0">
                                                         <i class="material-icons">event_busy
                                                         </i>
@@ -397,11 +404,11 @@
                                                         <i class="material-icons">event_available</i>
                                                     </button>
                                                     <button type="submit"  ng-click="chovanchuyen()" rel="tooltip" class="btn btn-info btn-simple" ng-if="i.invoice.status== 1">
-                                                        <i class="material-icons">event_note</i>
+                                                        <i class="material-icons">bus_alert</i>
                                                     </button>
 
                                                     <button type="submit" ng-click="dangvanchuyen()"  rel="tooltip" class="btn btn-success btn-simple" ng-if="i.invoice.status== 2">
-                                                        <i class="material-icons">beenhere</i>
+                                                        <i class="material-icons">directions_bus</i>
                                                     </button>
                                                 </form>
                                             </td>
@@ -552,11 +559,49 @@
                 $scope.invoice = response.data;
             });
         }
+        $scope.count = [];
+        $scope.xoa = 0;
+        $scope.chapnhan = 0;
+        $scope.cho=0;
+        $scope.dang =0;
+        $scope.hoanthanh = 0;
+        $http.get("../../invoice/count/list").then(function (response) {
+            $scope.count = response.data;
+            for( var i = 0;i < $scope.count.length;i++){
+                $scope.ketqua = $scope.count[i];
+                if($scope.ketqua[0] == 0){
+                    $scope.chapnhan = $scope.ketqua[1];
+                }
+                if($scope.ketqua[0] == 1){
+                    $scope.cho = $scope.ketqua[1];
+                }
+                if($scope.ketqua[0] == 2){
+                    $scope.dang = $scope.ketqua[1];
+                }
+                if($scope.ketqua[0] == 3){
+                    $scope.hoanthanh = $scope.ketqua[1];
+                }
+                if($scope.ketqua[0] == 4){
+                    $scope.xoa = $scope.ketqua[1];
+                }
+            }
+        });
+
+        // for(var i = 0;i < $scope.count;i++){
+        //     $scope.test = $scope.count[]
+        // }
+
         // alert($scope.id);
         $scope.invoice1= {};
 
         $scope.chitiet = function (index) {
-            $scope.invoice_detail = $scope.invoice[index].invoidetail;
+            for(var i = 0; i < $scope.invoice.length; i++){
+                if( $scope.invoice[i].invoice.id == index){
+
+                    $scope.invoice_detail = $scope.invoice[i].invoidetail;
+                }
+            }
+            // $scope.invoice_detail = $scope.invoice[index].invoidetail;
         }
         $scope.url = "";
         $scope.tuchoi = function (){

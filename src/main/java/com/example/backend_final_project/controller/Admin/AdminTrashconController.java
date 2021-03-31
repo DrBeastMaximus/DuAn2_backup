@@ -89,4 +89,31 @@ public class AdminTrashconController {
         model.addAttribute("restor",new Supplier());
         return "main/tables/nhacungcap_restore";
     }
+    @GetMapping("/trashconvoucher")
+    public String restorevoucherdelete(ModelMap model){
+        model.addAttribute("restor", new Voucher());
+        return "main/tables/voucher_restore";
+    }
+
+    @PostMapping("/trashconvoucher")
+    public String restoreavoucherdelete(ModelMap model, @ModelAttribute  Voucher voucher){
+        trashconServiceImpl.restoreVoucher(voucher.getID());
+        System.out.println("ok");
+        model.addAttribute("restor",new Voucher());
+        return "main/tables/voucher_restore";
+    }
+
+    @GetMapping("/trashconproduct")
+    public String restoreproductdelete(ModelMap model){
+        model.addAttribute("restor", new Product());
+        return "main/tables/product_restore";
+    }
+
+    @PostMapping("/trashconproduct")
+    public String restoreaproductdelete(ModelMap model, @ModelAttribute  Product product){
+        trashconServiceImpl.restoreProduct(product.getID());
+        System.out.println("ok");
+        model.addAttribute("restor",new Product());
+        return "main/tables/product_restore";
+    }
 }

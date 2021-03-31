@@ -58,6 +58,16 @@ public class InvoiceDAOImpl implements InvoiceDAO {
         List<Invoice> list = query.list();
         return list;
     }
+    @Override
+    public List<Object> getcountAll() {
+        Session session = this.sessionFactory.openSession();
+        String hql = "select Status as status, count(id) as quantity from Invoice group by Status";
+        Query query = session.createQuery(hql);
+
+        List<Object> list = query.list();
+        return list;
+    }
+
 
     @Override
     public List<Invoice> getInvoiceListByVoucherId(int voucherID) {

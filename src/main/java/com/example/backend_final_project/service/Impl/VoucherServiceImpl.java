@@ -41,7 +41,7 @@ public class VoucherServiceImpl implements VoucherService {
     }
 
     @Override
-    public List<Voucher> getVoucherByStatus(int status) {
+    public List<Voucher> getVoucherByStatus(boolean status) {
 
         return voucherDAOlmpl.getVoucherByStatus(status);
     }
