@@ -92,12 +92,12 @@ public class ProductPageREST {
 
         return ResponseEntity.ok(pg.getPageCount());
     }
-    @GetMapping("/gender/male/totalCount/")
+    @GetMapping("/gender/male/totalCount")
     public ResponseEntity<Integer> totalMaleProdCount(){
         List<Product> usn = productService.getMaleProductList();
         return ResponseEntity.ok(usn.size());
     }
-    @GetMapping("/gender/female/totalCount/")
+    @GetMapping("/gender/female/totalCount")
     public ResponseEntity<Integer> totalFemaleProdCount(){
         List<Product> usn = productService.getFemaleProductList();
         return ResponseEntity.ok(usn.size());
