@@ -68,8 +68,9 @@ public class CartPageREST {
                         for(int i=0;i<cartD.size();i++){
                             Map<String, Object> obj = new LinkedHashMap<>();
                             obj.put("cartDetailID",cartD.get(i).getId());
+                            obj.put("cartID",cartD.get(i).getCart().getId());
                             obj.put("product",cartD.get(i).getProduct());
-                            obj.put("productTotalPrice",cartD.get(i).getTotal());
+                            obj.put("totalPrice",cartD.get(i).getTotal());
                             obj.put("quantity",cartD.get(i).getQuantity());
                             String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+cartD.get(i).getProduct().getID();
                             obj.put("indexImage",indexImg);
