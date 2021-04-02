@@ -67,7 +67,7 @@ public class CartPageREST {
                         List ls = new ArrayList();
                         for(int i=0;i<cartD.size();i++){
                             Map<String, Object> obj = new LinkedHashMap<>();
-                            obj.put("cartDetailID",cartD.get(i).getProduct());
+                            obj.put("cartDetailID",cartD.get(i).getId());
                             obj.put("product",cartD.get(i).getProduct());
                             obj.put("productTotalPrice",cartD.get(i).getTotal());
                             obj.put("quantity",cartD.get(i).getQuantity());
