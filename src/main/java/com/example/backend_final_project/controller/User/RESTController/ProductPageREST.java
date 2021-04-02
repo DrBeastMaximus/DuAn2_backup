@@ -142,7 +142,7 @@ public class ProductPageREST {
 
         for(int i=0;i<pd.size();i++){
             Map<String, Object> obj = new LinkedHashMap<>();
-            obj.put("propduct",pd.get(i));
+            obj.put("product",pd.get(i));
             String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
             obj.put("indexImage",indexImg);
             ls.add(obj);
@@ -185,7 +185,7 @@ public class ProductPageREST {
 
         for(int i=0;i<pd.size();i++){
             Map<String, Object> obj = new LinkedHashMap<>();
-            obj.put("propduct",pd.get(i));
+            obj.put("product",pd.get(i));
             String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
             obj.put("indexImage",indexImg);
             ls.add(obj);
@@ -229,7 +229,7 @@ public class ProductPageREST {
 
         for(int i=0;i<pd.size();i++){
             Map<String, Object> obj = new LinkedHashMap<>();
-            obj.put("propduct",pd.get(i));
+            obj.put("product",pd.get(i));
             String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
             obj.put("indexImage",indexImg);
             ls.add(obj);
@@ -276,7 +276,7 @@ public class ProductPageREST {
 
         for(int i=0;i<pd.size();i++){
             Map<String, Object> obj = new LinkedHashMap<>();
-            obj.put("propduct",pd.get(i));
+            obj.put("product",pd.get(i));
             String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
             obj.put("indexImage",indexImg);
             ls.add(obj);
@@ -323,7 +323,7 @@ public class ProductPageREST {
 
         for(int i=0;i<pd.size();i++){
             Map<String, Object> obj = new LinkedHashMap<>();
-            obj.put("propduct",pd.get(i));
+            obj.put("product",pd.get(i));
             String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
             obj.put("indexImage",indexImg);
             ls.add(obj);
@@ -370,7 +370,7 @@ public class ProductPageREST {
 
         for(int i=0;i<pd.size();i++){
             Map<String, Object> obj = new LinkedHashMap<>();
-            obj.put("propduct",pd.get(i));
+            obj.put("product",pd.get(i));
             String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
             obj.put("indexImage",indexImg);
             ls.add(obj);
@@ -417,7 +417,7 @@ public class ProductPageREST {
 
         for(int i=0;i<pd.size();i++){
             Map<String, Object> obj = new LinkedHashMap<>();
-            obj.put("propduct",pd.get(i));
+            obj.put("product",pd.get(i));
             String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
             obj.put("indexImage",indexImg);
             ls.add(obj);
@@ -459,7 +459,7 @@ public class ProductPageREST {
 
         for(int i=0;i<pd.size();i++){
             Map<String, Object> obj = new LinkedHashMap<>();
-            obj.put("propduct",pd.get(i));
+            obj.put("product",pd.get(i));
             String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
             obj.put("indexImage",indexImg);
             ls.add(obj);
@@ -507,7 +507,7 @@ public class ProductPageREST {
 
         for(int i=0;i<pd.size();i++){
             Map<String, Object> obj = new LinkedHashMap<>();
-            obj.put("propduct",pd.get(i));
+            obj.put("product",pd.get(i));
             String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
             obj.put("indexImage",indexImg);
             ls.add(obj);
