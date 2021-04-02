@@ -56,6 +56,7 @@ public class CheckoutPageREST {
     @PostMapping("/order/{userID}/{voucherCode}")
     public Boolean orderwithVoucher(@PathVariable int userID, @PathVariable String voucherCode, @RequestBody JsonNode json) throws MessagingException {
         int discontValue = checkVoucher(voucherCode);
+        StringBuilder receipt = null;
         User user = userService.getUserById(userID);
         if(user!=null) {
             user.setFullname(json.get("name").asText());
@@ -82,9 +83,13 @@ public class CheckoutPageREST {
                     invoiceD.setInvoice(invoice);
                     invoiceD.setQuantity(cartDetail.get(i).getQuantity());
                     invoiceD.setProduct(cartDetail.get(i).getProduct());
-
-                    invoiceD.setProduct_Price(cartDetail.get(i).getProduct_Price());
-                    invoiceD.setTotal(cartDetail.get(i).getTotal());
+                    if(cartDetail.get(i).getProduct().getPrice_sale()!=0){
+                        invoiceD.setProduct_Price(cartDetail.get(i).getProduct().getPrice_sale());
+                        invoiceD.setTotal(cartDetail.get(i).getProduct().getPrice_sale()*cartDetail.get(i).getQuantity());
+                    } else{
+                        invoiceD.setProduct_Price(cartDetail.get(i).getProduct().getPrice());
+                        invoiceD.setTotal(cartDetail.get(i).getProduct().getPrice()*cartDetail.get(i).getQuantity());
+                    }
                     invoiceD.setCreated_date(new Date());
                     invoiceD.setUpdate_Date(new Date());
                     Product p = productService.getProductById(cartDetail.get(i).getProduct().getID());
@@ -92,12 +97,27 @@ public class CheckoutPageREST {
                     productService.updateProduct(p);
                     invoiceD.setPrice_sale(p.getPrice_sale());
                     invoiceDetailService.addInvoiceDetail(invoiceD);
+                    receipt
+                            .append("----------------------------------------------")
+                            .append("Tên sản phẩm: "+p.getName())
+                            .append("Giá: "+p.getPrice() +" x " + cartDetail.get(i).getQuantity())
+                            .append("Thành tiền: "+cartDetail.get(i).getTotal())
+                            .toString();
+
                     cartDetailService.deleteCartDetail(cartDetail.get(i).getId());
+
                 }
                 cartService.deleteCart(cart.getId());
+                String text = new StringBuilder()
+                            .append("Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.")
+                            .append("Dưới đây là chi tiết đến đơn hàng của bạn")
+                            .append("----------------------------------------------")
+                            .append(receipt)
+                            .toString();
+
                 MailSender.sendText(user.getEmail(),
                         "DWFashion Chân Thành Cảm Ơn Bạn Đã Đặt Hàng",
-                        "Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.");
+                        text);
                 return true;
             } else {return false;}
         } else{
@@ -105,9 +125,11 @@ public class CheckoutPageREST {
         }
 
     }
+
     @PostMapping("/order/{userID}")
     public Boolean orderwithoutVoucher(@PathVariable int userID, @RequestBody JsonNode json) throws MessagingException {
         User user = userService.getUserById(userID);
+        StringBuilder receipt = null;
         if(user!=null) {
             user.setFullname(json.get("name").asText());
             user.setPhone(String.valueOf(json.get("phone").asLong()));
@@ -133,8 +155,13 @@ public class CheckoutPageREST {
                     invoiceD.setInvoice(invoice);
                     invoiceD.setQuantity(cartDetail.get(i).getQuantity());
                     invoiceD.setProduct(cartDetail.get(i).getProduct());
-                    invoiceD.setProduct_Price(cartDetail.get(i).getProduct_Price());
-                    invoiceD.setTotal(cartDetail.get(i).getTotal());
+                    if(cartDetail.get(i).getProduct().getPrice_sale()!=0){
+                        invoiceD.setProduct_Price(cartDetail.get(i).getProduct().getPrice_sale());
+                        invoiceD.setTotal(cartDetail.get(i).getProduct().getPrice_sale()*cartDetail.get(i).getQuantity());
+                    } else{
+                        invoiceD.setProduct_Price(cartDetail.get(i).getProduct().getPrice());
+                        invoiceD.setTotal(cartDetail.get(i).getProduct().getPrice()*cartDetail.get(i).getQuantity());
+                    }
                     invoiceD.setCreated_date(new Date());
                     invoiceD.setUpdate_Date(new Date());
                     Product p = productService.getProductById(cartDetail.get(i).getProduct().getID());
@@ -142,13 +169,26 @@ public class CheckoutPageREST {
                     productService.updateProduct(p);
                     invoiceD.setPrice_sale(p.getPrice_sale());
                     invoiceDetailService.addInvoiceDetail(invoiceD);
+                    receipt
+                            .append("----------------------------------------------")
+                            .append("Tên sản phẩm: "+p.getName())
+                            .append("Giá: "+p.getPrice() +" x " + cartDetail.get(i).getQuantity())
+                            .append("Thành tiền: "+cartDetail.get(i).getTotal())
+                            .toString();
+
                     cartDetailService.deleteCartDetail(cartDetail.get(i).getId());
 
                 }
                 cartService.deleteCart(cart.getId());
+                String text = new StringBuilder()
+                        .append("Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.")
+                        .append("Dưới đây là chi tiết đến đơn hàng của bạn")
+                        .append("----------------------------------------------")
+                        .append(receipt)
+                        .toString();
                 MailSender.sendText(user.getEmail(),
                         "DWFashion Chân Thành Cảm Ơn Bạn Đã Đặt Hàng",
-                        "Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.");
+                        text);
                 return true;
             } else{
                 return false;}

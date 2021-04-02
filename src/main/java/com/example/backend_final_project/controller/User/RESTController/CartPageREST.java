@@ -16,9 +16,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/cart")
@@ -66,7 +64,19 @@ public class CartPageREST {
                 if(cart!=null){
                     List<Cart_Detail> cartD = cartDetailService.getCartDetailListByCardID(cart.getId());
                     if(cartD!=null || cart!=null){
-                        return ResponseEntity.ok(cartD);
+                        List ls = new ArrayList();
+                        for(int i=0;i<cartD.size();i++){
+                            Map<String, Object> obj = new LinkedHashMap<>();
+                            obj.put("cartDetailID",cartD.get(i).getProduct());
+                            obj.put("product",cartD.get(i).getProduct());
+                            obj.put("productTotalPrice",cartD.get(i).getTotal());
+                            obj.put("quantity",cartD.get(i).getQuantity());
+                            String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+cartD.get(i).getProduct().getID();
+                            obj.put("indexImage",indexImg);
+                            ls.add(obj);
+                        }
+                        return ResponseEntity.ok(ls);
+
                     } else{
                         return ResponseEntity.badRequest().body("Không có hàng trong giỏ!");
                     }
@@ -99,7 +109,12 @@ public class CartPageREST {
                     Cart_Detail cartDetail = new Cart_Detail();
                     cartDetail.setCart(cart);
                     cartDetail.setProduct(productService.getProductById(product_id));
-                    cartDetail.setProduct_Price(product_price);
+                    Product pd = productService.getProductById(product_id);
+                    if(pd.getPrice_sale()!=0){
+                        cartDetail.setProduct_Price(pd.getPrice_sale());
+                    } else{
+                        cartDetail.setProduct_Price(pd.getPrice());
+                    }
                     cartDetail.setQuantity(quantity);
                     cartDetail.setTotal(total);
                     cartDetail.setUpdate_Date(new Date());
@@ -116,16 +131,26 @@ public class CartPageREST {
 
     }
 
-    @PutMapping("/updateProduct")
-    public ResponseEntity<?> updateProduct(HttpServletRequest request,@RequestBody Cart_Detail cartDetail){
+    @PutMapping("/updateProduct/{cartDetailID}/{newQuantity}")
+    public ResponseEntity<?> updateProduct(HttpServletRequest request,@PathVariable Integer cartDetailID,@PathVariable Integer newQuantity){
         String token = TokenFactory.getJwtFromRequest(request);
         if (StringUtils.hasText(token) && TokenFactory.validateToken(token)) {
             int userId = Integer.parseInt(TokenFactory.getUserIdFromJWT(token));
             User usr = userService.getUserById(userId);
             if(usr!=null){
                 Cart cart = cartService.getCartByUserId(userId);
+                Cart_Detail cartDetail = cartDetailService.getCartDetailId(cartDetailID);
                 if(cart!=null){
                     cartDetail.setUpdate_Date(new Date());
+                    cartDetail.setQuantity(newQuantity);
+                    Product pd = productService.getProductById(cartDetail.getProduct().getID());
+                    if(pd.getPrice_sale()!=0){
+                        cartDetail.setProduct_Price(pd.getPrice_sale());
+                        cartDetail.setTotal(pd.getPrice()*newQuantity);
+                    } else{
+                        cartDetail.setProduct_Price(pd.getPrice());
+                        cartDetail.setTotal(pd.getPrice_sale()*newQuantity);
+                    }
                     cartDetailService.updateCartDetail(cartDetail);
                     cart.setUpdate_Date(new Date());
                     cart.setTotal(cart.getTotal()+cartDetail.getTotal());
