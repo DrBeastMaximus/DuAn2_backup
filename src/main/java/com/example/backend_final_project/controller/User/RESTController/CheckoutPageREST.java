@@ -36,7 +36,13 @@ public class CheckoutPageREST {
         if(voucher!=null){
             if(voucher.get(0).isStatus()){
                 if(voucher.get(0).getLimit_use()>0){
-                    return voucher.get(0).getValue();
+                    if(voucher.get(0).getExpiration_date().before(new Date())){
+                        return voucher.get(0).getValue();
+                    } else{
+                        voucher.get(0).setStatus(true);
+                        voucherService.updateVoucher(voucher.get(0));
+                        return null;
+                    }
                 }else{
                     return null;
                 }
@@ -106,13 +112,32 @@ public class CheckoutPageREST {
 
                     cartDetailService.deleteCartDetail(cartDetail.get(i).getId());
 
+
                 }
                 cartService.deleteCart(cart.getId());
+                List<Voucher> voucher = voucherService.getVoucherByCode(voucherCode);
+                if(voucher!=null){
+                    if(voucher.get(0).isStatus()){
+                        if(voucher.get(0).getLimit_use()>0){
+                            voucher.get(0).setUpdated_date(new Date());
+                            voucher.get(0).setUpdated_by("System");
+                            voucher.get(0).setLimit_use(voucher.get(0).getLimit_use()-1);
+                            voucherService.updateVoucher(voucher.get(0));
+                        } else if(voucher.get(0).getLimit_use()==1){
+                            voucher.get(0).setUpdated_date(new Date());
+                            voucher.get(0).setUpdated_by("System");
+                            voucher.get(0).setLimit_use(0);
+                            voucher.get(0).setStatus(true);
+                            voucherService.updateVoucher(voucher.get(0));
+                        }
+                    }
+                }
                 String text = new StringBuilder()
                             .append("Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.")
                             .append("Dưới đây là chi tiết đến đơn hàng của bạn")
                             .append("----------------------------------------------")
                             .append(receipt)
+                        .append("Voucher áp dụng chơ đơn hàng: "+voucherCode)
                             .toString();
 
                 MailSender.sendText(user.getEmail(),

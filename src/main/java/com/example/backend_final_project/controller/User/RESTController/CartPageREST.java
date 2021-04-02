@@ -156,7 +156,7 @@ public class CartPageREST {
                     cart.setUpdate_Date(new Date());
                     cart.setTotal(cart.getTotal()+cartDetail.getTotal());
                     cartService.updateCart(cart);
-                    return ResponseEntity.ok("Cập nhật sản phẩm vào giỏ hàng!");
+                    return ResponseEntity.ok("Đã cập nhật sản phẩm vào giỏ hàng!");
                 } else{
                     return ResponseEntity.badRequest().body("Không có giỏ hàng nào!");
                 }

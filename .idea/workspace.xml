@@ -22,13 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 4/2/2021 0:17AM">
+    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 4/3/2021 0:17AM">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CartPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CartPageREST.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/Utils/Base64Agent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/ProductController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CartPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CartPageREST.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +111,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication (1)">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BackendFinalProjectApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="backend_final_project" />
       <extension name="coverage">
@@ -189,7 +200,7 @@
       <workItem from="1617192236628" duration="1020000" />
       <workItem from="1617194297863" duration="973000" />
       <workItem from="1617195499831" duration="1757000" />
-      <workItem from="1617198505027" duration="18011000" />
+      <workItem from="1617198505027" duration="19963000" />
     </task>
     <task id="LOCAL-00001" summary="Thêm Class DAO">
       <created>1613982667329</created>
@@ -387,7 +398,28 @@
       <option name="project" value="LOCAL" />
       <updated>1617352765750</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Fix 4/2/2021 0:17AM">
+      <created>1617402955753</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1617402955753</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Fix 4/3/2021 0:17AM">
+      <created>1617403122674</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1617403122674</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Fix 4/3/2021 0:17AM">
+      <created>1617403217307</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1617403217307</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +461,8 @@
     <MESSAGE value="Fix 30/3/2021 3:10PM" />
     <MESSAGE value="Fix 31/3/2021 0:17AM" />
     <MESSAGE value="Fix 4/2/2021 0:17AM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix 4/2/2021 0:17AM" />
+    <MESSAGE value="Fix 4/3/2021 0:17AM" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix 4/3/2021 0:17AM" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
