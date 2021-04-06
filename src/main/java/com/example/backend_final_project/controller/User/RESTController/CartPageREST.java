@@ -59,33 +59,38 @@ public class CartPageREST {
         if (StringUtils.hasText(token) && TokenFactory.validateToken(token)) {
             int userId = Integer.parseInt(TokenFactory.getUserIdFromJWT(token));
             User usr = userService.getUserById(userId);
-            if(usr!=null){
+            if (usr != null) {
                 Cart cart = cartService.getCartByUserId(userId);
-                if(cart!=null){
+                if (cart != null) {
                     List<Cart_Detail> cartD = cartDetailService.getCartDetailListByCardID(cart.getId());
-                    if(cartD!=null || cart!=null){
+                    if (cartD != null || cart != null) {
                         List ls = new ArrayList();
-                        for(int i=0;i<cartD.size();i++){
+                        for (int i = 0; i < cartD.size(); i++) {
                             Map<String, Object> obj = new LinkedHashMap<>();
-                            obj.put("cartDetailID",cartD.get(i).getId());
-                            obj.put("cartID",cartD.get(i).getCart().getId());
-                            obj.put("product",cartD.get(i).getProduct());
-                            obj.put("totalPrice",cartD.get(i).getTotal());
-                            obj.put("quantity",cartD.get(i).getQuantity());
-                            String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+cartD.get(i).getProduct().getID();
-                            obj.put("indexImage",indexImg);
+                            obj.put("cartDetailID", cartD.get(i).getId());
+                            obj.put("cartID", cartD.get(i).getCart().getId());
+                            obj.put("product", cartD.get(i).getProduct());
+                            obj.put("totalPrice", cartD.get(i).getTotal());
+                            obj.put("quantity", cartD.get(i).getQuantity());
+                            String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/" + cartD.get(i).getProduct().getID();
+                            obj.put("indexImage", indexImg);
                             ls.add(obj);
                         }
                         return ResponseEntity.ok(ls);
 
-                    } else{
-                        return ResponseEntity.badRequest().body("Không có hàng trong giỏ!");
+                    } else {
+//                        return ResponseEntity.badRequest().body("Không có hàng trong giỏ!");
+                        return ResponseEntity.badRequest().body(null);
                     }
-                } else{
-                    return ResponseEntity.badRequest().body("Không có giỏ hàng nào!");
+                } else {
+//                    return ResponseEntity.badRequest().body("Không có giỏ hàng nào!");
+                    return ResponseEntity.badRequest().body(null);
                 }
             }
-        }{return ResponseEntity.badRequest().body("Không có giỏ hàng này!");}
+//        }{return ResponseEntity.badRequest().body("Không có giỏ hàng này!");
+        }{
+            return ResponseEntity.badRequest().body(null);
+                }
 
     }
 //    @GetMapping("/test")
@@ -97,9 +102,9 @@ public class CartPageREST {
     @PutMapping("/addProduct")
     public ResponseEntity<?> addProduct(HttpServletRequest request, @RequestBody JsonNode json){
         int product_id = json.get("product_id").asInt();
-        Float total = json.get("total").floatValue();
+        Long total = json.get("total").asLong();
         int quantity = json.get("quantity").asInt();
-        Float product_price = json.get("product_price").floatValue();
+        Long product_price = json.get("product_price").asLong();
         String token = TokenFactory.getJwtFromRequest(request);
         if (StringUtils.hasText(token) && TokenFactory.validateToken(token)) {
             int userId = Integer.parseInt(TokenFactory.getUserIdFromJWT(token));
