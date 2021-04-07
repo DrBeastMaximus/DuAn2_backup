@@ -167,7 +167,7 @@ public class ProductPageREST {
             @PathVariable Long min,
             @PathVariable Long max) {
 
-        List<Product> usn = productService.getHotFemaleProductListInRange(min, max);
+        List<Product> usn = productService.getHotMaleProductListInRange(min, max);
 
         switch (sort){
             case "DESC":
@@ -440,7 +440,7 @@ public class ProductPageREST {
             @PathVariable Integer size,
             @PathVariable String sort) {
 
-        List<Product> usn = productService.getMaleProductList();
+        List<Product> usn = productService.getFemaleProductList();
 
         switch (sort){
             case "DESC":

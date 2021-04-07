@@ -59,7 +59,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getHotMaleProductListInRange(long min, long max) {
-        return productDAOlmpl.getHotFemaleProductListInRange(min, max);
+        return productDAOlmpl.getHotMaleProductListInRange(min, max);
     }
 
     @Override

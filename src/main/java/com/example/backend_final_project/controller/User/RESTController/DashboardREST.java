@@ -17,20 +17,15 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/dashboard")
 public class DashboardREST {
-    @Autowired
-    private CartServiceImpl cartService;
+
     @Autowired
     private ProductServiceImpl productService;
     @Autowired
     private UserServicelmpl userService;
     @Autowired
-    private CartDetailServiceImpl cartDetailService;
-    @Autowired
     private InvoiceServiceImpl invoiceService;
     @Autowired
     private InvoiceDetailServiceImpl invoiceDetailService;
-    @Autowired
-    private VoucherServiceImpl voucherService;
     @Autowired
     private CommentServiceImpl commentService;
 
