@@ -152,10 +152,10 @@ public class CartPageREST {
                     Product pd = productService.getProductById(cartDetail.getProduct().getID());
                     if(pd.getPrice_sale()!=0){
                         cartDetail.setProduct_Price(pd.getPrice_sale());
-                        cartDetail.setTotal(pd.getPrice()*newQuantity);
+                        cartDetail.setTotal(pd.getPrice_sale()*newQuantity);
                     } else{
                         cartDetail.setProduct_Price(pd.getPrice());
-                        cartDetail.setTotal(pd.getPrice_sale()*newQuantity);
+                        cartDetail.setTotal(pd.getPrice()*newQuantity);
                     }
                     cartDetailService.updateCartDetail(cartDetail);
                     cart.setUpdate_Date(new Date());
