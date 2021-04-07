@@ -18,8 +18,6 @@ import java.util.List;
 @RequestMapping("/api/product/comment")
 public class CommentREST {
     @Autowired
-    private ProductServiceImpl productService;
-    @Autowired
     private CommentServiceImpl commentService;
 
     @GetMapping("/loadProductComment/{page}/{size}/{prodID}")

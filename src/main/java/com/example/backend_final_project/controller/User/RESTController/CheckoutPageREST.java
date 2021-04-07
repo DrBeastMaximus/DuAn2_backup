@@ -103,12 +103,6 @@ public class CheckoutPageREST {
                     productService.updateProduct(p);
                     invoiceD.setPrice_sale(p.getPrice_sale());
                     invoiceDetailService.addInvoiceDetail(invoiceD);
-                    receipt
-                            .append("----------------------------------------------")
-                            .append("Tên sản phẩm: "+p.getName())
-                            .append("Giá: "+p.getPrice() +" x " + cartDetail.get(i).getQuantity())
-                            .append("Thành tiền: "+cartDetail.get(i).getTotal())
-                            .toString();
 
                     cartDetailService.deleteCartDetail(cartDetail.get(i).getId());
 
@@ -134,10 +128,6 @@ public class CheckoutPageREST {
                 }
                 String text = new StringBuilder()
                             .append("Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.")
-                            .append("Dưới đây là chi tiết đến đơn hàng của bạn")
-                            .append("----------------------------------------------")
-                            .append(receipt)
-                        .append("Voucher áp dụng chơ đơn hàng: "+voucherCode)
                             .toString();
 
                 MailSender.sendText(user.getEmail(),
@@ -194,12 +184,6 @@ public class CheckoutPageREST {
                     productService.updateProduct(p);
                     invoiceD.setPrice_sale(p.getPrice_sale());
                     invoiceDetailService.addInvoiceDetail(invoiceD);
-                    receipt
-                            .append("----------------------------------------------")
-                            .append("Tên sản phẩm: "+p.getName())
-                            .append("Giá: "+p.getPrice() +" x " + cartDetail.get(i).getQuantity())
-                            .append("Thành tiền: "+cartDetail.get(i).getTotal())
-                            .toString();
 
                     cartDetailService.deleteCartDetail(cartDetail.get(i).getId());
 
@@ -207,9 +191,6 @@ public class CheckoutPageREST {
                 cartService.deleteCart(cart.getId());
                 String text = new StringBuilder()
                         .append("Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.")
-                        .append("Dưới đây là chi tiết đến đơn hàng của bạn")
-                        .append("----------------------------------------------")
-                        .append(receipt)
                         .toString();
                 MailSender.sendText(user.getEmail(),
                         "DWFashion Chân Thành Cảm Ơn Bạn Đã Đặt Hàng",
