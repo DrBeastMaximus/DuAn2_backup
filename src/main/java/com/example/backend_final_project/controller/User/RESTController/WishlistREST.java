@@ -62,7 +62,7 @@ public class WishlistREST {
                 for(int i=0;i<pd.size();i++){
                     Map<String, Object> obj = new LinkedHashMap<>();
                     obj.put("wishlist_product",pd.get(i));
-                    String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
+                    String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getProduct().getID();
                     obj.put("indexImage",indexImg);
                     ls.add(obj);
                 }
