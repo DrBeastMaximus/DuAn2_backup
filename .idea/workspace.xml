@@ -24,13 +24,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 4/7/2021 3:44AM">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CommentREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CommentREST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/DashboardREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/DashboardREST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/Impl/ProductServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductHotPageREST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/WishlistREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/WishlistREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ProductHotPageREST.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +203,7 @@
       <workItem from="1617194297863" duration="973000" />
       <workItem from="1617195499831" duration="1757000" />
       <workItem from="1617198505027" duration="35669000" />
-      <workItem from="1617567584048" duration="20102000" />
+      <workItem from="1617567584048" duration="50919000" />
     </task>
     <task id="LOCAL-00001" summary="Thêm Class DAO">
       <created>1613982667329</created>
@@ -471,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617796580923</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Fix 4/7/2021 3:44AM">
+      <created>1617825375247</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1617825375247</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,31 +549,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.java</url>
-          <line>128</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.java</url>
-          <line>126</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.java</url>
-          <line>124</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.java</url>
-          <line>122</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.java</url>
-          <line>123</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.java</url>
           <line>111</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -584,21 +566,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.java</url>
           <line>26</line>
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CommentREST.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CommentREST.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CommentREST.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java</url>
@@ -661,31 +628,6 @@
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/Utils/ImageUtil.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/Utils/ImageUtil.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DownloadImageREST.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java</url>
           <line>24</line>
           <option name="timeStamp" value="96" />
@@ -711,44 +653,34 @@
           <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CartPageREST.java</url>
-          <line>153</line>
-          <option name="timeStamp" value="114" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
+          <line>148</line>
+          <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CartPageREST.java</url>
-          <line>156</line>
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CartPageREST.java</url>
-          <line>157</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CartPageREST.java</url>
-          <line>161</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CartPageREST.java</url>
-          <line>160</line>
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CartPageREST.java</url>
-          <line>151</line>
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CartPageREST.java</url>
-          <line>150</line>
-          <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CartPageREST.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
           <line>149</line>
-          <option name="timeStamp" value="122" />
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
+          <line>150</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
+          <line>153</line>
+          <option name="timeStamp" value="128" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

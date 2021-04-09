@@ -11,8 +11,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/wishlist")
@@ -57,7 +56,17 @@ public class WishlistREST {
             User usr = userService.getUserById(userId);
             if (usr != null) {
                 List<Wishlish> chk = wishlistService.getWishlishByUserID(userId);
-                return ResponseEntity.ok(chk);
+                List ls = new ArrayList();
+                List<Wishlish> pd = chk;
+
+                for(int i=0;i<pd.size();i++){
+                    Map<String, Object> obj = new LinkedHashMap<>();
+                    obj.put("wishlist_product",pd.get(i));
+                    String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+pd.get(i).getID();
+                    obj.put("indexImage",indexImg);
+                    ls.add(obj);
+                }
+                return ResponseEntity.ok(ls);
             } else {
                 return ResponseEntity.badRequest().body("Wishlist trống!");
             }

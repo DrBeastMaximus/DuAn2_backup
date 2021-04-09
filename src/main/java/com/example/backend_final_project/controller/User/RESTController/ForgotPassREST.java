@@ -83,15 +83,20 @@ public class ForgotPassREST {
             if (usr != null) {
                 UsersToken tokens = tokenService.getUserTokenByUID(userId);
                 if(tokens.getAccountStatus()==3){
-                    if(confirm.equals(newPass)){
-                        usr.setPassword(newPass);
-                        userService.updateUser(usr);
-                        tokens.setPasswordReminderExpire(null);
-                        tokens.setPasswordReminderToken(null);
-                        tokens.setAccountStatus(1);
-                        tokenService.updateToken(tokens);
-                        return ResponseEntity.ok("Đã khôi phục tài khoản thành công");
-                    } else{return ResponseEntity.badRequest().body("Mật khẩu không đúng với xác nhận");}
+                    //Fix here
+                    if(token==tokens.getPasswordReminderToken()) {
+                        if (confirm.equals(newPass)) {
+                            usr.setPassword(newPass);
+                            userService.updateUser(usr);
+                            tokens.setPasswordReminderExpire(null);
+                            tokens.setPasswordReminderToken(null);
+                            tokens.setAccountStatus(1);
+                            tokenService.updateToken(tokens);
+                            return ResponseEntity.ok("Đã khôi phục tài khoản thành công");
+                        } else {
+                            return ResponseEntity.badRequest().body("Mật khẩu không đúng với xác nhận");
+                        }
+                    } else {return ResponseEntity.badRequest().body("Link khôi phục tài khoản sai hoặc hết hạn");}
                 } else {
                 return ResponseEntity.badRequest().body("Link khôi phục tài khoản sai hoặc hết hạn");}
             } else {

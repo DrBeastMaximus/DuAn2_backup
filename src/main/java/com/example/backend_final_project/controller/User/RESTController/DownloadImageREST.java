@@ -25,9 +25,6 @@ public class DownloadImageREST {
     @Autowired
     private ProductImageServiceImpl productImageService;
 
-    @Autowired
-    private ProductServiceImpl productService;
-
     @GetMapping("/getImages/{productID}/{pos}")
     public ResponseEntity<byte[]> downloadImage (@PathVariable int productID, @PathVariable int pos, HttpServletResponse resp){
         List<Product_Image> prodImg = productImageService.getProductImagesByProdId(productID);
