@@ -121,10 +121,21 @@ public class CartPageREST {
                     } else{
                         cartDetail.setProduct_Price(pd.getPrice());
                     }
-                    cartDetail.setQuantity(quantity);
-                    cartDetail.setTotal(total);
+
                     cartDetail.setUpdate_Date(new Date());
-                    cartDetailService.addCartDetail(cartDetail);
+                    Cart_Detail cd = cartDetailService.extractCartDetail(cart.getId(),product_id);
+                        if(cd!=null){
+                            cd.setQuantity(cd.getQuantity()+quantity);
+                            cd.setTotal(cd.getTotal()+total);
+                            cd.setUpdate_Date(new Date());
+                            cartDetailService.updateCartDetail(cd);
+                        } else {
+                            cartDetail.setQuantity(quantity);
+                            cartDetail.setTotal(total);
+                            cartDetailService.addCartDetail(cartDetail);
+                        }
+
+
                     cart.setUpdate_Date(new Date());
                     cart.setTotal(cart.getTotal()+total);
                     cartService.updateCart(cart);

@@ -4,11 +4,7 @@ import com.example.backend_final_project.DAO.CartDetailDAO;
 import com.example.backend_final_project.exception.DeleteDataException;
 import com.example.backend_final_project.exception.SaveDataErrorException;
 import com.example.backend_final_project.exception.UpdateDataException;
-import com.example.backend_final_project.model.Admin;
-import com.example.backend_final_project.model.Cart;
 import com.example.backend_final_project.model.Cart_Detail;
-import com.example.backend_final_project.model.User;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -48,11 +44,13 @@ public class CartDetailDAOImpl implements CartDetailDAO {
     }
 
     @Override
-    public void removeCartDetail(int cartID, int productID){
+    public Cart_Detail extractCartDetail(int cartID, int productID){
         Session session = this.sessionFactory.openSession();
-        session.createQuery("delete from Cart_Detail where Cart_Detail.Cart = :cartID and Cart_Detail.product = :productID", Cart_Detail.class)
-                .setParameter("cartID",cartID)
-                .setParameter("productID",productID);
+        String queryString = "FROM Cart_Detail WHERE Cart.Id = :cartID and product.id = :productID";
+        return (Cart_Detail) session.createQuery(queryString)
+                .setParameter("cartID", cartID)
+                .setParameter("productID", productID)
+                .uniqueResult();
     }
 
     @Override
