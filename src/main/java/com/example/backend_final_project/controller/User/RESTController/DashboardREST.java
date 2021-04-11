@@ -10,9 +10,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/dashboard")
@@ -92,7 +90,18 @@ public class DashboardREST {
                 for(int i=0;i<invc.size();i++){
                     invcD.addAll(invoiceDetailService.getInvoiceDetailListByInvoiceId(invc.get(i).getID()));
                 }
-                return ResponseEntity.ok(invcD);
+                //Gather to JSON format
+                List ls = new ArrayList();
+                for(int i=0;i<invcD.size();i++){
+                    Map<String, Object> obj = new LinkedHashMap<>();
+                    obj.put("history_purchase",invcD.get(i));
+                    String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+invcD.get(i).getProduct().getID();
+                    obj.put("indexImage",indexImg);
+                    ls.add(obj);
+                }
+                return ResponseEntity.ok(ls);
+                ///
+//                return ResponseEntity.ok(invcD);
             } else {
                 return ResponseEntity.badRequest().body("Không có lịch sử mua hàng!");
             }
