@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
+@SessionAttributes({"username", "role"})
 @RequestMapping("admin/taikhoan")
 public class AdminTaiKhoanController {
     @Autowired
@@ -18,9 +19,8 @@ public class AdminTaiKhoanController {
 
     @GetMapping("/home")
     public String Home(ModelMap model){
-        model.addAttribute("insert",new Admin());
-        model.addAttribute("update",new Admin());
-        model.addAttribute("delete",0);
+        attributr(model);
+
         model.addAttribute("message","");
 
 
@@ -34,63 +34,70 @@ public class AdminTaiKhoanController {
         List<Admin> ds = loginAdminService.getAdminList();
         return ds;
     }
-    @GetMapping("/insert")
-    public String insert(ModelMap model){
+
+    @ModelAttribute
+    public void attributr(ModelMap model){
         model.addAttribute("insert",new Admin());
         model.addAttribute("update",new Admin());
-
-        model.addAttribute("message","");
-
-
-
-        return "main/tables/tk";
     }
-
-    @GetMapping("/update")
-    public String update(ModelMap model){
-        model.addAttribute("insert",new Admin());
-        model.addAttribute("update",new Admin());
-
-        model.addAttribute("message","");
-
-
-
-        return "main/tables/tk";
-    }
-    @GetMapping("/delete")
-    public String delete(ModelMap model){
-        model.addAttribute("insert",new Admin());
-        model.addAttribute("update",new Admin());
-
-        model.addAttribute("message","");
-
-
-
-        return "main/tables/tk";
-    }
-    @PostMapping("/insert")
+    //    @GetMapping("/insert")
+//    public String insert(ModelMap model){
+//        model.addAttribute("insert",new Admin());
+//        model.addAttribute("update",new Admin());
+//
+//        model.addAttribute("message","");
+//
+//
+//
+//        return "main/tables/tk";
+//    }
+//
+//    @GetMapping("/update")
+//    public String update(ModelMap model){
+//        model.addAttribute("insert",new Admin());
+//        model.addAttribute("update",new Admin());
+//
+//        model.addAttribute("message","");
+//
+//
+//
+//        return "main/tables/tk";
+//    }
+//    @GetMapping("/delete")
+//    public String delete(ModelMap model){
+//        model.addAttribute("insert",new Admin());
+//        model.addAttribute("update",new Admin());
+//
+//        model.addAttribute("message","");
+//
+//
+//
+//        return "main/tables/tk";
+//    }
+    @PostMapping("/home")
     public String InsertAdmin(ModelMap model, @ModelAttribute Admin admin){
 
         Admin admintest = loginAdminService.getAdminUsername(admin.getUsername());
         if(admintest != null){
             if(admintest.isIsdelete() == false ){
-                model.addAttribute("insert",new Admin());
-                model.addAttribute("update",new Admin());
-
+//                model.addAttribute("insert",new Admin());
+//                model.addAttribute("update",new Admin());
+                attributr(model);
                 model.addAttribute("message","Tài Khoản Đã Tồn Tại");
             }else{
-                model.addAttribute("insert",new Admin());
-                model.addAttribute("update",new Admin());
-
+//                model.addAttribute("insert",new Admin());
+//                model.addAttribute("update",new Admin());
+                attributr(model);
                 model.addAttribute("message","Tài Khoản Đã Tồn Tại Trong Thùng Rác");
             }
         }else {
             admin.setCreated_date(new Date());
             loginAdminService.addAdmin(admin);
-            model.addAttribute("insert", new Admin());
-            model.addAttribute("update", new Admin());
-
+//            model.addAttribute("insert", new Admin());
+//            model.addAttribute("update", new Admin());
+            attributr(model);
         }
+//        return "redirect:/admin/taikhoan/home";
         return "main/tables/tk";
     }
 
@@ -101,12 +108,13 @@ public class AdminTaiKhoanController {
         System.out.println(admin.getUsername());
         System.out.println(admin.getRole());
         loginAdminService.updateAdmin(admin);
-        model.addAttribute("insert",new Admin());
-        model.addAttribute("update",new Admin());
-
+//        model.addAttribute("insert",new Admin());
+//        model.addAttribute("update",new Admin());
+        attributr(model);
         model.addAttribute("message","");
         System.out.println(admin);
-        return "main/tables/tk";
+//        return "main/tables/tk";
+        return "redirect:/admin/taikhoan/home";
     }
 
     @PostMapping("/delete")
@@ -116,15 +124,16 @@ public class AdminTaiKhoanController {
         admin.setIsdelete(true);
         admin.setUpdated_date(new Date());
         loginAdminService.updateAdmin(admin);
-        model.addAttribute("insert",new Admin());
-        model.addAttribute("update",new Admin());
-
+//        model.addAttribute("insert",new Admin());
+//        model.addAttribute("update",new Admin());
+        attributr(model);
         model.addAttribute("messenger","");
-        return "main/tables/tk";
+//        return "main/tables/tk";
+        return "redirect:/admin/taikhoan/home";
 
     }
-    @GetMapping("/taikhoan_restore")
-    public String test(ModelMap model){
-        return "main/tables/tk_restore";
-    }
+//    @GetMapping("/taikhoan_restore")
+//    public String test(ModelMap model){
+//        return "main/tables/tk_restore";
+//    }
 }

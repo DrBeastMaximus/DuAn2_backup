@@ -21,13 +21,21 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Chartlist -->
     <link rel="stylesheet" th:href="@{//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css}">
-    <script th:src="@{//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js}"></script>
+
     <script th:src="@{/assets/js/angular.min.js}"></script>
     <script th:src="@{/assets/js/angular-route.js}"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-base.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+
 </head>
 
 <body ng-app="myapp" ng-controller="myctrl">
-
+<input hidden id="year" name="year" ng-model="year" th:value="${year}">
+<input  hidden id="year_top" name="year_top" ng-model="year_top" th:value="${year_top}">
+<input hidden ng-model="username" th:value="${username}">
+<input hidden ng-model="role" th:value="${role}">
 <style>
     .ct-label{
         font-size:12px
@@ -60,7 +68,8 @@
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed">
                             <span>
-                                Tania Andrew
+                                 {{username}}
+
                                 <b class="caret"></b>
                             </span>
                     </a>
@@ -68,89 +77,146 @@
                     <div class="collapse" id="collapseExample">
                         <ul class="nav">
                             <li>
-                                <a href="#">
-                                    <span class="sidebar-mini"> MP </span>
-                                    <span class="sidebar-normal"> My Profile </span>
+                                <a th:href="@{../login/logut}">
+                                    <span class="sidebar-mini">  </span>
+                                    <span class="sidebar-normal"> Logout </span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <span class="sidebar-mini"> EP </span>
-                                    <span class="sidebar-normal"> Edit Profile </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="sidebar-mini"> S </span>
-                                    <span class="sidebar-normal"> Settings </span>
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
             </div>
             <ul class="nav">
-                <li>
-                    <a href="./dashboard.html">
-                        <i class="material-icons">dashboard</i>
-                        <p> Dashboard </p>
-                    </a>
-                </li>
-
-
-
-                <li>
-                    <a data-toggle="collapse" href="#tablesExamples">
-                        <i class="material-icons">grid_on</i>
-                        <p> Tables
+                <li ng-if="role == 1">
+                    <a data-toggle="collapse" href="#mapsExamples">
+                        <i class="material-icons">waterfall_chart</i>
+                        <p>     Thống Kê
                             <b class="caret"></b>
                         </p>
                     </a>
-                    <div class="collapse in" id="tablesExamples">
+                    <div class="collapse in" id="mapsExamples">
                         <ul class="nav">
+                            <li class="active">
+                                <a th:href="@{../statistical/home}">
+                                    <span class="sidebar-mini"> T </span>
+                                    <span class="sidebar-normal"> Tổng  </span>
+                                </a>
+                            </li>
                             <li>
-                                <a href="../tables/tk.html">
+                                <a th:href="@{../statistical/detail}">
+                                    <span class="sidebar-mini"> T </span>
+                                    <span class="sidebar-normal"> Sản Phảm Và Nhà Cung Cấp  </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li >
+                    <a data-toggle="collapse" href="#tablesExamples" aria-expanded="true">
+                        <i class="material-icons">manage_accounts</i>
+                        <p> Quản Lý
+                            <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse" id="tablesExamples">
+                        <ul class="nav">
+                            <li >
+                                <a th:href="@{../invoice/home/cho-xac-nhan}">
+                                    <span class="sidebar-mini"> ĐH </span>
+                                    <span class="sidebar-normal"> Đơn Hàng </span>
+                                </a>
+                            </li>
+                            <li ng-if="role == 1">
+                                <a th:href="@{../taikhoan/home}">
                                     <span class="sidebar-mini"> TK </span>
                                     <span class="sidebar-normal"> Tài khoản </span>
                                 </a>
                             </li>
+                            <li ng-if="role == 1">
+                                <a th:href="@{../user/home}">
+                                    <span class="sidebar-mini"> US </span>
+                                    <span class="sidebar-normal"> User </span>
+                                </a>
+                            </li>
                             <li>
-                                <a href="../tables/extended.html">
+                                <a th:href="@{../productproperty/home}">
+                                    <span class="sidebar-mini"> TT </span>
+                                    <span class="sidebar-normal"> Thuộc Tính Sản Phẩm </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{../supplier/home}">
+                                    <span class="sidebar-mini"> NC </span>
+                                    <span class="sidebar-normal"> Nhà Cung Cấp </span>
+                                </a>
+                            </li>
+
+                            <li ng-if="role == 1">
+                                <a th:href="@{../voucher/home}">
+                                    <span class="sidebar-mini"> V </span>
+                                    <span class="sidebar-normal"> Voucher </span>
+                                </a>
+                            </li>
+                            <li >
+                                <a th:href="@{../product/home}">
                                     <span class="sidebar-mini"> SP </span>
-                                    <span class="sidebar-normal"> Sản phẩm </span>
+                                    <span class="sidebar-normal"> Sản Phẩm </span>
+                                </a>
+                            </li>
+                            <li >
+                                <a th:href="@{../newsletter/home}">
+                                    <span class="sidebar-mini"> E </span>
+                                    <span class="sidebar-normal"> Email </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" href="#pagesExamples">
+                        <i class="material-icons">delete</i>
+                        <p> Thùng Rác
+                            <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse" id="pagesExamples">
+                        <ul class="nav">
+                            <li ng-if="role == 1">
+                                <a th:href="@{../trashcon/trashconadmin}">
+                                    <span class="sidebar-mini"> TK </span>
+                                    <span class="sidebar-normal"> Tài Khoản </span>
+                                </a>
+                            </li>
+                            <li ng-if="role == 1">
+                                <a th:href="@{../trashcon/trashconuser}">
+                                    <span class="sidebar-mini"> US</span>
+                                    <span class="sidebar-normal"> User </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="../tables/extended.html">
-                                    <span class="sidebar-mini"> TH </span>
-                                    <span class="sidebar-normal"> Thương hiệu </span>
+                                <a th:href="@{../trashcon/trashconproduct}">
+                                    <span class="sidebar-mini"> SP</span>
+                                    <span class="sidebar-normal"> Sản Phẩm </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="../tables/extended.html">
-                                    <span class="sidebar-mini"> K </span>
-                                    <span class="sidebar-normal"> Kho </span>
+                                <a th:href="@{../trashcon/trashconsupplier}">
+                                    <span class="sidebar-mini"> NC</span>
+                                    <span class="sidebar-normal"> Nhà Cung Cấp </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="../tables/extended.html">
-                                    <span class="sidebar-mini"> ĐH </span>
-                                    <span class="sidebar-normal"> Đơn hàng </span>
+                                <a th:href="@{../trashcon/trashconvoucher}">
+                                    <span class="sidebar-mini"> V</span>
+                                    <span class="sidebar-normal"> Voucher </span>
                                 </a>
                             </li>
 
                         </ul>
                     </div>
                 </li>
-
-
-                <li class="active">
-                    <a href="./charts.html">
-                        <i class="material-icons">timeline</i>
-                        <p> Thống kê </p>
-                    </a>
-                </li>
-
             </ul>
         </div>
     </div>
@@ -214,7 +280,7 @@
                             </div>
                             <div class="card-content">
                                 <p class="category">Tổng khách hàng</p>
-                                <h3 class="card-title">75.521</h3>
+                                <h3 class="card-title">{{count_User[0]}}</h3>
                             </div>
                             <div class="card-footer">
 
@@ -228,7 +294,7 @@
                             </div>
                             <div class="card-content">
                                 <p class="category">Số khách hàng mới</p>
-                                <h3 class="card-title">+245</h3>
+                                <h3 class="card-title">+ {{User_newYear[0]}}</h3>
                             </div>
                             <div class="card-footer">
 
@@ -244,7 +310,7 @@
                             </div>
                             <div class="card-content">
                                 <h4 class="card-title">Tổng đơn hàng</h4>
-                                <p class="category">Năm 2021
+                                <p class="category">Năm {{year}}
                                     <button button data-toggle="modal" data-target="#myModal2"  class="btn btn-rose btn-round btn-fab btn-fab-mini">
                                         <i class="material-icons">edit</i>
                                     </button></p>
@@ -255,12 +321,17 @@
 
                     <div class="col-md-4">
                         <div class="card card-chart">
-                            <div class="card-header" data-background-color="orange">
-                                <div id="chart3" class="ct-chart"></div>
+                            <!--                            <div class="card-header" data-background-color="white">-->
+                            <div class="card-header" data-background-color="white">
+                                <!--                                <div id="chart3" class="ct-chart"></div>-->
+                                <!--                                <canvas id="bar-chart"  height="100"></canvas>-->
+                                <!--                                <div id="chart_div" ></div>-->
+                                <!--                                <canvas id="chartJSContainer" width="300" height="100"></canvas>-->
+                                <div id="chart_div" style="height: 160px;" ></div>
                             </div>
                             <div class="card-content">
                                 <h4 class="card-title">Tổng doanh thu</h4>
-                                <p class="category">Năm 2021
+                                <p class="category">Năm {{year}}
                                     <button button data-toggle="modal" data-target="#myModal2"  class="btn btn-warning btn-round btn-fab btn-fab-mini">
                                         <i class="material-icons">edit</i>
                                     </button></p>
@@ -274,7 +345,7 @@
                             </div>
                             <div class="card-content">
                                 <h4 class="card-title">Tổng khách hàng</h4>
-                                <p class="category">Năm 2021
+                                <p class="category">Năm {{year}}
                                     <button button data-toggle="modal" data-target="#myModal2"  class="btn btn-info btn-round btn-fab btn-fab-mini">
                                         <i class="material-icons">edit</i>
                                     </button></p>
@@ -289,110 +360,45 @@
                                 <i class="material-icons"></i>
                             </div>
                             <div class="card-content">
-                                <h4 class="card-title">Top 10 số lượng sản phẩm bán ra tháng 03/2021 <button data-toggle="modal" data-target="#myModal" class="btn btn-round">
-                                    <i class="material-icons">edit_calendar</i> Click để chọn
-                                </button></h4>
+                                <h4 class="card-title">Top 10 số lượng sản phẩm bán ra nhiều nhất {{year_top}} <button data-toggle="modal" data-target="#myModal3" class="btn btn-round">
+                                    <i class="material-icons">edit_calendar</i> Tìm kiếm theo năm
+                                </button>
+                                    <button data-toggle="modal" data-target="#myModal" class="btn btn-round">
+                                        <i class="material-icons">edit_calendar</i> Tìm kiếm theo tháng
+                                    </button>
+                                </h4>
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="table-responsive table-sales">
                                             <table class="table">
                                                 <tbody>
-                                                <tr>
-                                                    <td>USA</td>
+                                                <tr >
+                                                    <td>Tên Sản Phẩm</td>
                                                     <td class="text-right">
-                                                        2.920
+                                                        Số Lượng Bán
                                                     </td>
                                                     <td class="text-right">
-                                                        53.23%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Germany</td>
-                                                    <td class="text-right">
-                                                        1.300
-                                                    </td>
-                                                    <td class="text-right">
-                                                        20.43%
+                                                        Tỗng Tiền
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Australia</td>
+                                                <tr ng-repeat="toppr in topproduct">
+                                                    <td>{{toppr[0]}}</td>
                                                     <td class="text-right">
-                                                        760
+                                                        {{toppr[1]}}
                                                     </td>
                                                     <td class="text-right">
-                                                        10.35%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>United Kingdom</td>
-                                                    <td class="text-right">
-                                                        690
-                                                    </td>
-                                                    <td class="text-right">
-                                                        7.87%
+                                                        {{toppr[2]}}
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Romania</td>
-                                                    <td class="text-right">
-                                                        600
-                                                    </td>
-                                                    <td class="text-right">
-                                                        5.94%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Brasil</td>
-                                                    <td class="text-right">
-                                                        550
-                                                    </td>
-                                                    <td class="text-right">
-                                                        4.34%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Brasil</td>
-                                                    <td class="text-right">
-                                                        550
-                                                    </td>
-                                                    <td class="text-right">
-                                                        4.34%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Brasil</td>
-                                                    <td class="text-right">
-                                                        550
-                                                    </td>
-                                                    <td class="text-right">
-                                                        4.34%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Brasil</td>
-                                                    <td class="text-right">
-                                                        550
-                                                    </td>
-                                                    <td class="text-right">
-                                                        4.34%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Brasil</td>
-                                                    <td class="text-right">
-                                                        550
-                                                    </td>
-                                                    <td class="text-right">
-                                                        4.34%
-                                                    </td>
-                                                </tr>
+
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                     <div class="col-md-7">
-                                        <div id="chart1" class="ct-chart"></div>
+                                        <!--                                        <div id="chart1" class="ct-chart"></div>-->
+                                        <!--                                        <canvas id="pie-chart" width="500" height="170"></canvas>-->
+                                        <div id="donutchart" style="width: 900px; height: 500px;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -408,30 +414,34 @@
                                 <i class="material-icons"></i>
                             </div>
                             <div class="card-content">
-                                <h4 class="card-title">Top 10 mặt hàng được yêu thích nhất tháng 03/2021 <button data-toggle="modal" data-target="#myModal" class="btn btn-round">
-                                    <i class="material-icons">edit_calendar</i> Click để chọn
-                                </button></h4>
+                                <h4 class="card-title">Top 10 mặt hàng được yêu thích nhất {{year_top}} <button data-toggle="modal" data-target="#myModal3" class="btn btn-round">
+                                    <i class="material-icons">edit_calendar</i> Tìm kiếm theo năm
+                                </button>
+                                    <button data-toggle="modal" data-target="#myModal" class="btn btn-round">
+                                        <i class="material-icons">edit_calendar</i> Tìm kiếm theo tháng
+                                    </button>
+                                </h4>
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="table-responsive table-sales">
                                             <table class="table">
                                                 <tbody>
                                                 <tr>
-                                                    <td>USA</td>
+                                                    <td>Tên Sản Phẩm</td>
+                                                    <!--                                                    <td class="text-right">-->
+                                                    <!--                                                        2.920-->
+                                                    <!--                                                    </td>-->
                                                     <td class="text-right">
-                                                        2.920
-                                                    </td>
-                                                    <td class="text-right">
-                                                        53.23%
+                                                        Số lượt thích
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>USA</td>
+                                                <tr ng-repeat="wi in topwishlish">
+                                                    <td>{{wi[0]}}</td>
+                                                    <!--                                                    <td class="text-right">-->
+                                                    <!--                                                        2.920-->
+                                                    <!--                                                    </td>-->
                                                     <td class="text-right">
-                                                        2.920
-                                                    </td>
-                                                    <td class="text-right">
-                                                        53.23%
+                                                        {{wi[1]}}
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -439,7 +449,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-7">
-                                        <div id="chart5" class="ct-chart"></div>
+                                        <!--                                        <div id="chart5" class="ct-chart"></div>-->
+                                        <div id="piechart" style="width: 900px; height: 500px;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -455,199 +466,188 @@
                                 <i class="material-icons"></i>
                             </div>
                             <div class="card-content">
-                                <h4 class="card-title">Top 10 khách hàng <button data-toggle="modal" data-target="#myModal" class="btn btn-round">
-                                    <i class="material-icons">edit_calendar</i> Click để chọn
-                                </button></h4>
+                                <h4 class="card-title">Top 10 khách hàng {{year_top}} <button data-toggle="modal" data-target="#myModal3" class="btn btn-round">
+                                    <i class="material-icons">edit_calendar</i> Tìm kiếm theo năm
+                                </button>
+                                    <button data-toggle="modal" data-target="#myModal" class="btn btn-round">
+                                        <i class="material-icons">edit_calendar</i> Tìm kiếm theo tháng
+                                    </button>
+                                </h4>
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="table-responsive table-sales">
                                             <table class="table">
                                                 <tbody>
                                                 <tr>
-                                                    <td>USA</td>
+                                                    <td>Tên Khách Hàng</td>
                                                     <td class="text-right">
-                                                        2.920
+                                                        Tổng Tiền
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>USA</td>
+                                                <tr ng-repeat="us in topuser">
+                                                    <td>{{us[0]}}</td>
                                                     <td class="text-right">
-                                                        2.920
+                                                        {{us[1]}}
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>USA</td>
-                                                    <td class="text-right">
-                                                        2.920
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>USA</td>
-                                                    <td class="text-right">
-                                                        2.920
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>USA</td>
-                                                    <td class="text-right">
-                                                        2.920
-                                                    </td>
-                                                </tr>
+
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                     <div class="col-md-7">
-                                        <div id="chart6" class="ct-chart"></div>
+                                        <!--                                        <div id="chart6" class="ct-chart"></div>-->
+                                        <div id="barChart" style="width: 900px; height: 600px;"/>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header card-header-icon" data-background-color="purple">
-                                <i class="material-icons">assignment</i>
-                            </div>
-                            <div class="card-content">
-                                <h4 class="card-title">Thống kê doanh thu từng mặt hàng <button data-toggle="modal" data-target="#myModal" class="btn btn-round">
-                                    <i class="material-icons">edit_calendar</i> Click để chọn
-                                </button></h4>
-                                <div class="toolbar">
+                <!--                <div class="row">-->
+                <!--                    <div class="col-md-12">-->
+                <!--                        <div class="card">-->
+                <!--                            <div class="card-header card-header-icon" data-background-color="purple">-->
+                <!--                                <i class="material-icons">assignment</i>-->
+                <!--                            </div>-->
+                <!--                            <div class="card-content">-->
+                <!--                                <h4 class="card-title">Thống kê doanh thu từng mặt hàng <button data-toggle="modal" data-target="#myModal" class="btn btn-round">-->
+                <!--                                    <i class="material-icons">edit_calendar</i> Click để chọn-->
+                <!--                                </button></h4>-->
+                <!--                                <div class="toolbar">-->
 
 
-                                </div>
-                                <div class="material-datatables">
-                                    <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
-                                        <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Tên mặt hàng</th>
-                                            <th>Số lượng bán</th>
-                                            <th>Doanh thu</th>
+                <!--                                </div>-->
+                <!--                                <div class="material-datatables">-->
+                <!--                                    <table  class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">-->
+                <!--                                        <thead>-->
+                <!--                                        <tr>-->
+                <!--                                            <th>ID</th>-->
+                <!--                                            <th>Tên mặt hàng</th>-->
+                <!--                                            <th>Số lượng bán</th>-->
+                <!--                                            <th>Doanh thu</th>-->
 
-                                        </tr>
-                                        </thead>
-                                        <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Tên mặt hàng</th>
-                                            <th>Số lượng bán</th>
-                                            <th>Doanh thu</th>
+                <!--                                        </tr>-->
+                <!--                                        </thead>-->
+                <!--                                        <tfoot>-->
+                <!--                                        <tr>-->
+                <!--                                            <th>ID</th>-->
+                <!--                                            <th>Tên mặt hàng</th>-->
+                <!--                                            <th>Số lượng bán</th>-->
+                <!--                                            <th>Doanh thu</th>-->
 
-                                        </tr>
-                                        </tfoot>
-                                        <tbody>
-                                        <tr>
-                                            <td>0</td>
-                                            <td>JL</td>
-                                            <td>0</td>
-                                            <td>JL</td>
-
-
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                            </div>
-                            <!-- end content-->
-                        </div>
-                        <!--  end card  -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header card-header-icon" data-background-color="purple">
-                                <i class="material-icons">assignment</i>
-                            </div>
-                            <div class="card-content">
-                                <h4 class="card-title">Thống kê doanh thu từng nhãn hiệu <button data-toggle="modal" data-target="#myModal" class="btn btn-round">
-                                    <i class="material-icons">edit_calendar</i> Click để chọn
-                                </button></h4>
-                                <div class="toolbar">
+                <!--                                        </tr>-->
+                <!--                                        </tfoot>-->
+                <!--                                        <tbody>-->
+                <!--                                        <tr>-->
+                <!--                                            <td>0</td>-->
+                <!--                                            <td>JL</td>-->
+                <!--                                            <td>0</td>-->
+                <!--                                            <td>JL</td>-->
 
 
-                                </div>
-                                <div class="material-datatables">
-                                    <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
-                                        <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Tên nhãn hiệu</th>
-                                            <th>Số lượng bán</th>
-                                            <th>Doanh thu</th>
+                <!--                                        </tr>-->
+                <!--                                        </tbody>-->
+                <!--                                    </table>-->
+                <!--                                </div>-->
 
-                                        </tr>
-                                        </thead>
-                                        <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Tên nhãn hiệu</th>
-                                            <th>Số lượng bán</th>
-                                            <th>Doanh thu</th>
-
-                                        </tr>
-                                        </tfoot>
-                                        <tbody>
-                                        <tr>
-                                            <td>0</td>
-                                            <td>JL</td>
-                                            <td>0</td>
-                                            <td>JL</td>
+                <!--                            </div>-->
+                <!--                            &lt;!&ndash; end content&ndash;&gt;-->
+                <!--                        </div>-->
+                <!--                        &lt;!&ndash;  end card  &ndash;&gt;-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="row">-->
+                <!--                    <div class="col-md-12">-->
+                <!--                        <div class="card">-->
+                <!--                            <div class="card-header card-header-icon" data-background-color="purple">-->
+                <!--                                <i class="material-icons">assignment</i>-->
+                <!--                            </div>-->
+                <!--                            <div class="card-content">-->
+                <!--                                <h4 class="card-title">Thống kê doanh thu từng nhãn hiệu <button data-toggle="modal" data-target="#myModal" class="btn btn-round">-->
+                <!--                                    <i class="material-icons">edit_calendar</i> Click để chọn-->
+                <!--                                </button></h4>-->
+                <!--                                <div class="toolbar">-->
 
 
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                <!--                                </div>-->
+                <!--                                <div class="material-datatables">-->
+                <!--                                    <table class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">-->
+                <!--                                        <thead>-->
+                <!--                                        <tr>-->
+                <!--                                            <th>ID</th>-->
+                <!--                                            <th>Tên nhãn hiệu</th>-->
+                <!--                                            <th>Số lượng bán</th>-->
+                <!--                                            <th>Doanh thu</th>-->
 
-                            </div>
-                            <!-- end content-->
-                        </div>
-                        <!--  end card  -->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header card-header-icon" data-background-color="blue">
-                                <i class="material-icons">timeline</i>
-                            </div>
-                            <div class="card-content">
-                                <h4 class="card-title">Biểu đồ thống kê doanh thu 10 mặt hàng
-                                    <small> - Rounded</small>
-                                </h4>
-                            </div>
-                            <div id="chart7" class="ct-chart"></svg></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header card-header-icon" data-background-color="rose">
-                                <i class="material-icons">insert_chart</i>
-                            </div>
-                            <div class="card-content">
-                                <h4 class="card-title">Biểu đồ thống kê doanh thu 10 nhãn hiệu
-                                    <small>- Bar Chart</small>
-                                </h4>
-                            </div>
-                            <div id="chart8" class="ct-chart"></div>
-                        </div>
-                    </div>
-                </div>
+                <!--                                        </tr>-->
+                <!--                                        </thead>-->
+                <!--                                        <tfoot>-->
+                <!--                                        <tr>-->
+                <!--                                            <th>ID</th>-->
+                <!--                                            <th>Tên nhãn hiệu</th>-->
+                <!--                                            <th>Số lượng bán</th>-->
+                <!--                                            <th>Doanh thu</th>-->
+
+                <!--                                        </tr>-->
+                <!--                                        </tfoot>-->
+                <!--                                        <tbody>-->
+                <!--                                        <tr>-->
+                <!--                                            <td>0</td>-->
+                <!--                                            <td>JL</td>-->
+                <!--                                            <td>0</td>-->
+                <!--                                            <td>JL</td>-->
+
+
+                <!--                                        </tr>-->
+                <!--                                        </tbody>-->
+                <!--                                    </table>-->
+                <!--                                </div>-->
+
+                <!--                            </div>-->
+                <!--                            &lt;!&ndash; end content&ndash;&gt;-->
+                <!--                        </div>-->
+                <!--                        &lt;!&ndash;  end card  &ndash;&gt;-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="row">-->
+                <!--                    <div class="col-md-6">-->
+                <!--                        <div class="card">-->
+                <!--                            <div class="card-header card-header-icon" data-background-color="blue">-->
+                <!--                                <i class="material-icons">timeline</i>-->
+                <!--                            </div>-->
+                <!--                            <div class="card-content">-->
+                <!--                                <h4 class="card-title">Biểu đồ thống kê doanh thu 10 mặt hàng-->
+                <!--                                    <small> - Rounded</small>-->
+                <!--                                </h4>-->
+                <!--                            </div>-->
+                <!--                            <div id="chart7" class="ct-chart"></svg></div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                    <div class="col-md-6">-->
+                <!--                        <div class="card">-->
+                <!--                            <div class="card-header card-header-icon" data-background-color="rose">-->
+                <!--                                <i class="material-icons">insert_chart</i>-->
+                <!--                            </div>-->
+                <!--                            <div class="card-content">-->
+                <!--                                <h4 class="card-title">Biểu đồ thống kê doanh thu 10 nhãn hiệu-->
+                <!--                                    <small>- Bar Chart</small>-->
+                <!--                                </h4>-->
+                <!--                            </div>-->
+                <!--                            <div id="chart8" class="ct-chart"></div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </div>
 
         </div>
     </div>
+
     <div id="myModal" class="modal fade" role="dialog">
         <div class="container d-flex justify-content-center">
             <div class="card">
                 <div class="card-content">
-                    <form id="LoginValidation" action="" method="" novalidate="novalidate">
+                    <form th:action="@{./selecttop}" method="post">
                         <div class="card-header card-header-icon" data-background-color="rose">
                             <i class="material-icons">library_books</i>
                         </div>
@@ -655,20 +655,21 @@
                             <h4 class="card-title">Datetime Picker</h4>
                             <div class="form-group label-floating is-empty">
                                 <label class="label-control">Click để chọn</label>
-                                <input type="text" class="form-control datepicker" data-date-format='YYYY-MM' value="10/2016">
+                                <input type="text" class="form-control datepicker" name="yeartop" data-date-format='MM-YYYY' value="{{month_show}}">
+                                <input hidden name="year" value="{{year}}">
                                 <span class="material-input"></span>
                             </div>
                             <div class="form-group label-floating is-empty">
-                                <label>
-                                    <input type="checkbox" name="optionsCheckboxes"><span class="checkbox-material"><span class="check"></span></span> Thống kê theo Tháng
-                                    <input type="checkbox" name="optionsCheckboxes"><span class="checkbox-material"><span class="check"></span></span> Thống kê theo Năm
-                                </label>
+                                <!--                                <label>-->
+                                <!--                                    <input type="checkbox" name="optionsCheckboxes" ng-click="searchYear()" checked="{{checkYear}}"><span class="checkbox-material"><span class="check"></span></span> Thống kê theo Năm-->
+                                <!--                                    <input type="checkbox" name="optionsCheckboxes" ng-click="searchMonth()" checked="{{checkmonth}}"><span class="checkbox-material"><span class="check"></span></span> Thống kê theo Tháng-->
+                                <!--                                </label>-->
                             </div>
                         </div>
 
                         <div class="form-footer text-right">
-                            <button class="btn btn-success">Ok</button>
-                            <button class="btn">Cancel</button>
+                            <button class="btn btn-success" type="submit">Ok</button>
+                            <button class="btn" data-dismiss="modal" type="button">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -681,7 +682,7 @@
         <div class="container d-flex justify-content-center">
             <div class="card">
                 <div class="card-content">
-                    <form id="LoginValidation" action="" method="" novalidate="novalidate">
+                    <form th:action="@{./home}" method="post">
                         <div class="card-header card-header-icon" data-background-color="rose">
                             <i class="material-icons">library_books</i>
                         </div>
@@ -689,13 +690,40 @@
                             <h4 class="card-title">Datetime Picker</h4>
                             <div class="form-group label-floating is-empty">
                                 <label class="label-control">Click để chọn</label>
-                                <input type="text" class="form-control datepicker" data-date-format='YYYY' value="2016">
+                                <input type="text"  name="year_Total" class="form-control datepicker"  data-date-format='YYYY' value="{{year_show}}">
+                                <input hidden type="text" name="yeartop" value="{{year_top}}">
                                 <span class="material-input"></span>
                             </div>
                         </div>
                         <div class="form-footer text-right">
-                            <button class="btn btn-success">Ok</button>
-                            <button class="btn">Cancel</button>
+                            <button class="btn btn-success" type="submit">Ok</button>
+                            <button class="btn" type="button" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal3" class="modal fade" role="dialog">
+        <div class="container d-flex justify-content-center">
+            <div class="card">
+                <div class="card-content">
+                    <form th:action="@{./selecttop}" method="post">
+                        <div class="card-header card-header-icon" data-background-color="rose">
+                            <i class="material-icons">library_books</i>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="card-title">Datetime Picker</h4>
+                            <div class="form-group label-floating is-empty">
+                                <label class="label-control">Click để chọn</label>
+                                <input type="text"  name="yeartop" class="form-control datepicker"  data-date-format='YYYY' value="{{year_show}}">
+                                <input hidden name="year" value="{{year}}">
+                                <span class="material-input"></span>
+                            </div>
+                        </div>
+                        <div class="form-footer text-right">
+                            <button class="btn btn-success" type="submit">Ok</button>
+                            <button class="btn" type="button" data-dismiss="modal">Cancel</button>
                         </div>
                     </form>
                 </div>
@@ -760,93 +788,13 @@
 
 
 
-<script>
-    // 10 mặt hàng bán chạy nhất ------------------------------------------------------------------
-    new Chartist.Pie('#chart1', {
-        labels: ['SP1','SP2','SP3','SP4','SP5','SP6','SP7','SP8','SP9','SP10',],
-        series: [10,20,30,40,50,60,70,80,90,100]
-    }, {
-        donut: true,
-        donutWidth: 60,
-        donutSolid: true,
-        startAngle: 270,
-        showLabel: true,
-        height: 500,
-    });
-</script>
 
-<script>
-    // 10 mặt hàng được yêu thích nhất ------------------------------------------------------------------
-    new Chartist.Pie('#chart5', {
-        labels: ['SP1','SP2','SP3','SP4','SP5','SP6','SP7','SP8','SP9','SP10',],
-        series: [10,20,30,40,50,60,70,80,90,100]
-    }, {
-        donut: false,
-        donutWidth: 60,
-        donutSolid: true,
-        startAngle: 270,
-        showLabel: true,
-        height: 500,
-    });
-</script>
 
-<script>
-    // 10 khách hàng ------------------------------------------------------------------
-    new Chartist.Bar('#chart6', {
-        labels: ['KH1', 'KH1', 'KH1', 'KH1', 'KH1', 'KH1', 'KH1','KH1','KH1','KH1'],
-        series: [20, 60, 120, 200, 180, 20, 10, 20, 10, 20]
-    }, {
-        distributeSeries: true,
-        height: 500
-    });
-</script>
 
-<script>
-    // Tổng đơn hàng ------------------------------------------------------------------
-    // var a =['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '12', '12']
-    // var data = {
-    //     labels: a,
-    //     series: [
-    //         [5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8]
-    //     ]
-    // };
-    //
-    // var options = {
-    //     seriesBarDistance: 10
-    // };
-    //
-    // new Chartist.Bar('#chart2', data, options,);
-</script>
 
-<script>
-    // Tổng doanh thu ------------------------------------------------------------------
-    new Chartist.Line('#chart3', {
-        labels: ['1', '2', '3', '4', '5','6', '7', '8', '9', '10', '11', '12'],
-        series: [
-            [12.5,20,50,100,12.5,20,50,100,12.5,200,150,222],
-        ]
-    }, {
-        fullWidth: true,
-        chartPadding: {
-            right: 40
-        }
-    });
-</script>
 
-<script>
-    // Tổng khách hàng ------------------------------------------------------------------
-    new Chartist.Line('#chart4', {
-        labels: ['1', '2', '3', '4', '5','6', '7', '8', '9', '10', '11', '12'],
-        series: [
-            [12.5,20,50,100,12.5,20,50,100,12.5,200,150,222],
-        ]
-    }, {
-        fullWidth: true,
-        chartPadding: {
-            right: 40
-        }
-    });
-</script>
+
+
 
 <script>
     new Chartist.Bar('#chart7', {
@@ -868,31 +816,478 @@
             ]
         },{height: 500}
     );
+
 </script>
 <script>
     var app = angular.module("myapp", []);
     app.controller("myctrl", function($scope, $http) {
+
+        $scope.year_show = new Date().getFullYear();
+        $scope.month_show = (new Date().getMonth()+1)+"-"+new Date().getFullYear();
+
+        //tông đơn hàng và doanh thu
         $scope.totalbill = [];
         $http.get("../statistical/totalbill").then(function(response) {
             $scope.totalbill = response.data;
             $scope.totalbill1 =  $scope.totalbill[0];
         });
-        //tổ
-        // ng đơn hàng
-        var a =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
-        var data = {
-            labels: a,
-            series: [
-                [5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8]
-            ]
-        };
+        $scope.count_User = [];
+        $http.get("../statistical/countuser").then(function(response) {
+            $scope.count_User = response.data;
+            // $scope.User =  $scope.count_User[0];
+        });
 
-        var options = {
-            seriesBarDistance: 10
-        };
+        $scope.User_newYear = [];
+        $http.get("../statistical/countusernewyear").then(function(response) {
+            $scope.User_newYear = response.data;
+            // $scope.User =  $scope.count_User[0];
+        });
 
-        new Chartist.Bar('#chart2', data, options,);
+        $scope.QuantityInvoiceYear = [];
+        $scope.yearHD = [];
+        $scope.QuantityYear = []
+
+        // thống kê tổng đơn hàng
+        if($scope.year != null) {
+            $http.get("../statistical/quantityinvoicebyyear/"+$scope.year).then(function(response) {
+                $scope.QuantityInvoiceYear = response.data;
+                for(var i = 0; i < $scope.QuantityInvoiceYear.length; i++){
+                    if($scope.yearHD.length < $scope.QuantityInvoiceYear.length) {
+                        $scope.totalIndex =  $scope.QuantityInvoiceYear[i];
+                        $scope.yearHD.push(angular.copy($scope.totalIndex[0]));
+                        $scope.QuantityYear.push(angular.copy($scope.totalIndex[1]));
+                    }
+                }
+                var data = {
+                    labels: $scope.yearHD,
+                    series: [
+                        $scope.QuantityYear
+                    ]
+                };
+                var options = {
+                    seriesBarDistance: 10
+                };
+                new Chartist.Bar('#chart2', data, options,);
+            });
+
+        }
+        //thống kê tổng doanh thu
+        $scope.TotalInvoiceYear = [];
+        $scope.yearDT = [];
+        $scope.TotalYear = []
+        $scope.toptalinvoice_chart= [];
+        $scope.toptalinvoice_chart.push( ['Month', 'TT']);
+        if($scope.year != null) {
+
+            $http.get("../statistical/totalinvoicebyyear/"+$scope.year).then(function(response) {
+                $scope.TotalInvoiceYear = response.data;
+                for(var i = 0; i < $scope.TotalInvoiceYear.length; i++){
+                    if($scope.toptalinvoice_chart.length <= $scope.TotalInvoiceYear.length) {
+                        $scope.toptalinvoice_chart.push(angular.copy( $scope.TotalInvoiceYear[i]));
+                        // $scope.totalIndex =  $scope.TotalInvoiceYear[i];
+                        // $scope.yearDT.push(angular.copy($scope.totalIndex[0]));
+                        // $scope.TotalYear.push(angular.copy($scope.totalIndex[1]));
+                    }
+                }
+                // new Chartist.Line('#chart3', {
+                //     labels: $scope.yearDT,
+                //     series: [
+                //         $scope.TotalYear,
+                //     ]
+                // }, {
+                //     fullWidth: true,
+                //     chartPadding: {
+                //         right: 40
+                //     }
+                // });
+                // alert($scope.toptalinvoice_chart)
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable(
+
+                        $scope.toptalinvoice_chart
+                    );
+
+                    var options = {
+                        title: 'Doanh Thu',
+                        hAxis: {title: 'Month',  titleTextStyle: {color: '#333'}},
+                        vAxis: {minValue: 0}
+                    };
+
+                    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+                    chart.draw(data, options);
+                }
+                // new Chart(document.getElementById("bar-chart"), {
+                //     type: 'bar',
+                //     data: {
+                //         labels: $scope.yearDT,
+                //         datasets: [
+                //             {
+                //                 label: "Tổng doanh thu",
+                //                 backgroundColor: ["#3e95cd", "#0000FF","#8e5ea2","#3cba9f","#e8c3b9","#c45850","#FF00CC","#33FF33","#AAAAAA","#00CCFF","#FFFF33","#9900FF"],
+                //                 data: $scope.TotalYear,
+                //                 width : "1px",
+                //                 height: "1px"
+                //             }
+                //         ]
+                //     },
+                //     options: {
+                //         legend: { display: false },
+                //         title: {
+                //             display: true,
+                //             text: ' '
+                //         }
+                //     }
+                // });
+
+                // google.charts.load('current', {packages: ['corechart', 'line']});
+                // google.charts.setOnLoadCallback(drawBackgroundColor);
+                //
+                // function drawBackgroundColor() {
+                //     var data = new google.visualization.DataTable();
+                //     data.addColumn('number', 'X');
+                //     data.addColumn('number', 'Dogs1');
+                //
+                //     data.addRows($scope.TotalInvoiceYear);
+                //
+                //     var options = {
+                //         hAxis: {
+                //             title: 'Time'
+                //         },
+                //         vAxis: {
+                //             title: 'Popularity'
+                //         },
+                //         backgroundColor: '#f1f8e9'
+                //     };
+                //
+                //     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+                //     chart.draw(data, options);
+                // }
+
+                // var options = {
+                //     type: 'line',
+                //     data: {
+                //         labels: $scope.yearDT,
+                //         datasets: [
+                //             {
+                //                 label: '# of Votes',
+                //                 data: $scope.TotalYear,
+                //                 borderWidth: 1
+                //             }
+                //         ]
+                //     },
+                //     options: {
+                //         scales: {
+                //             yAxes: [{
+                //                 ticks: {
+                //                     reverse: false
+                //                 }
+                //             }]
+                //         }
+                //     }
+                // }
+                // var ctx = document.getElementById('chartJSContainer').getContext('2d');
+                // new Chart(ctx, options);
+
+            });
+
+        }
+        // tổng khách hàng
+        $scope.QuantityUser = [];
+        $scope.year_user = [];
+        $scope.count = []
+        if($scope.year != null) {
+            $http.get("../statistical/quantityuseryear/"+$scope.year).then(function(response) {
+                $scope.QuantityUser = response.data;
+                for(var i = 0; i < $scope.QuantityUser.length; i++){
+                    if($scope.year_user.length < $scope.QuantityUser.length) {
+                        $scope.quantityIndex =  $scope.QuantityUser[i];
+                        $scope.year_user.push(angular.copy($scope.quantityIndex[0]));
+                        $scope.count.push(angular.copy($scope.quantityIndex[1]));
+                    }
+                }
+                new Chartist.Line('#chart4', {
+                    labels: $scope.year_user,
+                    series: [
+                        $scope.count,
+                    ]
+                }, {
+                    fullWidth: true,
+                    chartPadding: {
+                        right: 40
+                    }
+                });
+            });
+
+        }
+        // top khách hàng
+        $scope.topproduct = [];
+        $scope.topwishlish= [];
+        $scope.topuser = [];
+        // alert($scope.year_top);
+        if($scope.year_top != null){
+            if($scope.year_top.length == 4){
+                $http.get("../statistical/topproductbyyear/"+$scope.year_top).then(function(response) {
+                    $scope.topproduct = response.data;
+                    $scope.product_name = [];
+                    $scope.product_total = [];
+                    $scope.topproduct_chart = [];
+                    $scope.topproduct_chart.push(['Task', 'Hours per Day']);
+                    // $scope.char_pro = [];
+                    for(var i = 0; i < $scope.topproduct.length; i++){
+                        if($scope.topproduct_chart.length <= $scope.topproduct.length) {
+
+                            $scope.toppro_index =  $scope.topproduct[i];
+                            // $scope.product_name = $scope.toppro_index[0];
+                            // $scope.product_total = $scope.toppro_index[2];
+                            $scope.topproduct_chart.push([$scope.toppro_index[0],$scope.toppro_index[2]]);
+                            // $scope.product_name.push(angular.copy($scope.toppro_index[0]));
+                            // $scope.product_total.push(angular.copy($scope.toppro_index[2]));
+                            // $scope.char_pro_index = [$scope.toppro_index[0],$scope.toppro_index[2]];
+                            // $scope.test = $scope.aa;
+                            // $scope.char_pro.push(angular.copy($scope.char_pro_index));
+
+                        }
+
+                    }
+                    google.charts.load("current", {packages:["corechart"]});
+                    google.charts.setOnLoadCallback(drawChart);
+                    function drawChart() {
+                        var data = google.visualization.arrayToDataTable($scope.topproduct_chart);
+
+                        var options = {
+                            title: 'My Daily Activities',
+                            pieHole: 0.4,
+                        };
+
+                        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                        chart.draw(data, options);
+                    }
+
+                    // new Chart(document.getElementById("pie-chart"), {
+                    //     type: 'pie',
+                    //     data: {
+                    //         labels:  $scope.product_name,
+                    //         datasets: [{
+                    //             label: "Population (millions)",
+                    //             backgroundColor: ["#3e95cd", "#0000FF","#8e5ea2","#3cba9f","#e8c3b9","#c45850","#FF00CC","#33FF33","#AAAAAA","#00CCFF"],
+                    //             data: $scope.product_total
+                    //         }]
+                    //     },
+                    //     options: {
+                    //         title: {
+                    //             display: true,
+                    //             text: 'Top sản phẩm bán ra nhiều nhất '
+                    //         }
+                    //     }
+                    // });
+
+
+
+
+                });
+
+                $http.get("../statistical/topwishlishbyyear/"+$scope.year_top).then(function(response) {
+                    $scope.topwishlish = response.data;
+                    $scope.char_wishlish = [];
+                    $scope.char_wishlish.push(['Task', 'Hours per Day']);
+                    for(var i = 0; i < $scope.topwishlish.length; i++){
+                        if($scope.char_wishlish.length <=  $scope.topwishlish.length) {
+                            $scope.char_wishlish.push(angular.copy( $scope.topwishlish[i]));
+                            // $scope.name.push(angular.copy($scope.user_index[0]));
+                            // $scope.total_bill.push(angular.copy($scope.user_index[1]));
+                        }
+                    }
+
+                    google.charts.load('current', {'packages':['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+
+                        var data = google.visualization.arrayToDataTable(
+
+                            $scope.char_wishlish
+                        );
+
+                        var options = {
+                            title: 'Top sản phẩm đươc yêu thích nhất'
+                        };
+
+                        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                        chart.draw(data, options);
+                    }
+
+                });
+                $http.get("../statistical/topuserbyyear/"+$scope.year_top).then(function(response) {
+                    $scope.topuser = response.data;
+                    $scope.name = [];
+                    $scope.total_bill = [];
+                    for(var i = 0; i < $scope.topuser.length; i++){
+                        if($scope.name.length < $scope.topuser.length) {
+                            $scope.user_index =  $scope.topuser[i];
+                            $scope.name.push(angular.copy($scope.user_index[0]));
+                            $scope.total_bill.push(angular.copy($scope.user_index[1]));
+                        }
+                    }
+                    // new Chartist.Bar('#chart6', {
+                    //     labels: $scope.name,
+                    //     series:  $scope.total_bill
+                    // }, {
+                    //     distributeSeries: true,
+                    //     height: 500
+                    // });
+
+
+                    google.charts.load('current', {packages: ['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+
+                    function drawChart() {
+                        // Define the chart to be drawn.
+                        var data = new google.visualization.DataTable();
+                        data.addColumn('string', 'Element');
+                        data.addColumn('number', 'Tổng tiền');
+                        data.addRows( $scope.topuser);
+
+                        // Instantiate and draw the chart.
+                        var chart = new google.visualization.ColumnChart(document.getElementById('barChart'));
+                        chart.draw(data, null);
+                    }
+                });
+            }else{
+                if($scope.year_top.length = 7){
+                    $http.get("../statistical/topproductbymonthyear/"+$scope.year_top).then(function(response) {
+                        $scope.topproduct = response.data;
+                        $scope.product_name = [];
+                        $scope.product_total = [];
+                        $scope.topproduct_chart = [];
+                        $scope.topproduct_chart.push(['Task', 'Hours per Day']);
+                        // $scope.char_pro = [];
+                        for(var i = 0; i < $scope.topproduct.length; i++){
+                            if($scope.topproduct_chart.length <= $scope.topproduct.length) {
+
+                                $scope.toppro_index =  $scope.topproduct[i];
+                                // $scope.product_name = $scope.toppro_index[0];
+                                // $scope.product_total = $scope.toppro_index[2];
+                                $scope.topproduct_chart.push([$scope.toppro_index[0],$scope.toppro_index[2]]);
+                                // $scope.product_name.push(angular.copy($scope.toppro_index[0]));
+                                // $scope.product_total.push(angular.copy($scope.toppro_index[2]));
+                                // $scope.char_pro_index = [$scope.toppro_index[0],$scope.toppro_index[2]];
+                                // $scope.test = $scope.aa;
+                                // $scope.char_pro.push(angular.copy($scope.char_pro_index));
+
+                            }
+
+                        }
+                        google.charts.load("current", {packages:["corechart"]});
+                        google.charts.setOnLoadCallback(drawChart);
+                        function drawChart() {
+                            var data = google.visualization.arrayToDataTable($scope.topproduct_chart);
+
+                            var options = {
+                                title: 'My Daily Activities',
+                                pieHole: 0.4,
+                            };
+
+                            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                            chart.draw(data, options);
+                        }
+
+
+                    });
+                    $http.get("../statistical/topwishlishbymonthyear/"+$scope.year_top).then(function(response) {
+                        $scope.topwishlish = response.data;
+                        $scope.char_wishlish = [];
+                        $scope.char_wishlish.push(['Task', 'Hours per Day']);
+                        for(var i = 0; i < $scope.topwishlish.length; i++){
+                            if($scope.char_wishlish.length <=  $scope.topwishlish.length) {
+                                $scope.char_wishlish.push(angular.copy( $scope.topwishlish[i]));
+                                // $scope.name.push(angular.copy($scope.user_index[0]));
+                                // $scope.total_bill.push(angular.copy($scope.user_index[1]));
+                            }
+                        }
+
+                        google.charts.load('current', {'packages':['corechart']});
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+
+                            var data = google.visualization.arrayToDataTable(
+
+                                $scope.char_wishlish
+                            );
+
+                            var options = {
+                                title: 'Top sản phẩm đươc yêu thích nhất'
+                            };
+
+                            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                            chart.draw(data, options);
+                        }
+
+                    });
+                    $http.get("../statistical/topuserbymonthyear/"+$scope.year_top).then(function(response) {
+
+
+                        $scope.topuser = response.data;
+                        $scope.name = [];
+                        $scope.total_bill = [];
+                        for(var i = 0; i < $scope.topuser.length; i++){
+                            if($scope.name.length < $scope.topuser.length) {
+                                $scope.user_index =  $scope.topuser[i];
+                                $scope.name.push(angular.copy($scope.user_index[0]));
+                                $scope.total_bill.push(angular.copy($scope.user_index[1]));
+                            }
+                        }
+                        // new Chartist.Bar('#chart6', {
+                        //     labels: $scope.name,
+                        //     series:  $scope.total_bill
+                        // }, {
+                        //     distributeSeries: true,
+                        //     height: 500
+                        // });
+
+
+                        google.charts.load('current', {packages: ['corechart']});
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+                            // Define the chart to be drawn.
+                            var data = new google.visualization.DataTable();
+                            data.addColumn('string', 'Element');
+                            data.addColumn('number', 'Tổng tiền');
+                            data.addRows( $scope.topuser);
+
+                            // Instantiate and draw the chart.
+                            var chart = new google.visualization.ColumnChart(document.getElementById('barChart'));
+                            chart.draw(data, null);
+                        }
+                    });
+                }
+            }
+        }
+
+
+
+
+
+
+
     });
+    app.directive('input', ['$parse', function ($parse) {
+        return {
+            controller: 'myctrl',
+            restrict: 'E',
+            require: '?ngModel',
+            link: function (scope, element, attrs) {
+                if(attrs.value) {
+                    $parse(attrs.ngModel).assign(scope, attrs.value);
+                }
+            }
+        };
+    }]);
 </script>
 </body>
 <!--   Core JS Files   -->

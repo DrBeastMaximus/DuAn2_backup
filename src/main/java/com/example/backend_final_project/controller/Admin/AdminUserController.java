@@ -12,15 +12,23 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
+@SessionAttributes({"username", "role"})
 @RequestMapping("admin/user")
 public class AdminUserController {
     @Autowired
     private UserServicelmpl userServicelmpl;
 
-    @GetMapping("/home")
-    public String Home(ModelMap model){
+    @ModelAttribute
+    public void attribute(ModelMap model){
         model.addAttribute("insert",new User());
         model.addAttribute("update",new User());
+    }
+
+    @GetMapping("/home")
+    public String Home(ModelMap model){
+//        model.addAttribute("insert",new User());
+//        model.addAttribute("update",new User());
+        attribute(model);
         model.addAttribute("message","");
 
         return "main/tables/user";
@@ -33,48 +41,53 @@ public class AdminUserController {
         return ds;
     }
 
-    @GetMapping("/insert")
-    public String insert(ModelMap model){
-        model.addAttribute("insert",new User());
-        model.addAttribute("update",new User());
-        model.addAttribute("message","");
+//    @GetMapping("/insert")
+//    public String insert(ModelMap model){
+////        model.addAttribute("insert",new User());
+////        model.addAttribute("update",new User());
+//        attribute(model);
+//        model.addAttribute("message","");
+//
+//        return "main/tables/user";
+//    }
+//    @GetMapping("/update")
+//    public String update(ModelMap model){
+////        model.addAttribute("insert",new User());
+////        model.addAttribute("update",new User());
+//        attribute(model);
+//        model.addAttribute("message","");
+//
+//        return "main/tables/user";
+//    }
+//
+//    @GetMapping("/delete")
+//    public String delete(ModelMap model){
+////        model.addAttribute("insert",new User());
+////        model.addAttribute("update",new User());
+//        attribute(model);
+//        model.addAttribute("message","");
+//
+//        return "main/tables/user";
+//    }
 
-        return "main/tables/user";
-    }
-    @GetMapping("/update")
-    public String update(ModelMap model){
-        model.addAttribute("insert",new User());
-        model.addAttribute("update",new User());
-        model.addAttribute("message","");
-
-        return "main/tables/user";
-    }
-
-    @GetMapping("/delete")
-    public String delete(ModelMap model){
-        model.addAttribute("insert",new User());
-        model.addAttribute("update",new User());
-        model.addAttribute("message","");
-
-        return "main/tables/user";
-    }
 
 
 
-
-    @PostMapping("/insert")
+    @PostMapping("/home")
     public String InsertAdmin(ModelMap model, @ModelAttribute User user){
         User kiemtra = userServicelmpl.getUserByUsernameNoCheck(user.getUsername());
         if(kiemtra !=null){
             if(kiemtra.isIsdelete() == false){
                 model.addAttribute("message","User Đã Tồn Tại");
-                model.addAttribute("insert", new User());
-                model.addAttribute("update", new User());
+//                model.addAttribute("insert", new User());
+//                model.addAttribute("update", new User());
+                attribute(model);
                 return "main/tables/user";
             }else{
                 model.addAttribute("message","User Đã Tồn Tại Trong Thùng rác");
-                model.addAttribute("insert", new User());
-                model.addAttribute("update", new User());
+//                model.addAttribute("insert", new User());
+//                model.addAttribute("update", new User());
+                attribute(model);
                 return "main/tables/user";
             }
         }else {
@@ -82,8 +95,9 @@ public class AdminUserController {
             user.setCreated_date(new Date());
             userServicelmpl.addUser(user);
             model.addAttribute("message","");
-            model.addAttribute("insert", new User());
-            model.addAttribute("update", new User());
+//            model.addAttribute("insert", new User());
+//            model.addAttribute("update", new User());
+            attribute(model);
             return "main/tables/user";
         }
     }
@@ -93,14 +107,16 @@ public class AdminUserController {
         user.setUpdate_date(new Date());
         userServicelmpl.updateUser(user);
         model.addAttribute("message","");
-        model.addAttribute("insert",new User());
-        model.addAttribute("update",new User());
+//        model.addAttribute("insert",new User());
+//        model.addAttribute("update",new User());
+        attribute(model);
 
-        return "main/tables/user";
+//        return "main/tables/user";
+        return "redirect:/admin/user/home";
     }
 
     @PostMapping("/delete")
-    public String Delete(ModelMap model,@RequestParam("id_delete") int id_delete){
+    public String DeleteAdmin(ModelMap model,@RequestParam("id_delete") int id_delete){
         boolean ketqua = userServicelmpl.deleteUser(id_delete);
         if(ketqua == true){
 
@@ -111,10 +127,10 @@ public class AdminUserController {
             userServicelmpl.updateUser(user);
         }
         model.addAttribute("message","");
-        model.addAttribute("insert",new User());
-        model.addAttribute("update",new User());
-
-        return "main/tables/user";
-
+//        model.addAttribute("insert",new User());
+//        model.addAttribute("update",new User());
+        attribute(model);
+//        return "main/tables/user";
+        return "redirect:/admin/user/home";
     }
 }

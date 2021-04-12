@@ -2,8 +2,8 @@ package com.example.backend_final_project.controller.Admin;
 
 import com.example.backend_final_project.model.*;
 import com.example.backend_final_project.service.Impl.*;
-import com.example.backend_final_project.service.dto.ProductRespone;
-import com.example.backend_final_project.service.dto.Product_Property_DetailRespone;
+import com.example.backend_final_project.service.dto.ProductRequest;
+import com.example.backend_final_project.service.dto.Product_Property_DetailRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.BufferedOutputStream;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Date;
 import java.util.List;
 
 @Controller
+@SessionAttributes({"username", "role"})
 @RequestMapping("admin/product")
 public class AdminProductController {
     @Autowired
@@ -38,11 +38,11 @@ public class AdminProductController {
 
     @ModelAttribute
     public void attribute(ModelMap model){
-        model.addAttribute("insert", new ProductRespone());
-        model.addAttribute("update", new ProductRespone());
+        model.addAttribute("insert", new ProductRequest());
+        model.addAttribute("update", new ProductRequest());
 //        model.addAttribute("delete", new ProductRespone());
-        model.addAttribute("insertProperty", new Product_Property_DetailRespone());
-        model.addAttribute("updateProperty", new Product_Property_DetailRespone());
+        model.addAttribute("insertProperty", new Product_Property_DetailRequest());
+        model.addAttribute("updateProperty", new Product_Property_DetailRequest());
 //        model.addAttribute("deleteProperty", new Product_Property_DetailRespone());
         model.addAttribute("insertProductimage", new Product_Image());
         model.addAttribute("updateProductimage", new Product_Image());
@@ -78,44 +78,46 @@ public class AdminProductController {
         return "main/tables/sp_test";
     }
     @PostMapping("/insert")
-    public String insertProduct(ModelMap model, @ModelAttribute ProductRespone productRespone){
-        Supplier supplier = supplierServiceImpl.getSupplierById(Integer.parseInt(productRespone.getSupplier_id()));
+    public String insertProduct(ModelMap model, @ModelAttribute ProductRequest productRequest){
+        Supplier supplier = supplierServiceImpl.getSupplierById(Integer.parseInt(productRequest.getSupplier_id()));
         Product product = new Product();
 
-        product.setCode(productRespone.getCode());
-        product.setName(productRespone.getName());
-        product.setPrice(productRespone.getPrice());
-        product.setIssale(productRespone.isIssale());
-        product.setPrice_sale(productRespone.getPrice_sale());
-        product.setDescription(productRespone.getDescription());
-        product.setGender(productRespone.isGender());
-        product.setQuantity(productRespone.getQuantity());
+        product.setCode(productRequest.getCode());
+        product.setName(productRequest.getName());
+        product.setPrice(productRequest.getPrice());
+        product.setIssale(productRequest.isIssale());
+        product.setPrice_sale(productRequest.getPrice_sale());
+        product.setDescription(productRequest.getDescription());
+        product.setGender(productRequest.isGender());
+        product.setQuantity(productRequest.getQuantity());
         product.setSupplier_id(supplier);
         product.setCreated_date(new Date());
         productServiceImpl.addProduct(product);
         attribute(model);
-        return "main/tables/sp_test";
+//        return "main/tables/sp_test";
+        return "redirect:/admin/product/home";
     }
     @PostMapping("/update")
-    public String UpdateProduct(ModelMap model,@ModelAttribute ProductRespone productRespone){
-        Supplier supplier = supplierServiceImpl.getSupplierById(Integer.parseInt(productRespone.getSupplier_id()));
+    public String UpdateProduct(ModelMap model,@ModelAttribute ProductRequest productRequest){
+        Supplier supplier = supplierServiceImpl.getSupplierById(Integer.parseInt(productRequest.getSupplier_id()));
 
         Product product = new Product();
-        product.setID(productRespone.getId());
-        product.setCode(productRespone.getCode());
-        product.setName(productRespone.getName());
-        product.setPrice(productRespone.getPrice());
-        product.setIssale(productRespone.isIssale());
-        product.setPrice_sale(productRespone.getPrice_sale());
-        product.setDescription(productRespone.getDescription());
-        product.setGender(productRespone.isGender());
-        product.setQuantity(productRespone.getQuantity());
+        product.setID(productRequest.getId());
+        product.setCode(productRequest.getCode());
+        product.setName(productRequest.getName());
+        product.setPrice(productRequest.getPrice());
+        product.setIssale(productRequest.isIssale());
+        product.setPrice_sale(productRequest.getPrice_sale());
+        product.setDescription(productRequest.getDescription());
+        product.setGender(productRequest.isGender());
+        product.setQuantity(productRequest.getQuantity());
         product.setSupplier_id(supplier);
-        product.setCreated_date(productRespone.getCreated_date());
+        product.setCreated_date(productRequest.getCreated_date());
 
         productServiceImpl.updateProduct(product);
         attribute(model);
-        return "main/tables/sp_test";
+//        return "main/tables/sp_test";
+        return "redirect:/admin/product/home";
     }
     @PostMapping("/delete")
     public String deleteProduct(ModelMap model,@RequestParam("id_delete") int id_delete){
@@ -128,7 +130,8 @@ public class AdminProductController {
             productServiceImpl.updateProduct(product);
         }
         attribute(model);
-        return "main/tables/sp_test";
+//        return "main/tables/sp_test";
+        return "redirect:/admin/product/home";
     }
 
     //product_property_detail
@@ -166,34 +169,36 @@ public class AdminProductController {
         return "main/tables/sp_property";
     }
     @PostMapping("/property/insert/{id_product}")
-    public String insertPropertyid(ModelMap model, @PathVariable("id_product") int id_product,@ModelAttribute Product_Property_DetailRespone product_property_detailRespone){
+    public String insertPropertyid(ModelMap model, @PathVariable("id_product") int id_product,@ModelAttribute Product_Property_DetailRequest product_property_detailRequest){
         Product product = productServiceImpl.getProductById(id_product);
-        Product_Property product_property = productPropertyServiceImpl.getProductPropertyById(Integer.parseInt(product_property_detailRespone.getId_property()));
+        Product_Property product_property = productPropertyServiceImpl.getProductPropertyById(Integer.parseInt(product_property_detailRequest.getId_property()));
         Product_Property_Detail product_property_detail = new Product_Property_Detail();
         product_property_detail.setProduct(product);
         product_property_detail.setProduct_Property(product_property);
-        product_property_detail.setDescription(product_property_detailRespone.getDescription());
+        product_property_detail.setDescription(product_property_detailRequest.getDescription());
         product_property_detail.setCreated_date(new Date());
         productPropertyDetailServiceImpl.addProductPropertyD(product_property_detail);
         model.addAttribute("id", id_product);
         attribute(model);
-        return "main/tables/sp_property";
+//        return "main/tables/sp_property";
+        return "redirect:/admin/product/property/home/"+id_product;
     }
     @PostMapping("/property/update/{id_product}")
-    public String updatePropertyid(ModelMap model, @PathVariable("id_product") int id_product,@ModelAttribute Product_Property_DetailRespone product_property_detailRespone){
+    public String updatePropertyid(ModelMap model, @PathVariable("id_product") int id_product,@ModelAttribute Product_Property_DetailRequest product_property_detailRequest){
         Product product = productServiceImpl.getProductById(id_product);
-        Product_Property product_property = productPropertyServiceImpl.getProductPropertyById(Integer.parseInt(product_property_detailRespone.getId_property()));
+        Product_Property product_property = productPropertyServiceImpl.getProductPropertyById(Integer.parseInt(product_property_detailRequest.getId_property()));
         Product_Property_Detail product_property_detail = new Product_Property_Detail();
         product_property_detail.setProduct(product);
         product_property_detail.setProduct_Property(product_property);
-        product_property_detail.setDescription(product_property_detailRespone.getDescription());
-        product_property_detail.setCreated_date(product_property_detailRespone.getCreated_date());
+        product_property_detail.setDescription(product_property_detailRequest.getDescription());
+        product_property_detail.setCreated_date(product_property_detailRequest.getCreated_date());
         product_property_detail.setUpdated_date(new Date());
-        product_property_detail.setID(product_property_detailRespone.getId());
+        product_property_detail.setID(product_property_detailRequest.getId());
         productPropertyDetailServiceImpl.updateProductPropertyD(product_property_detail);
         model.addAttribute("id", id_product);
         attribute(model);
-        return "main/tables/sp_property";
+//        return "main/tables/sp_property";
+        return "redirect:/admin/product/property/home/"+id_product;
     }
     @PostMapping("/property/delete/{id_product}")
     public String deletePropertyid(ModelMap model, @PathVariable("id_product") int id_product,@RequestParam("id_delete") int id_delete){
@@ -201,7 +206,8 @@ public class AdminProductController {
         productPropertyDetailServiceImpl.deleteProductPropertyD(id_delete);
         model.addAttribute("id", id_product);
         attribute(model);
-        return "main/tables/sp_property";
+//        return "main/tables/sp_property";
+        return "redirect:/admin/product/property/home/"+id_product;
     }
     //product_image
 
@@ -268,7 +274,8 @@ public class AdminProductController {
         System.out.println("aaaaa");
         model.addAttribute("id", id_product);
         attribute(model);
-        return "main/tables/sp_image";
+//        return "main/tables/sp_image";
+        return "redirect:/admin/product/image/home/"+id_product;
     }
 
     @PostMapping("image/update/{id_product}")
@@ -310,14 +317,16 @@ public class AdminProductController {
 //        System.out.println("aaaaaaa");
         model.addAttribute("id", id_product);
         attribute(model);
-        return "main/tables/sp_image";
+//        return "main/tables/sp_image";
+        return "redirect:/admin/product/image/home/"+id_product;
     }
     @PostMapping("/image/delete/{id_product}")
     public String deleteimage(ModelMap model, @PathVariable("id_product") int id_product,@RequestParam int id_delete){
         productImageServiceImpl.deleteProductImage(id_delete);
         model.addAttribute("id", id_product);
         attribute(model);
-        return "main/tables/sp_image";
+//        return "main/tables/sp_image";
+        return "redirect:/admin/product/image/home/"+id_product;
     }
 
 }

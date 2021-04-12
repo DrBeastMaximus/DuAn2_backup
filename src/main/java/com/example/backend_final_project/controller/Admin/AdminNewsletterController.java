@@ -15,6 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
+@SessionAttributes({"username", "role"})
 @RequestMapping("admin/newsletter")
 public class AdminNewsletterController {
     @Autowired
@@ -29,15 +30,15 @@ public class AdminNewsletterController {
 
     @ModelAttribute
     public void attribute(ModelMap model){
-        model.addAttribute("sendemail",new SendEmailRequest());
+        model.addAttribute("A",new SendEmailRequest());
         model.addAttribute("insert",new Email());
     }
 
     @GetMapping("/home")
     public String Home(ModelMap model){
-            attribute(model);
+        attribute(model);
 
-           return "main/tables/email";
+        return "main/tables/email";
     }
     @GetMapping("/insert")
     public String insert(ModelMap model){
@@ -56,11 +57,11 @@ public class AdminNewsletterController {
     public String SendEmail(ModelMap model, @ModelAttribute SendEmailRequest SendEmail) throws MessagingException {
         List<Email> ds = newsletterServiceImpl.getNewsletterEmailList();
         for(int i = 0; i < ds.size(); i++){
-        MailSender.sendText(ds.get(i).getEmail(),SendEmail.getSubject(),SendEmail.getMessage());
+            MailSender.sendText(ds.get(i).getEmail(),SendEmail.getSubject(),SendEmail.getMessage());
         }
         attribute(model);
-
-        return "main/tables/email";
+        return "redirect:/admin/newsletter/home";
+//        return "main/tables/email";
     }
 
     @PostMapping("/insert")
@@ -69,7 +70,8 @@ public class AdminNewsletterController {
         newsletterServiceImpl.addNewsletterEmail(email);
         attribute(model);
 
-        return "main/tables/email";
+//        return "main/tables/email";
+        return "redirect:/admin/newsletter/home";
     }
 
 
@@ -79,7 +81,8 @@ public class AdminNewsletterController {
         newsletterServiceImpl.deleteNewsletterEmail(id);
         attribute(model);
 
-        return "main/tables/email";
+//        return "main/tables/email";
+        return "redirect:/admin/newsletter/home";
 
     }
 }

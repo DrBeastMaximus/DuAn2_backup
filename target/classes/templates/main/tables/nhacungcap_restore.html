@@ -23,6 +23,8 @@
 </head>
 
 <body ng-app="myapp" ng-controller="myctrl">
+<input hidden ng-model="username" th:value="${username}">
+<input hidden ng-model="role" th:value="${role}">
 <div class="wrapper">
     <div class="sidebar" data-active-color="rose" data-background-color="black" data-image="../../assets/img/sidebar-1.jpg">
         <!--
@@ -44,7 +46,7 @@
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed">
                             <span>
-                                Ngọc Tuấn
+                                 {{username}}
                                 <b class="caret"></b>
                             </span>
                     </a>
@@ -52,28 +54,41 @@
                     <div class="collapse" id="collapseExample">
                         <ul class="nav">
                             <li>
-                                <a href="#">
-                                    <span class="sidebar-mini"> MP </span>
-                                    <span class="sidebar-normal"> My Profile </span>
+                                <a th:href="@{../login/logut}">
+                                    <span class="sidebar-mini">  </span>
+                                    <span class="sidebar-normal"> Logout </span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <span class="sidebar-mini"> EP </span>
-                                    <span class="sidebar-normal"> Edit Profile </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="sidebar-mini"> S </span>
-                                    <span class="sidebar-normal"> Settings </span>
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
             </div>
             <ul class="nav">
+                <li ng-if="role == 1">
+                    <a data-toggle="collapse" href="#mapsExamples">
+                        <i class="material-icons">waterfall_chart</i>
+                        <p>     Thống Kê
+                            <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse" id="mapsExamples">
+                        <ul class="nav">
+                            <li>
+                                <a th:href="@{../statistical/home}">
+                                    <span class="sidebar-mini"> T </span>
+                                    <span class="sidebar-normal"> Tổng  </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{../statistical/detail}">
+                                    <span class="sidebar-mini"> T </span>
+                                    <span class="sidebar-normal"> Sản Phảm Và Nhà Cung Cấp  </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 <li >
                     <a data-toggle="collapse" href="#tablesExamples" aria-expanded="true">
                         <i class="material-icons">manage_accounts</i>
@@ -89,13 +104,13 @@
                                     <span class="sidebar-normal"> Đơn Hàng </span>
                                 </a>
                             </li>
-                            <li >
+                            <li ng-if="role == 1">
                                 <a th:href="@{../taikhoan/home}">
                                     <span class="sidebar-mini"> TK </span>
                                     <span class="sidebar-normal"> Tài khoản </span>
                                 </a>
                             </li>
-                            <li >
+                            <li ng-if="role == 1">
                                 <a th:href="@{../user/home}">
                                     <span class="sidebar-mini"> US </span>
                                     <span class="sidebar-normal"> User </span>
@@ -114,7 +129,7 @@
                                 </a>
                             </li>
 
-                            <li >
+                            <li ng-if="role == 1">
                                 <a th:href="@{../voucher/home}">
                                     <span class="sidebar-mini"> V </span>
                                     <span class="sidebar-normal"> Voucher </span>
@@ -145,13 +160,13 @@
                     </a>
                     <div class="collapse in" id="pagesExamples">
                         <ul class="nav">
-                            <li>
+                            <li ng-if="role == 1">
                                 <a th:href="@{../trashcon/trashconadmin}">
                                     <span class="sidebar-mini"> TK </span>
                                     <span class="sidebar-normal"> Tài Khoản </span>
                                 </a>
                             </li>
-                            <li>
+                            <li ng-if="role == 1">
                                 <a th:href="@{../trashcon/trashconuser}">
                                     <span class="sidebar-mini"> US</span>
                                     <span class="sidebar-normal"> User </span>
@@ -169,7 +184,7 @@
                                     <span class="sidebar-normal"> Nhà Cung Cấp </span>
                                 </a>
                             </li>
-                            <li>
+                            <li ng-if="role == 1">
                                 <a th:href="@{../trashcon/trashconvoucher}">
                                     <span class="sidebar-mini"> V</span>
                                     <span class="sidebar-normal"> Voucher </span>
@@ -256,7 +271,7 @@
                                                 <!--                                                        </button>                                                -->
                                                 <form th:action="@{./trashconsupplier}" method="post"  th:object="${restor}">
 
-                                                    <input hidden id="id" name="id" value="{{pro.id}}" >
+                                                    <textarea hidden id="id" name="id" value="{{pro.id}}" >{{pro.id}}</textarea>
                                                     <button type="submit" rel="tooltip" data-toggle="modal"  class="btn btn-success btn-simple" >
                                                         <i class="material-icons">restore</i>
                                                     </button>
@@ -406,6 +421,26 @@
         $scope.supplier = [];
         $http.get("../trashcon/supplier").then(function(response) {
             $scope.supplier = response.data;
+
+            $scope.pageCount = Math.ceil($scope.supplier.length / 8);
+            $scope.begin = 0;
+
+            $scope.first = function() {
+                $scope.begin = 0;
+            }
+            $scope.prev = function() {
+                if ($scope.begin > 0) {
+                    $scope.begin -= 8;
+                }
+            }
+            $scope.next = function() {
+                if ($scope.begin < ($scope.pageCount - 1) * 8) {
+                    $scope.begin += 8;
+                }
+            }
+            $scope.last = function() {
+                $scope.begin = ($scope.pageCount - 1) * 8;
+            }
         });
 
 
@@ -414,36 +449,48 @@
         // $scope.update = function (index) {
         //     $scope.provider1 = $scope.supplier[index];
         // }
-        $scope.begin = 0;
-        $scope.pageCount = Math.ceil($scope.supplier.length / 8);
-        $scope.first = function() {
-            $scope.begin = 0;
-        }
-        $scope.prev = function() {
-            // if ($scope.begin > 0) {
-
-            // }
-            if($scope.begin >=0){
-
-            }else{
-                $scope.begin -= 8;
-            }
-        }
-        $scope.next = function() {
-            if ($scope.begin < ($scope.pageCount - 1) * 8) {
-                $scope.begin += 8;
-            }else{
-                if($scope.begin == 0){
-                    // $scope.begin += 8;
-                }  $scope.begin = ($scope.pageCount - 1) * 8;
-            }
-
-        }
-        $scope.last = function() {
-            $scope.begin = ($scope.pageCount - 1) * 8;
-        }
+        // $scope.begin = 0;
+        // $scope.pageCount = Math.ceil($scope.supplier.length / 8);
+        // $scope.first = function() {
+        //     $scope.begin = 0;
+        // }
+        // $scope.prev = function() {
+        //     // if ($scope.begin > 0) {
+        //
+        //     // }
+        //     if($scope.begin >=0){
+        //
+        //     }else{
+        //         $scope.begin -= 8;
+        //     }
+        // }
+        // $scope.next = function() {
+        //     if ($scope.begin < ($scope.pageCount - 1) * 8) {
+        //         $scope.begin += 8;
+        //     }else{
+        //         if($scope.begin == 0){
+        //             // $scope.begin += 8;
+        //         }  $scope.begin = ($scope.pageCount - 1) * 8;
+        //     }
+        //
+        // }
+        // $scope.last = function() {
+        //     $scope.begin = ($scope.pageCount - 1) * 8;
+        // }
         // }
 
     });
+    app.directive('input', ['$parse', function ($parse) {
+        return {
+            controller: 'myctrl',
+            restrict: 'E',
+            require: '?ngModel',
+            link: function (scope, element, attrs) {
+                if(attrs.value) {
+                    $parse(attrs.ngModel).assign(scope, attrs.value);
+                }
+            }
+        };
+    }]);
 </script>
 </html>
