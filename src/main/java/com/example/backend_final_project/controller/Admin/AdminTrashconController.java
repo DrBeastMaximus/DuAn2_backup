@@ -1,7 +1,7 @@
 package com.example.backend_final_project.controller.Admin;
 
 import com.example.backend_final_project.model.*;
-import com.example.backend_final_project.service.Impl.TrashconServiceImpl;
+import com.example.backend_final_project.service.Impl.TrashcanServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@SessionAttributes({"username", "role"})
 @RequestMapping("admin/trashcon")
 public class AdminTrashconController {
     @Autowired
-    private TrashconServiceImpl trashconServiceImpl;
+    private TrashcanServiceImpl trashconServiceImpl;
 
     @GetMapping("/user")
     @ResponseBody

@@ -12,22 +12,30 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
+@SessionAttributes({"username", "role"})
 @RequestMapping("admin/voucher")
 public class AdminVoucherController {
     @Autowired
     private VoucherServiceImpl voucherServiceImpl;
 
-    @GetMapping("/home")
-    public String Home(ModelMap model){
+    @ModelAttribute
+    public void attribute(ModelMap model){
         model.addAttribute("insert",new Voucher());
         model.addAttribute("update",new Voucher());
+    }
+
+    @GetMapping("/home")
+    public String Home(ModelMap model){
+//        model.addAttribute("insert",new Voucher());
+//        model.addAttribute("update",new Voucher());
+        attribute(model);
         model.addAttribute("message","");
         return "main/tables/voucher";
     }
 
     @GetMapping("/list")
     @ResponseBody
-    public List<Voucher> getAdmin(){
+    public List<Voucher> getVoucher(){
         List<Voucher> ds = voucherServiceImpl.getVoucherList();
         return ds;
     }
@@ -63,9 +71,9 @@ public class AdminVoucherController {
             voucherServiceImpl.addVoucher(voucher);
             model.addAttribute("message","");
         }
-        model.addAttribute("insert",new Voucher());
-        model.addAttribute("update",new Voucher());
-
+//        model.addAttribute("insert",new Voucher());
+//        model.addAttribute("update",new Voucher());
+        attribute(model);
         return "main/tables/voucher";
     }
 
@@ -86,8 +94,9 @@ public class AdminVoucherController {
                 model.addAttribute("message","");
             }
         }
-        model.addAttribute("insert",new Voucher());
-        model.addAttribute("update",new Voucher());
+//        model.addAttribute("insert",new Voucher());
+//        model.addAttribute("update",new Voucher());
+        attribute(model);
 
         return "main/tables/voucher";
     }
@@ -103,8 +112,9 @@ public class AdminVoucherController {
             voucher.setStatus(true);
             voucherServiceImpl.updateVoucher(voucher);
         }
-        model.addAttribute("insert",new Voucher());
-        model.addAttribute("update",new Voucher());
+//        model.addAttribute("insert",new Voucher());
+//        model.addAttribute("update",new Voucher());
+        attribute(model);
         model.addAttribute("message","");
         return "main/tables/voucher";
 

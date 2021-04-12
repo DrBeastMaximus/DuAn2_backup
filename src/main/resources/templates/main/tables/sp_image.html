@@ -24,6 +24,8 @@
 
 <body ng-app="myapp" ng-controller="myctrl">
 <input hidden ng-model="id" th:value="${id}">
+<input hidden ng-model="username" th:value="${username}">
+<input hidden ng-model="role" th:value="${role}">
 <div class="wrapper">
     <div class="sidebar" data-active-color="rose" data-background-color="black" data-image="../../../../assets/img/sidebar-1.jpg">
         <!--
@@ -45,7 +47,7 @@
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed">
                             <span>
-                                Ngọc Tuấn
+                                 {{username}}
                                 <b class="caret"></b>
                             </span>
                     </a>
@@ -53,28 +55,41 @@
                     <div class="collapse" id="collapseExample">
                         <ul class="nav">
                             <li>
-                                <a href="#">
-                                    <span class="sidebar-mini"> MP </span>
-                                    <span class="sidebar-normal"> My Profile </span>
+                                <a th:href="@{../../../login/logut}">
+                                    <span class="sidebar-mini"> </span>
+                                    <span class="sidebar-normal"> Logout </span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <span class="sidebar-mini"> EP </span>
-                                    <span class="sidebar-normal"> Edit Profile </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="sidebar-mini"> S </span>
-                                    <span class="sidebar-normal"> Settings </span>
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
             </div>
             <ul class="nav">
+                <li ng-if="role == 1">
+                    <a data-toggle="collapse" href="#mapsExamples">
+                        <i class="material-icons">waterfall_chart</i>
+                        <p>     Thống Kê
+                            <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse" id="mapsExamples">
+                        <ul class="nav">
+                            <li>
+                                <a th:href="@{../../../statistical/home}">
+                                    <span class="sidebar-mini"> T </span>
+                                    <span class="sidebar-normal"> Tổng  </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a th:href="@{../../../statistical/detail}">
+                                    <span class="sidebar-mini"> T </span>
+                                    <span class="sidebar-normal"> Sản Phảm Và Nhà Cung Cấp  </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 <li >
                     <a data-toggle="collapse" href="#tablesExamples" aria-expanded="true">
                         <i class="material-icons">manage_accounts</i>
@@ -90,13 +105,13 @@
                                     <span class="sidebar-normal"> Đơn Hàng </span>
                                 </a>
                             </li>
-                            <li >
+                            <li ng-if="role == 1">
                                 <a th:href="@{../../../taikhoan/home}">
                                     <span class="sidebar-mini"> TK </span>
                                     <span class="sidebar-normal"> Tài khoản </span>
                                 </a>
                             </li>
-                            <li >
+                            <li ng-if="role == 1">
                                 <a th:href="@{../../../user/home}">
                                     <span class="sidebar-mini"> US </span>
                                     <span class="sidebar-normal"> User </span>
@@ -115,7 +130,7 @@
                                 </a>
                             </li>
 
-                            <li >
+                            <li ng-if="role == 1">
                                 <a th:href="@{../../../voucher/home}">
                                     <span class="sidebar-mini"> V </span>
                                     <span class="sidebar-normal"> Voucher </span>
@@ -146,13 +161,13 @@
                     </a>
                     <div class="collapse" id="pagesExamples">
                         <ul class="nav">
-                            <li>
+                            <li ng-if="role == 1">
                                 <a th:href="@{../../../trashcon/trashconadmin}">
                                     <span class="sidebar-mini"> TK </span>
                                     <span class="sidebar-normal"> Tài Khoản </span>
                                 </a>
                             </li>
-                            <li>
+                            <li ng-if="role == 1">
                                 <a th:href="@{../../../trashcon/trashconuser}">
                                     <span class="sidebar-mini"> US</span>
                                     <span class="sidebar-normal"> User </span>
@@ -170,7 +185,7 @@
                                     <span class="sidebar-normal"> Nhà Cung Cấp </span>
                                 </a>
                             </li>
-                            <li>
+                            <li ng-if="role == 1">
                                 <a th:href="@{../../../trashcon/trashconvoucher}">
                                     <span class="sidebar-mini"> V</span>
                                     <span class="sidebar-normal"> Voucher </span>
@@ -199,62 +214,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"> thương hiệu </a>
+                    <a class="navbar-brand" href="#"> Hình </a>
                 </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="material-icons">dashboard</i>
-                                <p class="hidden-lg hidden-md">Dashboard</p>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="material-icons">notifications</i>
-                                <span class="notification">5</span>
-                                <p class="hidden-lg hidden-md">
-                                    Notifications
-                                    <b class="caret"></b>
-                                </p>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">Mike John responded to your email</a>
-                                </li>
-                                <li>
-                                    <a href="#">You have 5 new tasks</a>
-                                </li>
-                                <li>
-                                    <a href="#">You're now friend with Andrew</a>
-                                </li>
-                                <li>
-                                    <a href="#">Another Notification</a>
-                                </li>
-                                <li>
-                                    <a href="#">Another One</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="material-icons">person</i>
-                                <p class="hidden-lg hidden-md">Profile</p>
-                            </a>
-                        </li>
-                        <li class="separator hidden-lg hidden-md"></li>
-                    </ul>
-                    <form class="navbar-form navbar-right" role="search">
-                        <div class="form-group form-search is-empty">
-                            <input type="text" class="form-control" placeholder=" Search ">
-                            <span class="material-input"></span>
-                        </div>
-                        <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                            <i class="material-icons">search</i>
-                            <div class="ripple-container"></div>
-                        </button>
-                    </form>
-                </div>
+
             </div>
         </nav>
         <div class="content">
@@ -269,8 +231,8 @@
                                 <h4 class="card-title">Hình</h4>
                                 <div class="toolbar">
                                     <!--        Here you can write extra buttons/actions for the toolbar              -->
-                                    <button type="button" rel="tooltip" class="btn btn-info btn-simple" href="#" data-original-title="" title="">
-                                        <i class="material-icons">undo</i><a th:href="@{../../../product/home}">Quay về sản phẩm</a>
+                                    <button type="button" rel="tooltip" class="btn btn-info btn-simple" href="#" data-original-title="" onclick="location.href='../../../product/home';">
+                                        <i class="material-icons">undo</i><a >Quay về sản phẩm</a>
                                     </button>
                                     <button class="btn btn-warning" data-toggle="modal" data-target="#myModal">Thêm mới</button>
                                     <div class="input-group" style="margin-left: 1350px">
@@ -555,6 +517,26 @@
         if($scope.id != null) {
             $http.get("../../productimage/list/" + $scope.id).then(function (response) {
                 $scope.productimage = response.data;
+
+                $scope.pageCount = Math.ceil($scope.productimage.length / 8);
+                $scope.begin = 0;
+
+                $scope.first = function() {
+                    $scope.begin = 0;
+                }
+                $scope.prev = function() {
+                    if ($scope.begin > 0) {
+                        $scope.begin -= 8;
+                    }
+                }
+                $scope.next = function() {
+                    if ($scope.begin < ($scope.pageCount - 1) * 8) {
+                        $scope.begin += 8;
+                    }
+                }
+                $scope.last = function() {
+                    $scope.begin = ($scope.pageCount - 1) * 8;
+                }
             });
         }
         $scope.productimage1= {};
@@ -574,39 +556,39 @@
         $scope.urldelete= "../../image/delete/"+$scope.id;
         $scope.urlimage = null;
 
-        $scope.begin = 0;
-
-        $scope.pageCount = Math.ceil($scope.productimage.length / 8);
-        $scope.first = function() {
-            $scope.begin = 0;
-
-        }
-        $scope.prev = function() {
-
-            if($scope.begin >=0){
-
-            }else{
-                $scope.begin -= 8;
-
-            }
-        }
-        $scope.next = function() {
-            if ($scope.begin < ($scope.pageCount - 1) * 8) {
-                $scope.begin += 8;
-
-            }else{
-                if($scope.begin == 0){
-
-
-                }  $scope.begin = ($scope.pageCount - 1) * 8;
-
-            }
-
-        }
-        $scope.last = function() {
-            $scope.begin = ($scope.pageCount - 1) * 8;
-
-        }
+        // $scope.begin = 0;
+        //
+        // $scope.pageCount = Math.ceil($scope.productimage.length / 8);
+        // $scope.first = function() {
+        //     $scope.begin = 0;
+        //
+        // }
+        // $scope.prev = function() {
+        //
+        //     if($scope.begin >=0){
+        //
+        //     }else{
+        //         $scope.begin -= 8;
+        //
+        //     }
+        // }
+        // $scope.next = function() {
+        //     if ($scope.begin < ($scope.pageCount - 1) * 8) {
+        //         $scope.begin += 8;
+        //
+        //     }else{
+        //         if($scope.begin == 0){
+        //
+        //
+        //         }  $scope.begin = ($scope.pageCount - 1) * 8;
+        //
+        //     }
+        //
+        // }
+        // $scope.last = function() {
+        //     $scope.begin = ($scope.pageCount - 1) * 8;
+        //
+        // }
 
 
 

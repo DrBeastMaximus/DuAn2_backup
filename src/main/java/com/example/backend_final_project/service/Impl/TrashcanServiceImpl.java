@@ -2,7 +2,7 @@ package com.example.backend_final_project.service.Impl;
 
 import com.example.backend_final_project.DAO.Impl.TrashcanDAOImpl;
 import com.example.backend_final_project.model.*;
-import com.example.backend_final_project.service.TrashconService;
+import com.example.backend_final_project.service.TrashcanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class TrashconServiceImpl implements TrashconService {
+public class TrashcanServiceImpl implements TrashcanService {
 
     @Autowired
     private TrashcanDAOImpl trashcanDAOImpl;

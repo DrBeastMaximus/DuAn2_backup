@@ -4,7 +4,7 @@ import com.example.backend_final_project.model.*;
 
 import java.util.List;
 
-public interface TrashconService {
+public interface TrashcanService {
     List<User> getUserdeleteList();
     List<Product> getProductdeleteList();
     List<Voucher> getVoucherdeleteList();

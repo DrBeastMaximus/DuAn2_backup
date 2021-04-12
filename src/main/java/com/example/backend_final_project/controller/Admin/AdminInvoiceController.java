@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@SessionAttributes({"username", "role"})
+//@SessionAttributes("admin")
 @RequestMapping("admin/invoice")
 public class AdminInvoiceController {
     @Autowired
@@ -23,6 +25,8 @@ public class AdminInvoiceController {
 
     @Autowired
     private InvoiceServiceImpl invoiceServiceImpl;
+
+
 
     @GetMapping("/count/list")
     @ResponseBody
@@ -56,7 +60,7 @@ public class AdminInvoiceController {
             ListinvoiceRespones.add(invoiceRespone);
         }
 
-    return ListinvoiceRespones;
+        return ListinvoiceRespones;
     }
 
     @GetMapping("/home/{status}")
