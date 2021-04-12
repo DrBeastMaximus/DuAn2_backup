@@ -84,7 +84,7 @@ public class ForgotPassREST {
                 UsersToken tokens = tokenService.getUserTokenByUID(userId);
                 if(tokens.getAccountStatus()==3){
                     //Fix here
-                    if(token==tokens.getPasswordReminderToken()) {
+                    if(token.equals(tokens.getPasswordReminderToken())) {
                         if (confirm.equals(newPass)) {
                             usr.setPassword(newPass);
                             userService.updateUser(usr);
