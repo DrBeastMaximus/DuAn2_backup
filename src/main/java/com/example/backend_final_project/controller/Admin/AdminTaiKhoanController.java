@@ -2,6 +2,7 @@ package com.example.backend_final_project.controller.Admin;
 
 import com.example.backend_final_project.model.Admin;
 import com.example.backend_final_project.service.Impl.LoginAdminServiceImpl;
+import com.example.backend_final_project.service.SessionService;
 import org.codehaus.jackson.map.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -92,6 +93,7 @@ public class AdminTaiKhoanController {
             }
         }else {
             admin.setCreated_date(new Date());
+            admin.setCreated_by(SessionService.username);
             loginAdminService.addAdmin(admin);
 //            model.addAttribute("insert", new Admin());
 //            model.addAttribute("update", new Admin());
@@ -104,9 +106,7 @@ public class AdminTaiKhoanController {
     @PostMapping("/update")
     public String UpdateAdmin(ModelMap model, @ModelAttribute Admin admin){
         admin.setUpdated_date(new Date());
-        System.out.println(admin.getID());
-        System.out.println(admin.getUsername());
-        System.out.println(admin.getRole());
+        admin.setUpdated_by(SessionService.username);
         loginAdminService.updateAdmin(admin);
 //        model.addAttribute("insert",new Admin());
 //        model.addAttribute("update",new Admin());
@@ -123,6 +123,7 @@ public class AdminTaiKhoanController {
         Admin admin =  loginAdminService.getAdminId(id_delete);
         admin.setIsdelete(true);
         admin.setUpdated_date(new Date());
+        admin.setUpdated_by(SessionService.username);
         loginAdminService.updateAdmin(admin);
 //        model.addAttribute("insert",new Admin());
 //        model.addAttribute("update",new Admin());

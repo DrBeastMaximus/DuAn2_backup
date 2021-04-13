@@ -3,6 +3,7 @@ package com.example.backend_final_project.controller.Admin;
 
 import com.example.backend_final_project.model.Product_Property;
 import com.example.backend_final_project.service.Impl.ProductPropertyServiceImpl;
+import com.example.backend_final_project.service.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -62,6 +63,7 @@ public class AdminProduct_PropertyController {
     @PostMapping("/insert")
     public String InsertProductProperty(ModelMap model, @ModelAttribute Product_Property product_Property){
         product_Property.setCreated_date(new Date());
+        product_Property.setCreated_by(SessionService.username);
         productPropertyServiceImpl.addProductProperty(product_Property);
         attribute(model);
 //        model.addAttribute("insert",new Product_Property());
@@ -77,6 +79,7 @@ public class AdminProduct_PropertyController {
         System.out.println(product_Property.getName());
         System.out.println(product_Property.getCreated_date());
         product_Property.setUpdated_date(new Date());
+        product_Property.setUpdated_by(SessionService.username);
         productPropertyServiceImpl.updateProductProperty(product_Property);
 //        model.addAttribute("insert",new Product_Property());
 //        model.addAttribute("update",new Product_Property());

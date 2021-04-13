@@ -58,7 +58,7 @@ public class SecurityInterceptor implements HandlerInterceptor {
                 return true;
             }
             /*-- Có lỗi -> về đăng nhập --*/
-            session.addSecurityUrl(uri);
+//            session.addSecurityUrl(uri);
 //        response.sendRedirect("/account/login?message=" + StrUtils.encodeUrl(error) );
         }
         response.sendRedirect("/admin/login/auth" );

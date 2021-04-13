@@ -47,8 +47,8 @@ public class Product {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Created_date;
 
-    @Column(name = "creatd_by")
-    private String Creatd_by;
+    @Column(name = "created_by")
+    private String Created_by;
 
     @Column(name ="isdelete")
     private boolean isdelete;
@@ -56,6 +56,15 @@ public class Product {
 
     @Column(name ="gender")
     private boolean gender;
+
+    @Column(name = "updated_date")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date Updated_date;
+
+    @Column(name ="update_by")
+    private String Updated_by;
+
 
 //    @OneToMany(mappedBy="product_detail",fetch=FetchType.EAGER)
 //    private Collection<Product_Detail> Product_Detail;
@@ -112,6 +121,13 @@ public class Product {
         Price = price;
     }
 
+    public float getPrice_sale() {
+        return Price_sale;
+    }
+
+    public void setPrice_sale(float price_sale) {
+        Price_sale = price_sale;
+    }
 
     public String getDescription() {
         return Description;
@@ -121,13 +137,28 @@ public class Product {
         Description = description;
     }
 
-
     public boolean isIssale() {
         return Issale;
     }
 
     public void setIssale(boolean issale) {
         Issale = issale;
+    }
+
+    public Supplier getSupplier_id() {
+        return Supplier_id;
+    }
+
+    public void setSupplier_id(Supplier supplier_id) {
+        Supplier_id = supplier_id;
+    }
+
+    public float getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(float quantity) {
+        Quantity = quantity;
     }
 
     public Date getCreated_date() {
@@ -138,12 +169,12 @@ public class Product {
         Created_date = created_date;
     }
 
-    public String getCreatd_by() {
-        return Creatd_by;
+    public String getCreated_by() {
+        return Created_by;
     }
 
-    public void setCreatd_by(String creatd_by) {
-        Creatd_by = creatd_by;
+    public void setCreated_by(String created_by) {
+        Created_by = created_by;
     }
 
     public boolean isIsdelete() {
@@ -162,29 +193,23 @@ public class Product {
         this.gender = gender;
     }
 
-    public float getPrice_sale() {
-        return Price_sale;
+    public Date getUpdated_date() {
+        return Updated_date;
     }
 
-    public void setPrice_sale(float price_sale) {
-        Price_sale = price_sale;
+    public void setUpdated_date(Date updated_date) {
+        Updated_date = updated_date;
     }
 
-    public Supplier getSupplier_id() {
-        return Supplier_id;
+    public String getUpdated_by() {
+        return Updated_by;
     }
 
-    public void setSupplier_id(Supplier supplier_id) {
-        Supplier_id = supplier_id;
+    public void setUpdated_by(String updated_by) {
+        Updated_by = updated_by;
     }
 
-    public float getQuantity() {
-        return Quantity;
-    }
 
-    public void setQuantity(float quantity) {
-        this.Quantity = quantity;
-    }
     //    public Collection<Product_Detail> getProduct_Detail() {
 //        return Product_Detail;
 //    }
@@ -272,7 +297,8 @@ public class Product {
 //        Wishlish = wishlish;
 //    }
 
-    public Product(int ID, String code, String name, float price, float price_sale, String description, boolean issale, Supplier supplier_id, float quantity, Date created_date, String creatd_by, boolean isdelete, boolean gender) {
+
+    public Product(int ID, String code, String name, float price, float price_sale, String description, boolean issale, Supplier supplier_id, float quantity, Date created_date, String created_by, boolean isdelete, boolean gender, Date updated_date, String updated_by) {
         this.ID = ID;
         Code = code;
         Name = name;
@@ -283,10 +309,13 @@ public class Product {
         Supplier_id = supplier_id;
         Quantity = quantity;
         Created_date = created_date;
-        Creatd_by = creatd_by;
+        Created_by = created_by;
         this.isdelete = isdelete;
         this.gender = gender;
+        Updated_date = updated_date;
+        Updated_by = updated_by;
     }
+
     public Product() {
     }
 }

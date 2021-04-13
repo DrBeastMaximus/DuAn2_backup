@@ -3,6 +3,7 @@ package com.example.backend_final_project.controller.Admin;
 
 import com.example.backend_final_project.model.Voucher;
 import com.example.backend_final_project.service.Impl.VoucherServiceImpl;
+import com.example.backend_final_project.service.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -39,13 +40,13 @@ public class AdminVoucherController {
         List<Voucher> ds = voucherServiceImpl.getVoucherList();
         return ds;
     }
-    @GetMapping("/insert")
-    public String insert(ModelMap model){
-        model.addAttribute("insert",new Voucher());
-        model.addAttribute("update",new Voucher());
-        model.addAttribute("message","");
-        return "main/tables/voucher";
-    }
+    //    @GetMapping("/insert")
+//    public String insert(ModelMap model){
+//        model.addAttribute("insert",new Voucher());
+//        model.addAttribute("update",new Voucher());
+//        model.addAttribute("message","");
+//        return "main/tables/voucher";
+//    }
     @GetMapping("/update")
     public String update(ModelMap model){
         model.addAttribute("insert",new Voucher());
@@ -53,13 +54,13 @@ public class AdminVoucherController {
         model.addAttribute("message","");
         return "main/tables/voucher";
     }
-    @GetMapping("/delete")
-    public String delete(ModelMap model){
-        model.addAttribute("insert",new Voucher());
-        model.addAttribute("update",new Voucher());
-        model.addAttribute("message","");
-        return "main/tables/voucher";
-    }
+//    @GetMapping("/delete")
+//    public String delete(ModelMap model){
+//        model.addAttribute("insert",new Voucher());
+//        model.addAttribute("update",new Voucher());
+//        model.addAttribute("message","");
+//        return "main/tables/voucher";
+//    }
 
     @PostMapping("/insert")
     public String InsertAdmin(ModelMap model, @ModelAttribute Voucher voucher){
@@ -68,6 +69,7 @@ public class AdminVoucherController {
             model.addAttribute("message","Mã Voucher đã tồn tại");
         }else{
             voucher.setCreated_date(new Date());
+            voucher.setCreated_by(SessionService.username);
             voucherServiceImpl.addVoucher(voucher);
             model.addAttribute("message","");
         }
@@ -80,8 +82,9 @@ public class AdminVoucherController {
     @PostMapping("/update")
     public String UpdateAdmin(ModelMap model, @ModelAttribute Voucher voucher){
         Voucher vou = voucherServiceImpl.getVoucherById(voucher.getID());
-        if(vou.getCode() == voucher.getCode()){
+        if(vou.getCode().equals(voucher.getCode())){
             voucher.setUpdated_date(new Date());
+            voucher.setUpdated_by(SessionService.username);
             voucherServiceImpl.updateVoucher(voucher);
             model.addAttribute("message","");
         }else{
@@ -90,6 +93,7 @@ public class AdminVoucherController {
                 model.addAttribute("message","Mã Voucher đã tồn tại");
             }else{
                 voucher.setUpdated_date(new Date());
+                voucher.setUpdated_by(SessionService.username);
                 voucherServiceImpl.updateVoucher(voucher);
                 model.addAttribute("message","");
             }
@@ -110,13 +114,14 @@ public class AdminVoucherController {
             Voucher voucher = voucherServiceImpl.getVoucherById(id_delete);
             voucher.setUpdated_date(new Date());
             voucher.setStatus(true);
+            voucher.setUpdated_by(SessionService.username);
             voucherServiceImpl.updateVoucher(voucher);
         }
 //        model.addAttribute("insert",new Voucher());
 //        model.addAttribute("update",new Voucher());
         attribute(model);
         model.addAttribute("message","");
-        return "main/tables/voucher";
+        return "redirect:/admin/voucher/home";
 
     }
 }

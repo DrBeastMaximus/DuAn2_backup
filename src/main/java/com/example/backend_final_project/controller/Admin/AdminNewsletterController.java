@@ -30,7 +30,7 @@ public class AdminNewsletterController {
 
     @ModelAttribute
     public void attribute(ModelMap model){
-        model.addAttribute("A",new SendEmailRequest());
+        model.addAttribute("sendemail",new SendEmailRequest());
         model.addAttribute("insert",new Email());
     }
 
@@ -40,18 +40,18 @@ public class AdminNewsletterController {
 
         return "main/tables/email";
     }
-    @GetMapping("/insert")
-    public String insert(ModelMap model){
-        attribute(model);
-
-        return "main/tables/email";
-    }
-    @GetMapping("/delete")
-    public String delete(ModelMap model){
-        attribute(model);
-
-        return "main/tables/email";
-    }
+//    @GetMapping("/insert")
+//    public String insert(ModelMap model){
+//        attribute(model);
+//
+//        return "main/tables/email";
+//    }
+//    @GetMapping("/delete")
+//    public String delete(ModelMap model){
+//        attribute(model);
+//
+//        return "main/tables/email";
+//    }
 
     @PostMapping("/home")
     public String SendEmail(ModelMap model, @ModelAttribute SendEmailRequest SendEmail) throws MessagingException {

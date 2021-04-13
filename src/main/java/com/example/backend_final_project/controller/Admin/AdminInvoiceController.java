@@ -4,6 +4,7 @@ import com.example.backend_final_project.model.Invoice;
 import com.example.backend_final_project.model.Invoice_Detail;
 import com.example.backend_final_project.service.Impl.InvoiceDetailServiceImpl;
 import com.example.backend_final_project.service.Impl.InvoiceServiceImpl;
+import com.example.backend_final_project.service.SessionService;
 import com.example.backend_final_project.service.dto.InvoiceRequest;
 import com.example.backend_final_project.service.dto.InvoiceRespone;
 import com.example.backend_final_project.service.dto.Invoice_detetailRespone;
@@ -12,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -90,6 +93,8 @@ public class AdminInvoiceController {
                 }
             }
         }
+
+
         model.addAttribute("status", new InvoiceRequest());
         model.addAttribute("id", status);
         return "main/tables/dh";
@@ -124,6 +129,8 @@ public class AdminInvoiceController {
 
         Invoice invoice = invoiceServiceImpl.getInvoiceById(invoiceRequest.getId());
         invoice.setStatus(invoiceRequest.getStatus());
+        invoice.setUpdate_Date(new Date());
+        invoice.setUpdate_by(SessionService.username);
         invoiceServiceImpl.updateInvoice(invoice);
         model.addAttribute("status", new InvoiceRequest());
         model.addAttribute("id", status);

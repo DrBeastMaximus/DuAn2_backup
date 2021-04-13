@@ -3,6 +3,7 @@ package com.example.backend_final_project.DAO.Impl;
 import com.example.backend_final_project.DAO.TrashcanDAO;
 import com.example.backend_final_project.exception.UpdateDataException;
 import com.example.backend_final_project.model.*;
+import com.example.backend_final_project.service.SessionService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -64,6 +65,7 @@ public class TrashcanDAOImpl implements TrashcanDAO {
             User user = session.get(User.class, id);
             user.setUpdate_date(new Date());
             user.setIsdelete(false);
+
             session.update(user);
             t.commit();
         } catch (Exception e) {
@@ -83,6 +85,8 @@ public class TrashcanDAOImpl implements TrashcanDAO {
             Product product = session.get(Product.class, id);
 
             product.setIsdelete(false);
+            product.setUpdated_date(new Date());
+            product.setUpdated_by(SessionService.username);
             session.update(product);
             t.commit();
         } catch (Exception e) {
@@ -101,6 +105,8 @@ public class TrashcanDAOImpl implements TrashcanDAO {
             Voucher voucher = session.get(Voucher.class, id);
             voucher.setUpdated_date(new Date());
             voucher.setStatus(false);
+
+            voucher.setUpdated_by(SessionService.username);
             session.update(voucher);
             t.commit();
         } catch (Exception e) {
@@ -120,6 +126,7 @@ public class TrashcanDAOImpl implements TrashcanDAO {
             Supplier supplier = session.get(Supplier.class, id);
             supplier.setUpdated_date(new Date());
             supplier.setIsdelete(false);
+            supplier.setUpdated_by(SessionService.username);
             session.update(supplier);
             t.commit();
         } catch (Exception e) {
@@ -139,6 +146,8 @@ public class TrashcanDAOImpl implements TrashcanDAO {
             Admin admin = session.get(Admin.class, id);
 //            admin.setUpdated_date(new Date());
             admin.setIsdelete(false);
+            admin.setUpdated_date(new Date());
+            admin.setUpdated_by(SessionService.username);
             session.update(admin);
             t.commit();
         } catch (Exception e) {

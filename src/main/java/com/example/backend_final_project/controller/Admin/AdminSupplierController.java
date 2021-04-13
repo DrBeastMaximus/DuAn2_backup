@@ -2,6 +2,7 @@ package com.example.backend_final_project.controller.Admin;
 
 import com.example.backend_final_project.model.Supplier;
 import com.example.backend_final_project.service.Impl.SupplierServiceImpl;
+import com.example.backend_final_project.service.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -63,6 +64,7 @@ public class AdminSupplierController {
     @PostMapping("/insert")
     public String InsertSupplier(ModelMap model, @ModelAttribute Supplier supplier){
         supplier.setCreated_date(new Date());
+        supplier.setCreated_by(SessionService.username);
         providerServiceImpl.addSupplier(supplier);
 //        model.addAttribute("insert",new Supplier());
 //        model.addAttribute("update",new Supplier());
@@ -74,6 +76,7 @@ public class AdminSupplierController {
     @PostMapping("/update")
     public String UpdateSupplier(ModelMap model, @ModelAttribute Supplier supplier){
         supplier.setUpdated_date(new Date());
+        supplier.setUpdated_by(SessionService.username);
         providerServiceImpl.updateSupplier(supplier);
 //        model.addAttribute("insert",new Supplier());
 //        model.addAttribute("update",new Supplier());

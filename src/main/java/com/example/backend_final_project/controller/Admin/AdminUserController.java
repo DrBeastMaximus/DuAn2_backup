@@ -93,6 +93,7 @@ public class AdminUserController {
         }else {
 
             user.setCreated_date(new Date());
+
             userServicelmpl.addUser(user);
             model.addAttribute("message","");
 //            model.addAttribute("insert", new User());
@@ -105,6 +106,7 @@ public class AdminUserController {
     @PostMapping("/update")
     public String UpdateAdmin(ModelMap model, @ModelAttribute User user){
         user.setUpdate_date(new Date());
+
         userServicelmpl.updateUser(user);
         model.addAttribute("message","");
 //        model.addAttribute("insert",new User());

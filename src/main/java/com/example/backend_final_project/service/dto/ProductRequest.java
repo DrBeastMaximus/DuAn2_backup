@@ -1,5 +1,10 @@
 package com.example.backend_final_project.service.dto;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.Temporal;
+
+import javax.persistence.TemporalType;
 import java.util.Date;
 
 public class ProductRequest {
@@ -13,7 +18,11 @@ public class ProductRequest {
     private boolean gender;
     private int quantity;
     private String supplier_id;
+
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date Created_date;
+
     private String Created_by;
 
     public int getId() {

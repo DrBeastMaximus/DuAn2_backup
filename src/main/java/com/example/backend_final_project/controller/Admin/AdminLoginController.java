@@ -11,7 +11,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.net.HttpCookie;
+import java.util.Date;
 
 
 @Controller
@@ -48,8 +51,10 @@ public class AdminLoginController {
 
 //                    session.setAttribute("username",GlobalConstant.getUsername());
 //                    session.setAttribute("role",GlobalConstant.getRole());
-                    return "redirect:/admin/invoice/home/cho-xac-nhan";
-//                    return "main/pages/login";
+//                    return "redirect:/admin/invoice/home/cho-xac-nhan";
+
+//                    return "redirect:/admin/invoice/home/cho-xac-nhan";
+                    return "main/tables/reloadpages";
                 } else {
                     mm.addAttribute("message", "Wrong username or password!");
                     return "main/pages/login";

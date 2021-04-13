@@ -19,11 +19,13 @@ public class SessionService {
     /**
      * Lưu user vào session
      */
+    public static String username = null;
     public void addAdmin(Admin admin) {
 
         session.setAttribute("admin", admin);
         session.setAttribute("username", admin.getUsername());
         session.setAttribute("role",admin.getRole());
+        username = admin.getUsername();
     }
     /**
      * Xóa user khỏi session
@@ -33,29 +35,30 @@ public class SessionService {
         session.removeAttribute("admin");
         session.removeAttribute("username");
         session.removeAttribute("role");
+        username = null;
     }
     /**
      * Đọc security-url từ session
      */
-    public String getSecurityUrl() {
-        return (String) session.getAttribute("security-url");
-    }
-    /**
-     * Lưu security-url vào session
-     */
-    public void addSecurityUrl(String securityUrl) {
-        session.setAttribute("security-url", securityUrl);
-    }
-    /**
-     * Xóa security-url khỏi session
-     */
-    public void removeSecurityUrl() {
-        session.removeAttribute("security-url");
-    }
-    /**
-     * Hủy bỏ session hiện tại
-     */
-    public void clear() {
-        session.invalidate();
-    }
+//    public String getSecurityUrl() {
+//        return (String) session.getAttribute("security-url");
+//    }
+//    /**
+//     * Lưu security-url vào session
+//     */
+//    public void addSecurityUrl(String securityUrl) {
+//        session.setAttribute("security-url", securityUrl);
+//    }
+//    /**
+//     * Xóa security-url khỏi session
+//     */
+//    public void removeSecurityUrl() {
+//        session.removeAttribute("security-url");
+//    }
+//    /**
+//     * Hủy bỏ session hiện tại
+//     */
+//    public void clear() {
+//        session.invalidate();
+//    }
 }
