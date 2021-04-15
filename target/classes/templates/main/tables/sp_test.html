@@ -23,6 +23,7 @@
     <script th:src="@{/assets/js/bootstable.min.js}"></script>
     <script th:src="@{/assets/js/angular.min.js}"></script>
     <script th:src="@{/assets/js/angular-route.js}"></script>
+    <script th:src="@{/assets/js/admin/sp_test.js}"></script>
 </head>
 
 <body ng-app="myapp" ng-controller="myctrl">
@@ -673,73 +674,5 @@
         $('.card .material-datatables label').addClass('form-group');
     });
 </script>
-<script>
-    var app = angular.module("myapp", []);
-    app.controller("myctrl", function($scope, $http) {
-        $scope.product = [];
-        $http.get("../product/list").then(function(response) {
-            $scope.product = response.data;
 
-            $scope.pageCount = Math.ceil($scope.product.length / 8);
-            $scope.begin = 0;
-
-            $scope.first = function() {
-                $scope.begin = 0;
-            }
-            $scope.prev = function() {
-                if ($scope.begin > 0) {
-                    $scope.begin -= 8;
-                }
-            }
-            $scope.next = function() {
-                if ($scope.begin < ($scope.pageCount - 1) * 8) {
-                    $scope.begin += 8;
-                }
-            }
-            $scope.last = function() {
-                $scope.begin = ($scope.pageCount - 1) * 8;
-            }
-        });
-
-        $scope.supplier = [];
-        $http.get("../supplier/list").then(function(response) {
-            $scope.supplier = response.data;
-        });
-
-        $scope.product1= {};
-
-        $scope.update = function (index) {
-            for(var i = 0; i < $scope.product.length; i++){
-                if( $scope.product[i].id == index){
-                    $scope.product1 = $scope.product[i];
-                }
-            }
-        }
-        $scope.content= "";
-        $scope.contentid = function (index) {
-            for(var i = 0; i < $scope.product.length; i++){
-                if( $scope.product[i].id == index){
-                    $scope.content = $scope.product[i].description;
-                }
-            }
-
-        }
-
-
-        // }
-
-    });
-    app.directive('input', ['$parse', function ($parse) {
-        return {
-            controller: 'myctrl',
-            restrict: 'E',
-            require: '?ngModel',
-            link: function (scope, element, attrs) {
-                if(attrs.value) {
-                    $parse(attrs.ngModel).assign(scope, attrs.value);
-                }
-            }
-        };
-    }]);
-</script>
 </html>

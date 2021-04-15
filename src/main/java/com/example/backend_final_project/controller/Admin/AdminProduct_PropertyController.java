@@ -19,6 +19,7 @@ public class AdminProduct_PropertyController {
     @Autowired
     private ProductPropertyServiceImpl productPropertyServiceImpl;
 
+    // trả về trang quản lý thuộc tính sản phẩm
     @GetMapping("/home")
     public String Home(ModelMap model){
         attribute(model);
@@ -32,6 +33,7 @@ public class AdminProduct_PropertyController {
         model.addAttribute("update",new Product_Property());
     }
 
+    //api lấy danh sách thuộc tính sản phẩm từ db
     @GetMapping("/list")
     @ResponseBody
     public List<Product_Property> getProductProperty(){
@@ -60,6 +62,7 @@ public class AdminProduct_PropertyController {
 //        return "main/tables/product_pr";
 //    }
 
+    //thêm thuộc tính mới vào db
     @PostMapping("/insert")
     public String InsertProductProperty(ModelMap model, @ModelAttribute Product_Property product_Property){
         product_Property.setCreated_date(new Date());
@@ -73,11 +76,12 @@ public class AdminProduct_PropertyController {
         return "redirect:/admin/productproperty/home";
     }
 
+    // cập nhật lại thuộc tính
     @PostMapping("/update")
     public String UpdateProductProperty(ModelMap model, @ModelAttribute Product_Property product_Property){
-        System.out.println(product_Property.getID());
-        System.out.println(product_Property.getName());
-        System.out.println(product_Property.getCreated_date());
+//        System.out.println(product_Property.getID());
+//        System.out.println(product_Property.getName());
+//        System.out.println(product_Property.getCreated_date());
         product_Property.setUpdated_date(new Date());
         product_Property.setUpdated_by(SessionService.username);
         productPropertyServiceImpl.updateProductProperty(product_Property);
@@ -89,12 +93,15 @@ public class AdminProduct_PropertyController {
         return "redirect:/admin/productproperty/home";
     }
 
+    //xóa thuộc tính khỏi db
     @PostMapping("home")
     public String DeleteProductProperty(ModelMap model,@RequestParam("id_delete") int id_delete){
+
         boolean ketqua = productPropertyServiceImpl.deleteProductProperty(id_delete);
         if(ketqua == true){
             model.addAttribute("message","");
         }else{
+            // thông báo thất bại khi không xóa được thuộc tính
             model.addAttribute("message","Xóa thất bại");
         }
 //        model.addAttribute("insert",new Product_Property());

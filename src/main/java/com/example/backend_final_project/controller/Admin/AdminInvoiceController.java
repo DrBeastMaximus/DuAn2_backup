@@ -30,7 +30,7 @@ public class AdminInvoiceController {
     private InvoiceServiceImpl invoiceServiceImpl;
 
 
-
+// lấy tông hóa đơn theo trạng thái
     @GetMapping("/count/list")
     @ResponseBody
     public List<Object> getcountall(){
@@ -38,15 +38,17 @@ public class AdminInvoiceController {
         return list;
     }
 
-
+// lấy danh sách hóa đơn và hóa đơn chi tiết theo trang thái(status)
     @GetMapping("/list/{status}")
     @ResponseBody
     public List<InvoiceRespone> getinvoice(@PathVariable("status") int status){
         List<InvoiceRespone> ListinvoiceRespones = new ArrayList<InvoiceRespone>();
+        // lấy danh sách hóa đơn theo status
         List<Invoice> listinvoice = invoiceServiceImpl.getInvoiceListByStatus(status);
         for(int i =0; i < listinvoice.size(); i ++){
             InvoiceRespone invoiceRespone = new InvoiceRespone();
             List<Invoice_detetailRespone> listinvoice_detetailRespone = new ArrayList<Invoice_detetailRespone>();
+            //lấy danh sách hóa đơn chi tiết và theo hóa đơn
             List<Invoice_Detail> listinvoice_detail = invoiceDetailServiceImpl.getInvoiceDetailListByInvoiceId(listinvoice.get(i).getID());
             for(int j =0; j < listinvoice_detail.size(); j++) {
                 Invoice_detetailRespone invoice_detetailRespone = new Invoice_detetailRespone();
@@ -58,14 +60,18 @@ public class AdminInvoiceController {
                 invoice_detetailRespone.setId(listinvoice_detail.get(j).getID());
                 listinvoice_detetailRespone.add(invoice_detetailRespone);
             }
+            //thêm hóa đơn vào invoiceRespone
             invoiceRespone.setInvoice(listinvoice.get(i));
+            //thêm danh sách hóa đơn chi tiết vào invoiceRespone
             invoiceRespone.setInvoidetail(listinvoice_detetailRespone);
+            // add invoiceRespone vào listinvoiceRespones
             ListinvoiceRespones.add(invoiceRespone);
         }
 
         return ListinvoiceRespones;
     }
 
+    //trả về trang quản lý đơn hàng
     @GetMapping("/home/{status}")
     public String homestatus(ModelMap model,@PathVariable("status") String check){
 
@@ -99,6 +105,8 @@ public class AdminInvoiceController {
         model.addAttribute("id", status);
         return "main/tables/dh";
     }
+
+    // chuyển đổi trạng thái đơn hàng
     @PostMapping("/home/{status}")
     public String statusInvoice(ModelMap model,@PathVariable("status") String check,@ModelAttribute InvoiceRequest invoiceRequest){
 

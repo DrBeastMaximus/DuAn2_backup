@@ -29,11 +29,13 @@ public class AdminLoginController {
     @Autowired
     CookieService cookie;
 
+    //trả về trang login
     @GetMapping("/auth")
     public String auth(){
         return "main/pages/login";
     }
 
+    //login
     @PostMapping("/auth")
     public String auth(ModelMap mm, @RequestParam(value = "email") String email, @RequestParam(value = "password") String pass){
 //        HttpSession session = request.getSession(true);
@@ -47,6 +49,7 @@ public class AdminLoginController {
 //                    GlobalConstant.setAdminID(list.getID());
 //                    GlobalConstant.setRole(list.getRole());
 //                    GlobalConstant.setUsername(list.getUsername());
+                    //thêm admin vào session
                     session.addAdmin(list);
 
 //                    session.setAttribute("username",GlobalConstant.getUsername());
@@ -67,7 +70,7 @@ public class AdminLoginController {
     }
 
 
-
+//logout
     @GetMapping("/logut")
     public String logout(){
         session.removeAdmin();

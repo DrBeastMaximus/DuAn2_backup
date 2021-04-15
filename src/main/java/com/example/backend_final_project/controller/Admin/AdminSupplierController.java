@@ -18,6 +18,7 @@ public class AdminSupplierController {
     @Autowired
     private SupplierServiceImpl providerServiceImpl;
 
+    //trả về trang quản lý nhà cung cấp
     @GetMapping("/home")
     public String Home(ModelMap model){
         attribute(model);
@@ -31,7 +32,7 @@ public class AdminSupplierController {
         model.addAttribute("insert",new Supplier());
         model.addAttribute("update",new Supplier());
     }
-
+// api lấy danh sách tất cả nhà cung cấp có trong db với trạng thái chưa xóa
     @GetMapping("/list")
     @ResponseBody
     public List<Supplier> getSupplier(){
@@ -61,6 +62,7 @@ public class AdminSupplierController {
 //        return "main/tables/nhacungcap";
 //    }
 
+    // thêm nhà cung cấp vào db
     @PostMapping("/insert")
     public String InsertSupplier(ModelMap model, @ModelAttribute Supplier supplier){
         supplier.setCreated_date(new Date());
@@ -73,6 +75,7 @@ public class AdminSupplierController {
         return "redirect:/admin/supplier/home";
     }
 
+    // cập nhật nhà cung cấp
     @PostMapping("/update")
     public String UpdateSupplier(ModelMap model, @ModelAttribute Supplier supplier){
         supplier.setUpdated_date(new Date());
@@ -85,12 +88,14 @@ public class AdminSupplierController {
         return "redirect:/admin/supplier/home";
     }
 
+    //xóa nhà cung cấp
     @PostMapping("delete")
     public String DeleteSupplier(ModelMap model,@RequestParam("id_delete") int id_delete){
         boolean ketqua = providerServiceImpl.deleteSupplier(id_delete);
         if(ketqua == true){
 
         }else {
+            // nếu xóa thất bại sẽ update trạng thái nhà cung cấp từ chưa xóa thành đã xóa
             Supplier supplier = providerServiceImpl.getSupplierById(id_delete);
             supplier.setUpdated_date(new Date());
             supplier.setIsdelete(true);

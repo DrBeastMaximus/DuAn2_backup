@@ -25,6 +25,7 @@ public class AdminVoucherController {
         model.addAttribute("update",new Voucher());
     }
 
+    //trả về trang quản lý voucher
     @GetMapping("/home")
     public String Home(ModelMap model){
 //        model.addAttribute("insert",new Voucher());
@@ -34,6 +35,7 @@ public class AdminVoucherController {
         return "main/tables/voucher";
     }
 
+    // api lấy danh sách voucher có trong db với trạng thái chưa xóa(chưa sử dụng)
     @GetMapping("/list")
     @ResponseBody
     public List<Voucher> getVoucher(){
@@ -47,6 +49,8 @@ public class AdminVoucherController {
 //        model.addAttribute("message","");
 //        return "main/tables/voucher";
 //    }
+
+    //trả về trang quản lý voucher
     @GetMapping("/update")
     public String update(ModelMap model){
         model.addAttribute("insert",new Voucher());
@@ -62,9 +66,11 @@ public class AdminVoucherController {
 //        return "main/tables/voucher";
 //    }
 
+    //thêm voucher vào db
     @PostMapping("/insert")
-    public String InsertAdmin(ModelMap model, @ModelAttribute Voucher voucher){
+    public String InsertVoucher(ModelMap model, @ModelAttribute Voucher voucher){
         List<Voucher> vou = voucherServiceImpl.getVoucherByCode(voucher.getCode());
+        //kiểm tra mã voucher đã tồn tại chưa
         if (vou.size() != 0){
             model.addAttribute("message","Mã Voucher đã tồn tại");
         }else{
@@ -79,9 +85,11 @@ public class AdminVoucherController {
         return "main/tables/voucher";
     }
 
+    //cập nhật voucher
     @PostMapping("/update")
-    public String UpdateAdmin(ModelMap model, @ModelAttribute Voucher voucher){
+    public String UpdateVoucher(ModelMap model, @ModelAttribute Voucher voucher){
         Voucher vou = voucherServiceImpl.getVoucherById(voucher.getID());
+        // kiểm tra mã voucher có bị thay đổi không
         if(vou.getCode().equals(voucher.getCode())){
             voucher.setUpdated_date(new Date());
             voucher.setUpdated_by(SessionService.username);
@@ -89,6 +97,7 @@ public class AdminVoucherController {
             model.addAttribute("message","");
         }else{
             List<Voucher> vou1 = voucherServiceImpl.getVoucherByCode(voucher.getCode());
+            //kiểm tra mã voucher đã tồn tại chưa
             if(vou1.size() != 0){
                 model.addAttribute("message","Mã Voucher đã tồn tại");
             }else{
@@ -105,8 +114,9 @@ public class AdminVoucherController {
         return "main/tables/voucher";
     }
 
+    //xóa voucher
     @PostMapping("delete")
-    public String Delete(ModelMap model,@RequestParam("id_delete") int id_delete){
+    public String DeleteVoucher(ModelMap model,@RequestParam("id_delete") int id_delete){
         boolean ketqua = voucherServiceImpl.deleteVoucher(id_delete);
         if(ketqua == true){
 
