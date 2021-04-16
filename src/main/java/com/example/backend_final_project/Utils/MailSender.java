@@ -58,7 +58,7 @@ public class MailSender {
 
         mailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(receiver));
         mailMessage.setSubject(subject);
-        mailMessage.setText(text);
+        mailMessage.setContent(text,"text/html; charset=utf-8");
 
         queue.add(mailMessage);
     }

@@ -1,5 +1,6 @@
 package com.example.backend_final_project.controller.User.RESTController;
 
+import com.example.backend_final_project.Utils.HTMLTableBuilder;
 import com.example.backend_final_project.Utils.MailSender;
 import com.example.backend_final_project.model.*;
 import com.example.backend_final_project.service.Impl.*;
@@ -73,7 +74,7 @@ public class CheckoutPageREST {
     @PostMapping("/order/{userID}/{voucherCode}")
     public Boolean orderwithVoucher(@PathVariable int userID, @PathVariable String voucherCode, @RequestBody JsonNode json) throws MessagingException {
         int discontValue = checkVoucher(voucherCode);
-        StringBuilder receipt = null;
+        String receipt = null;
         User user = userService.getUserById(userID);
         if(user!=null) {
             user.setFullname(json.get("name").asText());
@@ -101,6 +102,8 @@ public class CheckoutPageREST {
                 invoice.setIsdelete(false);
                 invoice.setStatus(0);
                 invoiceService.addInvoice(invoice);
+                HTMLTableBuilder htmlBuilder = new HTMLTableBuilder(null, true, cartDetail.size(), 6);
+                htmlBuilder.addTableHeader("Hình ảnh","Tên sản phẩm","Giá", "Số lượng","Thành Tiền","Link sản phẩm");
                 for (int i = 0; i < cartDetail.size(); i++) {
                     Invoice_Detail invoiceD = new Invoice_Detail();
                     invoiceD.setInvoice(invoice);
@@ -122,9 +125,17 @@ public class CheckoutPageREST {
                     invoiceDetailService.addInvoiceDetail(invoiceD);
 
                     cartDetailService.deleteCartDetail(cartDetail.get(i).getId());
-
+                    String pd = productService.getProductById(cartDetail.get(i).getProduct().getID()).getName();
+                    Float price = cartDetail.get(i).getProduct_Price();
+                    Float totasl = cartDetail.get(i).getTotal();
+                    String indexImg = "<img src=\"http://dwhigh.tech:8080/api/image/getIndexImages/" + cartDetail.get(i).getProduct().getID()+"\" width=\"130\" height=\"130\">";
+                    String productlink = "http://dwhigh.tech/san-pham-chi-tiet/" +cartDetail.get(i).getProduct().getID();
+                    int qty = cartDetail.get(i).getQuantity();
+                    htmlBuilder.addRowValues(indexImg,pd, String.valueOf(price), String.valueOf(qty), String.valueOf(totasl),productlink);
+                    cartDetailService.deleteCartDetail(cartDetail.get(i).getId());
 
                 }
+                String table = htmlBuilder.build();
                 cartService.deleteCart(cart.getId());
                 List<Voucher> voucher = voucherService.getVoucherByCode(voucherCode);
                 if(voucher!=null){
@@ -144,8 +155,11 @@ public class CheckoutPageREST {
                     }
                 }
                 String text = new StringBuilder()
-                            .append("Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.")
-                            .toString();
+                        .append("Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.\n")
+                        .append(table)
+                        .append("\n Tổng hóa đơn của bạn là: "+total)
+                        .append("\n Voucher bạn đã áp dụng:"+ voucherCode)
+                        .toString();
 
                 MailSender.sendText(user.getEmail(),
                         "DWFashion Chân Thành Cảm Ơn Bạn Đã Đặt Hàng",
@@ -161,7 +175,7 @@ public class CheckoutPageREST {
     @PostMapping("/order/{userID}")
     public Boolean orderwithoutVoucher(@PathVariable int userID, @RequestBody JsonNode json) throws MessagingException {
         User user = userService.getUserById(userID);
-        StringBuilder receipt = null;
+        String receipt="";
         if(user!=null) {
             user.setFullname(json.get("name").asText());
             user.setPhone(String.valueOf(json.get("phone").asLong()));
@@ -188,6 +202,8 @@ public class CheckoutPageREST {
                 invoice.setIsdelete(false);
                 invoice.setStatus(0);
                 invoiceService.addInvoice(invoice);
+                HTMLTableBuilder htmlBuilder = new HTMLTableBuilder(null, true, cartDetail.size(), 6);
+                htmlBuilder.addTableHeader("Hình ảnh","Tên sản phẩm","Giá", "Số lượng","Thành Tiền","Link sản phẩm");
                 for (int i = 0; i < cartDetail.size(); i++) {
                     Invoice_Detail invoiceD = new Invoice_Detail();
                     invoiceD.setInvoice(invoice);
@@ -207,13 +223,22 @@ public class CheckoutPageREST {
                     productService.updateProduct(p);
                     invoiceD.setPrice_sale(p.getPrice_sale());
                     invoiceDetailService.addInvoiceDetail(invoiceD);
-
+                String pd = productService.getProductById(cartDetail.get(i).getProduct().getID()).getName();
+                Float price = cartDetail.get(i).getProduct_Price();
+                Float totasl = cartDetail.get(i).getTotal();
+                String indexImg = "<img src=\"http://dwhigh.tech:8080/api/image/getIndexImages/" + cartDetail.get(i).getProduct().getID()+"\" width=\"130\" height=\"130\">";
+                String productlink = "http://dwhigh.tech/san-pham-chi-tiet/" +cartDetail.get(i).getProduct().getID();
+                int qty = cartDetail.get(i).getQuantity();
+                    htmlBuilder.addRowValues(indexImg,pd, String.valueOf(price), String.valueOf(qty), String.valueOf(totasl),productlink);
                     cartDetailService.deleteCartDetail(cartDetail.get(i).getId());
 
                 }
+                String table = htmlBuilder.build();
                 cartService.deleteCart(cart.getId());
                 String text = new StringBuilder()
-                        .append("Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.")
+                        .append("Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.\n")
+                        .append(table)
+                        .append("\n Tổng hóa đơn của bạn là: "+total)
                         .toString();
                 MailSender.sendText(user.getEmail(),
                         "DWFashion Chân Thành Cảm Ơn Bạn Đã Đặt Hàng",

@@ -283,10 +283,10 @@
 
                                                                     <td class="text-center">{{ind.id}}</td>
                                                                     <td>{{ind.product_name}}</td>
-                                                                    <td>{{ind.product_price}}</td>
+                                                                    <td>{{ind.product_price.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});}}</td>
                                                                     <td>{{ind.price_sale}}</td>
                                                                     <td class="text-right"> {{ind.quantity}}</td>
-                                                                    <td class="text-right">{{ind.total}} đ</td>
+                                                                    <td class="text-right">{{ind.total.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});}} đ</td>
                                                                 </tr>
 
                                                                 </tbody>
@@ -355,7 +355,7 @@
                                             <td>{{i.invoice.user.address}}</td>
                                             <td>{{i.invoice.voucher.code}}</td>
                                             <td>{{i.invoice.created_date}}</td>
-                                            <td>{{i.invoice.total}}</td>
+                                            <td>{{i.invoice.total.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});}}</td>
 
                                             <td><button type="button" rel="tooltip" ng-click="chitiet(i.invoice.id)" data-toggle="modal" data-target="#myModal3" class="btn btn-success btn-simple" data-original-title="" title="">
                                                 <i class="material-icons">open_in_new</i>
