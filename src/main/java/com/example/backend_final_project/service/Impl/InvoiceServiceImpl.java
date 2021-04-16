@@ -50,6 +50,11 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
+    public List<Invoice> getInvoiceListByCode(String code) {
+        return invoiceDAOlmpl.getInvoiceListByCode(code);
+    }
+
+    @Override
     public void addInvoice(Invoice invoice) {
     invoiceDAOlmpl.addInvoice(invoice);
     }

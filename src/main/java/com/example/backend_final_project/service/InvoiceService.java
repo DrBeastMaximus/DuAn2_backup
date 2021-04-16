@@ -13,6 +13,8 @@ public interface InvoiceService {
     List<Invoice> getInvoiceListByStatus(int status);
     List<Invoice> getInvoiceListByVoucherId(int voucherID);
     List<Object> getcountAll();
+
+    List<Invoice> getInvoiceListByCode(String code);
     void addInvoice(Invoice invoice);
 
     void updateInvoice(Invoice invoice);

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="backend_final_project:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="ALL" />
   </component>
@@ -23,52 +28,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 4/10/2021 6:44AM">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/reloadpages.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/101_anh_1618406835099tissot.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/102_anh_1618477957378anh1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/102_anh_1618477967267anh2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/102_anh_1618477977848anh3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/102_anh_1618477991324anh4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/102_anh_1618478000889anh5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/103_anh_1618478529332anh1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/103_anh_1618478537629anh2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/103_anh_1618478545863anh3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/103_anh_1618478554350anh4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/103_anh_1618478564633anh5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/104_anh_1618479286644anh1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/104_anh_1618479296187anh2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/104_anh_1618479305855anh3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/104_anh_1618479313958anh4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/104_anh_1618479323828anh5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/105_anh_1618557697485anh1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/105_anh_1618557708077anh2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/105_anh_1618557718732anh3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/105_anh_1618557728907anh4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/105_anh_1618557741324anh5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/106_anh_1618559729344anh1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/106_anh_1618559741640anh2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/106_anh_1618559754960anh3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/106_anh_1618559764668anh4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/106_anh_1618559823324anh5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/107_anh_1618563463793anh1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/107_anh_1618563475021anh2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/107_anh_1618563489526anh3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/107_anh_1618563502216anh4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/107_anh_1618563515379anh5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/83_anh_1618474253664anh1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/83_anh_1618474357733anh1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/84_anh_1618473871485anh1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/84_anh_1618473901149anh2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/84_anh_1618473912280anh3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/84_anh_1618473936847anh4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/84_anh_1618473947082anh5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hinhanh/91_anh_1618474880774anh5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/TrashcanDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/TrashcanDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/config/SecurityInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/config/SecurityInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminInvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminInvoiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminLoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminNewsletterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminNewsletterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProduct_PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProduct_PropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminSupplierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminSupplierController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminTaiKhoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminTaiKhoanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminVoucherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminVoucherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/SessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/ProductRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/dto/ProductRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/dh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/dh.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/nhacungcap.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/nhacungcap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/product_pr.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/product_pr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_image.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_property.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_property.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/tk.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/tk.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/voucher.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/voucher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/TrashcanDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/DAO/Impl/TrashcanDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/config/SecurityInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/config/SecurityInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminInvoiceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminInvoiceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminLoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminLoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminNewsletterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminNewsletterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProduct_PropertyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProduct_PropertyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminSupplierController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminSupplierController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminTaiKhoanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminTaiKhoanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminVoucherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminVoucherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/SessionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/SessionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/dto/ProductRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/service/dto/ProductRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/dh.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/dh.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/nhacungcap.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/nhacungcap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/product_pr.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/product_pr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/sp_image.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/sp_image.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/sp_property.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/sp_property.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/sp_test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/sp_test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/tk.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/tk.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/voucher.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/voucher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/BackendFinalProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/BackendFinalProjectApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/InvoiceDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/InvoiceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/InvoiceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/InvoiceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/Impl/InvoiceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/InvoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/service/InvoiceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/BackendFinalProjectApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/BackendFinalProjectApplication.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,12 +151,18 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/main/tables" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\DuAn2_backup\src\main\resources\templates\main\tables" />
-      <recent name="F:\DuAn2_backup\src\main\resources\templates\main\pages" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\resources\templates\main\tables" />
+      <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\java\com\example\backend_final_project\service" />
+      <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\java\com\example\backend_final_project\service\dto" />
+      <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\java\com\example\backend_final_project\config" />
+      <recent name="D:\DuAn2_backup\src\main\resources\templates" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.backend_final_project.DAO.Impl" />
@@ -155,15 +170,12 @@
       <recent name="com.example.backend_final_project.service.Impl" />
       <recent name="com.example.backend_final_project.service" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\UD15101\Du an 2\duan\DuAn2_backup\src\main\resources\templates\main\tables" />
-      <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\resources\templates\main\tables" />
-      <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\java\com\example\backend_final_project\service" />
-      <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\java\com\example\backend_final_project\service\dto" />
-      <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\java\com\example\backend_final_project\config" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\DuAn2_backup\src\main\resources\templates\main\tables" />
+      <recent name="F:\DuAn2_backup\src\main\resources\templates\main\pages" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication">
+  <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication (1)">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -203,8 +215,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.BackendFinalProjectApplication" />
         <item itemvalue="Spring Boot.BackendFinalProjectApplication (1)" />
+        <item itemvalue="Spring Boot.BackendFinalProjectApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +266,6 @@
       <workItem from="1617198505027" duration="35669000" />
       <workItem from="1617567584048" duration="74010000" />
       <workItem from="1618215759975" duration="1327000" />
-      <workItem from="1618299489150" duration="2051000" />
     </task>
     <task id="LOCAL-00001" summary="Thêm Class DAO">
       <created>1613982667329</created>
@@ -611,50 +622,12 @@
     <MESSAGE value="Fix 4/10/2021 6:44AM" />
     <option name="LAST_COMMIT_MESSAGE" value="Fix 4/10/2021 6:44AM" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1618301242216">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1618301242216" />
-    <state width="1877" height="231" key="GridCell.Tab.0.bottom" timestamp="1618301501371">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618301501371" />
-    <state width="1877" height="231" key="GridCell.Tab.0.center" timestamp="1618301501370">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618301501370" />
-    <state width="1877" height="231" key="GridCell.Tab.0.left" timestamp="1618301501369">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618301501369" />
-    <state width="1877" height="231" key="GridCell.Tab.0.right" timestamp="1618301501370">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618301501370" />
-    <state width="1877" height="231" key="GridCell.Tab.1.bottom" timestamp="1618301501373">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618301501373" />
-    <state width="1877" height="231" key="GridCell.Tab.1.center" timestamp="1618301501372">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618301501372" />
-    <state width="1877" height="231" key="GridCell.Tab.1.left" timestamp="1618301501371">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618301501371" />
-    <state width="1877" height="231" key="GridCell.Tab.1.right" timestamp="1618301501372">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618301501372" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ProductPageREST.java</url>
-          <line>115</line>
+          <line>111</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -674,27 +647,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java</url>
-          <line>53</line>
+          <line>60</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java</url>
-          <line>54</line>
+          <line>61</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java</url>
-          <line>55</line>
+          <line>62</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java</url>
-          <line>56</line>
+          <line>63</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java</url>
-          <line>59</line>
+          <line>66</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -734,32 +707,32 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>194</line>
+          <line>157</line>
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>195</line>
+          <line>158</line>
           <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>196</line>
+          <line>159</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>197</line>
+          <line>160</line>
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>198</line>
+          <line>161</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>199</line>
+          <line>162</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
       </breakpoints>

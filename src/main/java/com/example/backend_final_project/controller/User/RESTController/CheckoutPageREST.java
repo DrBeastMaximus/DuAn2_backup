@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
+import java.security.SecureRandom;
 import java.util.Date;
 import java.util.List;
 
@@ -28,7 +29,15 @@ public class CheckoutPageREST {
     private VoucherServiceImpl voucherService;
     @Autowired
     private ProductServiceImpl productService;
+    static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    static SecureRandom rnd = new SecureRandom();
 
+    String randomString(int len){
+        StringBuilder sb = new StringBuilder(len);
+        for(int i = 0; i < len; i++)
+            sb.append(AB.charAt(rnd.nextInt(AB.length())));
+        return sb.toString();
+    }
 
     @GetMapping("/getVoucherInfo/{code}")
     public Integer checkVoucher(@PathVariable String code){
@@ -81,6 +90,12 @@ public class CheckoutPageREST {
                 invoice.setUpdate_by("System");
                 invoice.setCreated_date(new Date());
                 invoice.setUpdate_Date(new Date());
+                String code = randomString(5);
+                List<Invoice> inv = invoiceService.getInvoiceListByCode(code);
+                while(inv.size()>0){
+                    code = randomString(5);
+                }
+                invoice.setCode(code);
                 invoice.setIsdelete(false);
                 invoice.setStatus(0);
                 invoiceService.addInvoice(invoice);
@@ -162,6 +177,12 @@ public class CheckoutPageREST {
                 invoice.setUpdate_by("System");
                 invoice.setCreated_date(new Date());
                 invoice.setUpdate_Date(new Date());
+                String code = randomString(5);
+                List<Invoice> inv = invoiceService.getInvoiceListByCode(code);
+                while(inv.size()>0){
+                    code = randomString(5);
+                }
+                invoice.setCode(code);
                 invoice.setIsdelete(false);
                 invoice.setStatus(0);
                 invoiceService.addInvoice(invoice);

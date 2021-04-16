@@ -80,6 +80,16 @@ public class InvoiceDAOImpl implements InvoiceDAO {
     }
 
     @Override
+    public List<Invoice> getInvoiceListByCode(String code) {
+        Session session = this.sessionFactory.openSession();
+        String hql = "FROM Invoice where Code = :id and isdelete=false ";
+        Query query = session.createQuery(hql);
+        query.setParameter("id", code);
+        List<Invoice> list = query.list();
+        return list;
+    }
+
+    @Override
     @ExceptionHandler({SaveDataErrorException.class})
     public void addInvoice(Invoice invoice) {
         Session session = this.sessionFactory.openSession();

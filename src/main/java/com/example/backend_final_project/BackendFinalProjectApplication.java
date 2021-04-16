@@ -3,10 +3,11 @@ package com.example.backend_final_project;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class BackendFinalProjectApplication {
+public class BackendFinalProjectApplication extends SpringBootServletInitializer {
     private static ConfigurableApplicationContext context;
     private static ApplicationArguments argsz;
     public static void main(String[] args) {
