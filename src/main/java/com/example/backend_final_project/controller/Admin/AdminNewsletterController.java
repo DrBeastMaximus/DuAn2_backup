@@ -19,6 +19,8 @@ import java.util.List;
 @RequestMapping("admin/newsletter")
 public class AdminNewsletterController {
     @Autowired
+    MailSender MailSender;
+    @Autowired
     private NewsletterServiceImpl newsletterServiceImpl;
 
     // api lấy danh sách email có trong db

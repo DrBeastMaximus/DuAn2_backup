@@ -16,6 +16,8 @@ import java.util.List;
 @RequestMapping("/api/checkout")
 public class CheckoutPageREST {
     @Autowired
+    MailSender MailSender;
+    @Autowired
     private CartServiceImpl cartService;
     @Autowired
     private UserServicelmpl userService;

@@ -23,6 +23,8 @@ import java.util.Date;
 @RequestMapping("/api/auth/register")
 public class RegisterPageREST {
     @Autowired
+    MailSender MailSender;
+    @Autowired
     private UserServicelmpl userService;
     @Autowired
     private UsersTokenServiceImpl tokenService;

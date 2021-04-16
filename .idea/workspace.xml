@@ -22,9 +22,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 4/10/2021 6:44AM">
+    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 4/16/2021 4:26AM">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/thongke.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/thongke.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/BackendFinalProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/BackendFinalProjectApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/Utils/MailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/Utils/MailSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminNewsletterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminNewsletterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/dh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/dh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/BackendFinalProjectApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/BackendFinalProjectApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/Utils/MailSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/Utils/MailSender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminNewsletterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminNewsletterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/dh.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/dh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/thongke.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/thongke.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +134,18 @@
       <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\java\com\example\backend_final_project\config" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication">
+  <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication (1)">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BackendFinalProjectApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="backend_final_project" />
       <extension name="coverage">
@@ -149,8 +174,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.BackendFinalProjectApplication" />
         <item itemvalue="Spring Boot.BackendFinalProjectApplication (1)" />
+        <item itemvalue="Spring Boot.BackendFinalProjectApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -514,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618219046600</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Fix 4/16/2021 4:26AM">
+      <created>1618572367534</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1618572367534</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +566,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Thêm Class DAO" />
     <MESSAGE value="Thêm Class DAO mới" />
     <MESSAGE value="Thêm function cho DAO" />
     <MESSAGE value="Thêm function cho DAO s" />
@@ -559,45 +590,8 @@
     <MESSAGE value="Fix 4/3/2021 0:17AM" />
     <MESSAGE value="Fix 4/7/2021 3:44AM" />
     <MESSAGE value="Fix 4/10/2021 6:44AM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix 4/10/2021 6:44AM" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1618301242216">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1618301242216" />
-    <state width="1877" height="231" key="GridCell.Tab.0.bottom" timestamp="1618480613884">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618480613884" />
-    <state width="1877" height="231" key="GridCell.Tab.0.center" timestamp="1618480613882">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618480613882" />
-    <state width="1877" height="231" key="GridCell.Tab.0.left" timestamp="1618480613881">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618480613881" />
-    <state width="1877" height="231" key="GridCell.Tab.0.right" timestamp="1618480613883">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618480613883" />
-    <state width="1877" height="231" key="GridCell.Tab.1.bottom" timestamp="1618480613887">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618480613887" />
-    <state width="1877" height="231" key="GridCell.Tab.1.center" timestamp="1618480613885">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618480613885" />
-    <state width="1877" height="231" key="GridCell.Tab.1.left" timestamp="1618480613885">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618480613885" />
-    <state width="1877" height="231" key="GridCell.Tab.1.right" timestamp="1618480613886">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="231" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618480613886" />
+    <MESSAGE value="Fix 4/16/2021 4:26AM" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix 4/16/2021 4:26AM" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -654,62 +648,62 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java</url>
-          <line>57</line>
+          <line>59</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java</url>
-          <line>56</line>
+          <line>58</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java</url>
-          <line>51</line>
+          <line>53</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java</url>
-          <line>52</line>
+          <line>54</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java</url>
-          <line>53</line>
+          <line>55</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/ForgotPassREST.java</url>
-          <line>61</line>
+          <line>63</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>194</line>
+          <line>196</line>
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>195</line>
+          <line>197</line>
           <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>196</line>
+          <line>198</line>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>197</line>
+          <line>199</line>
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>198</line>
+          <line>200</line>
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java</url>
-          <line>199</line>
+          <line>201</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
       </breakpoints>
