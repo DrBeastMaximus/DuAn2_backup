@@ -49,7 +49,7 @@ public class AdminProductController {
         model.addAttribute("updateProductimage", new Product_Image());
     }
 
-    //product
+    //api lấy danh sách sản phẩm có trang thái chưa xóa có trong db
     @GetMapping("/list")
     @ResponseBody
     public List<Product> getproduct(){
@@ -57,7 +57,7 @@ public class AdminProductController {
         return product;
     }
 
-
+// trả về trang quản lý sản phâm
     @GetMapping("/home")
     public String home(ModelMap model){
         attribute(model);
@@ -78,6 +78,8 @@ public class AdminProductController {
 //        attribute(model);
 //        return "main/tables/sp_test";
 //    }
+
+    //thêm sản phẩm mới
     @PostMapping("/insert")
     public String insertProduct(ModelMap model, @ModelAttribute ProductRequest productRequest){
         Supplier supplier = supplierServiceImpl.getSupplierById(Integer.parseInt(productRequest.getSupplier_id()));
@@ -99,6 +101,8 @@ public class AdminProductController {
 //        return "main/tables/sp_test";
         return "redirect:/admin/product/home";
     }
+
+    //cập nhật sản phẩm
     @PostMapping("/update")
     public String UpdateProduct(ModelMap model,@ModelAttribute ProductRequest productRequest){
         Supplier supplier = supplierServiceImpl.getSupplierById(Integer.parseInt(productRequest.getSupplier_id()));
@@ -123,12 +127,15 @@ public class AdminProductController {
 //        return "main/tables/sp_test";
         return "redirect:/admin/product/home";
     }
+
+    //xóa sản phẩm
     @PostMapping("/delete")
     public String deleteProduct(ModelMap model,@RequestParam("id_delete") int id_delete){
         boolean ketqua = productServiceImpl.deleteProduct(id_delete);
         if(ketqua == true){
 
         }else{
+            // nếu xóa thất bại thì chuyển trạng thái của sản phẩm từ chưa xóa sang đã xóa
             Product product = productServiceImpl.getProductById(id_delete);
             product.setIsdelete(true);
             product.setUpdated_date(new Date());
@@ -141,6 +148,7 @@ public class AdminProductController {
     }
 
     //product_property_detail
+    // api lấy danh sách thuộc tính chi tiết sản phẩm theo id
     @GetMapping("productPropertydetail/list/{id}")
     @ResponseBody
     public List<Product_Property_Detail> getPropertydetail(@PathVariable("id") int id){
@@ -148,7 +156,7 @@ public class AdminProductController {
         return list;
     }
 
-
+// trả về trang quản lý thuộc tính sản phẩm có product id tương ứng
     @GetMapping("/property/home/{id_product}")
     public String getPropertyid(ModelMap model, @PathVariable("id_product") int id_product){
         model.addAttribute("id", id_product);
@@ -174,6 +182,8 @@ public class AdminProductController {
 //        attribute(model);
 //        return "main/tables/sp_property";
 //    }
+
+    // thêm thuộc tính sản phẩm mới vào db
     @PostMapping("/property/insert/{id_product}")
     public String insertPropertyid(ModelMap model, @PathVariable("id_product") int id_product,@ModelAttribute Product_Property_DetailRequest product_property_detailRequest){
         Product product = productServiceImpl.getProductById(id_product);
@@ -190,6 +200,8 @@ public class AdminProductController {
 //        return "main/tables/sp_property";
         return "redirect:/admin/product/property/home/"+id_product;
     }
+
+     //cập nhật thuộc tính sản phẩm
     @PostMapping("/property/update/{id_product}")
     public String updatePropertyid(ModelMap model, @PathVariable("id_product") int id_product,@ModelAttribute Product_Property_DetailRequest product_property_detailRequest){
         Product product = productServiceImpl.getProductById(id_product);
@@ -209,6 +221,8 @@ public class AdminProductController {
 //        return "main/tables/sp_property";
         return "redirect:/admin/product/property/home/"+id_product;
     }
+
+    // xóa thuộc tính sản phẩm
     @PostMapping("/property/delete/{id_product}")
     public String deletePropertyid(ModelMap model, @PathVariable("id_product") int id_product,@RequestParam("id_delete") int id_delete){
 
@@ -219,13 +233,15 @@ public class AdminProductController {
         return "redirect:/admin/product/property/home/"+id_product;
     }
     //product_image
-
+// api lấy danh sách product_image theo product id
     @GetMapping("productimage/list/{id}")
     @ResponseBody
     public List<Product_Image> getProduct_image(@PathVariable("id") int id){
         List<Product_Image> list = productImageServiceImpl.getProductImageByProdId(id);
         return list;
     }
+
+    //trả về trang quản lý hình ảnh sản phẩm theo product id
     @GetMapping("/image/home/{id_product}")
     public String getimageid(ModelMap model, @PathVariable("id_product") int id_product){
         model.addAttribute("id", id_product);
@@ -252,7 +268,7 @@ public class AdminProductController {
 //    }
 
 
-
+// thêm hình ảnh mới vào db
     @PostMapping("/image/insert/{id_product}")
     public String insertimage(ModelMap model, @PathVariable("id_product") int id_product, @ModelAttribute Product_Image product_image, @RequestPart("file") MultipartFile file){
         System.out.println(file.toString());
@@ -288,6 +304,7 @@ public class AdminProductController {
         return "redirect:/admin/product/image/home/"+id_product;
     }
 
+    // cập nhật hình ảnh sản phẩm
     @PostMapping("image/update/{id_product}")
     public String updateimage(ModelMap model, @PathVariable("id_product") int id_product, @ModelAttribute Product_Image product_image, @RequestPart("file") MultipartFile file){
 
@@ -332,6 +349,9 @@ public class AdminProductController {
 //        return "main/tables/sp_image";
         return "redirect:/admin/product/image/home/"+id_product;
     }
+
+    //xóa hình ảnh sản phẩm
+    
     @PostMapping("/image/delete/{id_product}")
     public String deleteimage(ModelMap model, @PathVariable("id_product") int id_product,@RequestParam int id_delete){
         productImageServiceImpl.deleteProductImage(id_delete);

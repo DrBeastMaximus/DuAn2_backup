@@ -24,6 +24,7 @@ public class AdminUserController {
         model.addAttribute("update",new User());
     }
 
+    //trả về trang quản lý user
     @GetMapping("/home")
     public String Home(ModelMap model){
 //        model.addAttribute("insert",new User());
@@ -34,9 +35,10 @@ public class AdminUserController {
         return "main/tables/user";
     }
 
+    //api trả về danh sách user có trạng thái chưa xóa
     @GetMapping("/list")
     @ResponseBody
-    public List<User> getAdmin(){
+    public List<User> getUser(){
         List<User> ds = userServicelmpl.getUserList();
         return ds;
     }
@@ -72,10 +74,11 @@ public class AdminUserController {
 
 
 
-
+// thêm user mới vào db
     @PostMapping("/home")
-    public String InsertAdmin(ModelMap model, @ModelAttribute User user){
+    public String InsertUser(ModelMap model, @ModelAttribute User user){
         User kiemtra = userServicelmpl.getUserByUsernameNoCheck(user.getUsername());
+        // kiểm tra username có tồn tại chưa
         if(kiemtra !=null){
             if(kiemtra.isIsdelete() == false){
                 model.addAttribute("message","User Đã Tồn Tại");
@@ -103,8 +106,9 @@ public class AdminUserController {
         }
     }
 
+    // cập nhật user
     @PostMapping("/update")
-    public String UpdateAdmin(ModelMap model, @ModelAttribute User user){
+    public String UpdateUser(ModelMap model, @ModelAttribute User user){
         user.setUpdate_date(new Date());
 
         userServicelmpl.updateUser(user);
@@ -117,8 +121,9 @@ public class AdminUserController {
         return "redirect:/admin/user/home";
     }
 
+    //xóa user
     @PostMapping("/delete")
-    public String DeleteAdmin(ModelMap model,@RequestParam("id_delete") int id_delete){
+    public String DeleteUser(ModelMap model,@RequestParam("id_delete") int id_delete){
         boolean ketqua = userServicelmpl.deleteUser(id_delete);
         if(ketqua == true){
 

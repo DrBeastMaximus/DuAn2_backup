@@ -21,9 +21,10 @@ public class AdminNewsletterController {
     @Autowired
     private NewsletterServiceImpl newsletterServiceImpl;
 
+    // api lấy danh sách email có trong db
     @GetMapping("/list")
     @ResponseBody
-    public List<Email> getAdmin(){
+    public List<Email> getEmail(){
         List<Email> ds = newsletterServiceImpl.getNewsletterEmailList();
         return ds;
     }
@@ -34,6 +35,7 @@ public class AdminNewsletterController {
         model.addAttribute("insert",new Email());
     }
 
+    //trả về trang quản lí email
     @GetMapping("/home")
     public String Home(ModelMap model){
         attribute(model);
@@ -53,10 +55,13 @@ public class AdminNewsletterController {
 //        return "main/tables/email";
 //    }
 
+    //gửi email
     @PostMapping("/home")
     public String SendEmail(ModelMap model, @ModelAttribute SendEmailRequest SendEmail) throws MessagingException {
+        //lấy danh sách email có trong db
         List<Email> ds = newsletterServiceImpl.getNewsletterEmailList();
         for(int i = 0; i < ds.size(); i++){
+            //gửi email cho email ở vị trí i với nội dung và tiêu đề từ SendEmailRequest
             MailSender.sendText(ds.get(i).getEmail(),SendEmail.getSubject(),SendEmail.getMessage());
         }
         attribute(model);
@@ -64,6 +69,7 @@ public class AdminNewsletterController {
 //        return "main/tables/email";
     }
 
+    //thêm email mới vào db
     @PostMapping("/insert")
     public String InsertEmail(ModelMap model, @ModelAttribute Email email){
         email.setCreated_date(new Date());
@@ -75,7 +81,7 @@ public class AdminNewsletterController {
     }
 
 
-
+// xóa email khỏi db
     @PostMapping("delete")
     public String DeleteEmail(ModelMap model,@RequestParam("id") int id){
         newsletterServiceImpl.deleteNewsletterEmail(id);

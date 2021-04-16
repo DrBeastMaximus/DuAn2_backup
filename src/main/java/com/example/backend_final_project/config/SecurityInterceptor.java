@@ -21,11 +21,13 @@ public class SecurityInterceptor implements HandlerInterceptor {
         Admin admin = session.getAdmin();
         String error = "";
 
+        // kiểm tra admin có trong session chưa
         if(admin == null) {
 
             error = "Vui lòng đăng nhập trước khi sử dụng chức năng này!";
         }
         else {
+            // kiểm tra vai trò va quyền truy cập các url của admin
             if (admin.getRole() == 0 && uri.startsWith("/admin/statistical/")) {
                 error = "Bạn không có quyền sử dụng chức năng này!";
             }
@@ -61,6 +63,7 @@ public class SecurityInterceptor implements HandlerInterceptor {
 //            session.addSecurityUrl(uri);
 //        response.sendRedirect("/account/login?message=" + StrUtils.encodeUrl(error) );
         }
+        //trả về trang login nếu chưa login hoặc truy cập vào những trang mà admin đó không có quyền truy cập
         response.sendRedirect("/admin/login/auth" );
         return false;
     }

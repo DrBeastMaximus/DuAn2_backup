@@ -18,6 +18,7 @@ public class AdminTaiKhoanController {
     @Autowired
     private LoginAdminServiceImpl loginAdminService;
 
+    //trả về trang quản lý tài khoản
     @GetMapping("/home")
     public String Home(ModelMap model){
         attributr(model);
@@ -29,6 +30,7 @@ public class AdminTaiKhoanController {
         return "main/tables/tk";
     }
 
+    //api trả về danh sách admin có trong db với trạng thái chưa xóa
     @GetMapping("/list")
     @ResponseBody
     public List<Admin> getAdmin(){
@@ -75,6 +77,8 @@ public class AdminTaiKhoanController {
 //
 //        return "main/tables/tk";
 //    }
+
+    //thêm tài khoản vào db
     @PostMapping("/home")
     public String InsertAdmin(ModelMap model, @ModelAttribute Admin admin){
 
@@ -103,6 +107,7 @@ public class AdminTaiKhoanController {
         return "main/tables/tk";
     }
 
+    // cập nhật tài khoản
     @PostMapping("/update")
     public String UpdateAdmin(ModelMap model, @ModelAttribute Admin admin){
         admin.setUpdated_date(new Date());
@@ -117,8 +122,9 @@ public class AdminTaiKhoanController {
         return "redirect:/admin/taikhoan/home";
     }
 
+    // xóa tài khoản
     @PostMapping("/delete")
-    public String Delete(ModelMap model,@RequestParam("id_delete") int id_delete){
+    public String DeleteAdmin(ModelMap model,@RequestParam("id_delete") int id_delete){
 
         Admin admin =  loginAdminService.getAdminId(id_delete);
         admin.setIsdelete(true);
