@@ -35,7 +35,7 @@ public class RegisterPageREST {
         String email = json.get("email").asText();
         String username = json.get("email").asText();
         String password = json.get("password").asText();
-        User users = userService.getUserByUsername(username);
+        User users = userService.getUserByUsernameNoCheck(username);
         User usr = userService.getUserByEmail(email);
         if(users==null){
             if(usr==null){
