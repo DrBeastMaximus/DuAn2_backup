@@ -77,7 +77,7 @@ app.controller("myctrl", function($scope, $http) {
                 $scope.first1 = function() {
                     $scope.begin1 = 0;
                 }
-                $scope.prev = function() {
+                $scope.prev1 = function() {
                     if ($scope.begin1 > 0) {
                         $scope.begin1 -= 8;
                     }
@@ -87,7 +87,7 @@ app.controller("myctrl", function($scope, $http) {
                         $scope.begin1 += 8;
                     }
                 }
-                $scope.last = function() {
+                $scope.last1 = function() {
                     $scope.begin1 = ($scope.pageCount1 - 1) * 8;
                 }
             }

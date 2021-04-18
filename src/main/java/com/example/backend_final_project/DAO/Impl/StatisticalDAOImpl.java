@@ -117,7 +117,7 @@ public class StatisticalDAOImpl implements StatisticalDAO {
     @Override
     public Object getTopUserbyyear(int year) {
         Session session = this.sessionFactory.openSession();
-        String hql = "select  User.Fullname , sum(Total) from  Invoice where YEAR(Created_date) = :year group by User.Id, User.Fullname order by sum(Total) DESC";
+        String hql = "select  User.Fullname , sum(Total) from  Invoice where YEAR(Created_date) = :year and Status = 3 group by User.Id, User.Fullname order by sum(Total) DESC";
         Query query = session.createQuery(hql).setParameter("year",year).setMaxResults(10);
         Object object = query.list();
         return object;
@@ -126,7 +126,7 @@ public class StatisticalDAOImpl implements StatisticalDAO {
     @Override
     public Object getTopUserbymonthyear(int month, int year) {
         Session session = this.sessionFactory.openSession();
-        String hql = "select  User.Fullname , sum(Total) from  Invoice where YEAR(Created_date) = :year  and MONTH(Created_date) = :month group by User.Id, User.Fullname order by sum(Total) DESC";
+        String hql = "select  User.Fullname , sum(Total) from  Invoice where YEAR(Created_date) = :year  and MONTH(Created_date) = :month and Status = 3 group by User.Id, User.Fullname order by sum(Total) DESC";
         Query query = session.createQuery(hql).setParameter("year",year)
                 .setParameter("month",month).setMaxResults(10);
         Object object = query.list();

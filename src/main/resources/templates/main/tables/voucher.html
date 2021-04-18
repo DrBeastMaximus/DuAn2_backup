@@ -356,7 +356,7 @@
                                         <tr ng-repeat="v in voucher| filter:search|limitTo:8:begin">
                                             <td>{{v.id}}</td>
                                             <td>{{v.code}}</td>
-                                            <td>{{v.value}}</td>
+                                            <td>{{v.value.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});}}</td>
                                             <td>{{v.limit_use}}</td>
                                             <td>{{v.expiration_date}}</td>
                                             <td class="td-actions text-right">

@@ -235,24 +235,24 @@
                                     <!--        Here you can write extra buttons/actions for the toolbar              -->
                                     <button type="button" rel="tooltip" class="btn btn-danger" onclick="location.href='../home/da-huy';">
                                         <i class="material-icons">event_busy</i>
-                                        Đơn hàng đã hủy: {{xoa}}
+                                        Đã hủy: {{xoa}}
                                     </button>
                                     <button type="button" rel="tooltip" class="btn" onclick="location.href='../home/cho-xac-nhan';">
                                         <i class="material-icons">event_available</i>
-                                        Đơn hàng chờ xác nhận: {{chapnhan}}
+                                        Chờ xác nhận: {{chapnhan}}
                                     </button>
                                     <button type="button" rel="tooltip" class="btn btn-info" onclick="location.href='../home/cho-van-chuyen';">
                                         <i class="material-icons">bus_alert</i>
-                                        Đơn hàng chờ vận chuyển: {{cho}}
+                                        Chờ vận chuyển: {{cho}}
                                     </button>
 
                                     <button type="button" rel="tooltip" class="btn btn-warning" onclick="location.href='../home/dang-van-chuyen';">
                                         <i class="material-icons">directions_bus</i>
-                                        Đơn hàng đang vận chuyển: {{dang}}
+                                        Đang vận chuyển: {{dang}}
                                     </button>
                                     <button type="button" rel="tooltip" class="btn btn-success" onclick="location.href='../home/da-hoan-thanh';">
                                         <i class="material-icons">beenhere</i>
-                                        Đơn hàng đã hoàn thành: {{hoanthanh}}
+                                        Đã hoàn thành: {{hoanthanh}}
                                     </button>
                                     <div class="input-group" style="margin-left: 1350px">
                                         <input type="search" ng-model="search" id="form1" class="form-control" placeholder="Search for..." ng-click="first()"/>
@@ -279,7 +279,7 @@
                                                                 </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                <tr ng-repeat="ind in invoice_detail|limitTo:8:begin">
+                                                                <tr ng-repeat="ind in invoice_detail|limitTo:8:begin1">
 
                                                                     <td class="text-center">{{ind.id}}</td>
                                                                     <td>{{ind.product_name}}</td>
