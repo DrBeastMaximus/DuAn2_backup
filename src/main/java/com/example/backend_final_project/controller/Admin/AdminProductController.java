@@ -269,39 +269,49 @@ public class AdminProductController {
 
 
 // thêm hình ảnh mới vào db
-    @PostMapping("/image/insert/{id_product}")
+    @PostMapping("/image/home/{id_product}")
     public String insertimage(ModelMap model, @PathVariable("id_product") int id_product, @ModelAttribute Product_Image product_image, @RequestPart("file") MultipartFile file){
-        System.out.println(file.toString());
-        System.out.println(file.getOriginalFilename());
-//            String path = "./hinhanh";
-        String path = System.getProperty("user.dir")+"/hinhanh/";
-        String filename= file.getOriginalFilename();
-        System.out.println(path);
-        try{
-            Date time = new Date();
-            String image_name = id_product+"_"+"anh"+"_"+time.getTime()+filename;
-            byte barr[]=file.getBytes();
+        List<Product_Image> listImage = productImageServiceImpl.getProductImagesIndexByProdId(id_product);
+        if(listImage.size() >=1 && product_image.getProiority() == 1){
+            model.addAttribute("message","Mõi sản phẩm chỉ có 1 hình chính");
+        }else{
+            List<Product_Image> listImage1 = productImageServiceImpl.getProductImagesByProdId(id_product);
+            if(listImage1.size() >=4){
+                model.addAttribute("message","Mõi sản phẩm chỉ có 4 hình phụ");
+            }else{
 
-            BufferedOutputStream bout=new BufferedOutputStream(
-                    new FileOutputStream(path+"/"+image_name));
-            bout.write(barr);
-            bout.flush();
-            bout.close();
-            Product product = productServiceImpl.getProductById(id_product);
-            product_image.setCreated_date(new Date());
-            product_image.setImage(image_name);
-            product_image.setProduct(product);
-            product_image.setCreated_by(SessionService.username);
-            productImageServiceImpl.addProductImage(product_image);
+                String path = System.getProperty("user.dir")+"/hinhanh/";
+                String filename= file.getOriginalFilename();
+                System.out.println(path);
+                try{
+                    Date time = new Date();
+                    String image_name = id_product+"_"+"anh"+"_"+time.getTime()+filename;
+                    byte barr[]=file.getBytes();
 
-        }catch(Exception e){
-            System.out.println(e);
+                    BufferedOutputStream bout=new BufferedOutputStream(
+                            new FileOutputStream(path+"/"+image_name));
+                    bout.write(barr);
+                    bout.flush();
+                    bout.close();
+                    Product product = productServiceImpl.getProductById(id_product);
+                    product_image.setCreated_date(new Date());
+                    product_image.setImage(image_name);
+                    product_image.setProduct(product);
+                    product_image.setCreated_by(SessionService.username);
+                    productImageServiceImpl.addProductImage(product_image);
+                    model.addAttribute("message","");
+                }catch(Exception e){
+                    System.out.println(e);
+                }
+            }
         }
+//            String path = "./hinhanh";
+
 
         model.addAttribute("id", id_product);
         attribute(model);
-//        return "main/tables/sp_image";
-        return "redirect:/admin/product/image/home/"+id_product;
+        return "main/tables/sp_image";
+//        return "redirect:/admin/product/image/home/"+id_product;
     }
 
     // cập nhật hình ảnh sản phẩm

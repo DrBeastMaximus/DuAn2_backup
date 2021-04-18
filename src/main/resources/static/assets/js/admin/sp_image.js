@@ -41,7 +41,7 @@ app.controller("myctrl", function($scope, $http) {
 
     }
 // các url cho các chức năng thêm, sửa, xóa
-    $scope.urlinsert= "../../image/insert/"+$scope.id;
+    $scope.urlinsert= "../../image/home/"+$scope.id;
     $scope.urlupdate= "../../image/update/"+$scope.id;
     $scope.urldelete= "../../image/delete/"+$scope.id;
     $scope.urlimage = null;
