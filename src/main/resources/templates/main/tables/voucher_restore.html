@@ -38,10 +38,10 @@
     Tip 3: you can change the color of the sidebar with data-background-color="white | black"
 -->
         <div class="logo">
-            <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+            <a href="" class="simple-text logo-mini">
                 DW
             </a>
-            <a href="http://www.creative-tim.com" class="simple-text logo-normal">DW Fashion</a>
+            <a href="" class="simple-text logo-normal">DW Fashion</a>
         </div>
         <div class="sidebar-wrapper">
             <div class="user">
@@ -272,7 +272,7 @@
                                         <tr ng-repeat="v in voucher| filter:search|limitTo:8:begin">
                                             <td>{{v.id}}</td>
                                             <td>{{v.code}}</td>
-                                            <td>{{v.value}}</td>
+                                            <td>{{v.value.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});}}</td>
                                             <td>{{v.limit_use}}</td>
                                             <td>{{v.expiration_date}}</td>
                                             <td class="td-actions text-right">

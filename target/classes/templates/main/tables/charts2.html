@@ -268,7 +268,7 @@
                             </div>
                             <div class="card-content">
                                 <p class="category">Tổng doanh thu</p>
-                                <h3 class="card-title">{{totalbill1[1]}}</h3>
+                                <h3 class="card-title">{{totalbill1[1].toLocaleString('it-IT', {style : 'currency', currency : 'VND'});}}</h3>
                             </div>
                             <div class="card-footer">
 
@@ -389,7 +389,7 @@
                                                         {{toppr[1]}}
                                                     </td>
                                                     <td class="text-right">
-                                                        {{toppr[2]}}
+                                                        {{toppr[2].toLocaleString('it-IT', {style : 'currency', currency : 'VND'});}}
                                                     </td>
                                                 </tr>
 
@@ -489,7 +489,7 @@
                                                 <tr ng-repeat="us in topuser">
                                                     <td>{{us[0]}}</td>
                                                     <td class="text-right">
-                                                        {{us[1]}}
+                                                        {{us[1].toLocaleString('it-IT', {style : 'currency', currency : 'VND'});}}
                                                     </td>
                                                 </tr>
 
@@ -745,25 +745,14 @@
                         <a href="#">
                             Company
                         </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Portofolio
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Blog
-                        </a>
-                    </li>
-                </ul>
+                    </li>                                                    </ul>
             </nav>
             <p class="copyright pull-right">
                 &copy;
                 <script>
                     document.write(new Date().getFullYear())
                 </script>
-                <a href=""> DW Fashion </a>
+                <a href="#"> DW Fashion </a>
             </p>
         </div>
     </footer>
