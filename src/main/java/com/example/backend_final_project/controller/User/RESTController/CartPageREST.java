@@ -197,4 +197,26 @@ public class CartPageREST {
             }
         }{return ResponseEntity.badRequest().body("Không có giỏ hàng này!");}
     }
+
+    @DeleteMapping("/clearCart")
+    public ResponseEntity<?> removeAllProduct(HttpServletRequest request){
+        String token = TokenFactory.getJwtFromRequest(request);
+        if (StringUtils.hasText(token) && TokenFactory.validateToken(token)) {
+            int userId = Integer.parseInt(TokenFactory.getUserIdFromJWT(token));
+            User usr = userService.getUserById(userId);
+            if(usr!=null){
+                Cart cart = cartService.getCartByUserId(userId);
+                if(cart!=null){
+                    List<Cart_Detail> cd = cartDetailService.getCartDetailListByCardID(cart.getId());
+                    for(int i = 0;i<cd.size();i++){
+                        cartDetailService.deleteCartDetail(cd.get(i).getId());
+                    }
+                    cartService.deleteCart(cart.getId());
+                    return ResponseEntity.ok("Đã bỏ tất cả sản phẩm khỏi giỏ hàng!");
+                } else{
+                    return ResponseEntity.badRequest().body("Không có giỏ hàng nào!");
+                }
+            }
+        }{return ResponseEntity.badRequest().body("Không có giỏ hàng này!");}
+    }
 }
