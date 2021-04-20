@@ -23,8 +23,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 4/17/2021 06:26PM">
-      <change afterPath="$PROJECT_DIR$/hinhanh/85_anh_1618662626281anh1.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminStatisticalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminStatisticalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminStorageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminTaiKhoanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminTaiKhoanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminTrashconController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/Admin/AdminTrashconController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/admin/product_restore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/admin/sanpham_restore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/admin/sp_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/admin/sanpham.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/forms/CRUD.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/forms/CRUD.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/charts2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/TKtong.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/dh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/dh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/k.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/kho.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/nhacungcap.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/nhacungcap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/product_restore.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sanpham_restore.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sanpham.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sanpham.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/sp_test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/th.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/thongke.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/TKsp_ncc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/tk.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/taikhoan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/tk_restore.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/taikhoan_restore.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/user_restore.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/tables/user_restore.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/tables/đh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminStatisticalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/Admin/AdminStatisticalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CartPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CartPageREST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/admin/product_restore.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/admin/product_restore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/admin/sp_test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/forms/CRUD.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/forms/CRUD.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/charts2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/dh.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/dh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/k.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/kho.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/product_restore.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/product_restore.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/sanpham.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/sanpham.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/sp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/sp_test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/th.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/thongke.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/thongke.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/tk.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/tk.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/tk_restore.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main/tables/tk_restore.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main/tables/đh.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +140,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../AndroidSDK" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/main/tables" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -120,7 +164,7 @@
       <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\java\com\example\backend_final_project\config" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication (1)">
+  <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -160,8 +204,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.BackendFinalProjectApplication (1)" />
         <item itemvalue="Spring Boot.BackendFinalProjectApplication" />
+        <item itemvalue="Spring Boot.BackendFinalProjectApplication (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -216,6 +260,8 @@
       <workItem from="1618399827218" duration="2021000" />
       <workItem from="1618464027824" duration="6172000" />
       <workItem from="1618498859648" duration="656000" />
+      <workItem from="1618909979338" duration="497000" />
+      <workItem from="1618918392839" duration="7886000" />
     </task>
     <task id="LOCAL-00001" summary="Thêm Class DAO">
       <created>1613982667329</created>
@@ -599,6 +645,44 @@
     <MESSAGE value="Fix 4/16/2021 12:26PM" />
     <MESSAGE value="Fix 4/17/2021 06:26PM" />
     <option name="LAST_COMMIT_MESSAGE" value="Fix 4/17/2021 06:26PM" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1618925382415">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1618925382415" />
+    <state width="1877" height="230" key="GridCell.Tab.0.bottom" timestamp="1618932925400">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618932925400" />
+    <state width="1877" height="230" key="GridCell.Tab.0.center" timestamp="1618932925399">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618932925399" />
+    <state width="1877" height="230" key="GridCell.Tab.0.left" timestamp="1618932925398">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618932925398" />
+    <state width="1877" height="230" key="GridCell.Tab.0.right" timestamp="1618932925399">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618932925399" />
+    <state width="1877" height="230" key="GridCell.Tab.1.bottom" timestamp="1618932925402">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1618932925402" />
+    <state width="1877" height="230" key="GridCell.Tab.1.center" timestamp="1618932925401">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1618932925401" />
+    <state width="1877" height="230" key="GridCell.Tab.1.left" timestamp="1618932925400">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1618932925400" />
+    <state width="1877" height="230" key="GridCell.Tab.1.right" timestamp="1618932925401">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="230" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1618932925401" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

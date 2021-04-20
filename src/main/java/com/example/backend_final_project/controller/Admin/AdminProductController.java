@@ -61,7 +61,7 @@ public class AdminProductController {
     @GetMapping("/home")
     public String home(ModelMap model){
         attribute(model);
-        return "main/tables/sp_test";
+        return "main/tables/sanpham";
     }
     //    @GetMapping("/insert")
 //    public String insert(ModelMap model){

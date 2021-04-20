@@ -268,8 +268,8 @@
                                                         <div class="form-group label-floating is-empty">
                                                             <label class="control-label">Số điện thoại<star>*</star>
                                                             </label>
-                                                            <input class="form-control" th:field="*{phone}"  type="text" email="true" required="true" aria-required="true" pattern="(\+84|0)\d{9,10}"
-                                                                   title="Nhập số điện thoại từ 10 đến 11 số">
+                                                            <input class="form-control" th:field="*{phone}"  type="text" email="true" required="true" aria-required="true"  pattern="(\+84|0)\d{9}"
+                                                                   title="Nhập số điện thoại có 10 số">
                                                         </div>
                                                         <div class="category form-category">
                                                             <star>*</star> Required fields</div>
@@ -315,8 +315,8 @@
                                                         <div class="label-floating is-empty">
                                                             <label class="control-label">Số điện thoại<star>*</star>
                                                             </label>
-                                                            <input class="form-control" id="phone" name="phone" type="text"  value="{{provider1.phone}}" required="true" aria-required="true" pattern="(\+84|0)\d{9,10}"
-                                                                   title="Nhập số điện thoại từ 10 đến 11 số">
+                                                            <input class="form-control" id="phone" name="phone" type="text"  value="{{provider1.phone}}" required="true" aria-required="true"  pattern="(\+84|0)\d{9}"
+                                                                   title="Nhập số điện thoại có 10 số">
                                                         </div>
                                                         <input hidden id="id" name="id" value="{{provider1.id}}">
                                                         <input hidden id="created_date" name="created_date" value="{{provider1.created_date}}">

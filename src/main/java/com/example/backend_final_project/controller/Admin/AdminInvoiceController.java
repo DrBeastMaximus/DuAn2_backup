@@ -103,7 +103,7 @@ public class AdminInvoiceController {
 
         model.addAttribute("status", new InvoiceRequest());
         model.addAttribute("id", status);
-        return "main/tables/dh";
+        return "main/tables/donhang";
     }
 
     // chuyển đổi trạng thái đơn hàng
@@ -142,7 +142,7 @@ public class AdminInvoiceController {
         invoiceServiceImpl.updateInvoice(invoice);
         model.addAttribute("status", new InvoiceRequest());
         model.addAttribute("id", status);
-        return "main/tables/dh";
+        return "main/tables/donhang";
     }
 
 }

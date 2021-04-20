@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 @Controller
 @SessionAttributes({"username", "role"})
@@ -167,7 +166,7 @@ public class AdminStatisticalController {
         int year  = localDate.getYear();
         model.addAttribute("year",year);
         model.addAttribute("year_top",year);
-        return "main/tables/charts2";
+        return "main/tables/TKtong";
     }
 
     //tìm kiếm user,hóa đơn, tổng tiền của từng tháng theo năm
@@ -175,7 +174,7 @@ public class AdminStatisticalController {
     public String getyear(ModelMap model, @RequestParam("year_Total") int year,@RequestParam("yeartop") String yeartop){
         model.addAttribute("year",year);
         model.addAttribute("year_top",yeartop);
-        return "main/tables/charts2";
+        return "main/tables/TKtong";
     }
 
     //trả về trang thống kê tổng
@@ -186,7 +185,7 @@ public class AdminStatisticalController {
         int year  = localDate.getYear();
         model.addAttribute("year",year);
         model.addAttribute("year_top",year);
-        return "main/tables/charts2";
+        return "main/tables/TKtong";
     }
 
     // tìm kiếm top sản phẩm bán chạy, sản phẩm yêu thích, khách hàng mua sắm nhiều nhất
@@ -196,7 +195,7 @@ public class AdminStatisticalController {
 
         model.addAttribute("year",year);
         model.addAttribute("year_top",yeartop);
-        return "main/tables/charts2";
+        return "main/tables/TKtong";
     }
 
     // trả về trang thống kê sản phẩm và nhà cung cấp
@@ -207,13 +206,13 @@ public class AdminStatisticalController {
         int year  = localDate.getYear();
 
         model.addAttribute("year_top",year);
-        return "main/tables/thongke";
+        return "main/tables/TKsp_ncc";
     }
 
     //tìm kiếm danh thu từng sản phẩm và nhà cung cấp
     @PostMapping("detail")
     public String selectProductAndSupplierByDate(ModelMap model,@RequestParam("yeartop") String yeartop){
         model.addAttribute("year_top",yeartop);
-        return "main/tables/thongke";
+        return "main/tables/TKsp_ncc";
     }
 }

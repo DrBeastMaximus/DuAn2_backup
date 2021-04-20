@@ -60,7 +60,7 @@ public class AdminTrashconController {
     @GetMapping("/trashconadmin")
     public String getadmindelete(ModelMap model){
         model.addAttribute("restor",new Admin());
-        return "main/tables/tk_restore";
+        return "main/tables/taikhoan_restore";
     }
 
     // cập nhật trạng thái admin từ đã xóa thành chưa xóa
@@ -69,7 +69,7 @@ public class AdminTrashconController {
         trashconServiceImpl.restoreAdmin(admin.getID());
         System.out.println("ok");
         model.addAttribute("restor",new Admin());
-        return "main/tables/tk_restore";
+        return "main/tables/taikhoan_restore";
     }
 
     // trả về thùng rác user
@@ -124,7 +124,7 @@ public class AdminTrashconController {
     @GetMapping("/trashconproduct")
     public String restoreproductdelete(ModelMap model){
         model.addAttribute("restor", new Product());
-        return "main/tables/product_restore";
+        return "main/tables/sanpham_restore";
     }
 
     //cập nhật trang thái sản phẩm từ đã xóa thành chưa xóa
@@ -133,6 +133,6 @@ public class AdminTrashconController {
         trashconServiceImpl.restoreProduct(product.getID());
         System.out.println("ok");
         model.addAttribute("restor",new Product());
-        return "main/tables/product_restore";
+        return "main/tables/sanpham_restore";
     }
 }

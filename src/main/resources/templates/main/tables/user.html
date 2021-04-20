@@ -280,8 +280,8 @@
                                                         <div class="form-group label-floating is-empty">
                                                             <label class="control-label">Điện thoại<star>*</star><br>
                                                             </label>
-                                                            <input class="form-control" th:field="*{phone}" type="text" pattern="(\+84|0)\d{9,10}"
-                                                                   title="Nhập số điện thoại từ 10 đến 11 số" required="true" aria-required="true">
+                                                            <input class="form-control" th:field="*{phone}" type="text" pattern="(\+84|0)\d{9}"
+                                                                   title="Nhập số điện thoại có 10 số" required="true" aria-required="true">
                                                             <span class="material-input"></span></div>
                                                         <div class="form-group label-floating is-empty">
                                                             <label class="label-control">Ngày sinh: </label>
@@ -293,7 +293,7 @@
                                                             <!--                                                                   value="2018-07-22"-->
                                                             <!--                                                                   min="2018-01-01" max="2018-12-31">-->
                                                             <input type="date" class="form-control datepicker" th:field="*{birthday}"
-                                                                   data-date-format='YYYY-MM-DD'  value="">
+                                                                   data-date-format='YYYY-MM-DD'  value="" required="true" aria-required="true">
                                                             <span class="material-input"></span>
                                                         </div>
                                                         <!--                                                        <div class="form-group label-floating is-empty">-->
@@ -366,15 +366,15 @@
                                                         <div class="label-floating is-empty">
                                                             <label class="control-label">Điện thoại<star>*</star>
                                                             </label>
-                                                            <input class="form-control" id="phone" name="phone"  required="true" aria-required="true" type="text" value="{{user1.phone}}" pattern="(\+84|0)\d{9,10}"
-                                                                   title="Nhập số điện thoại từ 10 đến 11 số">
+                                                            <input class="form-control" id="phone" name="phone"  required="true" aria-required="true" type="text" value="{{user1.phone}}"  pattern="(\+84|0)\d{9}"
+                                                                   title="Nhập số điện thoại có 10 số">
                                                             <span class="material-input"></span></div>
                                                         <div class="label-floating is-empty">
                                                             <label class="label-control">Ngày sinh</label>
                                                             <!--                                                                <input type="text" class="form-control datepicker" value="03/26/2021">-->
                                                             <!--                                                            <input type="date" id="birthday" name="birthday" value="{{user1.birthday}}"-->
                                                             <!--                                                                   required="true"  >-->
-                                                            <input type="date" class="form-control datepicker" id="birthday" name="birthday" data-date-format='YYYY-MM-DD' value="{{user1.birthday}}">
+                                                            <input type="date" class="form-control datepicker" id="birthday" name="birthday" data-date-format='YYYY-MM-DD' value="{{user1.birthday}}" required="true" aria-required="true">
 
                                                             <span class="material-input"></span>
                                                         </div>

@@ -3,7 +3,6 @@ package com.example.backend_final_project.controller.Admin;
 import com.example.backend_final_project.model.Admin;
 import com.example.backend_final_project.service.Impl.LoginAdminServiceImpl;
 import com.example.backend_final_project.service.SessionService;
-import org.codehaus.jackson.map.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,7 +26,7 @@ public class AdminTaiKhoanController {
 
 
 
-        return "main/tables/tk";
+        return "taikhoan";
     }
 
     //api trả về danh sách admin có trong db với trạng thái chưa xóa
@@ -104,7 +103,7 @@ public class AdminTaiKhoanController {
             attributr(model);
         }
 //        return "redirect:/admin/taikhoan/home";
-        return "main/tables/tk";
+        return "main/tables/taikhoan";
     }
 
     // cập nhật tài khoản
