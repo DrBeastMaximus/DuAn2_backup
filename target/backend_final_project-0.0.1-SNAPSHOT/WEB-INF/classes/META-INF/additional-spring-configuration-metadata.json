@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "domain",
+      "type": "java.lang.String",
+      "description": "Description for domain."
+    },
+    {
+      "name": "app.domain",
+      "type": "java.lang.String",
+      "description": "Description for app.domain."
+    }
+  ] }
