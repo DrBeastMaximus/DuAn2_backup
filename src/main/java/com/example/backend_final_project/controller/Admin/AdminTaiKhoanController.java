@@ -26,7 +26,7 @@ public class AdminTaiKhoanController {
 
 
 
-        return "taikhoan";
+        return "main/tables/taikhoan";
     }
 
     //api trả về danh sách admin có trong db với trạng thái chưa xóa
