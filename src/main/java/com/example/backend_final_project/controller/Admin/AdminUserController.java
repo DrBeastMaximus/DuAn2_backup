@@ -2,7 +2,9 @@ package com.example.backend_final_project.controller.Admin;
 
 
 import com.example.backend_final_project.model.User;
+import com.example.backend_final_project.model.UsersToken;
 import com.example.backend_final_project.service.Impl.UserServicelmpl;
+import com.example.backend_final_project.service.Impl.UsersTokenServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,6 +19,9 @@ import java.util.List;
 public class AdminUserController {
     @Autowired
     private UserServicelmpl userServicelmpl;
+
+    @Autowired
+    private UsersTokenServiceImpl usersTokenServiceImpl;
 
     @ModelAttribute
     public void attribute(ModelMap model){
@@ -98,6 +103,11 @@ public class AdminUserController {
             user.setCreated_date(new Date());
 
             userServicelmpl.addUser(user);
+            UsersToken usersToken = new UsersToken();
+            usersToken.setUser(user);
+            usersToken.setRegistrationTime(new Date());
+            usersToken.setAccountStatus(1);
+            usersTokenServiceImpl.addToken(usersToken);
             model.addAttribute("message","");
 //            model.addAttribute("insert", new User());
 //            model.addAttribute("update", new User());
