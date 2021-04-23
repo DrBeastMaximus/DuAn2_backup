@@ -52,7 +52,7 @@ public class StatisticalDAOImpl implements StatisticalDAO {
     @Override
     public Object getQuantityInvoiceByyear(int year) {
         Session session = this.sessionFactory.openSession();
-        String hql = "select Month(Created_date), count(id) from  Invoice where YEAR(Created_date) = :year group by Month(Created_date)";
+        String hql = "select Month(Created_date), count(id) from  Invoice where YEAR(Created_date) = :year and Status = 3 group by Month(Created_date)";
         Query query = session.createQuery(hql).setParameter("year",year);
         Object object = query.list();
         return object;
@@ -61,7 +61,7 @@ public class StatisticalDAOImpl implements StatisticalDAO {
     @Override
     public Object getTotalInvoiceByyear(int year) {
         Session session = this.sessionFactory.openSession();
-        String hql = "select Month(Created_date), Sum(Total) from  Invoice where YEAR(Created_date) = :year group by Month(Created_date)";
+        String hql = "select Month(Created_date), Sum(Total) from  Invoice where YEAR(Created_date) = :year and Status = 3 group by Month(Created_date)";
         Query query = session.createQuery(hql).setParameter("year",year);
         Object object = query.list();
         return object;
@@ -70,7 +70,7 @@ public class StatisticalDAOImpl implements StatisticalDAO {
     @Override
     public Object getQuantityUserByyear(int year) {
         Session session = this.sessionFactory.openSession();
-        String hql = "select Month(Created_date), count(User ) from  Invoice where YEAR(Created_date) = :year group by Month(Created_date)";
+        String hql = "select Month(Created_date), count(User ) from  Invoice where YEAR(Created_date) = :year  group by Month(Created_date)";
         Query query = session.createQuery(hql).setParameter("year",year);
         Object object = query.list();
         return object;

@@ -24,6 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 4/17/2021 06:26PM">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/StatisticalDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/StatisticalDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,13 +121,15 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -216,7 +219,8 @@
       <workItem from="1618464027824" duration="6172000" />
       <workItem from="1618498859648" duration="656000" />
       <workItem from="1619004749339" duration="4614000" />
-      <workItem from="1619075273800" duration="3858000" />
+      <workItem from="1619075273800" duration="4610000" />
+      <workItem from="1619155049943" duration="1498000" />
     </task>
     <task id="LOCAL-00001" summary="Thêm Class DAO">
       <created>1613982667329</created>
@@ -602,38 +606,38 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fix 4/17/2021 06:26PM" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="230" key="GridCell.Tab.0.bottom" timestamp="1619079795796">
+    <state width="1877" height="230" key="GridCell.Tab.0.bottom" timestamp="1619086309467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="230" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619079795796" />
-    <state width="1877" height="230" key="GridCell.Tab.0.center" timestamp="1619079795795">
+    <state width="1877" height="230" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309467" />
+    <state width="1877" height="230" key="GridCell.Tab.0.center" timestamp="1619086309467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="230" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619079795795" />
-    <state width="1877" height="230" key="GridCell.Tab.0.left" timestamp="1619079795794">
+    <state width="1877" height="230" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309467" />
+    <state width="1877" height="230" key="GridCell.Tab.0.left" timestamp="1619086309467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="230" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619079795794" />
-    <state width="1877" height="230" key="GridCell.Tab.0.right" timestamp="1619079795796">
+    <state width="1877" height="230" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309467" />
+    <state width="1877" height="230" key="GridCell.Tab.0.right" timestamp="1619086309467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="230" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619079795796" />
-    <state width="1877" height="230" key="GridCell.Tab.1.bottom" timestamp="1619079795801">
+    <state width="1877" height="230" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309467" />
+    <state width="1877" height="230" key="GridCell.Tab.1.bottom" timestamp="1619086309483">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="230" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619079795801" />
-    <state width="1877" height="230" key="GridCell.Tab.1.center" timestamp="1619079795798">
+    <state width="1877" height="230" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309483" />
+    <state width="1877" height="230" key="GridCell.Tab.1.center" timestamp="1619086309467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="230" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619079795798" />
-    <state width="1877" height="230" key="GridCell.Tab.1.left" timestamp="1619079795797">
+    <state width="1877" height="230" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309467" />
+    <state width="1877" height="230" key="GridCell.Tab.1.left" timestamp="1619086309467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="230" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619079795797" />
-    <state width="1877" height="230" key="GridCell.Tab.1.right" timestamp="1619079795800">
+    <state width="1877" height="230" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309467" />
+    <state width="1877" height="230" key="GridCell.Tab.1.right" timestamp="1619086309483">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="230" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619079795800" />
+    <state width="1877" height="230" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309483" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
