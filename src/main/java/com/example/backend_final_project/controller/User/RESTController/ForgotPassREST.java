@@ -65,7 +65,7 @@ public class ForgotPassREST {
                 } else {
                     tokens.setAccountStatus(3);
                     tokenService.updateToken(tokens);
-                    return ResponseEntity.status(HttpStatus.FOUND).location(URI.create("https://dwhigh.tech/resetpass/"+token)).build();
+                    return ResponseEntity.status(HttpStatus.FOUND).location(URI.create("http://dwhigh.tech/resetpass/"+token)).build();
                 }
 
             } else {
