@@ -86,7 +86,7 @@ public class DashboardREST {
             int userId = Integer.parseInt(TokenFactory.getUserIdFromJWT(token));
             List<Invoice> invc = invoiceService.getInvoiceListByUserId(userId);
             List<Invoice_Detail> invcD = new ArrayList<>();
-            if (invc.get(0) != null) {
+            if (invc.size() != 0) {
                 for(int i=0;i<invc.size();i++){
                     invcD.addAll(invoiceDetailService.getInvoiceDetailListByInvoiceId(invc.get(i).getID()));
                 }

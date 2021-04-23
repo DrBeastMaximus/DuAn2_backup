@@ -23,8 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 4/17/2021 06:26PM">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_12_2021_2_14_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_12_2021_2_14_AM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2021_6_51_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2021_6_51_PM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2021_6_52_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2021_6_52_PM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_20_2021_8_08_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_20_2021_8_08_PM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/StatisticalDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/DAO/Impl/StatisticalDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,16 +124,14 @@
       <recent name="D:\UD15101\Du an 2\DuAn2_backup\src\main\java\com\example\backend_final_project\config" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.BackendFinalProjectApplication (1)">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,8 +164,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.BackendFinalProjectApplication" />
         <item itemvalue="Spring Boot.BackendFinalProjectApplication (1)" />
+        <item itemvalue="Spring Boot.BackendFinalProjectApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -605,40 +607,6 @@
     <MESSAGE value="Fix 4/17/2021 06:26PM" />
     <option name="LAST_COMMIT_MESSAGE" value="Fix 4/17/2021 06:26PM" />
   </component>
-  <component name="WindowStateProjectService">
-    <state width="1877" height="230" key="GridCell.Tab.0.bottom" timestamp="1619086309467">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="230" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309467" />
-    <state width="1877" height="230" key="GridCell.Tab.0.center" timestamp="1619086309467">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="230" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309467" />
-    <state width="1877" height="230" key="GridCell.Tab.0.left" timestamp="1619086309467">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="230" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309467" />
-    <state width="1877" height="230" key="GridCell.Tab.0.right" timestamp="1619086309467">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="230" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309467" />
-    <state width="1877" height="230" key="GridCell.Tab.1.bottom" timestamp="1619086309483">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="230" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309483" />
-    <state width="1877" height="230" key="GridCell.Tab.1.center" timestamp="1619086309467">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="230" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309467" />
-    <state width="1877" height="230" key="GridCell.Tab.1.left" timestamp="1619086309467">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="230" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309467" />
-    <state width="1877" height="230" key="GridCell.Tab.1.right" timestamp="1619086309483">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="230" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1619086309483" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -761,6 +729,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/RegisterPageREST.java</url>
           <line>34</line>
           <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/DashboardREST.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="160" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
