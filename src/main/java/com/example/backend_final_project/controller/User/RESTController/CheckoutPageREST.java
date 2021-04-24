@@ -6,6 +6,7 @@ import com.example.backend_final_project.model.*;
 import com.example.backend_final_project.service.Impl.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
@@ -43,26 +44,49 @@ public class CheckoutPageREST {
     }
 
     @GetMapping("/getVoucherInfo/{code}")
-    public Integer checkVoucher(@PathVariable String code){
+    public ResponseEntity<?> checkVoucher(@PathVariable String code){
+        List<Voucher> voucher = voucherService.getVoucherByCode(code);
+        if(voucher.size()!=0){
+            if(!voucher.get(0).isStatus()){
+                if(voucher.get(0).getLimit_use()>0){
+                    if(!(new Date()).after(voucher.get(0).getExpiration_date())){
+                        return ResponseEntity.ok(voucher.get(0).getValue());
+                    } else{
+                        voucher.get(0).setStatus(true);
+                        voucherService.updateVoucher(voucher.get(0));
+                        return ResponseEntity.badRequest().body("Voucher hết hạn!");
+                    }
+                }else{
+                    return ResponseEntity.badRequest().body("Voucher hết lượt sử dụng!");
+                }
+            }else{
+                return ResponseEntity.badRequest().body("Voucher không hợp lệ!");
+            }
+        } else {
+            return ResponseEntity.badRequest().body("Voucher không hợp lệ!");
+        }
+    }
+
+    public Integer checkVc(String code){
         List<Voucher> voucher = voucherService.getVoucherByCode(code);
         if(voucher!=null){
             if(voucher.get(0).isStatus()){
                 if(voucher.get(0).getLimit_use()>0){
-                    if(voucher.get(0).getExpiration_date().before(new Date())){
+                    if(!(new Date()).after(voucher.get(0).getExpiration_date())){
                         return voucher.get(0).getValue();
                     } else{
                         voucher.get(0).setStatus(true);
                         voucherService.updateVoucher(voucher.get(0));
-                        return null;
+                        return 0;
                     }
                 }else{
-                    return null;
+                    return 0;
                 }
             }else{
-                return null;
+                return 0;
             }
         } else {
-            return null;
+            return 0;
         }
     }
 
@@ -73,7 +97,7 @@ public class CheckoutPageREST {
 
     @PostMapping("/order/{userID}/{voucherCode}")
     public Boolean orderwithVoucher(@PathVariable int userID, @PathVariable String voucherCode, @RequestBody JsonNode json) throws MessagingException {
-        int discontValue = checkVoucher(voucherCode);
+        int discountValue = checkVc(voucherCode);
         String receipt = null;
         User user = userService.getUserById(userID);
         if(user!=null) {
@@ -86,7 +110,7 @@ public class CheckoutPageREST {
             if(cartDetail.size()>0) {
                 Invoice invoice = new Invoice();
                 invoice.setUser(user);
-                float total = cart.getTotal() * ((100 - discontValue) / 100);
+                float total = cart.getTotal() * ((100 - discountValue) / 100);
                 invoice.setTotal(total);
                 invoice.setPayment("Trực tiếp");
                 invoice.setVoucher(voucherService.getVoucherByCode(voucherCode).get(0));
