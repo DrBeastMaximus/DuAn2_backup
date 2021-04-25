@@ -22,7 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 4/19/2021 06:26PM">
+    <list default="true" id="a5184346-3d29-4ddf-ad11-3dc54e0f6be0" name="Default Changelist" comment="Fix 4/24/2021 11:33PM">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend_final_project/controller/User/RESTController/CheckoutPageREST.class" afterDir="false" />
@@ -220,13 +220,6 @@
       <workItem from="1619004749339" duration="4614000" />
       <workItem from="1619075273800" duration="4610000" />
       <workItem from="1619155049943" duration="1498000" />
-    </task>
-    <task id="LOCAL-00003" summary="Thêm function cho DAO">
-      <created>1614041602936</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1614041602936</updated>
     </task>
     <task id="LOCAL-00004" summary="Thêm function cho DAO">
       <created>1614049371379</created>
@@ -564,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619209070463</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Fix 4/24/2021 11:33PM">
+      <created>1619282041555</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1619282041555</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +584,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Thêm function .cho DAO" />
     <MESSAGE value="Sửa DAO" />
     <MESSAGE value="Chỉnh lý lại các Class" />
     <MESSAGE value="DAO hoàn thành 1/2 đến NewsletterDAO" />
@@ -609,7 +608,8 @@
     <MESSAGE value="Fix 4/16/2021 12:26PM" />
     <MESSAGE value="Fix 4/17/2021 06:26PM" />
     <MESSAGE value="Fix 4/19/2021 06:26PM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix 4/19/2021 06:26PM" />
+    <MESSAGE value="Fix 4/24/2021 11:33PM" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix 4/24/2021 11:33PM" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

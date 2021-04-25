@@ -99,6 +99,7 @@ public class CheckoutPageREST {
     public Boolean orderwithVoucher(@PathVariable int userID, @PathVariable String voucherCode, @RequestBody JsonNode json) throws MessagingException {
         int discountValue = checkVc(voucherCode);
         String receipt = null;
+        float total;
         User user = userService.getUserById(userID);
         if(user!=null) {
             user.setFullname(json.get("name").asText());
@@ -110,8 +111,13 @@ public class CheckoutPageREST {
             if(cartDetail.size()>0) {
                 Invoice invoice = new Invoice();
                 invoice.setUser(user);
-                float total = cart.getTotal() * ((100 - discountValue) / 100);
-                invoice.setTotal(total);
+                if(discountValue>100) {
+                    total = cart.getTotal() - discountValue;
+                    invoice.setTotal(total);
+                } else{
+                    total = cart.getTotal() * ((100 - discountValue) / 100);
+                    invoice.setTotal(total);
+                }
                 invoice.setPayment("Trực tiếp");
                 invoice.setVoucher(voucherService.getVoucherByCode(voucherCode).get(0));
                 invoice.setUpdate_by("System");
