@@ -69,8 +69,8 @@ public class CheckoutPageREST {
 
     public Integer checkVc(String code){
         List<Voucher> voucher = voucherService.getVoucherByCode(code);
-        if(voucher!=null){
-            if(voucher.get(0).isStatus()){
+        if(voucher.size()!=0){
+            if(!voucher.get(0).isStatus()){
                 if(voucher.get(0).getLimit_use()>0){
                     if(!(new Date()).after(voucher.get(0).getExpiration_date())){
                         return voucher.get(0).getValue();
@@ -161,7 +161,7 @@ public class CheckoutPageREST {
                     String indexImg = "<img src=\"http://dwhigh.tech:8080/api/image/getIndexImages/" + cartDetail.get(i).getProduct().getID()+"\" width=\"130\" height=\"130\">";
                     String productlink = "http://dwhigh.tech/san-pham-chi-tiet/" +cartDetail.get(i).getProduct().getID();
                     int qty = cartDetail.get(i).getQuantity();
-                    htmlBuilder.addRowValues(indexImg,pd, String.valueOf(price), String.valueOf(qty), String.valueOf(totasl),productlink);
+                    htmlBuilder.addRowValues(indexImg,pd, String.format("%.2f", price), String.valueOf(qty),String.format("%.2f", totasl),productlink);
                     cartDetailService.deleteCartDetail(cartDetail.get(i).getId());
 
                 }
@@ -169,7 +169,7 @@ public class CheckoutPageREST {
                 cartService.deleteCart(cart.getId());
                 List<Voucher> voucher = voucherService.getVoucherByCode(voucherCode);
                 if(voucher!=null){
-                    if(voucher.get(0).isStatus()){
+                    if(!voucher.get(0).isStatus()){
                         if(voucher.get(0).getLimit_use()>0){
                             voucher.get(0).setUpdated_date(new Date());
                             voucher.get(0).setUpdated_by("System");
@@ -187,8 +187,8 @@ public class CheckoutPageREST {
                 String text = new StringBuilder()
                         .append("Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.\n")
                         .append(table)
-                        .append("\n Tổng hóa đơn của bạn là: "+total)
-                        .append("\n Voucher bạn đã áp dụng:"+ voucherCode)
+                        .append("\n Tổng hóa đơn của bạn là: "+total+"\n")
+                        .append("\n Voucher bạn đã áp dụng: "+ voucherCode)
                         .toString();
 
                 MailSender.sendText(user.getEmail(),
@@ -259,7 +259,7 @@ public class CheckoutPageREST {
                 String indexImg = "<img src=\"http://dwhigh.tech:8080/api/image/getIndexImages/" + cartDetail.get(i).getProduct().getID()+"\" width=\"130\" height=\"130\">";
                 String productlink = "http://dwhigh.tech/san-pham-chi-tiet/" +cartDetail.get(i).getProduct().getID();
                 int qty = cartDetail.get(i).getQuantity();
-                    htmlBuilder.addRowValues(indexImg,pd, String.valueOf(price), String.valueOf(qty), String.valueOf(totasl),productlink);
+                    htmlBuilder.addRowValues(indexImg,pd, String.format("%.2f", price), String.valueOf(qty),String.format("%.2f", totasl),productlink);
                     cartDetailService.deleteCartDetail(cartDetail.get(i).getId());
 
                 }
