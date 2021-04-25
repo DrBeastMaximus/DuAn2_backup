@@ -168,7 +168,7 @@ public class CheckoutPageREST {
                 String table = htmlBuilder.build();
                 cartService.deleteCart(cart.getId());
                 List<Voucher> voucher = voucherService.getVoucherByCode(voucherCode);
-                if(voucher!=null){
+                if(voucher.size()!=0){
                     if(!voucher.get(0).isStatus()){
                         if(voucher.get(0).getLimit_use()>0){
                             voucher.get(0).setUpdated_date(new Date());
