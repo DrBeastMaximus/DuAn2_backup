@@ -37,7 +37,7 @@ app.controller("myctrl", function($scope, $http) {
         $scope.product_property = response.data;
     });
     // url cho các chức năng thêm, sửa, xóa
-    $scope.urlinsert= "../../property/insert/"+$scope.id;
+    $scope.urlinsert= "../../property/home/"+$scope.id;
     $scope.urlupdate= "../../property/update/"+$scope.id;
     $scope.urldelete= "../../property/delete/"+$scope.id;
 

@@ -86,7 +86,7 @@ app.controller("myctrl", function($scope, $http) {
             //     }
             // });
             // alert($scope.toptalinvoice_chart)
-                // biểu đồ thống kê từng sản phẩm theo năm
+            // biểu đồ thống kê từng sản phẩm theo năm
             google.charts.load('current', {'packages':['corechart']});
             google.charts.setOnLoadCallback(drawChart);
             function drawChart() {
@@ -225,7 +225,7 @@ app.controller("myctrl", function($scope, $http) {
                 // $scope.char_pro = [];
                 for(var i = 0; i < $scope.topproduct.length; i++){
                     if($scope.topproduct_chart.length <= $scope.topproduct.length) {
-                    //đưa dữ liệu vào mảng để đưa vào biễu đồ
+                        //đưa dữ liệu vào mảng để đưa vào biễu đồ
                         $scope.toppro_index =  $scope.topproduct[i];
                         // $scope.product_name = $scope.toppro_index[0];
                         // $scope.product_total = $scope.toppro_index[2];
@@ -246,7 +246,7 @@ app.controller("myctrl", function($scope, $http) {
                     var data = google.visualization.arrayToDataTable($scope.topproduct_chart);
 
                     var options = {
-                        title: 'My Daily Activities',
+                        title: 'Top sản phẩm bán chạy nhất',
                         pieHole: 0.4,
                     };
 
@@ -276,7 +276,7 @@ app.controller("myctrl", function($scope, $http) {
 
 
             });
-        // thống kê top 10 sản phẩm được yêu thích nhất
+            // thống kê top 10 sản phẩm được yêu thích nhất
             $http.get("../statistical/topwishlishbyyear/"+$scope.year_top).then(function(response) {
                 $scope.topwishlish = response.data;
                 $scope.char_wishlish = [];
@@ -333,7 +333,7 @@ app.controller("myctrl", function($scope, $http) {
                 //     height: 500
                 // });
 
-        //biểu đồ thống kê top 10 khách hàng
+                //biểu đồ thống kê top 10 khách hàng
                 google.charts.load('current', {packages: ['corechart']});
                 google.charts.setOnLoadCallback(drawChart);
 

@@ -458,14 +458,14 @@
                                             <th>Tên sản phẩm</th>
 
                                             <th>Giá gốc</th>
-                                            <td>IsSale</td>
-                                            <th>Giá Sale</th>
+                                            <th>Trạng thái khuyến mãi</th>
+                                            <th>Giá khuyến mãi</th>
                                             <th>Nhà Cung Cấp</th>
                                             <th>Giới tính</th>
                                             <th>Số Lượng</th>
-                                            <th>Content</th>
-                                            <th>Thuộc tính</th>
-                                            <th>Hình ảnh</th>
+                                            <!--                                            <th>Content</th>-->
+                                            <!--                                            <th>Thuộc tính</th>-->
+                                            <!--                                            <th>Hình ảnh</th>-->
 
                                             <th class="disabled-sorting text-right">Actions</th>
                                         </tr>
@@ -477,14 +477,14 @@
                                             <th>Tên sản phẩm</th>
 
                                             <th>Giá gốc</th>
-                                            <th>IsSale</th>
-                                            <th>Giá Sale</th>
+                                            <th>Trạng thái khuyến mãi</th>
+                                            <th>Giá khuyến mãi</th>
                                             <th>Nhà Cung Cập</th>
                                             <th>Giới tính</th>
                                             <th>Số Lượng</th>
-                                            <th>Content</th>
-                                            <th>Thuộc tính</th>
-                                            <th>Hình ảnh</th>
+                                            <!--                                            <th>Content</th>-->
+                                            <!--                                            <th>Thuộc tính</th>-->
+                                            <!--                                            <th>Hình ảnh</th>-->
 
                                             <th class="text-right">Actions</th>
                                         </tr>
@@ -495,36 +495,50 @@
                                             <td>{{pr.code}}</td>
                                             <td>{{pr.name}}</td>
                                             <td>{{pr.price.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});}}</td>
-                                            <td>{{pr.issale}}</td>
+                                            <td ng-if="pr.issale == 0">Không khuyến mãi</td>
+                                            <td ng-if="pr.issale == 1">Khuyến mãi</td>
                                             <td>{{pr.price_sale.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});}}</td>
                                             <td>{{pr.supplier_id.name}}</td>
                                             <td ng-if="pr.gender == 0">Nữ</td>
                                             <td ng-if="pr.gender == 1">Nam</td>
                                             <td>{{pr.quantity}}</td>
-                                            <td><button type="button" rel="tooltip" ng-click="contentid(pr.id)"  data-toggle="modal" data-target="#myModal3" class="btn btn-success btn-simple" data-original-title="" title="">
-                                                <i class="material-icons">open_in_new</i>
-                                            </button></td>
-                                            <td>
-                                                <a th:href="@{./property/home/{{pr.id}}}" method="get">
-                                                    <button type="button" rel="tooltip"  data-toggle="modal"   class="btn btn-success btn-simple" data-original-title="" title="">
-                                                        <i class="material-icons">open_in_new</i>
-                                                    </button>
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a th:href="@{./image/home/{{pr.id}}}" method="get">
-                                                    <button type="button" rel="tooltip"  data-toggle="modal"  class="btn btn-success btn-simple" data-original-title="" title="">
-                                                        <i class="material-icons">open_in_new</i>
-                                                    </button>
-                                                </a>
-                                            </td>
+                                            <!--                                            <td><button type="button" rel="tooltip" ng-click="contentid(pr.id)"  data-toggle="modal" data-target="#myModal3" class="btn btn-info btn-simple" data-original-title="" title="">-->
+                                            <!--                                                <i class="material-icons">insert_comment</i>-->
+                                            <!--                                            </button></td>-->
+                                            <!--                                            <td>-->
+                                            <!--                                                <a th:href="@{./property/home/{{pr.id}}}" method="get">-->
+                                            <!--                                                    <button type="button" rel="tooltip"  data-toggle="modal"   class="btn btn-warning btn-simple" data-original-title="" title="">-->
+                                            <!--                                                        <i class="material-icons">event_note</i>-->
+                                            <!--                                                    </button>-->
+                                            <!--                                                </a>-->
+                                            <!--                                            </td>-->
+                                            <!--                                            <td>-->
+                                            <!--                                                <a th:href="@{./image/home/{{pr.id}}}" method="get">-->
+                                            <!--                                                    <button type="button" rel="tooltip"  data-toggle="modal"  class="btn btn-light btn-simple" data-original-title="" title="">-->
+                                            <!--                                                        <i class="material-icons">insert_photo</i>-->
+                                            <!--                                                    </button>-->
+                                            <!--                                                </a>-->
+                                            <!--                                            </td>-->
                                             <td class="td-actions text-right">
                                                 <!--                                                        <button type="button" rel="tooltip" class="btn btn-info btn-simple" data-original-title="" title="">-->
                                                 <!--                                                            <i class="material-icons">person</i>-->
                                                 <!--                                                        </button>                                                -->
 
 
-                                                <form th:action="@{./delete}" method="post">
+                                                <form action="@{./delete}" method="post">
+                                                    <button type="button" rel="tooltip" ng-click="contentid(pr.id)"  data-toggle="modal" data-target="#myModal3" class="btn btn-info btn-simple" data-original-title="" title="">
+                                                        <i class="material-icons">insert_comment</i>
+                                                    </button>
+                                                    <a  href="../product/property/home/{{pr.id}}">
+                                                        <button type="button" rel="tooltip"  data-toggle="modal"  class="btn btn-warning btn-simple" data-original-title="" title="">
+                                                            <i class="material-icons">event_note</i>
+                                                        </button>
+                                                    </a>
+                                                    <a  href="../product/image/home/{{pr.id}}">
+                                                        <button type="button" rel="tooltip"  data-toggle="modal"   class="btn btn-light btn-simple" data-original-title="" title="">
+                                                            <i class="material-icons">insert_photo</i>
+                                                        </button>
+                                                    </a>
                                                     <textarea hidden id="id_delete" name="id_delete" >{{pr.id}}</textarea>
                                                     <button type="button" rel="tooltip"  data-toggle="modal" ng-click="update(pr.id)"data-target="#myModal2" class="btn btn-success btn-simple" data-original-title="" title="">
                                                         <i class="material-icons">edit</i>
@@ -632,47 +646,47 @@
 <script th:src="@{/assets/js/material-dashboard.js?v=1.2.1}"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script th:src="@{/assets/js/demo.js}"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#datatables').DataTable({
-            "pagingType": "full_numbers",
-            "lengthMenu": [
-                [10, 25, 50, -1],
-                [10, 25, 50, "All"]
-            ],
-            responsive: true,
-            language: {
-                search: "_INPUT_",
-                searchPlaceholder: "Search records",
-            }
+<!--<script type="text/javascript">-->
+<!--    $(document).ready(function() {-->
+<!--        $('#datatables').DataTable({-->
+<!--            "pagingType": "full_numbers",-->
+<!--            "lengthMenu": [-->
+<!--                [10, 25, 50, -1],-->
+<!--                [10, 25, 50, "All"]-->
+<!--            ],-->
+<!--            responsive: true,-->
+<!--            language: {-->
+<!--                search: "_INPUT_",-->
+<!--                searchPlaceholder: "Search records",-->
+<!--            }-->
 
-        });
+<!--        });-->
 
 
-        var table = $('#datatables').DataTable();
+<!--        var table = $('#datatables').DataTable();-->
 
-        // Edit record
-        table.on('click', '.edit', function() {
-            $tr = $(this).closest('tr');
+<!--        // Edit record-->
+<!--        table.on('click', '.edit', function() {-->
+<!--            $tr = $(this).closest('tr');-->
 
-            var data = table.row($tr).data();
-            alert('You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.');
-        });
+<!--            var data = table.row($tr).data();-->
+<!--            alert('You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.');-->
+<!--        });-->
 
-        // Delete a record
-        table.on('click', '.remove', function(e) {
-            $tr = $(this).closest('tr');
-            table.row($tr).remove().draw();
-            e.preventDefault();
-        });
+<!--        // Delete a record-->
+<!--        table.on('click', '.remove', function(e) {-->
+<!--            $tr = $(this).closest('tr');-->
+<!--            table.row($tr).remove().draw();-->
+<!--            e.preventDefault();-->
+<!--        });-->
 
-        //Like record
-        table.on('click', '.like', function() {
-            alert('You clicked on Like button');
-        });
+<!--        //Like record-->
+<!--        table.on('click', '.like', function() {-->
+<!--            alert('You clicked on Like button');-->
+<!--        });-->
 
-        $('.card .material-datatables label').addClass('form-group');
-    });
-</script>
+<!--        $('.card .material-datatables label').addClass('form-group');-->
+<!--    });-->
+<!--</script>-->
 
 </html>

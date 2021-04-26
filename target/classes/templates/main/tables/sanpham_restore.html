@@ -281,12 +281,11 @@
                                             <th>Tên sản phẩm</th>
 
                                             <th>Giá gốc</th>
-                                            <td>IsSale</td>
-                                            <th>Giá Sale</th>
+                                            <th>Trạng thái khuyến mãi</th>
+                                            <th>Giá khuyến mãi</th>
                                             <th>Nhà Cung Cấp</th>
                                             <th>Giới tính</th>
                                             <th>Số Lượng</th>
-                                            <th>Content</th>
 
 
                                             <th class="disabled-sorting text-right">Actions</th>
@@ -299,12 +298,11 @@
                                             <th>Tên sản phẩm</th>
 
                                             <th>Giá gốc</th>
-                                            <th>IsSale</th>
-                                            <th>Giá Sale</th>
-                                            <th>Nhà Cung Cập</th>
+                                            <th>Trạng thái khuyến mãi</th>
+                                            <th>Giá khuyến mãi</th>
+                                            <th>Nhà Cung Cấp</th>
                                             <th>Giới tính</th>
                                             <th>Số Lượng</th>
-                                            <th>Content</th>
 
 
                                             <th class="text-right">Actions</th>
@@ -316,15 +314,16 @@
                                             <td>{{pr.code}}</td>
                                             <td>{{pr.name}}</td>
                                             <td>{{pr.price.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});}}</td>
-                                            <td>{{pr.issale}}</td>
+                                            <td ng-if="pr.issale == 0">Không khuyến mãi</td>
+                                            <td ng-if="pr.issale == 1">Khuyến mãi</td>
                                             <td>{{pr.price_sale.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});}}</td>
                                             <td>{{pr.supplier_id.name}}</td>
                                             <td ng-if="pr.gender == 0">Nữ</td>
                                             <td ng-if="pr.gender == 1">Nam</td>
                                             <td>{{pr.quantity}}</td>
-                                            <td><button type="button" rel="tooltip" ng-click="contentid(pr.id)"  data-toggle="modal" data-target="#myModal3" class="btn btn-success btn-simple" data-original-title="" title="">
-                                                <i class="material-icons">open_in_new</i>
-                                            </button></td>
+                                            <!--                                            <td><button type="button" rel="tooltip" ng-click="contentid(pr.id)"  data-toggle="modal" data-target="#myModal3" class="btn btn-success btn-simple" data-original-title="" title="">-->
+                                            <!--                                                <i class="material-icons">open_in_new</i>-->
+                                            <!--                                            </button></td>-->
                                             <!--                                                    <td>{{ad.role}}</td>-->
                                             <td class="td-actions text-right">
                                                 <!--                                                        <button type="button" rel="tooltip" class="btn btn-info btn-simple" data-original-title="" title="">-->
@@ -332,7 +331,9 @@
                                                 <!--                                                        </button>-->
 
                                                 <form th:action="@{./trashconproduct}" method="post"  th:object="${restor}">
-
+                                                    <button type="button" rel="tooltip" ng-click="contentid(pr.id)"  data-toggle="modal" data-target="#myModal3" class="btn btn-info btn-simple" data-original-title="" title="">
+                                                        <i class="material-icons">insert_comment</i>
+                                                    </button>
                                                     <textarea hidden id="ID" name="ID"  >{{pr.id}}</textarea>
                                                     <button type="submit" rel="tooltip" data-toggle="modal"  class="btn btn-success btn-simple" >
                                                         <i class="material-icons">restore</i>
@@ -442,47 +443,47 @@
 <script th:src="@{/assets/js/jquery.tagsinput.js}"></script>
 <!-- Material Dashboard javascript methods -->
 <script th:src="@{/assets/js/material-dashboard.js?v=1.2.1}"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#datatables').DataTable({
-            "pagingType": "full_numbers",
-            "lengthMenu": [
-                [10, 25, 50, -1],
-                [10, 25, 50, "All"]
-            ],
-            responsive: true,
-            language: {
-                search: "_INPUT_",
-                searchPlaceholder: "Search records",
-            }
+<!--<script type="text/javascript">-->
+<!--    $(document).ready(function() {-->
+<!--        $('#datatables').DataTable({-->
+<!--            "pagingType": "full_numbers",-->
+<!--            "lengthMenu": [-->
+<!--                [10, 25, 50, -1],-->
+<!--                [10, 25, 50, "All"]-->
+<!--            ],-->
+<!--            responsive: true,-->
+<!--            language: {-->
+<!--                search: "_INPUT_",-->
+<!--                searchPlaceholder: "Search records",-->
+<!--            }-->
 
-        });
+<!--        });-->
 
 
-        var table = $('#datatables').DataTable();
+<!--        var table = $('#datatables').DataTable();-->
 
-        // Edit record
-        table.on('click', '.edit', function() {
-            $tr = $(this).closest('tr');
+<!--        // Edit record-->
+<!--        table.on('click', '.edit', function() {-->
+<!--            $tr = $(this).closest('tr');-->
 
-            var data = table.row($tr).data();
-            alert('You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.');
-        });
+<!--            var data = table.row($tr).data();-->
+<!--            alert('You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.');-->
+<!--        });-->
 
-        // Delete a record
-        table.on('click', '.remove', function(e) {
-            $tr = $(this).closest('tr');
-            table.row($tr).remove().draw();
-            e.preventDefault();
-        });
-        s
-        //Like record
-        table.on('click', '.like', function() {
-            alert('You clicked on Like button');
-        });
+<!--        // Delete a record-->
+<!--        table.on('click', '.remove', function(e) {-->
+<!--            $tr = $(this).closest('tr');-->
+<!--            table.row($tr).remove().draw();-->
+<!--            e.preventDefault();-->
+<!--        });-->
+<!--        s-->
+<!--        //Like record-->
+<!--        table.on('click', '.like', function() {-->
+<!--            alert('You clicked on Like button');-->
+<!--        });-->
 
-        $('.card .material-datatables label').addClass('form-group');
-    });
-</script>
+<!--        $('.card .material-datatables label').addClass('form-group');-->
+<!--    });-->
+<!--</script>-->
 
 s</html>

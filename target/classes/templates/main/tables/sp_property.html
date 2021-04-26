@@ -236,7 +236,10 @@
                                         <i class="material-icons">undo</i><a >Quay về sản phẩm</a>
                                     </button>
                                     <button class="btn btn-warning" data-toggle="modal" data-target="#myModal">Thêm mới</button>
-                                    <input type="search" ng-model="search" id="form1" class="form-control" placeholder="Search for..." ng-click="first()"/>
+                                    <div class="input-group" style="margin-left: 1350px">
+                                        <input type="search" ng-model="search" id="form1" class="form-control" placeholder="Search for..." ng-click="first()"/>
+                                    </div>
+                                    <h8 style="color: #ff0000">   [[${message}]]</h8>
                                     <div id="myModal" class="modal fade" role="dialog">
                                         <div class="container d-flex justify-content-center">
                                             <div class="card">
@@ -270,8 +273,11 @@
                                                             <div class="checkbox pull-left">
 
                                                             </div>
+
                                                             <button class="btn btn-success">Thêm</button>
-                                                            <button class="btn" type="button" onClick="window.location.reload();">Cancel</button>
+                                                            <a href="../../../product/property/home/{{id}}">
+                                                                <button class="btn" type="button" >Cancel</button>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -313,7 +319,9 @@
 
                                                             </div>
                                                             <button class="btn btn-success">Cập nhật</button>
-                                                            <button class="btn" type="button" onClick="window.location.reload();">Cancel</button>
+                                                            <a href="../../../product/property/home/{{id}}">
+                                                                <button class="btn" type="button" >Cancel</button>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </form>

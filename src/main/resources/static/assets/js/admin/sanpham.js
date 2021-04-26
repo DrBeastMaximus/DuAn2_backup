@@ -53,8 +53,6 @@ app.controller("myctrl", function($scope, $http) {
     }
 
 
-    // }
-
 });
 app.directive('input', ['$parse', function ($parse) {
     return {

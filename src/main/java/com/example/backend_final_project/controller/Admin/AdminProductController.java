@@ -57,7 +57,7 @@ public class AdminProductController {
         return product;
     }
 
-// trả về trang quản lý sản phâm
+    // trả về trang quản lý sản phâm
     @GetMapping("/home")
     public String home(ModelMap model){
         attribute(model);
@@ -156,7 +156,7 @@ public class AdminProductController {
         return list;
     }
 
-// trả về trang quản lý thuộc tính sản phẩm có product id tương ứng
+    // trả về trang quản lý thuộc tính sản phẩm có product id tương ứng
     @GetMapping("/property/home/{id_product}")
     public String getPropertyid(ModelMap model, @PathVariable("id_product") int id_product){
         model.addAttribute("id", id_product);
@@ -170,12 +170,12 @@ public class AdminProductController {
 //        return "main/tables/sp_property";
 //    }
 //
-//    @GetMapping("/property/update/{id_product}")
-//    public String Propertydupdatereloat(ModelMap model, @PathVariable("id_product") int id_product){
-//        model.addAttribute("id", id_product);
-//        attribute(model);
-//        return "main/tables/sp_property";
-//    }
+    @GetMapping("/property/update/{id_product}")
+    public String Propertydupdatereloat(ModelMap model, @PathVariable("id_product") int id_product){
+        model.addAttribute("id", id_product);
+        attribute(model);
+        return "main/tables/sp_property";
+    }
 //    @GetMapping("/property/delete/{id_product}")
 //    public String Propertyddeletereloat(ModelMap model, @PathVariable("id_product") int id_product){
 //        model.addAttribute("id", id_product);
@@ -184,42 +184,80 @@ public class AdminProductController {
 //    }
 
     // thêm thuộc tính sản phẩm mới vào db
-    @PostMapping("/property/insert/{id_product}")
+    @PostMapping("/property/home/{id_product}")
     public String insertPropertyid(ModelMap model, @PathVariable("id_product") int id_product,@ModelAttribute Product_Property_DetailRequest product_property_detailRequest){
-        Product product = productServiceImpl.getProductById(id_product);
-        Product_Property product_property = productPropertyServiceImpl.getProductPropertyById(Integer.parseInt(product_property_detailRequest.getId_property()));
-        Product_Property_Detail product_property_detail = new Product_Property_Detail();
-        product_property_detail.setProduct(product);
-        product_property_detail.setProduct_Property(product_property);
-        product_property_detail.setDescription(product_property_detailRequest.getDescription());
-        product_property_detail.setCreated_date(new Date());
-        product_property_detail.setCreated_by(SessionService.username);
-        productPropertyDetailServiceImpl.addProductPropertyD(product_property_detail);
+        List<Product_Property_Detail> listproperty = productPropertyDetailServiceImpl.getByProductIdAndPropertyRoot(id_product,Integer.parseInt(product_property_detailRequest.getId_property()));
+        if(listproperty.size() > 0){
+            model.addAttribute("message","Thuộc tính đã tồn tại");
+        }else {
+            Product product = productServiceImpl.getProductById(id_product);
+            Product_Property product_property = productPropertyServiceImpl.getProductPropertyById(Integer.parseInt(product_property_detailRequest.getId_property()));
+            Product_Property_Detail product_property_detail = new Product_Property_Detail();
+            product_property_detail.setProduct(product);
+            product_property_detail.setProduct_Property(product_property);
+            product_property_detail.setDescription(product_property_detailRequest.getDescription());
+            product_property_detail.setCreated_date(new Date());
+            product_property_detail.setCreated_by(SessionService.username);
+            productPropertyDetailServiceImpl.addProductPropertyD(product_property_detail);
+        }
         model.addAttribute("id", id_product);
         attribute(model);
-//        return "main/tables/sp_property";
-        return "redirect:/admin/product/property/home/"+id_product;
+        return "main/tables/sp_property";
+//        return "redirect:/admin/product/property/home/"+id_product;
     }
 
-     //cập nhật thuộc tính sản phẩm
+    //cập nhật thuộc tính sản phẩm
     @PostMapping("/property/update/{id_product}")
     public String updatePropertyid(ModelMap model, @PathVariable("id_product") int id_product,@ModelAttribute Product_Property_DetailRequest product_property_detailRequest){
-        Product product = productServiceImpl.getProductById(id_product);
-        Product_Property product_property = productPropertyServiceImpl.getProductPropertyById(Integer.parseInt(product_property_detailRequest.getId_property()));
-        Product_Property_Detail product_property_detail = new Product_Property_Detail();
-        product_property_detail.setProduct(product);
-        product_property_detail.setProduct_Property(product_property);
-        product_property_detail.setDescription(product_property_detailRequest.getDescription());
-        product_property_detail.setCreated_date(product_property_detailRequest.getCreated_date());
-        product_property_detail.setCreated_by(product_property_detailRequest.getCreated_by());
-        product_property_detail.setUpdated_date(new Date());
-        product_property_detail.setUpdated_by(SessionService.username);
-        product_property_detail.setID(product_property_detailRequest.getId());
-        productPropertyDetailServiceImpl.updateProductPropertyD(product_property_detail);
-        model.addAttribute("id", id_product);
-        attribute(model);
-//        return "main/tables/sp_property";
-        return "redirect:/admin/product/property/home/"+id_product;
+        Product_Property_Detail property_detail = productPropertyDetailServiceImpl.getProductPropertyDetailById (product_property_detailRequest.getId());
+
+        if(property_detail.getProduct_Property().getID() != Integer.parseInt(product_property_detailRequest.getId_property())){
+
+            List<Product_Property_Detail> listproperty = productPropertyDetailServiceImpl.getByProductIdAndPropertyRoot(id_product,Integer.parseInt(product_property_detailRequest.getId_property()));
+            if(listproperty.size() >0){
+                model.addAttribute("message","Thuộc tính đã tồn tại");
+                model.addAttribute("id", id_product);
+                attribute(model);
+                return "main/tables/sp_property";
+            }else{
+                Product product = productServiceImpl.getProductById(id_product);
+                Product_Property product_property = productPropertyServiceImpl.getProductPropertyById(Integer.parseInt(product_property_detailRequest.getId_property()));
+                Product_Property_Detail product_property_detail = new Product_Property_Detail();
+                product_property_detail.setProduct(product);
+                product_property_detail.setProduct_Property(product_property);
+                product_property_detail.setDescription(product_property_detailRequest.getDescription());
+                product_property_detail.setCreated_date(product_property_detailRequest.getCreated_date());
+                product_property_detail.setCreated_by(product_property_detailRequest.getCreated_by());
+                product_property_detail.setUpdated_date(new Date());
+                product_property_detail.setUpdated_by(SessionService.username);
+                product_property_detail.setID(product_property_detailRequest.getId());
+                productPropertyDetailServiceImpl.updateProductPropertyD(product_property_detail);
+                model.addAttribute("id", id_product);
+                attribute(model);
+                return "redirect:/admin/product/property/home/"+id_product;
+            }
+        }else {
+
+            Product product = productServiceImpl.getProductById(id_product);
+            Product_Property product_property = productPropertyServiceImpl.getProductPropertyById(Integer.parseInt(product_property_detailRequest.getId_property()));
+            Product_Property_Detail product_property_detail = new Product_Property_Detail();
+            product_property_detail.setProduct(product);
+            product_property_detail.setProduct_Property(product_property);
+            product_property_detail.setDescription(product_property_detailRequest.getDescription());
+            product_property_detail.setCreated_date(product_property_detailRequest.getCreated_date());
+            product_property_detail.setCreated_by(product_property_detailRequest.getCreated_by());
+            product_property_detail.setUpdated_date(new Date());
+            product_property_detail.setUpdated_by(SessionService.username);
+            product_property_detail.setID(product_property_detailRequest.getId());
+            productPropertyDetailServiceImpl.updateProductPropertyD(product_property_detail);
+            model.addAttribute("id", id_product);
+            attribute(model);
+            return "redirect:/admin/product/property/home/"+id_product;
+        }
+//        model.addAttribute("id", id_product);
+//        attribute(model);
+////        return "main/tables/sp_property";
+//        return "redirect:/admin/product/property/home/"+id_product;
     }
 
     // xóa thuộc tính sản phẩm
@@ -248,18 +286,18 @@ public class AdminProductController {
         attribute(model);
         return "main/tables/sp_image";
     }
-//    @GetMapping("/image/insert/{id_product}")
+    //    @GetMapping("/image/insert/{id_product}")
 //    public String imageinser(ModelMap model, @PathVariable("id_product") int id_product){
 //        model.addAttribute("id", id_product);
 //        attribute(model);
 //        return "main/tables/sp_image";
 //    }
-//    @GetMapping("/image/update/{id_product}")
-//    public String imageupdate(ModelMap model, @PathVariable("id_product") int id_product){
-//        model.addAttribute("id", id_product);
-//        attribute(model);
-//        return "main/tables/sp_image";
-//    }
+    @GetMapping("/image/update/{id_product}")
+    public String imageupdate(ModelMap model, @PathVariable("id_product") int id_product){
+        model.addAttribute("id", id_product);
+        attribute(model);
+        return "main/tables/sp_image";
+    }
 //    @GetMapping("/image/delete/{id_product}")
 //    public String imagedelete(ModelMap model, @PathVariable("id_product") int id_product){
 //        model.addAttribute("id", id_product);
@@ -268,7 +306,7 @@ public class AdminProductController {
 //    }
 
 
-// thêm hình ảnh mới vào db
+    // thêm hình ảnh mới vào db
     @PostMapping("/image/home/{id_product}")
     public String insertimage(ModelMap model, @PathVariable("id_product") int id_product, @ModelAttribute Product_Image product_image, @RequestPart("file") MultipartFile file){
         List<Product_Image> listImage = productImageServiceImpl.getProductImagesIndexByProdId(id_product);
@@ -317,51 +355,182 @@ public class AdminProductController {
     // cập nhật hình ảnh sản phẩm
     @PostMapping("image/update/{id_product}")
     public String updateimage(ModelMap model, @PathVariable("id_product") int id_product, @ModelAttribute Product_Image product_image, @RequestPart("file") MultipartFile file){
+        Product_Image image = productImageServiceImpl.getProductImageById(product_image.getID());
+        if(product_image.getProiority() != image.getProiority()){
 
-        if(file.getSize() != 0){
-            //            String path = "./hinhanh";
-            String path = System.getProperty("user.dir")+"/hinhanh/";
+            if(product_image.getProiority() == 1){
+                List<Product_Image> listImage = productImageServiceImpl.getProductImagesIndexByProdId(id_product);
+                if (listImage.size() >= 1){
+                    model.addAttribute("message","Mõi sản phẩm chỉ có 1 hình chính");
+                    model.addAttribute("id", id_product);
+                    attribute(model);
+                    return "main/tables/sp_image";
+                }else
+                {
+                    if(file.getSize() != 0){
+                        //            String path = "./hinhanh";
+                        String path = System.getProperty("user.dir")+"/hinhanh/";
 
-            String filename= file.getOriginalFilename();
-            try{
-                Date time = new Date();
-                String image_name = id_product+"_"+"anh"+"_"+time.getTime()+filename;
-                byte barr[]=file.getBytes();
+                        String filename= file.getOriginalFilename();
+                        try{
+                            Date time = new Date();
+                            String image_name = id_product+"_"+"anh"+"_"+time.getTime()+filename;
+                            byte barr[]=file.getBytes();
 
-                BufferedOutputStream bout=new BufferedOutputStream(
-                        new FileOutputStream(path+"/"+image_name));
-                bout.write(barr);
-                bout.flush();
-                bout.close();
+                            BufferedOutputStream bout=new BufferedOutputStream(
+                                    new FileOutputStream(path+"/"+image_name));
+                            bout.write(barr);
+                            bout.flush();
+                            bout.close();
+                            Product product = productServiceImpl.getProductById(id_product);
+                            product_image.setUpdated_date(new Date());
+                            product_image.setImage(image_name);
+                            product_image.setProduct(product);
+                            product_image.setUpdated_by(SessionService.username);
+                            productImageServiceImpl.updateProductImage(product_image);
+
+                        }catch(Exception e){
+                            System.out.println(e);
+                        }
+                    }else{
+                        Product product = productServiceImpl.getProductById(id_product);
+                        product_image.setProduct(product);
+                        product_image.setUpdated_date(new Date());
+                        product_image.setUpdated_by(SessionService.username);
+                        productImageServiceImpl.updateProductImage(product_image);
+                    }
+                    model.addAttribute("id", id_product);
+                    attribute(model);
+                    return "redirect:/admin/product/image/home/"+id_product;
+                }
+            }else{
+                List<Product_Image> listImage = productImageServiceImpl.getProductImagesByProdId(id_product);
+                if(listImage.size() >=4){
+                    model.addAttribute("message","Mõi sản phẩm chỉ có 4 hình phụ");
+                    model.addAttribute("id", id_product);
+                    attribute(model);
+                    return "main/tables/sp_image";
+                }else{
+                    if(file.getSize() != 0){
+                        //            String path = "./hinhanh";
+                        String path = System.getProperty("user.dir")+"/hinhanh/";
+
+                        String filename= file.getOriginalFilename();
+                        try{
+                            Date time = new Date();
+                            String image_name = id_product+"_"+"anh"+"_"+time.getTime()+filename;
+                            byte barr[]=file.getBytes();
+
+                            BufferedOutputStream bout=new BufferedOutputStream(
+                                    new FileOutputStream(path+"/"+image_name));
+                            bout.write(barr);
+                            bout.flush();
+                            bout.close();
+                            Product product = productServiceImpl.getProductById(id_product);
+                            product_image.setUpdated_date(new Date());
+                            product_image.setImage(image_name);
+                            product_image.setProduct(product);
+                            product_image.setUpdated_by(SessionService.username);
+                            productImageServiceImpl.updateProductImage(product_image);
+
+                        }catch(Exception e){
+                            System.out.println(e);
+                        }
+                    }else{
+                        Product product = productServiceImpl.getProductById(id_product);
+                        product_image.setProduct(product);
+                        product_image.setUpdated_date(new Date());
+                        product_image.setUpdated_by(SessionService.username);
+                        productImageServiceImpl.updateProductImage(product_image);
+                    }
+                    model.addAttribute("id", id_product);
+                    attribute(model);
+                    return "redirect:/admin/product/image/home/"+id_product;
+                }
+            }
+        }
+        else{
+            if(file.getSize() != 0){
+                //            String path = "./hinhanh";
+                String path = System.getProperty("user.dir")+"/hinhanh/";
+
+                String filename= file.getOriginalFilename();
+                try{
+                    Date time = new Date();
+                    String image_name = id_product+"_"+"anh"+"_"+time.getTime()+filename;
+                    byte barr[]=file.getBytes();
+
+                    BufferedOutputStream bout=new BufferedOutputStream(
+                            new FileOutputStream(path+"/"+image_name));
+                    bout.write(barr);
+                    bout.flush();
+                    bout.close();
+                    Product product = productServiceImpl.getProductById(id_product);
+                    product_image.setUpdated_date(new Date());
+                    product_image.setImage(image_name);
+                    product_image.setProduct(product);
+                    product_image.setUpdated_by(SessionService.username);
+                    productImageServiceImpl.updateProductImage(product_image);
+
+                }catch(Exception e){
+                    System.out.println(e);
+                }
+            }else{
                 Product product = productServiceImpl.getProductById(id_product);
-                product_image.setUpdated_date(new Date());
-                product_image.setImage(image_name);
                 product_image.setProduct(product);
+                product_image.setUpdated_date(new Date());
                 product_image.setUpdated_by(SessionService.username);
                 productImageServiceImpl.updateProductImage(product_image);
-
-            }catch(Exception e){
-                System.out.println(e);
             }
-        }else{
-            Product product = productServiceImpl.getProductById(id_product);
-            product_image.setProduct(product);
-            product_image.setUpdated_date(new Date());
-            product_image.setUpdated_by(SessionService.username);
-            productImageServiceImpl.updateProductImage(product_image);
+            model.addAttribute("id", id_product);
+            attribute(model);
+            return "redirect:/admin/product/image/home/"+id_product;
+
         }
+//        if(file.getSize() != 0){
+//            //            String path = "./hinhanh";
+//            String path = System.getProperty("user.dir")+"/hinhanh/";
+//
+//            String filename= file.getOriginalFilename();
+//            try{
+//                Date time = new Date();
+//                String image_name = id_product+"_"+"anh"+"_"+time.getTime()+filename;
+//                byte barr[]=file.getBytes();
+//
+//                BufferedOutputStream bout=new BufferedOutputStream(
+//                        new FileOutputStream(path+"/"+image_name));
+//                bout.write(barr);
+//                bout.flush();
+//                bout.close();
+//                Product product = productServiceImpl.getProductById(id_product);
+//                product_image.setUpdated_date(new Date());
+//                product_image.setImage(image_name);
+//                product_image.setProduct(product);
+//                product_image.setUpdated_by(SessionService.username);
+//                productImageServiceImpl.updateProductImage(product_image);
+//
+//            }catch(Exception e){
+//                System.out.println(e);
+//            }
+//        }else{
+//            Product product = productServiceImpl.getProductById(id_product);
+//            product_image.setProduct(product);
+//            product_image.setUpdated_date(new Date());
+//            product_image.setUpdated_by(SessionService.username);
+//            productImageServiceImpl.updateProductImage(product_image);
+//        }
 
 //        File dir = new File(System.getProperty("user.dir")+"/src/main/resources/static/assets/hinhanh");
 //        System.out.println(dir);
 //        System.out.println("aaaaaaa");
-        model.addAttribute("id", id_product);
-        attribute(model);
-//        return "main/tables/sp_image";
-        return "redirect:/admin/product/image/home/"+id_product;
+//        model.addAttribute("id", id_product);
+//        attribute(model);
+////        return "main/tables/sp_image";
+//        return "redirect:/admin/product/image/home/"+id_product;
     }
 
     //xóa hình ảnh sản phẩm
-    
+
     @PostMapping("/image/delete/{id_product}")
     public String deleteimage(ModelMap model, @PathVariable("id_product") int id_product,@RequestParam int id_delete){
         productImageServiceImpl.deleteProductImage(id_delete);

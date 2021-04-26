@@ -319,14 +319,14 @@
                                             <th>ID</th>
                                             <th>Mã đơn</th>
                                             <th>Người đặt</th>
-                                            <th>Email người đặt</th>
-                                            <th>SDT người đặt</th>
+                                            <th>Email</th>
+                                            <th>SDT</th>
                                             <th>Địa chỉ giao hàng</th>
                                             <th>Mã voucher</th>
                                             <th>Ngày đặt</th>
                                             <th>Tổng tiền</th>
-                                            <th>Chi tiết</th>
-                                            <th>Trạng thái</th>
+                                            <!--                                            <th>Chi tiết</th>-->
+                                            <!--                                            <th>Trạng thái</th>-->
                                             <th class="disabled-sorting text-right">Actions</th>
                                         </tr>
                                         </thead>
@@ -335,14 +335,14 @@
                                             <th>ID</th>
                                             <th>Mã đơn</th>
                                             <th>Người đặt</th>
-                                            <th>Email người đặt</th>
-                                            <th>SDT người đặt</th>
+                                            <th>Email</th>
+                                            <th>SDT</th>
                                             <th>Địa chỉ giao hàng</th>
                                             <th>Mã voucher</th>
                                             <th>Ngày đặt</th>
                                             <th>Tổng tiền</th>
-                                            <th>Chi tiết</th>
-                                            <th>Trạng thái</th>
+                                            <!--                                            <th>Chi tiết</th>-->
+                                            <!--                                            <th>Trạng thái</th>-->
                                             <th class="text-right">Actions</th>
                                         </tr>
                                         </tfoot>
@@ -358,17 +358,20 @@
                                             <td>{{i.invoice.created_date}}</td>
                                             <td>{{i.invoice.total.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});}}</td>
 
-                                            <td><button type="button" rel="tooltip" ng-click="chitiet(i.invoice.id)" data-toggle="modal" data-target="#myModal3" class="btn btn-success btn-simple" data-original-title="" title="">
-                                                <i class="material-icons">open_in_new</i>
-                                            </button>
-                                            </td>
-                                            <td ng-if="i.invoice.status == 0">Chờ xác nhận</td>
-                                            <td ng-if="i.invoice.status == 1">Chờ vận chuyển</td>
-                                            <td ng-if="i.invoice.status == 2">Đang vận chuyển</td>
-                                            <td ng-if="i.invoice.status == 3">Đã hoàn thành</td>
-                                            <td ng-if="i.invoice.status == 4">Đã hủy</td>
+                                            <!--                                            <td><button type="button" rel="tooltip" ng-click="chitiet(i.invoice.id)" data-toggle="modal" data-target="#myModal3" class="btn btn-success btn-simple" data-original-title="" title="">-->
+                                            <!--                                                <i class="material-icons">open_in_new</i>-->
+                                            <!--                                            </button>-->
+                                            <!--                                            </td>-->
+                                            <!--                                            <td ng-if="i.invoice.status == 0">Chờ xác nhận</td>-->
+                                            <!--                                            <td ng-if="i.invoice.status == 1">Chờ vận chuyển</td>-->
+                                            <!--                                            <td ng-if="i.invoice.status == 2">Đang vận chuyển</td>-->
+                                            <!--                                            <td ng-if="i.invoice.status == 3">Đã hoàn thành</td>-->
+                                            <!--                                            <td ng-if="i.invoice.status == 4">Đã hủy</td>-->
                                             <td class="td-actions text-right">
-                                                <form action="{{url}}" method="post" th:object="${status}">
+                                                <form action="{{url}}" method="post" th:object="${status}" >
+                                                    <button type="button" rel="tooltip" ng-click="chitiet(i.invoice.id)" data-toggle="modal" data-target="#myModal3" class="btn btn-success btn-simple" data-original-title="" title="">
+                                                        <i class="material-icons">open_in_new</i>
+                                                    </button>
                                                     <textarea hidden id="id" name="id" type="number" >{{i.invoice.id}}</textarea>
                                                     <textarea hidden id="status" name="status" type="number" >{{status}}</textarea>
                                                     <button type="submit" ng-click="tuchoi()" rel="tooltip" class="btn btn-danger btn-simple" ng-if="i.invoice.status== 0">
