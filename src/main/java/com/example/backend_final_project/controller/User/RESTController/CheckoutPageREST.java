@@ -140,7 +140,7 @@ public class CheckoutPageREST {
                     invoiceD.setQuantity(cartDetail.get(i).getQuantity());
                     invoiceD.setProduct(cartDetail.get(i).getProduct());
                     if(cartDetail.get(i).getProduct().getPrice_sale()!=0){
-                        invoiceD.setProduct_Price(cartDetail.get(i).getProduct().getPrice_sale());
+                        invoiceD.setProduct_Price(cartDetail.get(i).getProduct().getPrice());
                         invoiceD.setTotal(cartDetail.get(i).getProduct().getPrice_sale()*cartDetail.get(i).getQuantity());
                     } else{
                         invoiceD.setProduct_Price(cartDetail.get(i).getProduct().getPrice());
@@ -240,7 +240,7 @@ public class CheckoutPageREST {
                     invoiceD.setQuantity(cartDetail.get(i).getQuantity());
                     invoiceD.setProduct(cartDetail.get(i).getProduct());
                     if(cartDetail.get(i).getProduct().getPrice_sale()!=0){
-                        invoiceD.setProduct_Price(cartDetail.get(i).getProduct().getPrice_sale());
+                        invoiceD.setProduct_Price(cartDetail.get(i).getProduct().getPrice());
                         invoiceD.setTotal(cartDetail.get(i).getProduct().getPrice_sale()*cartDetail.get(i).getQuantity());
                     } else{
                         invoiceD.setProduct_Price(cartDetail.get(i).getProduct().getPrice());
