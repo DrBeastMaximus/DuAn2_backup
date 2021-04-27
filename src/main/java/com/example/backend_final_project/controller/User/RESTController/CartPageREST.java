@@ -154,10 +154,12 @@ public class CartPageREST {
         if (StringUtils.hasText(token) && TokenFactory.validateToken(token)) {
             int userId = Integer.parseInt(TokenFactory.getUserIdFromJWT(token));
             User usr = userService.getUserById(userId);
+            int oldQty = 0;
             if(usr!=null){
                 Cart cart = cartService.getCartByUserId(userId);
                 Cart_Detail cartDetail = cartDetailService.getCartDetailId(cartDetailID);
                 if(cart!=null){
+                    oldQty = cartDetail.getQuantity();
                     cartDetail.setUpdate_Date(new Date());
                     cartDetail.setQuantity(newQuantity);
                     Product pd = productService.getProductById(cartDetail.getProduct().getID());
@@ -170,7 +172,11 @@ public class CartPageREST {
                     }
                     cartDetailService.updateCartDetail(cartDetail);
                     cart.setUpdate_Date(new Date());
-                    cart.setTotal(cart.getTotal()+cartDetail.getTotal());
+                    if(oldQty>newQuantity){
+                        cart.setTotal(cart.getTotal()-cartDetail.getProduct_Price());
+                    } else{
+                        cart.setTotal(cart.getTotal()+cartDetail.getProduct_Price());
+                    }
                     cartService.updateCart(cart);
                     return ResponseEntity.ok("Đã cập nhật sản phẩm vào giỏ hàng!");
                 } else{
@@ -189,6 +195,11 @@ public class CartPageREST {
             if(usr!=null){
                 Cart cart = cartService.getCartByUserId(userId);
                 if(cart!=null){
+                    Cart_Detail cd = cartDetailService.getCartDetailId(cartDetailID);
+                    if(cart.getTotal()>0) {
+                        cart.setTotal(cart.getTotal() - cd.getTotal());
+                        cartService.updateCart(cart);
+                    }
                     cartDetailService.deleteCartDetail(cartDetailID);
                     return ResponseEntity.ok("Đã bỏ sản phẩm khỏi giỏ hàng!");
                 } else{
