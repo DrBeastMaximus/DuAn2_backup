@@ -103,7 +103,7 @@ public class CheckoutPageREST {
         User user = userService.getUserById(userID);
         if(user!=null) {
             user.setFullname(json.get("name").asText());
-            user.setPhone(String.valueOf(json.get("phone").asLong()));
+            user.setPhone("0"+String.valueOf(json.get("phone").asLong()));
             user.setAddress(json.get("address").asText());
             userService.updateUser(user);
             Cart cart = cartService.getCartByUserId(userID);
