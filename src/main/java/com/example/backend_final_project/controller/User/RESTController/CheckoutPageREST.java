@@ -99,7 +99,7 @@ public class CheckoutPageREST {
     public Boolean orderwithVoucher(@PathVariable int userID, @PathVariable String voucherCode, @RequestBody JsonNode json) throws MessagingException {
         int discountValue = checkVc(voucherCode);
         String receipt = null;
-        float total;
+        float total=0;
         User user = userService.getUserById(userID);
         if(user!=null) {
             user.setFullname(json.get("name").asText());
@@ -112,10 +112,17 @@ public class CheckoutPageREST {
                 Invoice invoice = new Invoice();
                 invoice.setUser(user);
                 if(discountValue>100) {
-                    total = cart.getTotal() - discountValue;
+                    for(int i=0;i<cartDetail.size();i++){
+                        total = total+cartDetail.get(i).getTotal();
+                    }
+                    total = total - discountValue;
                     invoice.setTotal(total);
+
                 } else{
-                    total = cart.getTotal() * ((100 - discountValue) / 100);
+                    for(int i=0;i<cartDetail.size();i++){
+                        total = total+cartDetail.get(i).getTotal();
+                    }
+                    total = total * ((100 - discountValue) / 100);
                     invoice.setTotal(total);
                 }
                 invoice.setPayment("Trực tiếp");
@@ -187,7 +194,7 @@ public class CheckoutPageREST {
                 String text = new StringBuilder()
                         .append("Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.\n")
                         .append(table)
-                        .append("\n Tổng hóa đơn của bạn là: "+total+"\n")
+                        .append("\n Tổng hóa đơn của bạn là: "+String.format("%.2f", total)+"\n")
                         .append("\n Voucher bạn đã áp dụng: "+ voucherCode)
                         .toString();
 
@@ -217,7 +224,10 @@ public class CheckoutPageREST {
                 Invoice invoice = new Invoice();
                 invoice.setUser(user);
                 float total = cart.getTotal();
-                invoice.setTotal(total);
+                for(int i=0;i<cartDetail.size();i++){
+                    invoice.setTotal(invoice.getTotal()+cartDetail.get(i).getTotal());
+                }
+//                invoice.setTotal(total);
                 invoice.setPayment("Trực tiếp");
                 invoice.setVoucher(null);
                 invoice.setUpdate_by("System");
@@ -268,7 +278,7 @@ public class CheckoutPageREST {
                 String text = new StringBuilder()
                         .append("Đơn đặt hàng của bạn đã được chúng tôi ghi lại và xử lý. Vui lòng chờ điện thoại xác nhận từ nhân viên trong vòng 24h.\n")
                         .append(table)
-                        .append("\n Tổng hóa đơn của bạn là: "+total)
+                        .append("\n Tổng hóa đơn của bạn là: "+String.format("%.2f", invoice.getTotal()))
                         .toString();
                 MailSender.sendText(user.getEmail(),
                         "DWFashion Chân Thành Cảm Ơn Bạn Đã Đặt Hàng",
