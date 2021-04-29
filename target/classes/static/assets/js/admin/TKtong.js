@@ -385,7 +385,7 @@ app.controller("myctrl", function($scope, $http) {
                         var data = google.visualization.arrayToDataTable($scope.topproduct_chart);
 
                         var options = {
-                            title: 'My Daily Activities',
+                            title: 'Top 10 sản phẩm bán chạy nhất',
                             pieHole: 0.4,
                         };
 
