@@ -29,7 +29,7 @@ public class CartPageREST {
     private CartDetailServiceImpl cartDetailService;
     @Autowired
     private ProductServiceImpl productService;
-
+//Tạo giỏ hàng
     @PostMapping("/createCart")
     public ResponseEntity<?> createCart(HttpServletRequest request){
         String token = TokenFactory.getJwtFromRequest(request);
@@ -53,6 +53,7 @@ public class CartPageREST {
             return ResponseEntity.badRequest().body("Tạo giỏ hàng thất bại!");
         }
     }
+    //Xem giỏ hàng
     @GetMapping("/viewCart")
     public ResponseEntity<?> viewCart(HttpServletRequest request){
         String token = TokenFactory.getJwtFromRequest(request);
@@ -93,12 +94,8 @@ public class CartPageREST {
                 }
 
     }
-//    @GetMapping("/test")
-//    public ResponseEntity<?> test(){
-//    List<Cart> b = cartService.getCartList();
-//        return ResponseEntity.ok(b);
-//    }
 
+    //Thêm sản phẩm
     @PutMapping("/addProduct")
     public ResponseEntity<?> addProduct(HttpServletRequest request, @RequestBody JsonNode json){
         int product_id = json.get("product_id").asInt();
@@ -147,7 +144,7 @@ public class CartPageREST {
         }{return ResponseEntity.badRequest().body("Không có giỏ hàng này!");}
 
     }
-
+//Cập nhật sản phậm bất kì
     @PutMapping("/updateProduct/{cartDetailID}/{newQuantity}")
     public ResponseEntity<?> updateProduct(HttpServletRequest request,@PathVariable Integer cartDetailID,@PathVariable Integer newQuantity){
         String token = TokenFactory.getJwtFromRequest(request);
@@ -185,7 +182,7 @@ public class CartPageREST {
             }
         }{return ResponseEntity.badRequest().body("Không có giỏ hàng này!");}
     }
-
+//Xóa sản phẩm bất kì
     @DeleteMapping("/removeProduct/{cartDetailID}")
     public ResponseEntity<?> removeProduct(HttpServletRequest request, @PathVariable int cartDetailID){
         String token = TokenFactory.getJwtFromRequest(request);
@@ -208,7 +205,7 @@ public class CartPageREST {
             }
         }{return ResponseEntity.badRequest().body("Không có giỏ hàng này!");}
     }
-
+//Xóa sạch giỏ hàng
     @DeleteMapping("/clearCart")
     public ResponseEntity<?> removeAllProduct(HttpServletRequest request){
         String token = TokenFactory.getJwtFromRequest(request);

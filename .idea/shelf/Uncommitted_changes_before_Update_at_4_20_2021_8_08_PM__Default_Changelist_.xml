@@ -1,9 +1,0 @@
-<changelist name="Uncommitted_changes_before_Update_at_4_20_2021_8_08_PM_[Default_Changelist]" date="1618974544434" recycled="true" deleted="true">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_20_2021_8_08_PM_[Default_Changelist]/shelved.patch" />
-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 4/20/2021 8:08 PM [Default Changelist]" />
-  <binary>
-    <option name="BEFORE_PATH" value="target/classes/com/example/backend_final_project/controller/User/RESTController/CartPageREST.class" />
-    <option name="AFTER_PATH" value="target/classes/com/example/backend_final_project/controller/User/RESTController/CartPageREST.class" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_20_2021_8_08_PM_[Default_Changelist]/CartPageREST.class" />
-  </binary>
-</changelist>

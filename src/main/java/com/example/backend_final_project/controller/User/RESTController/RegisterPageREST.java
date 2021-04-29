@@ -28,7 +28,7 @@ public class RegisterPageREST {
     private UserServicelmpl userService;
     @Autowired
     private UsersTokenServiceImpl tokenService;
-
+//Tạo user với thông tin từ Request. Send mail kích hoạt
     @PostMapping("/createUser")
     public ResponseEntity<?> createUser(@Validated @RequestBody JsonNode json, HttpServletRequest request) throws MessagingException {
         String name = json.get("name").asText();
@@ -72,7 +72,7 @@ public class RegisterPageREST {
         }
 
     }
-
+//Xác nhận email của user. Kích hoạt tài khoản
     @GetMapping("/emailconfirm/{token}")
     public ResponseEntity<?> confirmEmail(@PathVariable String token){
         if(TokenFactory.validateToken(token)){

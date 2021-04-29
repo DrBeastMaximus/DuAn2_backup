@@ -26,6 +26,7 @@ public class ProductPageREST {
 //        }
 //        return ResponseEntity.ok(prod);
 //    }
+    //Phân trang sản phẩm nam có filter
     @GetMapping("/gender/male/totalRecord/{size}/{propertyids}")
     public ResponseEntity<Integer> totalMaleProdRecordsFiltered(@PathVariable Integer size,@PathVariable List<String> propertyids){
         List<Product> usn = new ArrayList<>();
@@ -38,6 +39,7 @@ public class ProductPageREST {
 
         return ResponseEntity.ok(pg.getPageCount());
     }
+    //Phân trang sản phẩm nam có filter và khoảng giá
     @GetMapping("/gender/male/totalRecord/{size}/{min}/{max}/{propertyids}")
     public ResponseEntity<Integer> totalMaleProdRecordsFilteredInRange(@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max,@PathVariable List<String> propertyids){
         List<Product> usn = new ArrayList<>();
@@ -50,6 +52,7 @@ public class ProductPageREST {
 
         return ResponseEntity.ok(pg.getPageCount());
     }
+    //Phân trang sản phẩm nữ có filter và khoảng giá
     @GetMapping("/gender/female/totalRecord/{size}/{min}/{max}/{propertyids}")
     public ResponseEntity<Integer> totalFemaleProdRecordsFilteredInRange(@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max,@PathVariable List<String> propertyids){
         List<Product> usn = new ArrayList<>();
@@ -62,6 +65,7 @@ public class ProductPageREST {
 
         return ResponseEntity.ok(pg.getPageCount());
     }
+    //Phân trang sản phẩm nữ có khoảng giá
     @GetMapping("/gender/female/totalRecord/{size}/{min}/{max}")
     public ResponseEntity<Integer> totalFemaleProdRecordsInRange(@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max){
         List<Product> usn = productService.getHotFemaleProductListInRange(min,max);
@@ -70,6 +74,7 @@ public class ProductPageREST {
 
         return ResponseEntity.ok(pg.getPageCount());
     }
+    //Phân trang sản phẩm nam có khoảng giá
     @GetMapping("/gender/male/totalRecord/{size}/{min}/{max}")
     public ResponseEntity<Integer> totalMaleProdRecordsInRange(@PathVariable Integer size,@PathVariable Long min, @PathVariable Long max){
         List<Product> usn = productService.getHotMaleProductListInRange(min,max);
@@ -79,7 +84,7 @@ public class ProductPageREST {
 
         return ResponseEntity.ok(pg.getPageCount());
     }
-
+    //Phân trang sản phẩm nữ có filter
     @GetMapping("/gender/female/totalRecord/{size}/{propertyids}")
     public ResponseEntity<Integer> totalFemaleProdRecordsFiltered(@PathVariable Integer size,@PathVariable List<String> propertyids){
         List<Product> usn = new ArrayList<>();
@@ -92,16 +97,19 @@ public class ProductPageREST {
 
         return ResponseEntity.ok(pg.getPageCount());
     }
+    //Đếm tổng số sản phẩm nam
     @GetMapping("/gender/male/totalCount")
     public ResponseEntity<Integer> totalMaleProdCount(){
         List<Product> usn = productService.getMaleProductList();
         return ResponseEntity.ok(usn.size());
     }
+    //Đếm tổng số sản phẩm nữ
     @GetMapping("/gender/female/totalCount")
     public ResponseEntity<Integer> totalFemaleProdCount(){
         List<Product> usn = productService.getFemaleProductList();
         return ResponseEntity.ok(usn.size());
     }
+    //Phân trang sản phẩm nam
     @GetMapping("/gender/male/totalRecord/{size}")
     public ResponseEntity<Integer> totalMaleProdRecords(@PathVariable Integer size){
         List<Product> usn = productService.getMaleProductList();
@@ -110,6 +118,7 @@ public class ProductPageREST {
 
         return ResponseEntity.ok(pg.getPageCount());
     }
+    //Phân trang sản phẩm nữ
     @GetMapping("/gender/female/totalRecord/{size}")
     public ResponseEntity<Integer> totalFemaleProdRecords(@PathVariable Integer size){
         List<Product> usn = productService.getFemaleProductList();
@@ -118,6 +127,7 @@ public class ProductPageREST {
 
         return ResponseEntity.ok(pg.getPageCount());
     }
+    //Lấy sản phẩm nam có sort
     @GetMapping("/gender/male/{page}/{size}/{sort}")
     public ResponseEntity<List<Product>> getMaleProd(
             @PathVariable Integer page,
@@ -159,6 +169,7 @@ public class ProductPageREST {
         }
         return ResponseEntity.ok(ls);
     }
+    //Lấy sản phẩm nam có sort và khoảng giá
     @GetMapping("/gender/male/{page}/{size}/{sort}/{min}/{max}")
     public ResponseEntity<List<Product>> getMaleProdInRange(
             @PathVariable Integer page,
@@ -202,6 +213,7 @@ public class ProductPageREST {
         }
         return ResponseEntity.ok(ls);
     }
+    //Lấy sản phẩm nữ có sort và khoảng giá
     @GetMapping("/gender/female/{page}/{size}/{sort}/{min}/{max}")
     public ResponseEntity<List<Product>> getFemaleProdInRange(
             @PathVariable Integer page,
@@ -246,6 +258,7 @@ public class ProductPageREST {
         }
         return ResponseEntity.ok(ls);
     }
+    //Lấy sản phẩm nam có sort và filter
     @GetMapping("/gender/male/{page}/{size}/{sort}/{propertyids}")
     public ResponseEntity<List<Product>> getMaleProdFiltered(
             @PathVariable Integer page,
@@ -293,6 +306,7 @@ public class ProductPageREST {
         }
         return ResponseEntity.ok(ls);
     }
+    //Lấy sản phẩm nam có sort, khoảng giá và filter
     @GetMapping("/gender/male/{page}/{size}/{sort}/{min}/{max}/{propertyids}")
     public ResponseEntity<List<Product>> getMaleProdFilteredInRange(
             @PathVariable Integer page,
@@ -387,6 +401,7 @@ public class ProductPageREST {
         }
         return ResponseEntity.ok(ls);
     }
+    //Lấy sản phẩm nữ có sort và filter
     @GetMapping("/gender/female/{page}/{size}/{sort}/{propertyids}")
     public ResponseEntity<List<Product>> getFemaleProdFiltered(
             @PathVariable Integer page,
@@ -434,6 +449,7 @@ public class ProductPageREST {
         }
         return ResponseEntity.ok(ls);
     }
+    //Lấy sản phẩm nữ có sort
     @GetMapping("/gender/female/{page}/{size}/{sort}")
     public ResponseEntity<List<Product>> getFemaleProd(
             @PathVariable Integer page,
@@ -476,6 +492,7 @@ public class ProductPageREST {
         }
         return ResponseEntity.ok(ls);
     }
+    //Phân trang sản phẩm chứa từ khóa tương ứng
     @GetMapping("/search/result/totalRecord/{size}/{keyword}")
     public ResponseEntity<Integer> totalSearchResultRecords(@PathVariable Integer size,@PathVariable String keyword){
         List<Product> usn = productService.getProductListByKeyword(keyword);
@@ -484,7 +501,7 @@ public class ProductPageREST {
 
         return ResponseEntity.ok(pg.getPageCount());
     }
-
+    //Lấy danh sách sản phẩm có sort và từ khóa tương ứng
     @GetMapping("/search/result/{page}/{size}/{sort}/{keyword}")
     public ResponseEntity<List<User>> searchProductsByKeyword(
             @PathVariable Integer page,@PathVariable Integer size,@PathVariable String sort,@PathVariable String keyword)  {
@@ -524,6 +541,7 @@ public class ProductPageREST {
         }
         return ResponseEntity.ok(ls);
     }
+    //Lấy thông tin sản phẩm theo ID
     @GetMapping("/getinfo/{id}")
     public ResponseEntity<Product> getProductInfoByID(@PathVariable Integer id){
        Product usn = productService.getProductById(id);

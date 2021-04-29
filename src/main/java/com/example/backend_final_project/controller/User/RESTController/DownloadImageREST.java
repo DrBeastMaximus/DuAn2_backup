@@ -24,28 +24,28 @@ import java.util.List;
 public class DownloadImageREST {
     @Autowired
     private ProductImageServiceImpl productImageService;
-
+//Load hình ảnh phụ của sản phẩm bất kì
     @GetMapping("/getImages/{productID}/{pos}")
     public ResponseEntity<byte[]> downloadImage (@PathVariable int productID, @PathVariable int pos, HttpServletResponse resp){
         List<Product_Image> prodImg = productImageService.getProductImagesByProdId(productID);
         resp.setHeader("Content-Disposition","attachment;filename="+ prodImg.get(pos).getImage());
         return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(ImageUtil.open(prodImg.get(pos).getImage()));
     }
-
+//Load hình ảnh chính của sản phẩm bất kì
     @GetMapping("/getIndexImages/{productID}")
     public ResponseEntity<byte[]> downloadIndexImage (@PathVariable int productID, HttpServletResponse resp){
         List<Product_Image> prodImg = productImageService.getProductImagesIndexByProdId(productID);
         resp.setHeader("Content-Disposition","attachment;filename="+ prodImg.get(0).getImage());
         return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(ImageUtil.open(prodImg.get(0).getImage()));
     }
-
+//Load hình ảnh có ID bất kì
     @GetMapping("/getImagesByID/{productimageID}")
     public ResponseEntity<byte[]> downloadImageByID (@PathVariable int productimageID, HttpServletResponse resp){
         Product_Image prodImg = productImageService.getProductImageById(productimageID);
         resp.setHeader("Content-Disposition","attachment;filename="+ prodImg.getImage());
         return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(ImageUtil.open(prodImg.getImage()));
     }
-
+//Trả về tổng số hình ảnh của 1 sản phẩm. Dùng chung với GetImages
     @GetMapping("/getImagesCount/{productID}")
     public ResponseEntity<?> getImageCount (@PathVariable int productID, HttpServletRequest req){
         List<Product_Image> prodImg = productImageService.getProductImagesByProdId(productID);

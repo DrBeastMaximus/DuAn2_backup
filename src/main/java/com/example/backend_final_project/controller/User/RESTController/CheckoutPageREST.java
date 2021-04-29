@@ -35,14 +35,14 @@ public class CheckoutPageREST {
     private ProductServiceImpl productService;
     static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     static SecureRandom rnd = new SecureRandom();
-
+//Sinh chuỗi ngãu nhiên
     String randomString(int len){
         StringBuilder sb = new StringBuilder(len);
         for(int i = 0; i < len; i++)
             sb.append(AB.charAt(rnd.nextInt(AB.length())));
         return sb.toString();
     }
-
+//Lấy thông tin Voucher
     @GetMapping("/getVoucherInfo/{code}")
     public ResponseEntity<?> checkVoucher(@PathVariable String code){
         List<Voucher> voucher = voucherService.getVoucherByCode(code);
@@ -66,7 +66,7 @@ public class CheckoutPageREST {
             return ResponseEntity.badRequest().body("Voucher không hợp lệ!");
         }
     }
-
+//Kiểm tra voucher
     public Integer checkVc(String code){
         List<Voucher> voucher = voucherService.getVoucherByCode(code);
         if(voucher.size()!=0){
@@ -89,12 +89,12 @@ public class CheckoutPageREST {
             return 0;
         }
     }
-
+//Lấy địa chỉ khách hàng
     @GetMapping("/getAddress/{userID}")
     public String getAddress(@PathVariable int userID){
         return userService.getUserById(userID).getAddress();
     }
-
+//Tiến hành đặt hàng có Voucher
     @PostMapping("/order/{userID}/{voucherCode}")
     public Boolean orderwithVoucher(@PathVariable int userID, @PathVariable String voucherCode, @RequestBody JsonNode json) throws MessagingException {
         int discountValue = checkVc(voucherCode);
@@ -208,7 +208,7 @@ public class CheckoutPageREST {
         }
 
     }
-
+    //Tiến hành đặt hàng không có Voucher
     @PostMapping("/order/{userID}")
     public Boolean orderwithoutVoucher(@PathVariable int userID, @RequestBody JsonNode json) throws MessagingException {
         User user = userService.getUserById(userID);

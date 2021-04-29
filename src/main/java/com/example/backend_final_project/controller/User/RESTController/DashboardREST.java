@@ -26,7 +26,7 @@ public class DashboardREST {
     private InvoiceDetailServiceImpl invoiceDetailService;
     @Autowired
     private CommentServiceImpl commentService;
-
+//Load thông tin của khách hàng
     @GetMapping("/viewInfo")
     public ResponseEntity<?> viewUserInfo(HttpServletRequest request) {
         String token = TokenFactory.getJwtFromRequest(request);
@@ -40,7 +40,7 @@ public class DashboardREST {
             }
         } else{return ResponseEntity.badRequest().body("Không có thông tin!");}
     }
-
+//Cập nhật thông tin khách hàng
     @PostMapping("/updateInfo")
     public ResponseEntity<?> updateUserInfo(@RequestBody User user, HttpServletRequest request) {
         String token = TokenFactory.getJwtFromRequest(request);
@@ -55,7 +55,7 @@ public class DashboardREST {
             }
         }{return ResponseEntity.badRequest().body("Cập nhật thông tin thất bại!");}
     }
-
+//Đổi mật khẩu khách hàng
     @PostMapping("/changePassword")
     public ResponseEntity<?> updateUserPassword(@RequestBody JsonNode json, HttpServletRequest request) {
         String token = TokenFactory.getJwtFromRequest(request);
@@ -78,7 +78,7 @@ public class DashboardREST {
             }
         }{return ResponseEntity.badRequest().body("Cập nhật thông tin thất bại!");}
     }
-
+//Load lịch sử đơn hàng
     @GetMapping("/viewPurchaseHistory")
     public ResponseEntity<?> viewPurchaseHistory(HttpServletRequest request){
         String token = TokenFactory.getJwtFromRequest(request);
@@ -93,10 +93,16 @@ public class DashboardREST {
                 //Gather to JSON format
                 List ls = new ArrayList();
                 for(int i=0;i<invcD.size();i++){
+                    Comment cmt = commentService.getCommentListByProductIdandUserId(invcD.get(i).getProduct().getID(), userId);
                     Map<String, Object> obj = new LinkedHashMap<>();
                     obj.put("history_purchase",invcD.get(i));
                     String indexImg = "http://dwhigh.tech:8080/api/image/getIndexImages/"+invcD.get(i).getProduct().getID();
                     obj.put("indexImage",indexImg);
+                    if(cmt!=null){
+                        obj.put("isCommented",true);
+                    }else{
+                        obj.put("isCommented",false);
+                    }
                     ls.add(obj);
                 }
                 return ResponseEntity.ok(ls);
@@ -107,7 +113,7 @@ public class DashboardREST {
             }
         }{return ResponseEntity.badRequest().body("Không có lịch sử mua hàng!");}
     }
-
+//Đánh giá sản phẩm đã mua
     @PostMapping("/rateProduct")
     public ResponseEntity<?> rateProduct(@RequestBody JsonNode json, HttpServletRequest request){
         int productID = json.get("product_id").asInt();

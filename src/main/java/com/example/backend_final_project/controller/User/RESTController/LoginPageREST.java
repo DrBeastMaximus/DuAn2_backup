@@ -24,7 +24,7 @@ public class LoginPageREST {
     AuthenticationManager authenticationManager;
     @Autowired
     private UserServicelmpl userServicelmpl;
-
+//Kiểm tra tính hợp lệ của Token
     @GetMapping("/checkValidToken/{token}")
     public boolean checkValidToken(@PathVariable String token){
         if(TokenFactory.validateToken(token)){
@@ -33,7 +33,7 @@ public class LoginPageREST {
             return false;
         }
     }
-
+//Tiến hành đăng nhập
     @PostMapping("/signin")
     public ResponseEntity<?> SignIn(@RequestBody JsonNode json){
         String password = json.get("password").asText();

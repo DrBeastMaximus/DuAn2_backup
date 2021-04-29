@@ -28,7 +28,7 @@ public class ForgotPassREST {
     private UserServicelmpl userService;
     @Autowired
     private UsersTokenServiceImpl tokenService;
-
+//Request email khôi phục về địa chỉ email bất kì
     @GetMapping("/{email}")
     public boolean resetPassword(@PathVariable String email, HttpServletRequest request) throws MessagingException {
         User user = userService.getUserByEmail(email);
@@ -49,6 +49,7 @@ public class ForgotPassREST {
             return false;
         }
     }
+//Xác nhận Email khôi phục và tiến hành chuyển đổi trạng thái
     @GetMapping("/emailconfirm/{token}")
     public ResponseEntity<?> confirmEmail(@PathVariable String token){
         if(TokenFactory.validateToken(token)) {
@@ -73,7 +74,7 @@ public class ForgotPassREST {
             }
         } else{return ResponseEntity.badRequest().body("Token is not valid");}
     }
-
+//Đổi mật khẩu và khôi phục tài khoản.
     @PostMapping("/recover")
     public ResponseEntity<?> recover(@RequestBody JsonNode json){
         String token = json.get("token").asText();

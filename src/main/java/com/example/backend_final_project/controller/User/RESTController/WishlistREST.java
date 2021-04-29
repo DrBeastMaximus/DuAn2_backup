@@ -23,6 +23,7 @@ public class WishlistREST {
     @Autowired
     private ProductServiceImpl productService;
 
+    //Thêm vào Wishlist sản phẩm có ID bất kì
     @GetMapping("/addToList/{idProduct}")
     public ResponseEntity<?> create(@PathVariable int idProduct, HttpServletRequest request){
         String token = TokenFactory.getJwtFromRequest(request);
@@ -47,7 +48,7 @@ public class WishlistREST {
         }{return ResponseEntity.badRequest().body("Thêm Wishlist thất bại!");}
     }
 
-
+//Đọc sản phẩm từ Wishlist
     @GetMapping("/readList")
     public ResponseEntity<?> read(HttpServletRequest request){
         String token = TokenFactory.getJwtFromRequest(request);
@@ -72,7 +73,7 @@ public class WishlistREST {
             }
         }{return ResponseEntity.badRequest().body("Wishlist trống!");}
     }
-
+//Xóa sản phẩm bất kì khỏi Wishlist
     @DeleteMapping("/removeProduct/{wishlistID}")
     public ResponseEntity<?> removeProduct(HttpServletRequest request, @PathVariable int wishlistID){
         String token = TokenFactory.getJwtFromRequest(request);

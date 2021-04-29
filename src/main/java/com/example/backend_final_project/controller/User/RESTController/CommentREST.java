@@ -19,7 +19,7 @@ import java.util.List;
 public class CommentREST {
     @Autowired
     private CommentServiceImpl commentService;
-
+//Load Comment của sản phẩm bất kì
     @GetMapping("/loadProductComment/{page}/{size}/{prodID}")
     public ResponseEntity<?> loadProductComment(@PathVariable Integer page, @PathVariable Integer size,@PathVariable Integer prodID){
         List<Comment> usn = commentService.getCommentListByProductId(prodID);
@@ -33,6 +33,7 @@ public class CommentREST {
             return ResponseEntity.badRequest().body("Không có comment");
         }
     }
+//Phân trang cho comment của sản phẩm bất kì, dùng chung với hàm loadProductComment
     @GetMapping("/loadProductComment/pageCount/{size}/{prodID}")
     public ResponseEntity<Integer> loadProductCommentPageCount( @PathVariable Integer size,@PathVariable Integer prodID){
         List<Comment> usn = commentService.getCommentListByProductId(prodID);

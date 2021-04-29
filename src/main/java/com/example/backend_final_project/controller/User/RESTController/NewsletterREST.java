@@ -15,7 +15,7 @@ import java.util.List;
 public class NewsletterREST {
     @Autowired
     private NewsletterServiceImpl newsletterService;
-
+//Ghi email đăng kí nhận tin vào Database
     @PostMapping("/registerEmail")
     public ResponseEntity<?> registerEmail(@RequestBody JsonNode json){
         String email = json.get("email").asText();

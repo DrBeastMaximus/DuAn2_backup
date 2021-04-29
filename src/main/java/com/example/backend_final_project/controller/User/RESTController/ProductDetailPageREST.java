@@ -32,7 +32,7 @@ public class ProductDetailPageREST {
     private ProductPropertyService ppService;
     @Autowired
     private ProductPropertyDetailService ppdService;
-
+//Lấy thông tin chi tiết sản phẩm bất kì
     @GetMapping("{productID}")
     public ResponseEntity<?> viewProduct(@PathVariable Integer productID){
         Product product = productService.getProductById(productID);

@@ -23,7 +23,7 @@ public class ProductPropertyREST {
     private ProductPropertyService ppService;
     @Autowired
     private ProductPropertyDetailService ppdService;
-
+    //Lấy thuộc tính tất cả sản phẩm
     @GetMapping("/getProperty")
     public ResponseEntity getRoot(){
         List<Product_Property> pd = ppService.getProductPropertyList();
@@ -44,7 +44,7 @@ public class ProductPropertyREST {
 //        return ResponseEntity.ok(ppdService.getByProductPropertyId(rootID));
 //    }
 
-
+//Lấy thuộc tính của một sản phẩm
     @GetMapping("/getBranchPropertyFromProductID/{prodID}")
     public ResponseEntity getBranchPropertyFromProductID(@PathVariable int prodID){
         return ResponseEntity.ok(ppdService.getByProductId(prodID));
