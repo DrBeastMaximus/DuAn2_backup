@@ -294,11 +294,11 @@
                                                             <span class="material-input"></span><span class="material-input"></span><span class="material-input"></span><span class="material-input"></span><span class="material-input"></span><span class="material-input"></span><span class="material-input"></span></div>
                                                         <div class="label-floating is-empty">
                                                             <label class="control-label">
-                                                                Is sale
+                                                                Trạng Thái Khuyến mãi
                                                             </label>
                                                             <select class="form-control" th:field="*{issale}">
-                                                                <option value="true" >Sale</option>
-                                                                <option value="false">Không Sale</option>
+                                                                <option value="true" >Khuyến mãi</option>
+                                                                <option value="false">Không khuyến mãi</option>
                                                             </select>
                                                         </div>
                                                         <div class="label-floating is-empty">
@@ -386,13 +386,13 @@
                                                             <textarea class="form-control" id="description" name="description"  type="textarea" required="true" aria-required="true">{{product1.description}}</textarea>
                                                             <span class="material-input"></span><span class="material-input"></span><span class="material-input"></span><span class="material-input"></span><span class="material-input"></span><span class="material-input"></span><span class="material-input"></span></div>
                                                         <div class="label-floating is-empty">
-                                                            <label class="control-label"><small>Is sale</small></label>
+                                                            <label class="control-label"><small>Trạng thái khuyến mãi</small></label>
                                                             <select class="form-control" id="issale" name="issale">
-                                                                <option ng-if="product1.issale == true" selected value="true">Sale</option>
-                                                                <option ng-if="product1.issale == false" selected  value="false">Không sale</option>
+                                                                <option ng-if="product1.issale == true" selected value="true">Khuyến mãi</option>
+                                                                <option ng-if="product1.issale == false" selected  value="false">Không khuyến mãi</option>
 
-                                                                <option ng-if="product1.issale == true"  value="false">Không Sale</option>
-                                                                <option ng-if="product1.issale == false"  value="true">Sale</option>
+                                                                <option ng-if="product1.issale == true"  value="false">Không khuyến mãi</option>
+                                                                <option ng-if="product1.issale == false"  value="true">khuyến mãi</option>
                                                             </select>
                                                         </div>
                                                         <div class="label-floating is-empty">
