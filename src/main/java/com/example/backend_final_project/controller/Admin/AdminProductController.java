@@ -311,11 +311,11 @@ public class AdminProductController {
     public String insertimage(ModelMap model, @PathVariable("id_product") int id_product, @ModelAttribute Product_Image product_image, @RequestPart("file") MultipartFile file){
         List<Product_Image> listImage = productImageServiceImpl.getProductImagesIndexByProdId(id_product);
         if(listImage.size() >=1 && product_image.getProiority() == 1){
-            model.addAttribute("message","Mõi sản phẩm chỉ có 1 hình chính");
+            model.addAttribute("message","Mỗi sản phẩm chỉ có 1 hình chính");
         }else{
             List<Product_Image> listImage1 = productImageServiceImpl.getProductImagesByProdId(id_product);
             if(listImage1.size() >=4){
-                model.addAttribute("message","Mõi sản phẩm chỉ có 4 hình phụ");
+                model.addAttribute("message","Mỗi sản phẩm chỉ có 4 hình phụ");
             }else{
 
                 String path = System.getProperty("user.dir")+"/hinhanh/";
@@ -406,7 +406,7 @@ public class AdminProductController {
             }else{
                 List<Product_Image> listImage = productImageServiceImpl.getProductImagesByProdId(id_product);
                 if(listImage.size() >=4){
-                    model.addAttribute("message","Mõi sản phẩm chỉ có 4 hình phụ");
+                    model.addAttribute("message","Mỗi sản phẩm chỉ có 4 hình phụ");
                     model.addAttribute("id", id_product);
                     attribute(model);
                     return "main/tables/sp_image";

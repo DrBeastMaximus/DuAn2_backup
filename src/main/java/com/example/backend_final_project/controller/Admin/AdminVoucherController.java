@@ -73,16 +73,21 @@ public class AdminVoucherController {
         //kiểm tra mã voucher đã tồn tại chưa
         if (vou.size() != 0){
             model.addAttribute("message","Mã Voucher đã tồn tại");
+            attribute(model);
+            return "main/tables/voucher";
         }else{
             voucher.setCreated_date(new Date());
             voucher.setCreated_by(SessionService.username);
             voucherServiceImpl.addVoucher(voucher);
             model.addAttribute("message","");
+            attribute(model);
+            return "redirect:/admin/voucher/home";
         }
 //        model.addAttribute("insert",new Voucher());
 //        model.addAttribute("update",new Voucher());
-        attribute(model);
-        return "main/tables/voucher";
+//        attribute(model);
+//        return "main/tables/voucher";
+//        return "redirect:/admin/voucher/home";
     }
 
     //cập nhật voucher
@@ -95,23 +100,29 @@ public class AdminVoucherController {
             voucher.setUpdated_by(SessionService.username);
             voucherServiceImpl.updateVoucher(voucher);
             model.addAttribute("message","");
+            attribute(model);
+            return "redirect:/admin/voucher/home";
         }else{
             List<Voucher> vou1 = voucherServiceImpl.getVoucherByCode(voucher.getCode());
             //kiểm tra mã voucher đã tồn tại chưa
             if(vou1.size() != 0){
                 model.addAttribute("message","Mã Voucher đã tồn tại");
+                attribute(model);
+                return "main/tables/voucher";
             }else{
                 voucher.setUpdated_date(new Date());
                 voucher.setUpdated_by(SessionService.username);
                 voucherServiceImpl.updateVoucher(voucher);
                 model.addAttribute("message","");
+                attribute(model);
+                return "redirect:/admin/voucher/home";
             }
         }
 //        model.addAttribute("insert",new Voucher());
 //        model.addAttribute("update",new Voucher());
-        attribute(model);
-
-        return "main/tables/voucher";
+//        attribute(model);
+//
+//        return "main/tables/voucher";
     }
 
     //xóa voucher

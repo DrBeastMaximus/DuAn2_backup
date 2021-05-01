@@ -53,7 +53,7 @@ public class InvoiceDAOImpl implements InvoiceDAO {
     public List<Invoice> getInvoiceListByStatus(int status) {
         Session session = this.sessionFactory.openSession();
         String hql = "FROM Invoice where Status = :id and isdelete=false order by Created_date DESC ";
-        Query query = session.createQuery(hql);
+        Query query = session.createQuery(hql).setMaxResults(32);
         query.setParameter("id", status);
         List<Invoice> list = query.list();
         return list;
