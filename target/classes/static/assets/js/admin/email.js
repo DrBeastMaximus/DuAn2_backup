@@ -29,45 +29,7 @@ app.controller("myctrl", function($scope, $http) {
     });
 
 
-    // $scope.admin1= {};
-    //
-    // $scope.update = function (index) {
-    //     // $scope.admin1 = $scope.admins[index];
-    //     for(var i = 0; i < $scope.admins.length; i++){
-    //         if( $scope.admins[i].id == index){
-    //             $scope.admin1 = $scope.admins[i];
-    //         }
-    //     }
-    // }
-    // $scope.begin = 0;
-    // $scope.pageCount = Math.ceil($scope.email.length / 8);
-    // $scope.first = function() {
-    //     $scope.begin = 0;
-    // }
-    // $scope.prev = function() {
-    //     // if ($scope.begin > 0) {
-    //
-    //     // }
-    //     if($scope.begin >=0){
-    //
-    //     }else{
-    //         $scope.begin -= 8;
-    //     }
-    // }
-    // $scope.next = function() {
-    //     if ($scope.begin < ($scope.pageCount - 1) * 8) {
-    //         $scope.begin += 8;
-    //     }else{
-    //         if($scope.begin == 0){
-    //             // $scope.begin += 8;
-    //         }  $scope.begin = ($scope.pageCount - 1) * 8;
-    //     }
-    //
-    // }
-    // $scope.last = function() {
-    //     $scope.begin = ($scope.pageCount - 1) * 8;
-    // }
-    // }
+
 
 });
 app.directive('input', ['$parse', function ($parse) {

@@ -46,17 +46,11 @@ public class AdminLoginController {
             Admin list = adminService.getAdminUsername(email);
             if (list!=null) {
                 if(list.getPassword().equals(pass)){
-//                    GlobalConstant.setAdminID(list.getID());
-//                    GlobalConstant.setRole(list.getRole());
-//                    GlobalConstant.setUsername(list.getUsername());
+
                     //thêm admin vào session
                     session.addAdmin(list);
 
-//                    session.setAttribute("username",GlobalConstant.getUsername());
-//                    session.setAttribute("role",GlobalConstant.getRole());
-//                    return "redirect:/admin/invoice/home/cho-xac-nhan";
 
-//                    return "redirect:/admin/invoice/home/cho-xac-nhan";
                     return "main/tables/reloadpages";
                 } else {
                     mm.addAttribute("message", "Wrong username or password!");

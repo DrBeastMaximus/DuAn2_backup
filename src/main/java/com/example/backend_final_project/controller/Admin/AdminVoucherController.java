@@ -42,13 +42,7 @@ public class AdminVoucherController {
         List<Voucher> ds = voucherServiceImpl.getVoucherList();
         return ds;
     }
-    //    @GetMapping("/insert")
-//    public String insert(ModelMap model){
-//        model.addAttribute("insert",new Voucher());
-//        model.addAttribute("update",new Voucher());
-//        model.addAttribute("message","");
-//        return "main/tables/voucher";
-//    }
+
 
     //trả về trang quản lý voucher
     @GetMapping("/update")
@@ -58,13 +52,7 @@ public class AdminVoucherController {
         model.addAttribute("message","");
         return "main/tables/voucher";
     }
-//    @GetMapping("/delete")
-//    public String delete(ModelMap model){
-//        model.addAttribute("insert",new Voucher());
-//        model.addAttribute("update",new Voucher());
-//        model.addAttribute("message","");
-//        return "main/tables/voucher";
-//    }
+
 
     //thêm voucher vào db
     @PostMapping("/insert")
@@ -83,11 +71,7 @@ public class AdminVoucherController {
             attribute(model);
             return "redirect:/admin/voucher/home";
         }
-//        model.addAttribute("insert",new Voucher());
-//        model.addAttribute("update",new Voucher());
-//        attribute(model);
-//        return "main/tables/voucher";
-//        return "redirect:/admin/voucher/home";
+
     }
 
     //cập nhật voucher
@@ -118,11 +102,7 @@ public class AdminVoucherController {
                 return "redirect:/admin/voucher/home";
             }
         }
-//        model.addAttribute("insert",new Voucher());
-//        model.addAttribute("update",new Voucher());
-//        attribute(model);
-//
-//        return "main/tables/voucher";
+
     }
 
     //xóa voucher
@@ -138,8 +118,7 @@ public class AdminVoucherController {
             voucher.setUpdated_by(SessionService.username);
             voucherServiceImpl.updateVoucher(voucher);
         }
-//        model.addAttribute("insert",new Voucher());
-//        model.addAttribute("update",new Voucher());
+
         attribute(model);
         model.addAttribute("message","");
         return "redirect:/admin/voucher/home";

@@ -252,7 +252,7 @@
                                                         <!--                                                            <input class="form-control" name="email" type="text" email="true" required="true" aria-required="true">-->
                                                         <!--                                                        <span class="material-input"></span><span class="material-input"></span></div>-->
                                                         <div class="form-group label-floating is-empty">
-                                                            <label class="control-label">Username<star>*</star>
+                                                            <label class="control-label">Username(Email)<star>*</star>
                                                             </label>
                                                             <input class="form-control" th:field="*{username}" type="email" email="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                                                                    title="Email không đúng định dạng" required="true" aria-required="true">
@@ -271,12 +271,12 @@
                                                             </label>
                                                             <input class="form-control" th:field="*{address}" type="text" required="true" aria-required="true">
                                                             <span class="material-input"></span></div>
-                                                        <div class="form-group label-floating is-empty">
-                                                            <label class="control-label">Email<star>*</star>
-                                                            </label>
-                                                            <input class="form-control" th:field="*{email}" type="email" email="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                                                                   title="Email không đúng định dạng" required="true" aria-required="true">
-                                                            <span class="material-input"></span></div>
+<!--                                                        <div class="form-group label-floating is-empty">-->
+<!--                                                            <label class="control-label">Email<star>*</star>-->
+<!--                                                            </label>-->
+<!--                                                            <input class="form-control" th:field="*{email}" type="email" email="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"-->
+<!--                                                                   title="Email không đúng định dạng" required="true" aria-required="true">-->
+<!--                                                            <span class="material-input"></span></div>-->
                                                         <div class="form-group label-floating is-empty">
                                                             <label class="control-label">Điện thoại<star>*</star><br>
                                                             </label>
@@ -336,7 +336,7 @@
                                                             <input  hidden  id="id" name="id"  value="{{user1.id}}"  >
                                                             <span class="material-input"></span><span class="material-input"></span></div>
                                                         <div class="label-floating is-empty">
-                                                            <label class="control-label">Username<star>*</star>
+                                                            <label class="control-label">Username(Email)<star>*</star>
                                                             </label>
                                                             <input class="form-control"  disabled type="text"  email="true" value="{{user1.username}}" required="true" aria-required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                                                                    title="Email không đúng định dạng">
@@ -357,12 +357,12 @@
                                                             </label>
                                                             <input class="form-control" id="address" name="address" type="text" required="true" aria-required="true" value="{{user1.address}}">
                                                             <span class="material-input"></span></div>
-                                                        <div class="label-floating is-empty">
-                                                            <label class="control-label">Email<star>*</star>
-                                                            </label>
-                                                            <input class="form-control" name="email" type="email" required="true" aria-required="true" value="{{user1.email}}" email="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                                                                   title="Email không đúng định dạng">
-                                                            <span class="material-input"></span></div>
+<!--                                                        <div class="label-floating is-empty">-->
+<!--                                                            <label class="control-label">Email<star>*</star>-->
+<!--                                                            </label>-->
+<!--                                                            <input class="form-control" name="email" type="email" required="true" aria-required="true" value="{{user1.email}}" email="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"-->
+<!--                                                                   title="Email không đúng định dạng">-->
+<!--                                                            <span class="material-input"></span></div>-->
                                                         <div class="label-floating is-empty">
                                                             <label class="control-label">Điện thoại<star>*</star>
                                                             </label>

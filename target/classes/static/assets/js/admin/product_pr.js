@@ -38,34 +38,6 @@ app.controller("myctrl", function($scope, $http) {
             }
         }
     }
-    // $scope.begin = 0;
-    // $scope.pageCount = Math.ceil($scope.product_property.length / 8);
-    // $scope.first = function() {
-    //     $scope.begin = 0;
-    // }
-    // $scope.prev = function() {
-    //     // if ($scope.begin > 0) {
-    //
-    //     // }
-    //     if($scope.begin >=0){
-    //
-    //     }else{
-    //         $scope.begin -= 8;
-    //     }
-    // }
-    // $scope.next = function() {
-    //     if ($scope.begin < ($scope.pageCount - 1) * 8) {
-    //         $scope.begin += 8;
-    //     }else{
-    //         if($scope.begin == 0){
-    //             // $scope.begin += 8;
-    //         }  $scope.begin = ($scope.pageCount - 1) * 8;
-    //     }
-    //
-    // }
-    // $scope.last = function() {
-    //     $scope.begin = ($scope.pageCount - 1) * 8;
-    // }
 
 
 });

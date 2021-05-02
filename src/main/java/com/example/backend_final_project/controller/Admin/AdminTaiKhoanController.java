@@ -17,6 +17,9 @@ public class AdminTaiKhoanController {
     @Autowired
     private LoginAdminServiceImpl loginAdminService;
 
+    @Autowired
+    private SessionService sessionService;
+
     //trả về trang quản lý tài khoản
     @GetMapping("/home")
     public String Home(ModelMap model){
@@ -42,40 +45,7 @@ public class AdminTaiKhoanController {
         model.addAttribute("insert",new Admin());
         model.addAttribute("update",new Admin());
     }
-    //    @GetMapping("/insert")
-//    public String insert(ModelMap model){
-//        model.addAttribute("insert",new Admin());
-//        model.addAttribute("update",new Admin());
-//
-//        model.addAttribute("message","");
-//
-//
-//
-//        return "main/tables/tk";
-//    }
-//
-//    @GetMapping("/update")
-//    public String update(ModelMap model){
-//        model.addAttribute("insert",new Admin());
-//        model.addAttribute("update",new Admin());
-//
-//        model.addAttribute("message","");
-//
-//
-//
-//        return "main/tables/tk";
-//    }
-//    @GetMapping("/delete")
-//    public String delete(ModelMap model){
-//        model.addAttribute("insert",new Admin());
-//        model.addAttribute("update",new Admin());
-//
-//        model.addAttribute("message","");
-//
-//
-//
-//        return "main/tables/tk";
-//    }
+
 
     //thêm tài khoản vào db
     @PostMapping("/home")
@@ -84,13 +54,11 @@ public class AdminTaiKhoanController {
         Admin admintest = loginAdminService.getAdminUsername(admin.getUsername());
         if(admintest != null){
             if(admintest.isIsdelete() == false ){
-//                model.addAttribute("insert",new Admin());
-//                model.addAttribute("update",new Admin());
+
                 attributr(model);
                 model.addAttribute("message","Tài Khoản Đã Tồn Tại");
             }else{
-//                model.addAttribute("insert",new Admin());
-//                model.addAttribute("update",new Admin());
+
                 attributr(model);
                 model.addAttribute("message","Tài Khoản Đã Tồn Tại Trong Thùng Rác");
             }
@@ -98,8 +66,7 @@ public class AdminTaiKhoanController {
             admin.setCreated_date(new Date());
             admin.setCreated_by(SessionService.username);
             loginAdminService.addAdmin(admin);
-//            model.addAttribute("insert", new Admin());
-//            model.addAttribute("update", new Admin());
+
             attributr(model);
         }
 //        return "redirect:/admin/taikhoan/home";
@@ -112,11 +79,15 @@ public class AdminTaiKhoanController {
         admin.setUpdated_date(new Date());
         admin.setUpdated_by(SessionService.username);
         loginAdminService.updateAdmin(admin);
-//        model.addAttribute("insert",new Admin());
-//        model.addAttribute("update",new Admin());
+
         attributr(model);
         model.addAttribute("message","");
         System.out.println(admin);
+        if(SessionService.username.equals(admin.getUsername())){
+            Admin ad = loginAdminService.getAdminId(admin.getID());
+            //            sessionService.removeAdmin();
+            sessionService.addAdmin(ad);
+        }
 //        return "main/tables/tk";
         return "redirect:/admin/taikhoan/home";
     }
@@ -130,16 +101,12 @@ public class AdminTaiKhoanController {
         admin.setUpdated_date(new Date());
         admin.setUpdated_by(SessionService.username);
         loginAdminService.updateAdmin(admin);
-//        model.addAttribute("insert",new Admin());
-//        model.addAttribute("update",new Admin());
+
         attributr(model);
         model.addAttribute("messenger","");
 //        return "main/tables/tk";
         return "redirect:/admin/taikhoan/home";
 
     }
-//    @GetMapping("/taikhoan_restore")
-//    public String test(ModelMap model){
-//        return "main/tables/tk_restore";
-//    }
+
 }

@@ -69,23 +69,11 @@ app.controller("myctrl", function($scope, $http) {
                 if($scope.toptalinvoice_chart.length <= $scope.TotalInvoiceYear.length) {
                     //đưa dử liệu từ api vào mảng để đua lên biểu đồ
                     $scope.toptalinvoice_chart.push(angular.copy( $scope.TotalInvoiceYear[i]));
-                    // $scope.totalIndex =  $scope.TotalInvoiceYear[i];
-                    // $scope.yearDT.push(angular.copy($scope.totalIndex[0]));
-                    // $scope.TotalYear.push(angular.copy($scope.totalIndex[1]));
+
                 }
             }
-            // new Chartist.Line('#chart3', {
-            //     labels: $scope.yearDT,
-            //     series: [
-            //         $scope.TotalYear,
-            //     ]
-            // }, {
-            //     fullWidth: true,
-            //     chartPadding: {
-            //         right: 40
-            //     }
-            // });
-            // alert($scope.toptalinvoice_chart)
+
+
             // biểu đồ thống kê từng sản phẩm theo năm
             google.charts.load('current', {'packages':['corechart']});
             google.charts.setOnLoadCallback(drawChart);
@@ -104,77 +92,6 @@ app.controller("myctrl", function($scope, $http) {
                 var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
                 chart.draw(data, options);
             }
-            // new Chart(document.getElementById("bar-chart"), {
-            //     type: 'bar',
-            //     data: {
-            //         labels: $scope.yearDT,
-            //         datasets: [
-            //             {
-            //                 label: "Tổng doanh thu",
-            //                 backgroundColor: ["#3e95cd", "#0000FF","#8e5ea2","#3cba9f","#e8c3b9","#c45850","#FF00CC","#33FF33","#AAAAAA","#00CCFF","#FFFF33","#9900FF"],
-            //                 data: $scope.TotalYear,
-            //                 width : "1px",
-            //                 height: "1px"
-            //             }
-            //         ]
-            //     },
-            //     options: {
-            //         legend: { display: false },
-            //         title: {
-            //             display: true,
-            //             text: ' '
-            //         }
-            //     }
-            // });
-
-            // google.charts.load('current', {packages: ['corechart', 'line']});
-            // google.charts.setOnLoadCallback(drawBackgroundColor);
-            //
-            // function drawBackgroundColor() {
-            //     var data = new google.visualization.DataTable();
-            //     data.addColumn('number', 'X');
-            //     data.addColumn('number', 'Dogs1');
-            //
-            //     data.addRows($scope.TotalInvoiceYear);
-            //
-            //     var options = {
-            //         hAxis: {
-            //             title: 'Time'
-            //         },
-            //         vAxis: {
-            //             title: 'Popularity'
-            //         },
-            //         backgroundColor: '#f1f8e9'
-            //     };
-            //
-            //     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-            //     chart.draw(data, options);
-            // }
-
-            // var options = {
-            //     type: 'line',
-            //     data: {
-            //         labels: $scope.yearDT,
-            //         datasets: [
-            //             {
-            //                 label: '# of Votes',
-            //                 data: $scope.TotalYear,
-            //                 borderWidth: 1
-            //             }
-            //         ]
-            //     },
-            //     options: {
-            //         scales: {
-            //             yAxes: [{
-            //                 ticks: {
-            //                     reverse: false
-            //                 }
-            //             }]
-            //         }
-            //     }
-            // }
-            // var ctx = document.getElementById('chartJSContainer').getContext('2d');
-            // new Chart(ctx, options);
 
         });
 
@@ -227,14 +144,9 @@ app.controller("myctrl", function($scope, $http) {
                     if($scope.topproduct_chart.length <= $scope.topproduct.length) {
                         //đưa dữ liệu vào mảng để đưa vào biễu đồ
                         $scope.toppro_index =  $scope.topproduct[i];
-                        // $scope.product_name = $scope.toppro_index[0];
-                        // $scope.product_total = $scope.toppro_index[2];
+
                         $scope.topproduct_chart.push([$scope.toppro_index[0],$scope.toppro_index[2]]);
-                        // $scope.product_name.push(angular.copy($scope.toppro_index[0]));
-                        // $scope.product_total.push(angular.copy($scope.toppro_index[2]));
-                        // $scope.char_pro_index = [$scope.toppro_index[0],$scope.toppro_index[2]];
-                        // $scope.test = $scope.aa;
-                        // $scope.char_pro.push(angular.copy($scope.char_pro_index));
+
 
                     }
 
@@ -254,26 +166,6 @@ app.controller("myctrl", function($scope, $http) {
                     chart.draw(data, options);
                 }
 
-                // new Chart(document.getElementById("pie-chart"), {
-                //     type: 'pie',
-                //     data: {
-                //         labels:  $scope.product_name,
-                //         datasets: [{
-                //             label: "Population (millions)",
-                //             backgroundColor: ["#3e95cd", "#0000FF","#8e5ea2","#3cba9f","#e8c3b9","#c45850","#FF00CC","#33FF33","#AAAAAA","#00CCFF"],
-                //             data: $scope.product_total
-                //         }]
-                //     },
-                //     options: {
-                //         title: {
-                //             display: true,
-                //             text: 'Top sản phẩm bán ra nhiều nhất '
-                //         }
-                //     }
-                // });
-
-
-
 
             });
             // thống kê top 10 sản phẩm được yêu thích nhất
@@ -285,8 +177,7 @@ app.controller("myctrl", function($scope, $http) {
                     //đưa dữ liệu vào mảng để đưa lên biểu đồ
                     if($scope.char_wishlish.length <=  $scope.topwishlish.length) {
                         $scope.char_wishlish.push(angular.copy( $scope.topwishlish[i]));
-                        // $scope.name.push(angular.copy($scope.user_index[0]));
-                        // $scope.total_bill.push(angular.copy($scope.user_index[1]));
+
                     }
                 }
 
@@ -325,13 +216,7 @@ app.controller("myctrl", function($scope, $http) {
                         $scope.total_bill.push(angular.copy($scope.user_index[1]));
                     }
                 }
-                // new Chartist.Bar('#chart6', {
-                //     labels: $scope.name,
-                //     series:  $scope.total_bill
-                // }, {
-                //     distributeSeries: true,
-                //     height: 500
-                // });
+
 
                 //biểu đồ thống kê top 10 khách hàng
                 google.charts.load('current', {packages: ['corechart']});
@@ -366,14 +251,8 @@ app.controller("myctrl", function($scope, $http) {
                         if($scope.topproduct_chart.length <= $scope.topproduct.length) {
 
                             $scope.toppro_index =  $scope.topproduct[i];
-                            // $scope.product_name = $scope.toppro_index[0];
-                            // $scope.product_total = $scope.toppro_index[2];
+
                             $scope.topproduct_chart.push([$scope.toppro_index[0],$scope.toppro_index[2]]);
-                            // $scope.product_name.push(angular.copy($scope.toppro_index[0]));
-                            // $scope.product_total.push(angular.copy($scope.toppro_index[2]));
-                            // $scope.char_pro_index = [$scope.toppro_index[0],$scope.toppro_index[2]];
-                            // $scope.test = $scope.aa;
-                            // $scope.char_pro.push(angular.copy($scope.char_pro_index));
 
                         }
 
@@ -404,8 +283,7 @@ app.controller("myctrl", function($scope, $http) {
                         //đưa dữ liệu vào mảng để đưa vào biểu đồ
                         if($scope.char_wishlish.length <=  $scope.topwishlish.length) {
                             $scope.char_wishlish.push(angular.copy( $scope.topwishlish[i]));
-                            // $scope.name.push(angular.copy($scope.user_index[0]));
-                            // $scope.total_bill.push(angular.copy($scope.user_index[1]));
+
                         }
                     }
 
@@ -444,13 +322,6 @@ app.controller("myctrl", function($scope, $http) {
                             $scope.total_bill.push(angular.copy($scope.user_index[1]));
                         }
                     }
-                    // new Chartist.Bar('#chart6', {
-                    //     labels: $scope.name,
-                    //     series:  $scope.total_bill
-                    // }, {
-                    //     distributeSeries: true,
-                    //     height: 500
-                    // });
 
                     // biểu đồ top 10 khách hàng
                     google.charts.load('current', {packages: ['corechart']});

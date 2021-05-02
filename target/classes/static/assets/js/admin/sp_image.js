@@ -37,7 +37,7 @@ app.controller("myctrl", function($scope, $http) {
                 $scope.urlimage= "/api/image/getImagesByID/"+$scope.productimage[i].id;
             }
         }
-        // $scope.productimage1 = $scope.productimage[index];
+
 
     }
 // các url cho các chức năng thêm, sửa, xóa
@@ -46,39 +46,7 @@ app.controller("myctrl", function($scope, $http) {
     $scope.urldelete= "../../image/delete/"+$scope.id;
     $scope.urlimage = null;
 
-    // $scope.begin = 0;
-    //
-    // $scope.pageCount = Math.ceil($scope.productimage.length / 8);
-    // $scope.first = function() {
-    //     $scope.begin = 0;
-    //
-    // }
-    // $scope.prev = function() {
-    //
-    //     if($scope.begin >=0){
-    //
-    //     }else{
-    //         $scope.begin -= 8;
-    //
-    //     }
-    // }
-    // $scope.next = function() {
-    //     if ($scope.begin < ($scope.pageCount - 1) * 8) {
-    //         $scope.begin += 8;
-    //
-    //     }else{
-    //         if($scope.begin == 0){
-    //
-    //
-    //         }  $scope.begin = ($scope.pageCount - 1) * 8;
-    //
-    //     }
-    //
-    // }
-    // $scope.last = function() {
-    //     $scope.begin = ($scope.pageCount - 1) * 8;
-    //
-    // }
+
 
 
 
